@@ -14,3 +14,32 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// 后台路由开始
+Route::get('admin','Admin\Index\IndexController@index');
+
+
+
+
+
+
+
+
+
+
+
+// 后台路由结束
+
+
+
+// 前台路由开始
+
+
+
+
+
+
+// 后台路由结束
+
+
+
