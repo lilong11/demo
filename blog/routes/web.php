@@ -16,10 +16,18 @@ Route::get('/', function () {
 });
 
 // 后台路由开始
-Route::get('admin','Admin\Index\IndexController@index');
+Route::get('admin','Admin\IndexController@index');
+
+
+// 用户路由开始
+ Route::resource('user','Admin\IndexController');
 
 
 
+
+
+
+// 用户路由结束
 
 
 
