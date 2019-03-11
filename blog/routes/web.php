@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 // 后台路由开始
-Route::get('admin','Admin\Index\IndexController@index');
+Route::get('admin','Admin\IndexController@index');
 
 
 
