@@ -23,6 +23,7 @@ class UsersStoreRequest extends FormRequest
      */
     public function rules()
     {
+        // 用户表单请求验证
         return [
             'uname' => 'required|regex:/^[a-zA-Z]{1}[\w]{7,15}$/',
             'password' => 'required|regex:/^[\w]{6}$/',

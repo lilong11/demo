@@ -4,7 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\UsersStoreRequest;
+use App\Models\Users;
+use App\Models\Usersinfos;
+use DB;
 class UserController extends Controller
 {
     /**
@@ -14,8 +18,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        // dump('用户列表');
-        return view('Admin.User.index',['title'=>'用户列表']);
+        $user = new Users;
+        $arr = Users::simplePaginate(6); 
+        // dd($arr);
+        // dump($arr);
+        return view('Admin.User.index',['title'=>'用户列表','arr'=>$arr]);
     }
 
     /**
@@ -25,7 +32,6 @@ class UserController extends Controller
      */
     public function create()
     {
-        // dump('用户添加');
         return view('Admin.User.create',['title'=>'用户添加']);
     }
 
@@ -70,17 +76,6 @@ class UserController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -88,7 +83,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        // dump($id);
+        $data = Users::find($id);
+        // dump($data);
+        return view('Admin.User.edit',['title'=>'用户修改','data'=>$data]);
     }
 
     /**
@@ -103,14 +101,20 @@ class UserController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+
+    public function delete($id)
     {
-        //
+        //用户删除
+        // dd($id);
+        $bool = Users::destroy($id);
+        if($bool){
+
+            return redirect('user')->with('success','用户删除成功');
+        }else{
+
+            return redirect('user')->with('error','用户删除失败');
+        }
     }
+
+    
 }
