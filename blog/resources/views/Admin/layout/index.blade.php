@@ -55,8 +55,8 @@
                         用户管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu">
-                        <li>
+                    <ul class="sub-menu  opened">
+                        <li class="current">
                             <a href="/user">
                                 <i class="iconfont">&#xe6a7;</i>
                                 用户列表
