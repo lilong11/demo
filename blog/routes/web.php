@@ -11,9 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// 前台路由开始
+// 前台首页显示
+Route::resource('/','Home\IndexController');
+
+
+
+
+
+//前台路由结束
+
+
 
 // 后台路由开始
 Route::get('admin','Admin\IndexController@index');
@@ -32,14 +40,7 @@ Route::get('admin','Admin\IndexController@index');
 
 
 
-// 前台路由开始
 
-
-
-
-
-
-// 后台路由结束
 
 
 
