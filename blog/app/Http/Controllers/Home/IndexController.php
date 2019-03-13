@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 class IndexController extends Controller
 {
 
+
     public function login()
     {
         // dump(123);
@@ -19,6 +20,7 @@ class IndexController extends Controller
         // dump(123);
         dump($request->all());
     }
+
 
 
     /**
