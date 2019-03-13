@@ -1,6 +1,7 @@
  <!-- 引入左边模块 -->
  @extends('Admin.layout.index')
         @section('content')
+            <link rel="stylesheet" href="../boot/css/bootstrap.css"> 	
 				<div class="layui-form-pane" style="text-align: center;">
                   <div class="layui-form-item" style="display: inline-block;">
                     <label class="layui-form-label xbs768">日期范围</label>
@@ -18,7 +19,19 @@
                     </div>
                   </div>
                 </div>
-                <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button><button class="layui-btn" onclick="level_add('添加用户','user/create','','600','300')"><i class="layui-icon"></i>添加</button><span class="x-right">共有数据：{{ $arr->links() }} 条</span></xblock>
+                <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button><button class="layui-btn" onclick="level_add('添加用户','user/create','','600','300')"><i class="layui-icon"></i>添加</button><span class="x-right">
+                <nav aria-label="...">
+				  <ul class="pagination">
+				    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+				    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+				    ...
+				  </ul>
+				</nav>
+
+				
+
+
+条</span></xblock>
              	<table class="layui-table">
 	                <thead>
 	                    <tr>
