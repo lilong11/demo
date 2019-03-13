@@ -9,15 +9,18 @@
     <link rel="stylesheet" href="../Admin_public/css/font.css">
     <link rel="stylesheet" href="../Admin_public/css/xadmin.css">
     <link rel="stylesheet" href="../Admin_public/css/swiper.min.css">
+    <!--  -->
+
     <script type="text/javascript" src="../Admin_public/js/jquery.min.js"></script>
     <script type="text/javascript" src="../Admin_public/js/swiper.jquery.min.js"></script>
     <script src="../Admin_public/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="../Admin_public/js/xadmin.js"></script>
 
+
 </head>
 <body>
     <!-- 顶部开始 -->
-    <div class="container">
+    <div class="container" style="  width: 100%;height: 71px;background-color: rgba(0, 0, 0, 0.25);border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
         <div class="logo"><a href="../Admin_public/index.html">{{$title or '用户操作'}}</a></div>
         <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
         <ul class="layui-nav right" lay-filter="">
