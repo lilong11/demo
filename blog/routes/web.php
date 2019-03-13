@@ -30,6 +30,8 @@ Route::get('admin','Admin\IndexController@index');
 
 
 
+//友情链接路由
+Route::get('admin/links','Admin\LinksController@index');
 
 
 

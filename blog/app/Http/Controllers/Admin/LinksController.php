@@ -14,7 +14,7 @@ class LinksController extends Controller
      */
     public function index()
     {
-        //
+        return view('Admin.Links.links');
     }
 
     /**
