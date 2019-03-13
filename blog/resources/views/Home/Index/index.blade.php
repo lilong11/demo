@@ -1,7 +1,15 @@
 @extends('Home.public.index')
-{{-- 首页头部 --}}
-@section('top')
-	<div class="header-top">
+
+	        @section('content')
+<style> 
+ .top a{
+	color: #fff;
+ }
+ .top a:hover{
+	color: #000;
+ }
+</style>		
+<div class="navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6 col-xs-4 header-top-left">
@@ -9,6 +17,9 @@
 					<ul class="header-lan-cur float-left">
 						<!-- Header Language -->
 						<li><a href="#">首页</a></li>
+						<li><a href="#">文章</a></li>
+						<li><a href="#">问题</a></li>
+
 					</ul>
 				</div>
 				<div class="col-sm-6 col-xs-8 header-top-right">
@@ -22,7 +33,7 @@
 								<div class="mc-sin-pro fix">
 									<a href="#" class="mc-pro-image float-left"><img src="img/mini-cart/1.jpg" alt=""></a>
 									<div class="mc-pro-details fix">
-										<a href="#">Women’s winter dress</a>
+										<a href="#">小米手机</a>
 										<span>1x$45.00</span>
 										<button class="pro-del"><i class="zmdi zmdi-delete"></i></button>
 									</div>
@@ -30,7 +41,7 @@
 								<div class="mc-sin-pro fix">
 									<a href="#" class="mc-pro-image float-left"><img src="img/mini-cart/2.jpg" alt=""></a>
 									<div class="mc-pro-details fix">
-										<a href="#">Full sleev women shirt</a>
+										<a href="#">小米外套</a>
 										<span>1x$85.00</span>
 										<button class="pro-del"><i class="zmdi zmdi-delete"></i></button>
 									</div>
@@ -38,12 +49,12 @@
 							</div>
 							<!-- Sub Total -->
 							<div class="mc-subtotal fix">
-								<h4>Subtotal <span>$130.00</span></h4>
+								<h4>小计 <span>$130.00</span></h4>
 								
 							</div>
 							<!-- Cart Button -->
 							<div class="mc-button">
-								<a href="#" class="button color-hover small">购物车</a>
+								<a href="#" class="button color-hover small">查看</a>
 							</div>
 						</div>
 					</div>
@@ -51,7 +62,7 @@
 					<div class="header-account-login float-right">
 						<!-- Header Account -->
 						<ul class="header-acc float-left">
-							<li><a href="#">个人中心<i class="zmdi zmdi-chevron-down"></i></a>
+							<li><a href="#">个人中心 <i class="zmdi zmdi-chevron-down"></i></a>
 								<ul class="top-sub-menu sub-menu-right">
 									<li><a href="#">我的订单</a></li>
 									<li><a href="#">我的收藏</a></li>
@@ -60,12 +71,12 @@
 						</ul>
 						<!-- Header Login -->
 						<div class="header-login float-left text-center">
-							<a href="#">登入 <i class="zmdi zmdi-chevron-down"></i></a>
+							<a href="">登入 <i class="zmdi zmdi-chevron-down"></i></a>
 							<div class="header-login-opt top-sub-menu sub-menu-right">
-								<h5>登入 或 注册</h5>
+								<h5>登入 或 注册 </h5>
 								<a class="button small" href="home/login">登入</a>
 								<span>or</span>
-								<a class="button small transparent" href="users/create">立即注册</a>
+								<a class="button small transparent" href="home/user/create">立即 注册</a>
 							</div>
 						</div>
 					</div>
@@ -73,4 +84,4 @@
 			</div>
 		</div>
 	</div>
-@endsection
+        	@endsection
