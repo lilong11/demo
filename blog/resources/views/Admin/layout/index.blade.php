@@ -5,17 +5,6 @@
     <meta charset="UTF-8">
     <title>{{$title or '用户操作'}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../Admin_public/css/font.css">
-    <link rel="stylesheet" href="../Admin_public/css/xadmin.css">
-    <link rel="stylesheet" href="../Admin_public/css/swiper.min.css">
-    <!--  -->
-
-    <script type="text/javascript" src="../Admin_public/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../Admin_public/js/swiper.jquery.min.js"></script>
-    <script src="../Admin_public/lib/layui/layui.js" charset="utf-8"></script>
-    <script type="text/javascript" src="../Admin_public/js/xadmin.js"></script>
-
 
 </head>
 <body>
@@ -29,7 +18,7 @@
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
               <dd><a href="">个人信息</a></dd>
               <dd><a href="">切换帐号</a></dd>
-              <dd><a href="../Admin_public/login.html">退出</a></dd>
+              <dd><a href="/login">退出</a></dd>
             </dl>
           </li>
           <li class="layui-nav-item"><a href="/">前台首页</a></li>
@@ -44,7 +33,7 @@
           <div id="side-nav">
             <ul id="nav">
                 <li class="list" current>
-                    <a href="admin">
+                    <a href="/admin">
                         <i class="iconfont">&#xe761;</i>
                         欢迎页面
                         <i class="iconfont nav_right">&#xe697;</i>
@@ -58,7 +47,7 @@
                         用户管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu  opened">
+                    <ul class="sub-menu">
                         <li class="current">
                             <a href="/user">
                                 <i class="iconfont">&#xe6a7;</i>
@@ -66,7 +55,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="user/create">
+                            <a href="/user/create">
                                 <i class="iconfont">&#xe6a7;</i>
                                 用户添加
                             </a>
@@ -83,14 +72,14 @@
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
-                        <li>
+                        <li  class="current">
                             <a href="/works">
                                 <i class="iconfont">&#xe6a7;</i>
                                 文章列表
                             </a>
                         </li>
                         <li>
-                            <a href="works/create">
+                            <a href="/works/create">
                                 <i class="iconfont">&#xe6a7;</i>
                                 文章添加
                             </a>

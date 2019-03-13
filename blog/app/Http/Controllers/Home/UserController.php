@@ -10,11 +10,20 @@ use App\Models\Users;
 use App\Models\Usersinfos;
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function login()
+    {
+        // dump(123);
+        return view('Home.users.login',['title'=>'账号登入']);
+    }
+
+    public function dologin(Request $request)
+    {
+        // dump(123);
+        dump($request->all());
+    }
+
+
+
     public function index()
     {
         dump('index');

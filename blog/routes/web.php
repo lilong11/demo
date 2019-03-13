@@ -13,13 +13,14 @@
 
 // 前台路由开始
 
- //登入路由
- Route::get('home/login','Home\IndexController@login');
+
 
 // 前台首页显示路由
 Route::resource('/','Home\IndexController');
 
  // 用户路由 
+ Route::get('users/login','Home\UserController@login');
+ Route::post('users/doLogin','Home\UserController@doLogin');
  Route::resource('/users','Home\UserController');
 
 
@@ -43,6 +44,9 @@ Route::resource('/','Home\IndexController');
 
 
 // 后台路由开始
+
+ Route::post('login/dologin','Admin\IndexController@dologin');
+ Route::get('login','Admin\IndexController@login');
  Route::get('admin','Admin\IndexController@index');
 // 用户路由
  Route::get('/user/delete/{id}','Admin\UserController@delete');
@@ -50,6 +54,7 @@ Route::resource('/','Home\IndexController');
 // 文章路由
  Route::get('/worke/delete/{id}','Admin\WorksController@delete');
  Route::resource('/works','Admin\WorksController');
+
 
 
 

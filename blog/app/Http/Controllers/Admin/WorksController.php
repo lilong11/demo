@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\works;
 use App\Http\Requests\WorksStoreBlogPost;
-
 class WorksController extends Controller
 {
     /**
@@ -14,10 +13,18 @@ class WorksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $works = works::simplePaginate(6); 
-        return view('Admin.works.index',['title'=>'文章列表','works'=>$works]);
+        // 接收搜索的关键字
+        $search = $request->input('search','');
+
+        // 接收 搜索的 显示条数
+        $count = $request->input('count',5);
+
+        $work = new works;
+        $works = $work->where('title','like','%'.$search.'%')->simplePaginate($count); 
+
+        return view('Admin.works.index',['search'=>$search,'count'=>$count,'title'=>'文章列表','works'=>$works]);
     }
 
     /**
@@ -77,6 +84,8 @@ class WorksController extends Controller
     public function edit($id)
     {
         // dump($id);
+        $data = works::find($id);
+        return view('Admin.works.edit',['title'=>'文章修改','data'=>$data]);
     }
 
     public function delete($id)

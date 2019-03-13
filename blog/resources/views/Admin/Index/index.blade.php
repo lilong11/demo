@@ -1,6 +1,14 @@
 	 <!-- 引入内容模块 -->
  @extends('Admin.layout.index')
         @section('content')
+            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+            <link rel="stylesheet" href="/Admin_public/css/font.css">
+            <link rel="stylesheet" href="/Admin_public/css/xadmin.css">
+            <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+            <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+            <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+            <script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
+            <script type="text/javascript" src="/Admin_public/js/xadmin.js"></script>
          <fieldset class="layui-elem-field layui-field-title site-title">
               <legend><a name="default">信息统计</a></legend>
          </fieldset>

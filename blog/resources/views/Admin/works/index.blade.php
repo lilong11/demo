@@ -1,6 +1,14 @@
 	 <!-- 引入内容模块 -->
  @extends('Admin.layout.index')
          @section('content')
+                <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	            <link rel="stylesheet" href="/Admin_public/css/font.css">
+	            <link rel="stylesheet" href="/Admin_public/css/xadmin.css">
+	            <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+	            <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	            <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+	            <script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
+	            <script type="text/javascript" src="/Admin_public/js/xadmin.js"></script>
            @if (count($errors) > 0)
                 <div class="alert alert-danger">
                     <ul>
@@ -10,22 +18,17 @@
                     </ul>
                 </div>
             @endif
-
 				<div class="layui-form-pane" style="text-align: center;">
                   <div class="layui-form-item" style="display: inline-block;">
-                    <label class="layui-form-label xbs768">日期范围</label>
-                    <div class="layui-input-inline xbs768">
-                      <input class="layui-input" placeholder="开始日" id="LAY_demorange_s">
-                    </div>
-                    <div class="layui-input-inline xbs768">
-                      <input class="layui-input" placeholder="截止日" id="LAY_demorange_e">
-                    </div>
-                    <div class="layui-input-inline">
-                      <input type="text" name="username" placeholder="请输入用户名" autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-input-inline" style="width:80px">
-                        <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon"></i></button>
-                    </div>
+					<form action="/works" method="git">
+                        {{ csrf_field() }}
+	                    <div class="layui-input-inline"> 
+	                        <input type="text" class="layui-input" autocomplete="off" name="search" value="{{ $search }}" placeholder="输入标题搜索">
+	                    </div>
+	                    <div class="layui-input-inline" style="width:80px">
+	                        <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon"></i></button>
+	                    </div>
+					</form>
                   </div>
                 </div>
 
@@ -92,7 +95,7 @@
 	                             {{ $k -> created_at }}
 	                        </td>
 	                        <td class="td-manage">
-	                            <a title="编辑" href="works/1/edit" style="text-decoration:none">
+	                            <a title="编辑" href="works/{{$k -> id }}/edit" style="text-decoration:none">
 	                                <i class="layui-icon"></i>
 	                            </a>
 

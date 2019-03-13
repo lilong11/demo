@@ -9,17 +9,7 @@ class IndexController extends Controller
 {
 
 
-    public function login()
-    {
-        // dump(123);
-        return view('Home.Index.login',['title'=>'账号登入']);
-    }
 
-    public function dologin(Request $request)
-    {
-        // dump(123);
-        dump($request->all());
-    }
 
 
 
@@ -40,7 +30,7 @@ class IndexController extends Controller
      */
     public function create()
     {
-        //
+        return view('Home.Users.create',['title'=>'哈哈商城注册']);
     }
 
     /**

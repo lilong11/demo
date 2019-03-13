@@ -28,6 +28,7 @@ class UsersStoreRequest extends FormRequest
             'uname' => 'required|regex:/^[a-zA-Z]{1}[\w]{7,15}$/',
             'password' => 'required|regex:/^[\w]{6}$/',
             'repassword' => 'required|same:password',
+            'grade' => 'required',
             'tel' => 'required|regex:/^[1]([3-9])[0-9]{9}$/',
         ];
     }
@@ -38,6 +39,7 @@ class UsersStoreRequest extends FormRequest
     {
         return [
             'uname.required' => '用户名不能为空',
+            'grade.required' => '您是不是忘记选择权限了',
             'uname.regex' => '用户名格式不正确',
             'password.required' => '密码不能为空',
             'password.regex' => '密码不能少于6位',

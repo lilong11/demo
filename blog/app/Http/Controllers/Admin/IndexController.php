@@ -8,6 +8,17 @@ use App\Http\Controllers\Controller;
 use App\Models\Users;
 class IndexController extends Controller
 {
+    public function login()
+    {
+    	return view('Admin.Index.login',['title'=>'商城后台登入']);
+    }
+
+    public function doLogin(Request $request)
+    {
+    	dump($request->except('_token'));
+    	
+    }
+
     public function index()
     {
     	// 统计用户个数

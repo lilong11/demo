@@ -16,13 +16,19 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        // 接收搜索的关键字
+        $search = $request->input('search','');
+
+        // 接收 搜索的 显示条数
+        $count = $request->input('count',5);
+
         $user = new Users;
-        $arr = Users::simplePaginate(6); 
-        // dd($arr);
+        $arr = $user->where('uname','like','%'.$search.'%')->simplePaginate($count);
+        // dump($arr);exit;
         // dump($arr);
-        return view('Admin.User.index',['title'=>'用户列表','arr'=>$arr]);
+        return view('Admin.User.index',['title'=>'用户列表','count'=>$count,'search'=>$search,'arr'=>$arr]);
     }
 
     /**
@@ -47,6 +53,8 @@ class UserController extends Controller
         $user = new Users;
 
         $user->uname = $request->input('uname','');
+        $user->grade = $request->input('grade','');
+        $user->status = $request->input('status','');
         $user->password = Hash::make($request->input('password',''));
         $user->tel = $request->input('tel','');
         // 执行添加到数据库
@@ -98,7 +106,23 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $user =  Users::find($id);
+
+        // 用户传过来的信息
+        $data = $request->except('_token','_method');
+
+        $user->uname = $data['uname'];
+        $user->created_at = time();
+        $user->tel = $data['tel'];
+        $bool = $user->save(); 
+
+        if($bool){
+            return redirect('user')->with('success','用户修改成功');
+        }else{
+            return redirect('user')->with('error','用户修改失败');
+        }
+
     }
 
 
