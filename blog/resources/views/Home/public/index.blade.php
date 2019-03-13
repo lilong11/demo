@@ -5,12 +5,10 @@
 
 	<title>{{$title or '商城' }}</title>
 	<meta name="description" content="">
-	<!-- 引入boorstrap 开始 -->
-	<link rel="stylesheet" href="../boot/css/bootstrap.min.css">
-	<!-- 引入boorstrap 结束 -->
+
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="../home_public/img/favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="./home_public/img/favicon.ico">
 	
 	<!-- Google Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
@@ -19,40 +17,40 @@
 	<!-- css  -->
 	<!-- Bootstrap CSS
 	============================================ -->
-	<link rel="stylesheet" href="../home_public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./home_public/css/bootstrap.min.css">
 	<!-- Icon Font CSS
 	============================================ -->
-	<link rel="stylesheet" href="../home_public/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="./home_public/css/material-design-iconic-font.min.css">
 	<!-- Mean Menu CSS
 	============================================ -->
-	<link rel="stylesheet" href="../home_public/css/meanmenu.min.css">
+	<link rel="stylesheet" href="./home_public/css/meanmenu.min.css">
 	<!-- Owl Carousel CSS
 	============================================ -->
-	<link rel="stylesheet" href="../home_public/css/owl.carousel.css">
+	<link rel="stylesheet" href="./home_public/css/owl.carousel.css">
 	<!-- Nivo Slider CSS
 	============================================ -->
-	<link rel="stylesheet" href="../home_public/css/nivo-slider.css">
+	<link rel="stylesheet" href="./home_public/css/nivo-slider.css">
 	<!-- Price Slider CSS
 	============================================ -->
-	<link rel="stylesheet" href="../home_public/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="./home_public/css/jquery-ui.min.css">
 	<!-- Magnific Popup CSS
 	============================================ -->
-	<link rel="stylesheet" href="../home_public/css/magnific-popup.css">
+	<link rel="stylesheet" href="./home_public/css/magnific-popup.css">
 	<!-- Animate CSS
 	============================================ -->
-	<link rel="stylesheet" href="../home_public/css/animate.min.css">
+	<link rel="stylesheet" href="./home_public/css/animate.min.css">
 	<!-- Style CSS
 	============================================ -->
-	<link rel="stylesheet" href="../home_public/css/style.css">
+	<link rel="stylesheet" href="./home_public/css/style.css">
 	<!-- Default Color CSS
 	============================================ -->
-	<link rel="stylesheet" href="../home_public/css/color/color-one.css">
+	<link rel="stylesheet" href="./home_public/css/color/color-one.css">
 	<!-- Responsive CSS 
 	============================================ -->
-	<link rel="stylesheet" href="../home_public/css/responsive.css">
+	<link rel="stylesheet" href="./home_public/css/responsive.css">
 	<!-- Modernizer JS
 	============================================ -->
-	<script src="../home_public/js/vendor/modernizr-2.8.3.min.js"></script>
+	<script src="./home_public/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
 <!-- Pre Loader
@@ -71,7 +69,7 @@
 ============================================ -->
 <div class="header transparent fixed">
 	<!-- 头部 导航开始 -->
-        @section('content')
+        @section('top')
 
         @show
 	<!-- 头部导航结束 -->
@@ -81,7 +79,7 @@
 				<div class="header-bottom-wrap">
 					<!-- Logo -->
 					<div class="header-logo col-lg-3 col-md-2">
-						<div class="logo"><a href="index.html"><img src="../home_public/img/logo.png" alt="logo" /></a></div>
+						<div class="logo"><a href="index.html"><img src="./home_public/img/logo.png" alt="logo" /></a></div>
 					</div>
 					<!-- Main Menu -->
 					<div class="main-menu-wrap col-lg-6 col-md-7 hidden-sm hidden-xs">
@@ -102,8 +100,8 @@
 											</div>
 
 											<div class="mm-column mm-column-banner float-left">
-												<a href="#"><img src="../home_public/img/menu-banner/1.jpg" alt="banner" /></a>
-												<a href="#"><img src="../home_public/img/menu-banner/2.jpg" alt="banner" /></a>
+												<a href="#"><img src="./home_public/img/menu-banner/1.jpg" alt="banner" /></a>
+												<a href="#"><img src="./home_public/img/menu-banner/2.jpg" alt="banner" /></a>
 											</div>
 										</div>
 									</li>
@@ -121,8 +119,8 @@
 											</div>
 
 											<div class="mm-column mm-column-banner float-left">
-												<a href="#"><img src="../home_public/img/menu-banner/1.jpg" alt="banner" /></a>
-												<a href="#"><img src="../home_public/img/menu-banner/2.jpg" alt="banner" /></a>
+												<a href="#"><img src="./home_public/img/menu-banner/1.jpg" alt="banner" /></a>
+												<a href="#"><img src="./home_public/img/menu-banner/2.jpg" alt="banner" /></a>
 											</div>
 										</div>
 									</li>
@@ -260,8 +258,8 @@
 ============================================ -->
 <div class="slider-wrap">
 	<div id="mainSlider" class="nivoSlider slider-image">
-		<a href="#"><img src="../home_public/img/slider/1.jpg" alt="main slider" title="#htmlcaption1"/></a>
-		<a href="#"><img src="../home_public/img/slider/2.jpg" alt="main slider" title="#htmlcaption2"/></a>
+		<a href="#"><img src="./home_public/img/slider/1.jpg" alt="main slider" title="#htmlcaption1"/></a>
+		<a href="#"><img src="./home_public/img/slider/2.jpg" alt="main slider" title="#htmlcaption2"/></a>
 	</div>
 	<div id="htmlcaption1" class="nivo-html-caption">			
 		<div class="slide-text-right text-white slide-text">
@@ -293,7 +291,7 @@
 			<!-- Single Banner Style 1 -->
 			<div class="sin-banner banner-style-1 col-sm-4 col-xs-12">
 				<a href="#" class="banner-wrap">
-					<img src="../home_public/img/banner/banner-1.jpg" alt="" />
+					<img src="./home_public/img/banner/banner-1.jpg" alt="" />
 					<div class="banner-bref banner-bref-1 text-center">
 						<h1>watches<br />collection</h1>
 					</div>
@@ -302,7 +300,7 @@
 			<!-- Single Banner Style 2 -->
 			<div class="sin-banner banner-style-2 col-sm-8 col-xs-12">
 				<div class="banner-wrap">
-					<img src="../home_public/img/banner/banner-2.jpg" alt="" />
+					<img src="./home_public/img/banner/banner-2.jpg" alt="" />
 					<div class="banner-bref banner-bref-2 text-left">
 						<h1>60% off for<br />men Collection</h1>
 						<a href="#" class="button color white-hover animated fadeOutDown">view more</a>
@@ -312,7 +310,7 @@
 			<!-- Single Banner Style 2 -->
 			<div class="sin-banner banner-style-2 col-sm-8 col-xs-12">
 				<div class="banner-wrap">
-					<img src="../home_public/img/banner/banner-3.jpg" alt="" />
+					<img src="./home_public/img/banner/banner-3.jpg" alt="" />
 					<div class="banner-bref banner-bref-2 text-right">
 						<h1>30% off for<br />Glasses Collection</h1>
 						<a href="#" class="button color white-hover animated fadeOutDown">view more</a>
@@ -322,7 +320,7 @@
 			<!-- Single Banner Style 1 -->
 			<div class="sin-banner banner-style-1 col-sm-4 col-xs-12">
 				<a href="#" class="banner-wrap">
-					<img src="../home_public/img/banner/banner-4.jpg" alt="" />
+					<img src="./home_public/img/banner/banner-4.jpg" alt="" />
 					<div class="banner-bref banner-bref-1 text-center">
 						<h1>Latest<br />backpack</h1>
 					</div>
@@ -357,7 +355,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/1.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/1.jpg" alt="" /></a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
 									<div class="sin-pro-action">
@@ -392,7 +390,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/2.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/2.jpg" alt="" /></a>
 									<span class="pro-label label-new">new</span>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
@@ -428,7 +426,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/3.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
 									<span class="pro-label label-new">new</span>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
@@ -465,7 +463,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/4.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/4.jpg" alt="" /></a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
 									<div class="sin-pro-action">
@@ -500,7 +498,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/1.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/1.jpg" alt="" /></a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
 									<div class="sin-pro-action">
@@ -535,7 +533,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/2.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/2.jpg" alt="" /></a>
 									<span class="pro-label label-new">new</span>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
@@ -571,7 +569,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/3.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
 									<span class="pro-label label-new">new</span>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
@@ -608,7 +606,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/4.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/4.jpg" alt="" /></a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
 									<div class="sin-pro-action">
@@ -646,7 +644,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/2.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/2.jpg" alt="" /></a>
 									<span class="pro-label label-new">new</span>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
@@ -682,7 +680,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/3.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
 									<span class="pro-label label-new">new</span>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
@@ -719,7 +717,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/4.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/4.jpg" alt="" /></a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
 									<div class="sin-pro-action">
@@ -754,7 +752,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/1.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/1.jpg" alt="" /></a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
 									<div class="sin-pro-action">
@@ -789,7 +787,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/2.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/2.jpg" alt="" /></a>
 									<span class="pro-label label-new">new</span>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
@@ -825,7 +823,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/3.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
 									<span class="pro-label label-new">new</span>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
@@ -862,7 +860,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/4.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/4.jpg" alt="" /></a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
 									<div class="sin-pro-action">
@@ -897,7 +895,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/1.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/1.jpg" alt="" /></a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
 									<div class="sin-pro-action">
@@ -935,7 +933,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/3.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
 									<span class="pro-label label-new">new</span>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
@@ -972,7 +970,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/4.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/4.jpg" alt="" /></a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
 									<div class="sin-pro-action">
@@ -1007,7 +1005,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/1.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/1.jpg" alt="" /></a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
 									<div class="sin-pro-action">
@@ -1042,7 +1040,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/2.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/2.jpg" alt="" /></a>
 									<span class="pro-label label-new">new</span>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
@@ -1078,7 +1076,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/3.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
 									<span class="pro-label label-new">new</span>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
@@ -1115,7 +1113,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/4.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/4.jpg" alt="" /></a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
 									<div class="sin-pro-action">
@@ -1150,7 +1148,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/1.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/1.jpg" alt="" /></a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
 									<div class="sin-pro-action">
@@ -1185,7 +1183,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/2.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/2.jpg" alt="" /></a>
 									<span class="pro-label label-new">new</span>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
@@ -1224,7 +1222,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/4.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/4.jpg" alt="" /></a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
 									<div class="sin-pro-action">
@@ -1259,7 +1257,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/1.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/1.jpg" alt="" /></a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
 									<div class="sin-pro-action">
@@ -1294,7 +1292,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/2.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/2.jpg" alt="" /></a>
 									<span class="pro-label label-new">new</span>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
@@ -1330,7 +1328,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/3.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
 									<span class="pro-label label-new">new</span>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
@@ -1367,7 +1365,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/4.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/4.jpg" alt="" /></a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
 									<div class="sin-pro-action">
@@ -1402,7 +1400,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/1.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/1.jpg" alt="" /></a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
 									<div class="sin-pro-action">
@@ -1437,7 +1435,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/2.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/2.jpg" alt="" /></a>
 									<span class="pro-label label-new">new</span>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
@@ -1473,7 +1471,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="../home_public/img/product/3.jpg" alt="" /></a>
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
 									<span class="pro-label label-new">new</span>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
@@ -1519,7 +1517,7 @@
 			<div class="col-md-5 col-xs-12">
 				<!-- Offer Image CounDown -->
 				<div class="offer-image-counter">
-					<img src="../home_public/img/special-offer.png" alt="special offer" />
+					<img src="./home_public/img/special-offer.png" alt="special offer" />
 					<div class="pro-countdown" data-countdown="2017/01/01"></div>
 				</div>
 			</div>
@@ -1548,7 +1546,7 @@
 					<div class="sin-pro">
 						<!-- Product Image -->
 						<div class="sin-pro-img-action fix">
-							<a href="#" class="sin-pro-img"><img src="../home_public/img/product/1.jpg" alt="" /></a>
+							<a href="#" class="sin-pro-img"><img src="./home_public/img/product/1.jpg" alt="" /></a>
 							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 							<!-- Product Action -->
 							<div class="sin-pro-action">
@@ -1581,7 +1579,7 @@
 					<div class="sin-pro">
 						<!-- Product Image -->
 						<div class="sin-pro-img-action fix">
-							<a href="#" class="sin-pro-img"><img src="../home_public/img/product/2.jpg" alt="" /></a>
+							<a href="#" class="sin-pro-img"><img src="./home_public/img/product/2.jpg" alt="" /></a>
 							<span class="pro-label label-new">new</span>
 							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 							<!-- Product Action -->
@@ -1615,7 +1613,7 @@
 					<div class="sin-pro">
 						<!-- Product Image -->
 						<div class="sin-pro-img-action fix">
-							<a href="#" class="sin-pro-img"><img src="../home_public/img/product/3.jpg" alt="" /></a>
+							<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
 							<span class="pro-label label-new">new</span>
 							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 							<!-- Product Action -->
@@ -1650,7 +1648,7 @@
 					<div class="sin-pro">
 						<!-- Product Image -->
 						<div class="sin-pro-img-action fix">
-							<a href="#" class="sin-pro-img"><img src="../home_public/img/product/4.jpg" alt="" /></a>
+							<a href="#" class="sin-pro-img"><img src="./home_public/img/product/4.jpg" alt="" /></a>
 							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 							<!-- Product Action -->
 							<div class="sin-pro-action">
@@ -1683,7 +1681,7 @@
 					<div class="sin-pro">
 						<!-- Product Image -->
 						<div class="sin-pro-img-action fix">
-							<a href="#" class="sin-pro-img"><img src="../home_public/img/product/3.jpg" alt="" /></a>
+							<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
 							<span class="pro-label label-new">new</span>
 							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 							<!-- Product Action -->
@@ -1732,7 +1730,7 @@
 					<div class="sin-blog">
 						<!-- Blog Image -->
 						<div class="blog-image">
-							<a href="#"><img src="../home_public/img/blog/1.jpg" alt="" /></a>
+							<a href="#"><img src="./home_public/img/blog/1.jpg" alt="" /></a>
 							<!-- Blog Date -->
 							<div class="blog-date text-center"><h4>07</h4><p>May</p></div>
 						</div>
@@ -1756,7 +1754,7 @@
 					<div class="sin-blog">
 						<!-- Blog Image -->
 						<div class="blog-image">
-							<a href="#"><img src="../home_public/img/blog/2.jpg" alt="" /></a>
+							<a href="#"><img src="./home_public/img/blog/2.jpg" alt="" /></a>
 							<!-- Blog Date -->
 							<div class="blog-date text-center"><h4>05</h4><p>May</p></div>
 						</div>
@@ -1780,7 +1778,7 @@
 					<div class="sin-blog">
 						<!-- Blog Image -->
 						<div class="blog-image">
-							<a href="#"><img src="../home_public/img/blog/3.jpg" alt="" /></a>
+							<a href="#"><img src="./home_public/img/blog/3.jpg" alt="" /></a>
 							<!-- Blog Date -->
 							<div class="blog-date text-center"><h4>21</h4><p>March</p></div>
 						</div>
@@ -1804,7 +1802,7 @@
 					<div class="sin-blog">
 						<!-- Blog Image -->
 						<div class="blog-image">
-							<a href="#"><img src="../home_public/img/blog/2.jpg" alt="" /></a>
+							<a href="#"><img src="./home_public/img/blog/2.jpg" alt="" /></a>
 							<!-- Blog Date -->
 							<div class="blog-date text-center"><h4>05</h4><p>May</p></div>
 						</div>
@@ -1884,7 +1882,7 @@
 		<div class="row">
 			<!-- Footer Address -->
 			<div class="sin-footer footer-address col-lg-3 col-md-4 col-sm-6 col-xs-12">
-				<div class="footer-logo"><img src="../home_public/img/logo-2.png" alt="logo" /></div>
+				<div class="footer-logo"><img src="./home_public/img/logo-2.png" alt="logo" /></div>
 				<p><span>地址：</span> 28 Green Tower，Street Name，纽约，美国</p>
 				<p><span>电话：</span> +88017 222 333</p>
 				<p><span>电子邮件：</span>  contact@shopieee.com</p>
@@ -1947,7 +1945,7 @@
 			</div>
 			<!-- Payment Method -->
 			<div class="payment-method col-sm-6 col-xs-12 text-right">
-				<img src="../home_public/img/payment-method.png" alt="" />
+				<img src="./home_public/img/payment-method.png" alt="" />
 			</div>
 		</div>
 	</div>
@@ -1966,16 +1964,16 @@
 						<!-- Product Details Image -->
 						<div class="product-details-image col-md-6 col-xs-12">
 							<ul class="quick-pro-thumb" role="tablist">
-								<li class="active"><a href="#big-image-1" data-toggle="tab"><img src="../home_public/img/product-details/thumb-2.jpg" alt="" /></a></li>
-								<li><a href="#big-image-2" data-toggle="tab"><img src="../home_public/img/product-details/thumb-1.jpg" alt="" /></a></li>
-								<li><a href="#big-image-3" data-toggle="tab"><img src="../home_public/img/product-details/thumb-3.jpg" alt="" /></a></li>
-								<li><a href="#big-image-4" data-toggle="tab"><img src="../home_public/img/product-details/thumb-4.jpg" alt="" /></a></li>
+								<li class="active"><a href="#big-image-1" data-toggle="tab"><img src="./home_public/img/product-details/thumb-2.jpg" alt="" /></a></li>
+								<li><a href="#big-image-2" data-toggle="tab"><img src="./home_public/img/product-details/thumb-1.jpg" alt="" /></a></li>
+								<li><a href="#big-image-3" data-toggle="tab"><img src="./home_public/img/product-details/thumb-3.jpg" alt="" /></a></li>
+								<li><a href="#big-image-4" data-toggle="tab"><img src="./home_public/img/product-details/thumb-4.jpg" alt="" /></a></li>
 							</ul>
 							<div class="quick-pro-big tab-content fix">
-								<div class="tab-pane active" id="big-image-1"><img src="../home_public/img/product-details/big-2.jpg" alt="" /></div>								
-								<div class="tab-pane" id="big-image-2"><img src="../home_public/img/product-details/big-1.jpg" alt="" /></div>								
-								<div class="tab-pane" id="big-image-3"><img src="../home_public/img/product-details/big-3.jpg" alt="" /></div>								
-								<div class="tab-pane" id="big-image-4"><img src="../home_public/img/product-details/big-4.jpg" alt="" /></div>								
+								<div class="tab-pane active" id="big-image-1"><img src="./home_public/img/product-details/big-2.jpg" alt="" /></div>								
+								<div class="tab-pane" id="big-image-2"><img src="./home_public/img/product-details/big-1.jpg" alt="" /></div>								
+								<div class="tab-pane" id="big-image-3"><img src="./home_public/img/product-details/big-3.jpg" alt="" /></div>								
+								<div class="tab-pane" id="big-image-4"><img src="./home_public/img/product-details/big-4.jpg" alt="" /></div>								
 							</div>
 						</div>
 						<!-- Product Details Content -->
@@ -2056,50 +2054,50 @@
 
 <!-- jQuery JS
 ============================================ -->
-<script src="../home_public/js/vendor/jquery-1.12.0.min.js"></script>
+<script src="./home_public/js/vendor/jquery-1.12.0.min.js"></script>
 <!-- Bootstrap JS
 ============================================ -->
-<script src="../home_public/js/bootstrap.min.js"></script>
+<script src="./home_public/js/bootstrap.min.js"></script>
 <!-- Nivo Slider JS
 ============================================ -->
-<script src="../home_public/js/jquery.nivo.slider.pack.js"></script>
+<script src="./home_public/js/jquery.nivo.slider.pack.js"></script>
 <!-- Mean Menu JS
 ============================================ -->
-<script src="../home_public/js/jquery.meanmenu.min.js"></script>
+<script src="./home_public/js/jquery.meanmenu.min.js"></script>
 <!-- Owl Carousel JS
 ============================================ -->
-<script src="../home_public/js/owl.carousel.min.js"></script>
+<script src="./home_public/js/owl.carousel.min.js"></script>
 <!-- Count Down JS
 ============================================ -->
-<script src="../home_public/js/jquery.countdown.min.js"></script>
+<script src="./home_public/js/jquery.countdown.min.js"></script>
 <!-- ScrollUP JS
 ============================================ -->
-<script src="../home_public/js/jquery.scrollup.min.js"></script>
+<script src="./home_public/js/jquery.scrollup.min.js"></script>
 <!-- TreeView JS
 ============================================ -->
-<script src="../home_public/js/jquery.treeview.js"></script>
+<script src="./home_public/js/jquery.treeview.js"></script>
 <!-- Price Slider JS
 ============================================ -->
-<script src="../home_public/js/jquery-ui.min.js"></script>
+<script src="./home_public/js/jquery-ui.min.js"></script>
 <!-- simpleLens JS
 ============================================ -->
-<script src="../home_public/js/jquery.elevateZoom-3.0.8.min.js"></script>
+<script src="./home_public/js/jquery.elevateZoom-3.0.8.min.js"></script>
 <!-- Magnific Popup JS
 ============================================ -->
-<script src="../home_public/js/jquery.magnific-popup.min.js"></script>
+<script src="./home_public/js/jquery.magnific-popup.min.js"></script>
 <!-- Nice Scroll JS
 ============================================ -->
-<script src="../home_public/js/jquery.nicescroll.min.js"></script>
+<script src="./home_public/js/jquery.nicescroll.min.js"></script>
 
 <!-- WOW JS
 ============================================ -->
-<script src="../home_public/js/wow.min.js"></script>
+<script src="./home_public/js/wow.min.js"></script>
 <script>
 	new WOW().init();
 </script>	
 <!-- Main JS
 ============================================ -->
-<script src="../home_public/js/main.js"></script>
+<script src="./home_public/js/main.js"></script>
 
 </body>
 </html>

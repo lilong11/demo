@@ -20,7 +20,7 @@
 Route::resource('/','Home\IndexController');
 
  // 用户路由 
- Route::resource('home/user','Home\UserController');
+ Route::resource('/users','Home\UserController');
 
 
 

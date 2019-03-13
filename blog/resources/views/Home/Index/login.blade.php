@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <title>{{$title or '用户操作'}}</title>
   <!-- 引入boorstrap 开始 -->
-  <link rel="stylesheet" href="../boot/css/bootstrap.min.css"></head>
+  <link rel="stylesheet" href="../boot/css/bootstrap.min.css">
+</head>
 <body>
     <div class="container" style="margin-top:200px;">
         <h2 class="text-center">{{$title or '用户操作'}}</h2>
