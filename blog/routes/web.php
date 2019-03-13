@@ -12,27 +12,39 @@
 */
 
 // 前台路由开始
- // 前台首页开始
- //登入页面路由
+
+ //登入路由
  Route::get('home/login','Home\IndexController@login');
 
- Route::resource('/','Home\IndexController');
+// 前台首页显示路由
+Route::resource('/','Home\IndexController');
 
  // 用户路由 
  Route::resource('home/user','Home\UserController');
 
 
-// 前台首页结束
 
 
 
 
-// 后台路由结束
+
+
+
+
+
+
+
+
+
+// 前台路由结束
+
+
+
 
 
 // 后台路由开始
  Route::get('admin','Admin\IndexController@index');
-// 用户路由开始
+// 用户路由
  Route::get('/user/delete/{id}','Admin\UserController@delete');
  Route::resource('/user','Admin\UserController');
 // 文章路由
@@ -44,11 +56,11 @@
 
 
 
-
-
-
-
 // 后台路由结束
+
+
+
+
 
 
 

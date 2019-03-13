@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 use App\Models\Users;
 class IndexController extends Controller
 {
@@ -17,4 +18,5 @@ class IndexController extends Controller
     }
 
     
+
 }
