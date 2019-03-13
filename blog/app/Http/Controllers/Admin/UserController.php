@@ -47,6 +47,7 @@ class UserController extends Controller
         $user = new Users;
 
         $user->uname = $request->input('uname','');
+        $user->grade = $request->input('grade','');
         $user->password = Hash::make($request->input('password',''));
         $user->tel = $request->input('tel','');
         // 执行添加到数据库

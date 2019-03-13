@@ -1,7 +1,16 @@
  <!-- 引入左边模块 -->
  @extends('Admin.layout.index')
         @section('content')
-            <link rel="stylesheet" href="../boot/css/bootstrap.css"> 	
+	            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+			    <link rel="stylesheet" href="../Admin_public/css/font.css">
+			    <link rel="stylesheet" href="../Admin_public/css/xadmin.css">
+			    <link rel="stylesheet" href="../Admin_public/css/swiper.min.css">
+			    <!--  -->
+
+			    <script type="text/javascript" src="../Admin_public/js/jquery.min.js"></script>
+			    <script type="text/javascript" src="../Admin_public/js/swiper.jquery.min.js"></script>
+			    <script src="../Admin_public/lib/layui/layui.js" charset="utf-8"></script>
+			    <script type="text/javascript" src="../Admin_public/js/xadmin.js"></script>
 				<div class="layui-form-pane" style="text-align: center;">
                   <div class="layui-form-item" style="display: inline-block;">
                     <label class="layui-form-label xbs768">日期范围</label>
@@ -19,19 +28,7 @@
                     </div>
                   </div>
                 </div>
-                <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button><button class="layui-btn" onclick="level_add('添加用户','user/create','','600','300')"><i class="layui-icon"></i>添加</button><span class="x-right">
-                <nav aria-label="...">
-				  <ul class="pagination">
-				    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-				    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-				    ...
-				  </ul>
-				</nav>
-
-				
-
-
-条</span></xblock>
+                <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button><button class="layui-btn" onclick="level_add('添加用户','user/create','','600','300')"><i class="layui-icon"></i>添加</button><span class="x-right"> {{ $arr->links() }}</span></xblock>
              	<table class="layui-table">
 	                <thead>
 	                    <tr>
@@ -44,9 +41,13 @@
 	                        <th>
 	                            用户名
 	                        </th>
+	                        <th>
+	                            用户等级
+	                        </th>
 	                      	<th>
 	                            用户状态
-	                        </th>
+	                        </th>	                      	
+
 							<th>
 	                            添加时间
 	                        </th>
@@ -73,8 +74,29 @@
 	                            {{$k -> uname }}
 	                        </td>
 	                        <td>
-	                            {{$k -> tel }}
+	                            @switch($k -> grade)
+	                           		@case(0)
+	                           			普通用户
+	                           		@break
+	                           		@case(1)
+	                           			vip 用户
+	                           		@break
+	                           		@case(2)
+	                           			超级管理员
+	                           		@break
+	                           	@endswitch
 	                        </td>
+	                        <td>
+	                            @switch($k -> grade)
+	                           		@case(0)
+	                           			使用中
+	                           		@break
+	                           		@case(1)
+	                           			已禁用
+	                           		@break
+	                           	@endswitch
+	                        </td>
+
 	                        <td>
 	                            {{$k -> created_at }}
 	                        </td>
