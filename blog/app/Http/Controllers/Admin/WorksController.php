@@ -22,7 +22,7 @@ class WorksController extends Controller
         $count = $request->input('count',5);
 
         $work = new works;
-        $works = $work->where('title','like','%'.$search.'%')->simplePaginate($count); 
+        $works = $work->where('title','like','%'.$search.'%')->paginate($count); 
 
         return view('Admin.works.index',['search'=>$search,'count'=>$count,'title'=>'文章列表','works'=>$works]);
     }
@@ -45,7 +45,7 @@ class WorksController extends Controller
      */
     public function store(WorksStoreBlogPost $request)
     {
-        //用户添加处理 
+        //文章添加处理 
         $user = new works;
 
         $user->title = $request->input('title','');

@@ -45,7 +45,8 @@
                               <div class="layui-input-inline login-inline">
                                 <input type="text" name="yzm" lay-verify="required" autocomplete="off" class="layui-input" style="height:60px">
                               </div>
-                              <label class="layui-form-label login-form" style="width:150px;"><img class="thumbnail captcha" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flat?'+Math.random()" title="点击图片重新获取验证码" style="width:150px;"></label>
+                              <label style="width:150px;"><img class="thumbnail captcha" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flat?'+Math.random()" title="点击图片重新获取验证码" style="width:190px;"></label>
+                              <!-- 判断验证码是否错误 -->
                         {{--   if($errors -> has ('captcha'))
                               <span class="help-block">
                                 <strong>{{$errors->first('captcha')}}</strong>
@@ -53,7 +54,7 @@
                             @endif --}}  
                           </div><br>
 
-                          <div class="form-actions"  style="width:110;height:120px;">
+                          <div class="form-actions"  style="width:110;height:120px; cursor:pointer;">
                               <button class="btn btn-warning pull-right" lay-submit lay-filter="login"  type="submit">登录</button> 
                               <div class="forgot"><a href="#" class="forgot">忘记帐号或者密码</a></div>     
                           </div>

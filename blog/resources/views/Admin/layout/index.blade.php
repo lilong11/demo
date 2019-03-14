@@ -17,7 +17,7 @@
             <a href="javascript:;">admin</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
               <dd><a href="">个人信息</a></dd>
-              <dd><a href="">切换帐号</a></dd>
+              <dd><a href="/login">切换帐号</a></dd>
               <dd><a href="/login">退出</a></dd>
             </dl>
           </li>
@@ -87,6 +87,29 @@
 
                     </ul>
                 </li>
+
+                <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i>
+                        问题管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li  class="current">
+                            <a href="/issue">
+                                <i class="iconfont">&#xe6a7;</i>
+                                问题列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/issue/create">
+                                <i class="iconfont">&#xe6a7;</i>
+                                问题添加
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
                 <!-- 左边管理栏目结束 -->
             </ul>
           </div>
@@ -96,7 +119,15 @@
 
         <!-- 右侧主体开始 -->
         <div class="page-content">
+
+
           <div class="content">
+            <!-- 显示问题开始 -->
+            @section('issue')
+
+            @show
+            <!-- 显示问题结束 -->
+            <!-- 读取 跳转信息 开始 -->
             <!-- 右侧内容框架，更改从这里开始 -->
             @section('content')
 

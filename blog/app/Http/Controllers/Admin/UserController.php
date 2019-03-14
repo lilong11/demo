@@ -11,6 +11,16 @@ use App\Models\Usersinfos;
 use DB;
 class UserController extends Controller
 {
+
+    // 测试无刷新分页
+    public function demo()
+    {
+        dump(1213);
+    }
+
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -25,10 +35,16 @@ class UserController extends Controller
         $count = $request->input('count',5);
 
         $user = new Users;
-        $arr = $user->where('uname','like','%'.$search.'%')->simplePaginate($count);
-        // dump($arr);exit;
-        // dump($arr);
-        return view('Admin.User.index',['title'=>'用户列表','count'=>$count,'search'=>$search,'arr'=>$arr]);
+
+        $arr = $user->where('uname','like','%'.$search.'%')->paginate($count);
+
+        // $grade = 2;
+        // 统计用户个数
+        $vip =  count($user->where([ 'grade' => 1 ])->get());
+        $common =  count($user->where([ 'grade' => 0 ])->get());
+        $root =  count($user->where([ 'grade' => 2 ])->get()); 
+        // dd($vip);
+        return view('Admin.User.index',['title'=>'用户列表','count'=>$count,'search'=>$search,'arr'=>$arr,'vip'=>$vip,'common'=>$common,'root'=>$root]);
     }
 
     /**
@@ -77,10 +93,7 @@ class UserController extends Controller
         }else{
              DB::rollBack();
             return redirect('user')->with('error','添加失败');
-        }
-        // dump($uid);
-        // 添加到用户详情表中
-        // $user->tel = $request->input('tel','');
+        } 
     }
 
     /**

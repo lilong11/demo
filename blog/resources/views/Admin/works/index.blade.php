@@ -9,15 +9,20 @@
 	            <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
 	            <script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
 	            <script type="text/javascript" src="/Admin_public/js/xadmin.js"></script>
-           @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+
+
+	            <style> .page_page{background: rgb(0,0,0,0); border-radius: 0.2rem; counter-reset: pagination; text-align: center; margin: 0px; } .page_page li{border: solid 1px #d6d6d6; border-radius: 0.2rem; color: #7d7d7d; text-decoration: none; text-transform: uppercase; display: inline-block; text-align: center; padding: 0.5rem 0.9rem; } </style>{{-- 分页样式 --}}
+
+	            
+	           @if (count($errors) > 0)
+	                <div class="alert alert-danger">
+	                    <ul>
+	                        @foreach ($errors->all() as $error)
+	                            <li>{{ $error }}</li>
+	                        @endforeach
+	                    </ul>
+	                </div>
+	            @endif
 				<div class="layui-form-pane" style="text-align: center;">
                   <div class="layui-form-item" style="display: inline-block;">
 					<form action="/works" method="git">
@@ -32,32 +37,32 @@
                   </div>
                 </div>
 
-                <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button><button class="layui-btn" onclick="level_add('添加用户','user/create','','600','300')"><i class="layui-icon"></i>添加</button><span class="x-right">显示分页处</span></xblock>
-                <table class="layui-table">
+
+                <table class="layui-table"  style="text-align: center;">
 	                <thead>
 	                    <tr>
-	                        <th>
+	                        <th  style="text-align: center;">
 	                            <input type="checkbox" name="" value="">
 	                        </th>
-	                        <th>
+	                        <th  style="text-align: center;">
 	                            编号
 	                        </th>
-	                        <th>
+	                        <th  style="text-align: center;">
 	                            文章标题
 	                        </th>	                        
-	                        <th>
+	                        <th  style="text-align: center;">
 	                            文章内容
 	                        </th>
-	                      	<th>
+	                      	<th  style="text-align: center;">
 	                            用户状态
 	                        </th>
-							<th>
+							<th  style="text-align: center;">
 	                            添加时间
 	                        </th>
-	                        <th>
+	                        <th  style="text-align: center;">
 	                            修改时间
 	                        </th>
-	                        <th>
+	                        <th  style="text-align: center;">
 	                            操作
 	                        </th>
 	                    </tr>
@@ -108,4 +113,6 @@
 						@endforeach
 					</tbody>
 	            </table>
+                <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button><button class="layui-btn" onclick="level_add('添加用户','user/create','','600','300')"><i class="layui-icon"></i>添加</button>	            
+	           <!-- 分页 --> <span class="x-right"> <div class="page_page" style="padding-bottom: 0px;"> {{ $works->links() }} </div> </span></xblock>
          @endsection
