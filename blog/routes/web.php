@@ -11,21 +11,13 @@
 |
 */
 
-// 前台路由开始
-
- //登入路由
- Route::get('home/login','Home\IndexController@login');
-
-// 前台首页显示路由
-Route::resource('/','Home\IndexController');
-
- // 用户路由 
- Route::resource('/users','Home\UserController');
 
 
 
 
 
+// 前台路由开始 
+Route::resource('/','Home\IndexController');//31行结束
 
 
 
@@ -37,26 +29,30 @@ Route::resource('/','Home\IndexController');
 
 
 // 前台路由结束
-
-
-
-
-
 // 后台路由开始
- Route::get('admin','Admin\IndexController@index');
-// 用户路由
- Route::get('/user/delete/{id}','Admin\UserController@delete');
- Route::resource('/user','Admin\UserController');
-// 文章路由
- Route::get('/worke/delete/{id}','Admin\WorksController@delete');
- Route::resource('/works','Admin\WorksController');
+ Route::get('admin','Admin\IndexController@index'); //43行结束
+ 
 
 
+
+ 
 
 
 
 
 // 后台路由结束
+// lilong 开始    //101行结束
+// 文章开始
+Route::get('/worke/delete/{id}','Admin\WorksController@delete');
+Route::resource('/works','Admin\WorksController');
+// 用户路由
+Route::get('/user/delete/{id}','Admin\UserController@delete');
+Route::resource('/user','Admin\UserController');
+
+  // 用户路由 
+ Route::resource('/users','Home\UserController');
+  //登入路由
+ Route::get('home/login','Home\IndexController@login');
 
 
 
@@ -68,3 +64,209 @@ Route::resource('/','Home\IndexController');
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// lilong 结束
+// 杨玉龙 开始  //158 结束
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 杨玉龙 结束
+// 王佳琦 开始    //215 结束
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 王佳琦 结束
+// 连柯鑫 开始   272结束
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 连柯鑫 结束
