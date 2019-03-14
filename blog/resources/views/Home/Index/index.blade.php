@@ -63,7 +63,7 @@
 										<a href="#">登入 <i class="zmdi zmdi-chevron-down"></i></a>
 										<div class="header-login-opt top-sub-menu sub-menu-right">
 											<h5>登入 或者 注册</h5>
-											<a class="button small" href="/home/login">登入</a>
+											<a class="button small" href="/users/login">登入</a>
 											<span>or</span>
 											<a class="button small transparent" href="/create">立即 注册</a>
 										</div>
