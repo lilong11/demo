@@ -82,6 +82,8 @@ Route::resource('/','Home\IndexController');
  //广告路由
  Route::get('/adv/delete/{id}','Admin\AdvController@delete');
  Route::resource('/adv','Admin\AdvController');
+ //留言路由
+ Route::resource('/mess','Admin\MessController');
 
 
 

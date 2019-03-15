@@ -124,6 +124,31 @@
 
                     </ul>
                 </li>
+
+
+
+                <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i>
+                      留言管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/mess">
+                                <i class="iconfont">&#xe6a7;</i>
+                                留言列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/mess/create">
+                                <i class="iconfont">&#xe6a7;</i>
+                                留言添加
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
                 <!-- 左边管理栏目结束 -->
             </ul>
           </div>
