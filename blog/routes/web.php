@@ -16,6 +16,8 @@
 
 
 
+
+
 // 前台路由开始 
 Route::resource('/','Home\IndexController');//31行结束
 
