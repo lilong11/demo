@@ -18,17 +18,12 @@ class WorksController extends Controller
         $works = new works; //查文章表
         $data = $works->all();  
 
-        //默认显示一遍文章
-      $id = $works->all('id'); 
-       // $id.rand();
-       // dump($id);
-       echo $id.rand();
-        $Issues = new Issues; //查问题表
-        $datas = $Issues->all();
 
+        $issues = new Issues; //查文章表
+        $datas = $issues->all(); 
 
         // dump($datas);
-        // return view('Home.works.index',['title'=>'文章首页','data'=>$data,'datas'=>$datas]);
+        return view('Home.works.index',['title'=>'文章首页','data'=>$data,'datas'=>$datas]);
          
     }
 

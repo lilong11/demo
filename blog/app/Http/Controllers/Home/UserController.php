@@ -36,6 +36,7 @@ class UserController extends Controller
      */
     public function create()
     {
+        // dump('create');
         return view('Home.users.create',['title'=>'用户注册']);
     }
 
@@ -47,21 +48,7 @@ class UserController extends Controller
      */
     public function store(UsersStoreRequest $request)
     {
-
-        dump(5201314);
-        //用户添加处理 
-        // $user = new Users;
-
-        // $user->uname = $request->input('uname','');
-        // $user->password = Hash::make($request->input('password',''));
-        // $user->tel = $request->input('tel','');
-        // // 执行添加到数据库
-        // $res1 = $user->save();
-        // if($res1){
-        //     return redirect('home/login')->with('success','添加成功');
-        // }else{
-        //     return redirect('home/login')->with('error','添加失败');
-        // }
+        
   
     }
 
