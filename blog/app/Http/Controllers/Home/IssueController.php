@@ -4,29 +4,17 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
-use App\Http\Requests\UsersStoreRequest;
-use App\Models\Users;
-use App\Models\Usersinfos;
-class UserController extends Controller
+
+class IssueController extends Controller
 {
-    public function login()
-    {
-        // dump(123);
-        return view('Home.users.login',['title'=>'账号登入']);
-    }
-
-    public function dologin(Request $request)
-    {
-        // dump(123);
-        dump($request->all());
-    }
-
-
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        return view('Home.users.info',['title'=>'个人中心']);
+        return view('Home.works.index',['title'=>'问题首页']);
     }
 
     /**
@@ -36,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('Home.users.create',['title'=>'用户注册']);
+        //
     }
 
     /**
@@ -45,24 +33,9 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UsersStoreRequest $request)
+    public function store(Request $request)
     {
-
-        dump(5201314);
-        //用户添加处理 
-        // $user = new Users;
-
-        // $user->uname = $request->input('uname','');
-        // $user->password = Hash::make($request->input('password',''));
-        // $user->tel = $request->input('tel','');
-        // // 执行添加到数据库
-        // $res1 = $user->save();
-        // if($res1){
-        //     return redirect('home/login')->with('success','添加成功');
-        // }else{
-        //     return redirect('home/login')->with('error','添加失败');
-        // }
-  
+        //
     }
 
     /**
@@ -73,7 +46,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        dump('show');
+        //
     }
 
     /**
@@ -84,7 +57,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        dump('edit');
+        //
     }
 
     /**
@@ -96,7 +69,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dump('update');
+        //
     }
 
     /**
@@ -107,6 +80,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        dump('destroy');
+        //
     }
 }

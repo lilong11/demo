@@ -57,7 +57,7 @@ Route::resource('/issue','Admin\IssueController');   //后台问题
 Route::get('users/login','Home\UserController@login');  //前台用户登入
 Route::post('users/doLogin','Home\UserController@doLogin');  //前台登入处理
 Route::resource('/users','Home\UserController');  //前台用户路由
-
+Route::resource('workss','Home\WorksController'); //前台文章路由
 
 
 
