@@ -6,15 +6,18 @@
     <title>{{$title or '用户操作'}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../Admin_public/css/font.css">
-    <link rel="stylesheet" href="../Admin_public/css/xadmin.css">
-    <link rel="stylesheet" href="../Admin_public/css/swiper.min.css">
+    <link rel="stylesheet" href="/Admin_public/css/font.css">
+    <link rel="stylesheet" href="/Admin_public/css/xadmin.css">
+    <link rel="stylesheet" href="/Admin_public/css/swiper.min.css">
+        <link rel="stylesheet" type="text/css" href="/boot/css/bootstrap.min.css">
+    <script type="text/javascript" src="/boot/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/boot/js/bootstrap.min.js"></script>
     <!--  -->
 
-    <script type="text/javascript" src="../Admin_public/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../Admin_public/js/swiper.jquery.min.js"></script>
-    <script src="../Admin_public/lib/layui/layui.js" charset="utf-8"></script>
-    <script type="text/javascript" src="../Admin_public/js/xadmin.js"></script>
+    <script type="text/javascript" src="/Admin_public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/Admin_public/js/swiper.jquery.min.js"></script>
+    <script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/Admin_public/js/xadmin.js"></script>
 
 
 </head>
@@ -58,7 +61,7 @@
                         用户管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu  opened">
+                    <ul class="sub-menu  ">
                         <li class="current">
                             <a href="/user">
                                 <i class="iconfont">&#xe6a7;</i>
@@ -93,6 +96,29 @@
                             <a href="works/create">
                                 <i class="iconfont">&#xe6a7;</i>
                                 文章添加
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i>
+                       广告管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/adv">
+                                <i class="iconfont">&#xe6a7;</i>
+                                广告列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/adv/create">
+                                <i class="iconfont">&#xe6a7;</i>
+                                广告添加
                             </a>
                         </li>
 

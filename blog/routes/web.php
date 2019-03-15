@@ -1,5 +1,8 @@
 <?php
-
+// 李龙:31~80
+// 杨玉龙:81~130
+// 王佳琦:131~180
+// 连柯鑫:181~230
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,27 +24,9 @@ Route::resource('/','Home\IndexController');
 
  // 用户路由 
  Route::resource('/users','Home\UserController');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 前台路由结束
-
-
-
-
-
+//
+//
 // 后台路由开始
  Route::get('admin','Admin\IndexController@index');
 // 用户路由
@@ -56,11 +41,47 @@ Route::resource('/','Home\IndexController');
 
 
 
-// 后台路由结束
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//杨玉龙
+ //广告路由
+ Route::get('/adv/delete/{id}','Admin\AdvController@delete');
+ Route::resource('/adv','Admin\AdvController');
 
 
 

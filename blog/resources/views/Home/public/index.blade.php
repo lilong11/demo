@@ -1735,8 +1735,8 @@
 							<div class="blog-date text-center"><h4>07</h4><p>May</p></div>
 						</div>
 						<!-- Blog Details -->
-						<div class="blog-details">
-							<!-- Blog Meta -->
+						<!-- <div class="blog-details">
+							Blog Meta
 							<div class="blog-meta fix">
 								<p class="author float-left"><a href="#"><i class="zmdi zmdi-account"></i> By Admin</a></p>
 								<p class="comment-like float-right">
@@ -1744,11 +1744,11 @@
 									<a href="#"><i class="zmdi zmdi-favorite-outline"></i> (225)</a>
 								</p>
 							</div>
-							<!-- Blog Title -->
+							Blog Title
 							<h4 class="blog-title"><a href="#">How to Improve Your Sales Volume</a></h4>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisic ing elit, sed do eiusmodte porincididunvt...</p>
 							<a class="read-more" href="#">Continue Reading</a>
-						</div>
+						</div> -->
 					</div>
 					<!-- Single blog -->
 					<div class="sin-blog">
@@ -1761,20 +1761,17 @@
 						<!-- Blog Details -->
 						<div class="blog-details">
 							<!-- Blog Meta -->
-							<div class="blog-meta fix">
-								<p class="author float-left"><a href="#"><i class="zmdi zmdi-account"></i> By Admin</a></p>
-								<p class="comment-like float-right">
-									<a href="#"><i class="zmdi zmdi-comment-outline"></i> (15)</a>
-									<a href="#"><i class="zmdi zmdi-favorite-outline"></i> (225)</a>
-								</p>
-							</div>
+							
 							<!-- Blog Title -->
-							<h4 class="blog-title"><a href="#">Top 10 Marketing for Improving Sales</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisic ing elit, sed do eiusmodte porincididunvt...</p>
-							<a class="read-more" href="#">Continue Reading</a>
+							
 						</div>
 					</div>
 					<!-- Single blog -->
+					
+					
+					<!-- 中间 -->
+
+
 					<div class="sin-blog">
 						<!-- Blog Image -->
 						<div class="blog-image">
@@ -1783,20 +1780,7 @@
 							<div class="blog-date text-center"><h4>21</h4><p>March</p></div>
 						</div>
 						<!-- Blog Details -->
-						<div class="blog-details">
-							<!-- Blog Meta -->
-							<div class="blog-meta fix">
-								<p class="author float-left"><a href="#"><i class="zmdi zmdi-account"></i> By Admin</a></p>
-								<p class="comment-like float-right">
-									<a href="#"><i class="zmdi zmdi-comment-outline"></i> (15)</a>
-									<a href="#"><i class="zmdi zmdi-favorite-outline"></i> (225)</a>
-								</p>
-							</div>
-							<!-- Blog Title -->
-							<h4 class="blog-title"><a href="#">Best Social Media Marketing..</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisic ing elit, sed do eiusmodte porincididunvt...</p>
-							<a class="read-more" href="#">Continue Reading</a>
-						</div>
+						
 					</div>
 					<!-- Single blog -->
 					<div class="sin-blog">
@@ -1807,20 +1791,7 @@
 							<div class="blog-date text-center"><h4>05</h4><p>May</p></div>
 						</div>
 						<!-- Blog Details -->
-						<div class="blog-details">
-							<!-- Blog Meta -->
-							<div class="blog-meta fix">
-								<p class="author float-left"><a href="#"><i class="zmdi zmdi-account"></i> By Admin</a></p>
-								<p class="comment-like float-right">
-									<a href="#"><i class="zmdi zmdi-comment-outline"></i> (15)</a>
-									<a href="#"><i class="zmdi zmdi-favorite-outline"></i> (225)</a>
-								</p>
-							</div>
-							<!-- Blog Title -->
-							<h4 class="blog-title"><a href="#">Top 10 Marketing for Improving Sales</a></h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisic ing elit, sed do eiusmodte porincididunvt...</p>
-							<a class="read-more" href="#">Continue Reading</a>
-						</div>
+						
 					</div>
 				</div>
 			</div>
