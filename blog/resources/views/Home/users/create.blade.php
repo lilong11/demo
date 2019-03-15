@@ -52,7 +52,7 @@
                               <div class="layui-input-inline login-inline">
                                 <input type="text" name="yzm" lay-verify="required" autocomplete="off" class="layui-input" style="height:60px">
                               </div>
-                              <label class="layui-form-label login-form" style="width:150px;"><img class="thumbnail captcha" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flat?'+Math.random()" title="点击图片重新获取验证码" style="width:150px;"></label>
+                              <label class="layui-form-label login-form" style="width:150px;"><img class="thumbnail captcha" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flat?'+Math.random()" title="点击图片重新获取验证码" style="width:150px; cursor:pointer;"></label>
                         {{--   if($errors -> has ('captcha'))
                               <span class="help-block">
                                 <strong>{{$errors->first('captcha')}}</strong>
