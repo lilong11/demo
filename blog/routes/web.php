@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,6 +9,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 
 
 
@@ -100,11 +100,11 @@ Route::resource('/','Home\IndexController');//31行结束
 
 // lilong 结束
 // 杨玉龙 开始  //158 结束
-
-
-
-
-
+ //广告路由
+ Route::get('/adv/delete/{id}','Admin\AdvController@delete');
+ Route::resource('/adv','Admin\AdvController');
+ //留言路由
+ Route::resource('/mess','Admin\MessController');
 
 
 

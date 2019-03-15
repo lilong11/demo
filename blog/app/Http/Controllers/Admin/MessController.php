@@ -1,37 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Home;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-
-class IndexController extends Controller
+class MessController extends Controller
 {
-
-
-    public function login()
-    {
-        // dump(123);
-        return view('Home.Index.login',['title'=>'账号登入']);
-    }
-
-    public function dologin(Request $request)
-    {
-        // dump(123);
-        dump($request->all());
-    }
-
-
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('Home.Index.index',['title'=>'哈哈商城']);
+        $request->all();
+        dump('我是留言首页');
     }
 
     /**
@@ -41,7 +25,8 @@ class IndexController extends Controller
      */
     public function create()
     {
-        //
+        dump('留言闯你妈的头');
+        return view('Admin/mess/create',['title'=>'添加留言']);
     }
 
     /**

@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>{{$title or '用户操作'}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 <body>
     <!-- 顶部开始 -->
@@ -48,6 +47,7 @@
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
+                    <ul class="sub-menu  ">
                         <li class="current">
                             <a href="/user">
                                 <i class="iconfont">&#xe6a7;</i>
@@ -105,12 +105,25 @@
                             <a href="/issue/create">
                                 <i class="iconfont">&#xe6a7;</i>
                                 问题添加
+                       广告管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/adv">
+                                <i class="iconfont">&#xe6a7;</i>
+                                广告列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/adv/create">
+                                <i class="iconfont">&#xe6a7;</i>
+                                广告添加
                             </a>
                         </li>
 
                     </ul>
                 </li>
-
                 <li class="list">
                     <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
@@ -128,6 +141,23 @@
                             <a href="/admin/links/create">
                                 <i class="iconfont">&#xe6a7;</i>
                                 友情添加
+                <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i>
+                      留言管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/mess">
+                                <i class="iconfont">&#xe6a7;</i>
+                                留言列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/mess/create">
+                                <i class="iconfont">&#xe6a7;</i>
+                                留言添加
                             </a>
                         </li>
 
