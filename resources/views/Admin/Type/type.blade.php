@@ -1,5 +1,6 @@
 @extends('admin.layout.index')
 @section('content')
+
 <!-- 中部开始 -->
     <div class="wrapper">
         <!-- 左侧菜单开始 -->
@@ -60,7 +61,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="admin/goods/index">
+                            <a href="/goods">
                                 <i class="iconfont">&#xe6a7;</i>
                                 商品列表
                             </a>
@@ -75,7 +76,7 @@
                     </a>
                     <ul class="sub-menu opened">
                         <li class="current">
-                            <a href="admin/type/index"">
+                            <a href="/type"">
                                 <i class="iconfont">&#xe6a7;</i>
                                 分类列表
                             </a>
@@ -205,12 +206,24 @@
                   </div>
                 </div> 
             </form>
-            <xblock><a href="/admin/goods/add"><button class="layui-btn" ><i class="layui-icon">&#xe608;</i>添加</button></a><span class="x-right" style="line-height:40px">共有数据：88 条</span></xblock>
+            <xblock><a href="/type/create"><button class="layui-btn" ><i class="layui-icon">&#xe608;</i>添加</button></a><span class="x-right" style="line-height:40px">共有数据：88 条</span></xblock>
+            @if (session('success'))
+                <div class="btn btn-success">
+                    {{ session('success') }}
+                </div>
+            @elseif (session('error'))
+                <div class="btn btn-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
             <table class="layui-table">
                 <thead>
                     <tr>
                         <th>
                             ID
+                        </th>
+                        <th>
+							PID
                         </th>
                         <th>
                             分类名
@@ -229,49 +242,45 @@
                         </th>
                     </tr>
                 </thead>
-                
-                <tbody>
+				@foreach($type_data as $k=>$v)
+				@if($v->path == 0)
+                <tbody>                	
                     <tr>
                         <td>
-                            1
+                            {{ $v->id }}
                         </td>
                         <td>
-                            <u style="cursor:pointer" onclick="member_show('张三','member-show.html','10001','360','400')">
-                                小明
-                            </u>
+							{{ $v->pid }}
+                        </td>
+                        <td>
+                            {{ $v->tname }}
                         </td>
           				<td>
-							0,1,2
+							{{ $v->path }}
           				</td>
           				<td>
-							<span class="layui-btn layui-btn-normal layui-btn-mini">
-                                查看子类
+							<a href="/type/create?id={{ $v->id }}">
+                            <span class="layui-btn layui-btn-normal layui-btn-mini">
+                                添加子类
                             </span>
+                            </a>
           				</td>
                         <td class="td-status">
                             <span class="layui-btn layui-btn-normal layui-btn-mini">
-                                已启用
+                                {{ $v->status == 1 ?'已启用' : '未启用' }}
                             </span>
                         </td>
                         <td class="td-manage">
-                            <a style="text-decoration:none" onclick="member_stop(this,'10001')" href="javascript:;" title="停用">
-                                <i class="layui-icon">&#xe601;</i>
-                            </a>
-                            <a title="编辑" href="javascript:;" onclick="member_edit('编辑','member-edit.html','4','','510')"
-                            class="ml-5" style="text-decoration:none">
-                                <i class="layui-icon">&#xe642;</i>
-                            </a>
-                            <a style="text-decoration:none"  onclick="member_password('修改密码','member-password.html','10001','600','400')"
-                            href="javascript:;" title="修改密码">
-                                <i class="layui-icon">&#xe631;</i>
-                            </a>
-                            <a title="删除" href="javascript:;" onclick="member_del(this,'1')" 
-                            style="text-decoration:none">
-                                <i class="layui-icon">&#xe640;</i>
-                            </a>
+                           	<form action="/type/{{ $v->id }}" method="post">
+                           		{{ csrf_field() }}
+                           		{{ method_field('DELETE') }}
+								<input type="submit" value="删除" class="btn btn-danger">
+                           	</form>
                         </td>
                     </tr>
                 </tbody>
+                @endif
+                @endforeach
             </table>
             <!-- 右侧内容框架，更改从这里结束 -->
           </div>

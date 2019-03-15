@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Type extends Model
+class Rotationimg extends Model
 {
-   public $timestamps = false;
+    //
+    public $timestamps = false;
 }

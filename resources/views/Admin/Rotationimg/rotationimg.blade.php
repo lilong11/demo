@@ -58,8 +58,8 @@
                         商品管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu opened">
-                        <li class="current">
+                    <ul class="sub-menu">
+                        <li>
                             <a href="/goods">
                                 <i class="iconfont">&#xe6a7;</i>
                                 商品列表
@@ -88,9 +88,9 @@
                         轮播管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu" style="display:none">
-                        <li>
-                            <a href="./Admin_public/banner-list.html">
+                    <ul class="sub-menu  opened">
+                        <li  class="current">
+                            <a href="/Rotationimg">
                                 <i class="iconfont">&#xe6a7;</i>
                                 轮播列表
                             </a>
@@ -105,7 +105,7 @@
                     </a>
                     <ul class="sub-menu" style="display:none">
                         <li>
-                            <a href="./Admin_public/banner-list.html">
+                            <a href="">
                                 <i class="iconfont">&#xe6a7;</i>
                                 轮播列表
                             </a>
@@ -205,7 +205,7 @@
                   </div>
                 </div> 
             </form>
-            <xblock><a href="/goods/create/"><button class="layui-btn" ><i class="layui-icon">&#xe608;</i>添加</button></a><span class="x-right" style="line-height:40px">共有数据：88 条</span></xblock>
+            <xblock><a href="/rotationimg/create/"><button class="layui-btn" ><i class="layui-icon">&#xe608;</i>添加</button></a><span class="x-right" style="line-height:40px">共有数据：88 条</span></xblock>
             @if (session('success'))
                 <div class="btn btn-success">
                     {{ session('success') }}
@@ -222,19 +222,10 @@
                             ID
                         </th>
                         <th>
-                            商品名
+                            轮播名
                         </th>
                         <th>
-                            商品图片
-                        </th>
-                        <th>
-                            商品价格
-                        </th>
-                        <th>
-                            商品数量
-                        </th>
-                        <th>
-                            商品描述
+                            轮播图片
                         </th>
                         <th>
                             状态
@@ -244,7 +235,7 @@
                         </th>
                     </tr>
                 </thead>                
-                @foreach($goods_data as $k=>$v)
+                @foreach($rotationimg_data as $k=>$v)
                 <tbody>
                     <tr>                        
                         <td>
@@ -252,37 +243,28 @@
                         </td>
                         <td>
                             <u style="cursor:pointer" onclick="member_show('张三','member-show.html','10001','360','400')">
-                                {{ $v->gname }}
+                                {{ $v->sname }}
                             </u>
                         </td>
                         <td>
-                            <img src="/uploads/{{ $v->pic }}" alt="" width="80px">                            
-                        </td>
-                        <td >
-                            {{ $v->price }}
-                        </td>
-                        <td >
-                            {{ $v->goodsNum }}
-                        </td>
-                        <td>
-                            {{ $v->goodsDes }}
+                            <img src="/uploads/{{ $v->simg }}" alt="" width="80px">                            
                         </td>
                         <td class="td-status">
                             <span class="layui-btn layui-btn-normal layui-btn-mini">
-                                {{ $v->goodsState == 1 ? '已启用' : '已停用' }}
+                                {{ $v->status == 1 ? '已启用' : '已停用' }}
                             </span>
                         </td>
                         <td class="td-manage">
                             <a style="text-decoration:none" onclick="member_stop(this,'10001')" href="javascript:;" title="停用">
                                 <i class="layui-icon">&#xe601;</i>
                             </a>
-                            <a title="编辑" href="/goods/show?id={{ $v->id }}">
+                            <a title="编辑" href="/rotationimg/show?sid={{ $v->sid }}">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>                                       
-                            <form action="/goods/{{ $v->id }}" method="post">
+							<form action="/rotationimg/{{ $v->sid }}" method="post">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
-                                <input type="hidden" name="pic" value="{{ $v->pic }}">
+                                <input type="hidden" name="simg" value="{{ $v->simg }}">
                                 <input type="submit" value="删除" class="btn btn-danger">
                             </form>
                         </td>

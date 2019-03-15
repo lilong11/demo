@@ -199,7 +199,7 @@
         <div class="page-content">
           <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
-            <form class="layui-form" action="/admin/goods/store" method="post" enctype="multipart/form-data">
+            <form class="layui-form" action="/goods/store" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="layui-form-item">
                     <label for="L_username" class="layui-form-label">
@@ -214,15 +214,9 @@
                     <label class="layui-form-label">商品分类</label>
                         <div class="layui-input-inline">
                         <select name="tid" value="{{ old('tid') }}">
-                          <option value="">请选择类型</option>
-                          <optgroup label="电脑">
-                            <option value="戴尔">戴尔</option>
-                            <option value="联想">联想</option>
-                          </optgroup>
-                          <optgroup label="手机">
-                            <option value="华为">华为</option>
-                            <option value="小米">小米</option>
-                          </optgroup>
+                             @foreach($type_data as $k=>$v)
+                                <option value="{{ $v->id }}">{{ $v->tname }}</option>
+                          @endforeach
                         </select>
                     </div>
                 </div>

@@ -60,7 +60,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="admin/goods/index">
+                            <a href="/goods">
                                 <i class="iconfont">&#xe6a7;</i>
                                 商品列表
                             </a>
@@ -75,7 +75,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="admin/type/index">
+                            <a href="/type">
                                 <i class="iconfont">&#xe6a7;</i>
                                 分类列表
                             </a>
@@ -90,7 +90,7 @@
                     </a>
                     <ul class="sub-menu" style="display:none">
                         <li>
-                            <a href="./Admin_public/banner-list.html">
+                            <a href="/rotationimg">
                                 <i class="iconfont">&#xe6a7;</i>
                                 轮播列表
                             </a>
