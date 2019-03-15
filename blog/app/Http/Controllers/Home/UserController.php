@@ -4,25 +4,12 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-class IndexController extends Controller
+use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\UsersStoreRequest;
+use App\Models\Users;
+use App\Models\Usersinfos;
+class UserController extends Controller
 {
-
-
-    public function login()
-    {
-        // dump(123);
-        return view('Home.Index.login',['title'=>'账号登入']);
-    }
-
-    public function dologin(Request $request)
-    {
-        // dump(123);
-        dump($request->all());
-    }
-
-
-
     /**
      * Display a listing of the resource.
      *
@@ -30,7 +17,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('Home.Index.index',['title'=>'哈哈商城']);
+        dump('index');
     }
 
     /**
@@ -40,7 +27,7 @@ class IndexController extends Controller
      */
     public function create()
     {
-        //
+        return view('Home.users.create',['title'=>'用户注册']);
     }
 
     /**
@@ -49,9 +36,24 @@ class IndexController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UsersStoreRequest $request)
     {
-        //
+
+        dump(5201314);
+        //用户添加处理 
+        // $user = new Users;
+
+        // $user->uname = $request->input('uname','');
+        // $user->password = Hash::make($request->input('password',''));
+        // $user->tel = $request->input('tel','');
+        // // 执行添加到数据库
+        // $res1 = $user->save();
+        // if($res1){
+        //     return redirect('home/login')->with('success','添加成功');
+        // }else{
+        //     return redirect('home/login')->with('error','添加失败');
+        // }
+  
     }
 
     /**
@@ -62,7 +64,7 @@ class IndexController extends Controller
      */
     public function show($id)
     {
-        //
+        dump('show');
     }
 
     /**
@@ -73,7 +75,7 @@ class IndexController extends Controller
      */
     public function edit($id)
     {
-        //
+        dump('edit');
     }
 
     /**
@@ -85,7 +87,7 @@ class IndexController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dump('update');
     }
 
     /**
@@ -96,6 +98,6 @@ class IndexController extends Controller
      */
     public function destroy($id)
     {
-        //
+        dump('destroy');
     }
 }
