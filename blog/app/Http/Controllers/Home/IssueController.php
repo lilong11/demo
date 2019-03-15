@@ -5,15 +5,8 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-
-class IndexController extends Controller
+class IssueController extends Controller
 {
-
-
-
-
-
-
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +14,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('Home.Index.index',['title'=>'哈哈商城']);
+        return view('Home.works.index',['title'=>'问题首页']);
     }
 
     /**
@@ -31,7 +24,7 @@ class IndexController extends Controller
      */
     public function create()
     {
-        return view('Home.Users.create',['title'=>'哈哈商城注册']);
+        //
     }
 
     /**

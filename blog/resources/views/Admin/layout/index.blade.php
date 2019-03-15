@@ -132,21 +132,21 @@
 
                 <li class="list">
                     <a href="javascript:;">
-                        <i class="iconfont">&#xe70b;</i>
-                        留言接管理
+                        <i class="iconfont">&#xe70b;</i> 
+                        留言管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
                         <li class="current">
                             <a href="">
                                 <i class="iconfont">&#xe6a7;</i>
-                                留言接列表
+                                留言列表
                             </a>
                         </li>
                         <li>
                             <a href="">
                                 <i class="iconfont">&#xe6a7;</i>
-                                留言接添加
+                                留言添加
                             </a>
                         </li>
                     </ul>

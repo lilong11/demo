@@ -74,7 +74,18 @@
                               </div>
                             </div>
 
-                            <div class="layui-form-item">
+                            <div class="layui-form-item"> 
+                              <label class="layui-form-label">是否使用</label>
+                              <div class="layui-input-inline">
+                                <select name="status" value="{{ old('status') }}">
+                                  <option value="">请选择</option>
+                                  <option value="0">使用</option>
+                                  <option value="1">只注册不使用</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="layui-form-item"> 
                                 <label for="L_repass" class="layui-form-label">
                                 </label>
                                 <button  class="layui-btn" lay-filter="add" lay-submit="">

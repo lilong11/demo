@@ -15,13 +15,13 @@
 
 </head>
 <body>
-    <div class="login-logo"><h1>立即注册</h1></div>
-    <div class="login-box" style="width:600px;height:600px;">
+    <div class="login-logo"><h1>后台登录</h1></div>
+    <div class="login-box" style="width:600px;height:500px;">
         <form class="layui-form layui-form-pane" action="/login/dologin" method="post" >
 
                           {{ csrf_field() }}
-                          <h3><a href=""><i class="iconfont">&#xe6b8;</i> 手机号注册</a></h3>
-                          <h3 style="position: absolute;right:680px;top:140px;"><a href=""><i class="iconfont">&#xe6b8;</i> 普通注册</a></h3>
+                          <h3><a href=""><i class="iconfont">&#xe6b8;</i> 手机号登录</a></h3>
+                          <h3 style="position: absolute;right:680px;top:140px;"><a href=""><i class="iconfont">&#xe6b8;</i> 普通登录</a></h3>
                           <label class="login-title" for="username">帐号</label>
                           <div class="layui-form-item">
                               <label class="layui-form-label login-form" style="width:90px;"><i class="iconfont">&#xe6b8;</i></label>
@@ -37,14 +37,6 @@
                                 <input type="password" name="password" lay-verify="required" placeholder="请输入你的密码" autocomplete="off" class="layui-input" style="width:480px;">
                               </div>
                           </div>
-
-                          <label class="login-title" for="password">确认密码</label>
-                          <div class="layui-form-item">
-                              <label class="layui-form-label login-form" style="width:90px;"><i class="iconfont" style="width:90px;">&#xe82b;</i></label>
-                              <div class="layui-input-inline login-inline">
-                                <input type="password" name="repassword" lay-verify="required" placeholder="请输入你的密码" autocomplete="off" class="layui-input" style="width:480px;">
-                              </div>
-                          </div>
                   
                           <label class="login-title" for="password">验证码</label>
                           <div class="layui-form-item">
@@ -52,7 +44,8 @@
                               <div class="layui-input-inline login-inline">
                                 <input type="text" name="yzm" lay-verify="required" autocomplete="off" class="layui-input" style="height:60px">
                               </div>
-                              <label class="layui-form-label login-form" style="width:150px;"><img class="thumbnail captcha" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flat?'+Math.random()" title="点击图片重新获取验证码" style="width:150px;"></label>
+                              <label style="width:150px;"><img class="thumbnail captcha" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flat?'+Math.random()" title="点击重新获取验证码" style="width:190px; cursor:pointer;"></label>
+                              <!-- 判断验证码是否错误 -->
                         {{--   if($errors -> has ('captcha'))
                               <span class="help-block">
                                 <strong>{{$errors->first('captcha')}}</strong>
@@ -60,7 +53,7 @@
                             @endif --}}  
                           </div><br>
 
-                          <div class="form-actions"  style="width:110;height:120px;">
+                          <div class="form-actions"  style="width:110;height:100px;">
                               <button class="btn btn-warning pull-right" lay-submit lay-filter="login"  type="submit">登录</button> 
                               <div class="forgot"><a href="#" class="forgot">忘记帐号或者密码</a></div>     
                           </div>

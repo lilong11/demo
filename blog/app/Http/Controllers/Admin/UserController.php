@@ -11,18 +11,40 @@ use App\Models\Usersinfos;
 use DB;
 class UserController extends Controller
 {
+
+    // 测试无刷新分页
+    public function demo()
+    {
+        dump(1213);
+    }
+
+
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        // 接收搜索的关键字
+        $search = $request->input('search','');
+
+        // 接收 搜索的 显示条数
+        $count = $request->input('count',5);
+
         $user = new Users;
-        $arr = Users::simplePaginate(6); 
-        // dd($arr);
-        // dump($arr);
-        return view('Admin.User.index',['title'=>'用户列表','arr'=>$arr]);
+
+        $arr = $user->where('uname','like','%'.$search.'%')->paginate($count);
+
+        // $grade = 2;
+        // 统计用户个数
+        $vip =  count($user->where([ 'grade' => 1 ])->get());
+        $common =  count($user->where([ 'grade' => 0 ])->get());
+        $root =  count($user->where([ 'grade' => 2 ])->get()); 
+        // dd($vip);
+        return view('Admin.User.index',['title'=>'用户列表','count'=>$count,'search'=>$search,'arr'=>$arr,'vip'=>$vip,'common'=>$common,'root'=>$root]);
     }
 
     /**
@@ -47,7 +69,8 @@ class UserController extends Controller
         $user = new Users;
 
         $user->uname = $request->input('uname','');
-        $user->grade = $request->input('grade','');
+        $user->grade = $request->input('grade',''); 
+        $user->status = $request->input('status',''); 
         $user->password = Hash::make($request->input('password',''));
         $user->tel = $request->input('tel','');
         // 执行添加到数据库
@@ -70,10 +93,7 @@ class UserController extends Controller
         }else{
              DB::rollBack();
             return redirect('user')->with('error','添加失败');
-        }
-        // dump($uid);
-        // 添加到用户详情表中
-        // $user->tel = $request->input('tel','');
+        } 
     }
 
     /**
@@ -99,7 +119,23 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $user =  Users::find($id);
+
+        // 用户传过来的信息
+        $data = $request->except('_token','_method');
+
+        $user->uname = $data['uname'];
+        $user->created_at = time();
+        $user->tel = $data['tel'];
+        $bool = $user->save(); 
+
+        if($bool){
+            return redirect('user')->with('success','用户修改成功');
+        }else{
+            return redirect('user')->with('error','用户修改失败');
+        }
+
     }
 
 

@@ -3,17 +3,11 @@
 namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
-
-class IndexController extends Controller
+use App\Http\Controllers\Controller; 
+use App\Models\works;
+use App\Models\Issues;
+class WorksController extends Controller
 {
-
-
-
-
-
-
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +15,21 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('Home.Index.index',['title'=>'哈哈商城']);
+        $works = new works; //查文章表
+        $data = $works->all();  
+
+        //默认显示一遍文章
+      $id = $works->all('id'); 
+       // $id.rand();
+       // dump($id);
+       echo $id.rand();
+        $Issues = new Issues; //查问题表
+        $datas = $Issues->all();
+
+
+        // dump($datas);
+        // return view('Home.works.index',['title'=>'文章首页','data'=>$data,'datas'=>$datas]);
+         
     }
 
     /**
@@ -31,7 +39,7 @@ class IndexController extends Controller
      */
     public function create()
     {
-        return view('Home.Users.create',['title'=>'哈哈商城注册']);
+        //
     }
 
     /**

@@ -4,43 +4,47 @@
 	            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 			    <link rel="stylesheet" href="../Admin_public/css/font.css">
 			    <link rel="stylesheet" href="../Admin_public/css/xadmin.css">
-			    <link rel="stylesheet" href="../Admin_public/css/swiper.min.css">
-			    <!--  -->
-
+			    <link rel="stylesheet" href="../Admin_public/css/swiper.min.css"> 
+			    <!-- 统计图js 引入 -->
+				<script type="text/javascript" src="../js/echarts.min.js"></script> 
 			    <script type="text/javascript" src="../Admin_public/js/jquery.min.js"></script>
 			    <script type="text/javascript" src="../Admin_public/js/swiper.jquery.min.js"></script>
 			    <script src="../Admin_public/lib/layui/layui.js" charset="utf-8"></script>
-			    <script type="text/javascript" src="../Admin_public/js/xadmin.js"></script>
+			    <script type="text/javascript" src="../Admin_public/js/xadmin.js"></script> 
+            <style> .page_page{background: rgb(0,0,0,0); border-radius: 0.2rem; counter-reset: pagination; text-align: center; margin: 0px; } .page_page li{border: solid 1px #d6d6d6; border-radius: 0.2rem; color: #7d7d7d; text-decoration: none; text-transform: uppercase; display: inline-block; text-align: center; padding: 0.5rem 0.9rem; } </style>{{-- 分页样式 --}}
+
+
+			    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+			    <div id="main" style="width: 300px;height:300px; user-select: none;background:color: yellow;"></div> 
 				<div class="layui-form-pane" style="text-align: center;">
                   <div class="layui-form-item" style="display: inline-block;">
-                    <label class="layui-form-label xbs768">日期范围</label>
-                    <div class="layui-input-inline xbs768">
-                      <input class="layui-input" placeholder="开始日" id="LAY_demorange_s">
-                    </div>
-                    <div class="layui-input-inline xbs768">
-                      <input class="layui-input" placeholder="截止日" id="LAY_demorange_e">
-                    </div>
-                    <div class="layui-input-inline">
-                      <input type="text" name="username" placeholder="请输入用户名" autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-input-inline" style="width:80px">
-                        <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon"></i></button>
-                    </div>
+					<form action="/user" method="git">
+                        {{ csrf_field() }}
+	                    <div class="layui-input-inline"> 
+	                        <input type="text" class="layui-input" name="search" value="{{ $search }}" placeholder="用户名">
+	                    </div>
+	                    <div class="layui-input-inline" style="width:80px">
+	                        <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon"></i></button>
+	                    </div>
+					</form>
+
                   </div>
-                </div>
+                </div> 
                 <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button><button class="layui-btn" onclick="level_add('添加用户','user/create','','600','300')"><i class="layui-icon"></i>添加</button><span class="x-right"> {{ $arr->links() }}</span></xblock>
-             	<table class="layui-table">
+             	<table class="layui-table"> 
+
+             	<table class="layui-table"  style="text-align: center;"> 
 	                <thead>
 	                    <tr>
-	                        <th>
+	                        <th  style="text-align: center;">
 	                            <input type="checkbox" name="" value="">
 	                        </th>
-	                        <th>
+	                        <th  style="text-align: center;">
 	                            ID
 	                        </th>
-	                        <th>
+	                        <th  style="text-align: center;">
 	                            用户名
-	                        </th>
+	                        </th> 
 	                        <th>
 	                            用户等级
 	                        </th>
@@ -48,13 +52,21 @@
 	                            用户状态
 	                        </th>	                      	
 
-							<th>
+							<th> 
+	                        <th  style="text-align: center;">
+	                            用户等级
+	                        </th>
+	                      	<th  style="text-align: center;">
+	                            用户状态
+	                        </th>	                      	
+
+							<th  style="text-align: center;"> 
 	                            添加时间
 	                        </th>
-	                        <th>
+	                        <th  style="text-align: center;">
 	                            修改时间
 	                        </th>
-	                        <th>
+	                        <th  style="text-align: center;">
 	                            操作
 	                        </th>
 	                    </tr>
@@ -86,8 +98,9 @@
 	                           		@break
 	                           	@endswitch
 	                        </td>
-	                        <td>
-	                            @switch($k -> grade)
+	                        <td> 
+	                            @switch($k -> grade) 
+	                            @switch($k -> status) 
 	                           		@case(0)
 	                           			使用中
 	                           		@break
@@ -121,4 +134,61 @@
 					    @endforeach
 	                </tbody>
 	            </table>
+                <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button><button class="layui-btn" onclick="level_add('添加用户','user/create','','600','300')"><i class="layui-icon"></i>添加</button>
+	            <!-- 分页 -->
+	            <span class="x-right"> <div class="page_page" style="padding-bottom: 0px;"> {{ $arr->links() }} </div> </span>
+
+                </xblock>
+        		<!-- 继承提示是否添加成功开始 -->
+		        @section('issue')
+		        <!-- <link rel="stylesheet" href="/boot/css/bootstrap.css">  -->
+		        <script src="/boot/js/jquery.min.js"></script>
+		        <script src="/boot/js/bootstrap.js"></script>
+		            @if (session('success'))
+			        <div class="bs-example" data-example-id="dismissible-alert-css">
+			            <div class="alert alert-success alert-dismissible" role="alert">
+			              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			                 {{ session('success') }}
+			            </div>
+			        </div>
+			    @endif
+
+			    @if (session('error'))
+			        <div class="bs-example" data-example-id="dismissible-alert-css">
+			            <div class="alert alert-danger alert-dismissible" role="alert">
+			              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			                 {{ session('error') }}
+			            </div>
+			        </div>
+			    @endif
+		        @endsection
+				<!-- 继承提示是否添加结束 -->
+
+	            <script>
+			        // 基于准备好的dom，初始化echarts实例
+			        var myChart = echarts.init(document.getElementById('main'));
+
+			        // 指定图表的配置项和数据
+			        var option = {
+			            title: {
+			                text: ' 用户统计 '
+			            },
+			            tooltip: {},
+			            legend: {
+			                data:['用户数量']
+			            },
+			            xAxis: {
+			                data: ["普通用户","vip用户","超级管理员"]
+			            },
+			            yAxis: {},
+			            series: [{
+			                name: '用户数量',
+			                type: 'bar',
+			                data: [{{ $common }}, {{ $vip }}, {{$root}}]
+			            }]
+			        };
+
+			        // 使用刚指定的配置项和数据显示图表。
+			        myChart.setOption(option);
+	            </script>
         @endsection
