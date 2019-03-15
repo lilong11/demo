@@ -40,24 +40,24 @@ Route::resource('/','Home\IndexController');//31行结束
 
 
 
-// 后台路由结束
-// lilong 开始    //101行结束
-// 文章开始
-Route::get('/worke/delete/{id}','Admin\WorksController@delete');
-Route::resource('/works','Admin\WorksController');
-// 用户路由
-Route::get('/user/delete/{id}','Admin\UserController@delete');
-Route::resource('/user','Admin\UserController');
-
-  // 用户路由 
- Route::resource('/users','Home\UserController');
-  //登入路由
- Route::get('home/login','Home\IndexController@login');
+	// 后台路由结束
+	// lilong 开始    //101行结束
+	// 文章开始
+	Route::get('/worke/delete/{id}','Admin\WorksController@delete');
+	Route::resource('/works','Admin\WorksController');
+	// 后台用户路由
+	Route::post('login/dologin','Admin\IndexController@dologin');
+	Route::get('login','Admin\IndexController@login');
+	Route::get('/user/delete/{id}','Admin\UserController@delete');
+	Route::resource('/user','Admin\UserController');
 
 
 
 
-
+	// 前台用户路由 
+	Route::get('users/login','Home\UserController@login');
+	Route::post('users/doLogin','Home\UserController@doLogin');
+	Route::resource('/users','Home\UserController');
 
 
 
