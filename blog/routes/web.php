@@ -157,8 +157,8 @@ Route::resource('/','Home\IndexController');//31行结束
 
 // 杨玉龙 结束
 // 王佳琦 开始    //215 结束
-
-
+//友情链接路由
+Route::resource('admin/links','Admin\LinksController');
 
 
 

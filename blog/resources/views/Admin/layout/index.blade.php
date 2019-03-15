@@ -1,16 +1,14 @@
-
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{{$title or '用户操作'}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 <body>
     <!-- 顶部开始 -->
     <div class="container" style="  width: 100%;height: 71px;background-color: rgba(0, 0, 0, 0.25);border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
-        <div class="logo"><a href="../Admin_public/index.html">{{$title or '用户操作'}}</a></div>
+        <div class="logo"><a href="../Admin_public/index.html">@yield('title','后台首页')</a></div>
         <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
         <ul class="layui-nav right" lay-filter="">
           <li class="layui-nav-item">
@@ -47,7 +45,11 @@
                         用户管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
+
                     <ul class="sub-menu">
+
+                    <ul class="sub-menu ">
+
                         <li class="current">
                             <a href="/user">
                                 <i class="iconfont">&#xe6a7;</i>
@@ -87,6 +89,28 @@
 
                     </ul>
                 </li>
+                <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i>
+                        友情链接管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/admin/links">
+                                <i class="iconfont">&#xe6a7;</i>
+                                友情链接列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/links/create">
+                                <i class="iconfont">&#xe6a7;</i>
+                                添加链接
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
                 <!-- 左边管理栏目结束 -->
             </ul>
           </div>
@@ -98,20 +122,37 @@
         <div class="page-content">
           <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
-            @section('content')
+            
 
+            <!-- 显示跳转信息  开始 -->
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if (session('error'))
+                <div class="alert alert-error">
+                    {{ session('error') }}
+                </div>
+            @endif
+            <!-- 显示跳转信息  结束 -->
+
+
+            @section('content')
+            
             @show
+
+            
+
+            
             <!-- 右侧内容框架，更改从这里结束 -->
           </div>
         </div>
         <!-- 右侧主体结束 -->
     </div>
     <!-- 中部结束 -->
-    <!-- 底部开始 -->
-    <div class="footer">
-        <div class="copyright">Copyright ©2017 x-admin v2.3 All Rights Reserved. 本后台系统由X前端框架提供前端技术支持</div>  
-    </div>
-    <!-- 底部结束 -->
+   
     <!-- 背景切换开始 -->
     <div class="bg-changer">
         <div class="swiper-container changer-list">
