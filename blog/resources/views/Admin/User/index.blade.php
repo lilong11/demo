@@ -98,8 +98,7 @@
 	                           		@break
 	                           	@endswitch
 	                        </td>
-	                        <td> 
-	                            @switch($k -> grade) 
+	                        <td>
 	                            @switch($k -> status) 
 	                           		@case(0)
 	                           			使用中
