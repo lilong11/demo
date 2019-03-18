@@ -213,10 +213,7 @@ Route::resource('admin/links','Admin\LinksController');
 
 
 // 王佳琦 结束
-// 连柯鑫 开始   272结束
-
-// 后台路由开始
-Route::resource('admin','Admin\IndexController');
+// 连柯鑫 开始   272结束 
 //商品列表
 Route::resource('/goods','Admin\GoodsController');
 Route::post('/goods/store','Admin\GoodsController@store');

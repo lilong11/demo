@@ -66,6 +66,52 @@
                 <li class="list">
                     <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
+                        问题管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li  class="current">
+                            <a href="/issue">
+                                <i class="iconfont">&#xe6a7;</i>
+                                问题列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/issue/create">
+                                <i class="iconfont">&#xe6a7;</i>
+                                问题添加
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i>
+                        文章管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li  class="current">
+                            <a href="/works">
+                                <i class="iconfont">&#xe6a7;</i>
+                                文章列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/works/create">
+                                <i class="iconfont">&#xe6a7;</i>
+                                文章添加
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i>
                         友情链接管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
@@ -107,28 +153,7 @@
                     </ul>
                 </li>
 
-                <li class="list">
-                    <a href="javascript:;">
-                        <i class="iconfont">&#xe70b;</i>
-                        文章管理
-                        <i class="iconfont nav_right">&#xe697;</i>
-                    </a>
-                    <ul class="sub-menu">
-                        <li  class="current">
-                            <a href="/works">
-                                <i class="iconfont">&#xe6a7;</i>
-                                文章列表
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/works/create">
-                                <i class="iconfont">&#xe6a7;</i>
-                                文章添加
-                            </a>
-                        </li>
 
-                    </ul>
-                </li>
 
                 <li class="list">
                     <a href="javascript:;">
@@ -152,23 +177,71 @@
                     </ul>
                 </li>
 
+
+
                 <li class="list">
                     <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
-                        问题管理
+                        分类管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
                         <li  class="current">
-                            <a href="/issue">
+                            <a href="/type">
                                 <i class="iconfont">&#xe6a7;</i>
-                                问题列表
+                                分类列表
                             </a>
                         </li>
                         <li>
                             <a href="/issue/create">
                                 <i class="iconfont">&#xe6a7;</i>
-                                问题添加
+                                分类添加
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i>
+                        商品管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li  class="current">
+                            <a href="/goods">
+                                <i class="iconfont">&#xe6a7;</i>
+                                商品列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/goods/store">
+                                <i class="iconfont">&#xe6a7;</i>
+                                商品添加
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i>
+                        轮播图管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li  class="current">
+                            <a href="/rotationimg">
+                                <i class="iconfont">&#xe6a7;</i>
+                                轮播图列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/issue/create">
+                                <i class="iconfont">&#xe6a7;</i>
+                                轮播图添加
                             </a>
                         </li>
 
