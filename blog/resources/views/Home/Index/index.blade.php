@@ -121,7 +121,7 @@
 					<div class="header-account-login float-right">
 						<!-- 右边模块 -->
 						<ul class="header-acc float-left">
-							<li><a href="#">个人中心<i class="zmdi zmdi-chevron-down"></i></a>
+							<li><a href="/users">个人中心<i class="zmdi zmdi-chevron-down"></i></a>
 								<ul class="top-sub-menu sub-menu-right">
 									<li><a href="#">个人中心</a></li> 
 									<li><a href="#">我的收藏</a></li>  
