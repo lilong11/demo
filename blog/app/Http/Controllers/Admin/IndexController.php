@@ -59,9 +59,9 @@ class IndexController extends Controller
     public function index()
     { 
         //判断用户是否登入了
-        if(empty(session('admin'))){
-            return view('Admin.Index.login');exit;
-        }
+        // if(empty(session('admin'))){
+        //     return view('Admin.Index.login');exit;
+        // }
 
         return view('Admin.Index.index'); 
     }
