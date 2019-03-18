@@ -36,8 +36,7 @@ class UserController extends Controller
 
         $user = new Users;
 
-        $arr = $user->where('uname','like','%'.$search.'%')->paginate($count);
-
+        $arr = $user->where('uname','like','%'.$search.'%')->paginate($count); 
         // $grade = 2;
         // 统计用户个数
         $vip =  count($user->where([ 'grade' => 1 ])->get());
