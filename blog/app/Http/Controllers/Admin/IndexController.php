@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Users;
 use Illuminate\Support\Facades\Auth; 
-use DB; 
+use DB;  
+
 class IndexController extends Controller
 {
     public function login()
@@ -71,7 +72,7 @@ class IndexController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    { 
+    {  
 
     }
 
@@ -81,8 +82,9 @@ class IndexController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {  
+    public function store(Request $request) 
+    { 
+ 
 
     }
 
@@ -92,9 +94,9 @@ class IndexController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show($id) 
+    { 
+          
     }
 
     /**
