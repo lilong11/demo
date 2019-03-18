@@ -1,32 +1,39 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;  
+use Illuminate\Http\Request; 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Users;
 use Illuminate\Support\Facades\Auth; 
+use DB;  
+
 class IndexController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function login()
     {
-        //
-        return view('Admin.Index.index');
+        return view('Admin.Index.login',['title'=>'商城后台登入']);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    { 
+    public function doLogin(Request $request)
+    {  
+        $uname = $request['uname'];
+        $password = $request['password'];  
+
+        // $data = DB::table('users')->where('uname',$uname)->get(); 
+        // dump($data);exit;
+        // if($data['grade'] != 2){
+        //     echo '权限不够';exit;
+        // }
+
+        if (Auth::attempt(['uname' => $uname, 'password' => $password])) { 
+            
+            session(['admin'=>$uname]);
+             echo '<script>alert("登入成功");location="/admin"</script>';
+        }else{
+            $request->flashOnly('uname');
+             echo '<script>alert("登入失败!密码错误");location="/login"</script>';
+        } 
         $uname = $request['uname'];
         $password = $request['password']; 
          // dd($uname);
@@ -38,14 +45,46 @@ class IndexController extends Controller
         } 
     }
 
+    public function exit()
+    {
+        session()->forget('admin');
+        return view('Admin.Index.login',['title'=>'商城后台登入']);exit;
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    { 
+        //判断用户是否登入了
+        if(empty(session('admin'))){
+            return view('Admin.Index.login');exit;
+        }
+
+        return view('Admin.Index.index'); 
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {  
+
+    }
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) 
     { 
+ 
 
     }
 
@@ -55,17 +94,9 @@ class IndexController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id) 
     { 
-        if(empty(session('admin'))){
-            return redirect('login');exit;
-        }
-    	// 统计用户个数
-    	// $user = Users::all();
-    	// $usernum = count($user); 
-        $admin = session('admin');
-        // session()->forget('admin');
-    	return view('Admin.Index.index',['title'=>'商城后台首页']); 
+          
     }
 
     /**
