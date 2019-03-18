@@ -26,7 +26,7 @@
                         @endif
                         <!-- 显示错误提示  结束-->
 
-                        <form class="layui-form"  method="post" action="/admin/links">
+                        <form class="layui-form"  method="post" action="/links">
                         {{ csrf_field() }}
                             <div class="layui-form-item">
                                 <label for="level-name" class="layui-form-label">

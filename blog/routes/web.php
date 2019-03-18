@@ -161,7 +161,7 @@ Route::resource('userPhone','Home\PhoneController'); //前台用户邮箱注册�
 Route::resource('/links','Admin\LinksController');
 
 //购物车路由
-Route::resource('cart','Home\CartController');
+Route::resource('/cart','Home\CartController');
 
 
 

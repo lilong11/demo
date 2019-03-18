@@ -108,7 +108,28 @@
 
                     </ul>
                 </li>
-
+                
+                <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i>
+                        订单管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="current">
+                            <a href="/links">
+                                <i class="iconfont">&#xe6a7;</i>
+                                订单列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/links/create">
+                                <i class="iconfont">&#xe6a7;</i>
+                                购物车管理
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="list">
                     <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
@@ -117,7 +138,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="current">
-                            <a href="admin/links">
+                            <a href="/links">
                                 <i class="iconfont">&#xe6a7;</i>
                                 友情链接列表
                             </a>
