@@ -160,6 +160,8 @@ Route::resource('workss','Home\WorksController'); //前台文章路由
 //友情链接路由
 Route::resource('admin/links','Admin\LinksController');
 
+//购物车路由
+Route::resource('cart','Home\CartController');
 
 
 
