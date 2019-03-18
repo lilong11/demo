@@ -122,7 +122,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="admin/links/create">
+                            <a href="/links/create">
                                 <i class="iconfont">&#xe6a7;</i>
                                 友情链接添加
                             </a>

@@ -58,9 +58,9 @@ Route::get('users/login','Home\UserController@login');  //前台用户登入
 Route::post('users/doLogin','Home\UserController@doLogin');  //前台登入处理
 Route::resource('/users','Home\UserController');  //前台用户路由
 Route::resource('workss','Home\WorksController'); //前台文章路由
-
-
-
+Route::resource('usersinfo','Home\UserinfoController'); //前台用户详情路由
+Route::resource('userEmail','Home\EmailController'); //前台用户邮箱注册路由
+Route::resource('userPhone','Home\PhoneController'); //前台用户邮箱注册路由
 
 
 
@@ -158,7 +158,7 @@ Route::resource('workss','Home\WorksController'); //前台文章路由
 // 杨玉龙 结束
 // 王佳琦 开始    //215 结束
 //友情链接路由
-Route::resource('admin/links','Admin\LinksController');
+Route::resource('/links','Admin\LinksController');
 
 
 

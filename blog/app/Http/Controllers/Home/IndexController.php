@@ -21,6 +21,7 @@ class IndexController extends Controller
      */
     public function index()
     {
+        // dd(session('home'));
         return view('Home.Index.index',['title'=>'哈哈商城']);
     }
 

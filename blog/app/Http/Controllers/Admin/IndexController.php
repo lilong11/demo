@@ -5,9 +5,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Users;
-use Illuminate\Support\Facades\Auth;
-use DB;
-    
+use Illuminate\Support\Facades\Auth; 
+use DB; 
 class IndexController extends Controller
 {
     public function login()
@@ -16,8 +15,7 @@ class IndexController extends Controller
     }
 
     public function doLogin(Request $request)
-    {
-
+    {  
         $uname = $request['uname'];
         $password = $request['password'];  
 
@@ -34,8 +32,16 @@ class IndexController extends Controller
         }else{
             $request->flashOnly('uname');
              echo '<script>alert("登入失败!密码错误");location="/login"</script>';
-        }
-        
+        } 
+        $uname = $request['uname'];
+        $password = $request['password']; 
+         // dd($uname);
+        if (Auth::attempt(['uname' => $uname, 'password' => $password])) { 
+            session(['admin'=>$uname]);
+            return redirect('admin')->with('success','登入成功');
+        }else{
+            return redirect('login')->with('errors','登入失败');
+        } 
     }
 
     public function exit()
@@ -65,8 +71,8 @@ class IndexController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    { 
+
     }
 
     /**
@@ -76,8 +82,8 @@ class IndexController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {  
+
     }
 
     /**
