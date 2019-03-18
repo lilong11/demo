@@ -18,7 +18,7 @@
     <div class="login-logo"><h1>账号登录</h1></div>
     <div class="login-box" style="width:600px;height:560px;">
 
-        <form class="layui-form layui-form-pane" action="/login/dologin" method="post" >
+        <form class="layui-form layui-form-pane" action="/users/doLogin" method="post" >
                           
                           {{ csrf_field() }}
                           <h3><a href=""><i class="iconfont">&#xe6b8;</i> 手机号登入</a></h3>

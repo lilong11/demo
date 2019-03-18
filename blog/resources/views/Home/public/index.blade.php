@@ -4,9 +4,6 @@
 	<meta charset="utf-8">
 
 	<title>{{$title or '商城' }}</title>
-	<meta name="description" content="">
-
-
 	<!-- Favicon -->
 	<link rel="shortcut icon" type="image/x-icon" href="./home_public/img/favicon.ico">
 	
@@ -121,7 +118,7 @@
 					<div class="header-account-login float-right">
 						<!-- 右边模块 -->
 						<ul class="header-acc float-left">
-							<li><a href="#">个人中心<i class="zmdi zmdi-chevron-down"></i></a>
+							<li><a href="/users">个人中心<i class="zmdi zmdi-chevron-down"></i></a>
 								<ul class="top-sub-menu sub-menu-right">
 									<li><a href="#">个人中心</a></li> 
 									<li><a href="#">我的收藏</a></li>  
@@ -129,8 +126,9 @@
 							</li>
 						</ul>
 						<!-- 登入 -->
+					 
 						<div class="header-login float-left text-center">
-							<a href="#">登入 <i class="zmdi zmdi-chevron-down"></i></a>
+							<a href="#"> <i class="zmdi zmdi-chevron-down"></i></a>
 							<div class="header-login-opt top-sub-menu sub-menu-right">
 								<h5>登入 或 注册</h5>
 								<a class="button small" href="users/login">登入</a>
@@ -138,6 +136,10 @@
 								<a class="button small transparent" href="/users/create">立即注册</a>
 							</div>
 						</div>
+
+
+
+
 					</div>
 				</div>
 			</div>
@@ -295,7 +297,7 @@
 			<div class="col-xs-12">
 				<ul class="breadcrumbs">
 					<li><a href="/">家</a></li>
-					<li><span>文章详情</span></li>
+					<li><span>{{$title or '列表' }}</span></li>
 				</ul>
 			</div>
 		</div>
@@ -320,8 +322,7 @@
 <div class="brand-area">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12">
-<<<<<<< HEAD
+			<div class="col-xs-12"> 
 				<!-- Product Slider -->
 				<div class="blog-slider">
 					<!-- Single blog -->
@@ -438,8 +439,7 @@
 				<!-- Service Content -->
 				<div class="content fix">
 					<h3>退款保证</h3>
-					<p>Lorem ipsum虚拟文本到这里</p>
-=======
+					<p>Lorem ipsum虚拟文本到这里</p> 
 				<div class="brand-slider">
 					<div class="sin-brand"><img src="home_public/img/brands/1.png" alt="" /></div>
 					<div class="sin-brand"><img src="home_public/img/brands/2.png" alt="" /></div>
@@ -450,8 +450,7 @@
 					<div class="sin-brand"><img src="home_public/img/brands/7.png" alt="" /></div>
 					<div class="sin-brand"><img src="home_public/img/brands/8.png" alt="" /></div>
 					<div class="sin-brand"><img src="home_public/img/brands/9.png" alt="" /></div>
-					<div class="sin-brand"><img src="home_public/img/brands/10.png" alt="" /></div>
->>>>>>> origin/ll
+					<div class="sin-brand"><img src="home_public/img/brands/10.png" alt="" /></div> 
 				</div>
 			</div>
 		</div>

@@ -30,7 +30,6 @@
 
                   </div>
                 </div> 
-                <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button><button class="layui-btn" onclick="level_add('添加用户','user/create','','600','300')"><i class="layui-icon"></i>添加</button><span class="x-right"> {{ $arr->links() }}</span></xblock>
              	<table class="layui-table"> 
 
              	<table class="layui-table"  style="text-align: center;"> 
@@ -40,32 +39,21 @@
 	                            <input type="checkbox" name="" value="">
 	                        </th>
 	                        <th  style="text-align: center;">
-	                            ID
+	                            编号
 	                        </th>
 	                        <th  style="text-align: center;">
 	                            用户名
 	                        </th> 
-	                        <th>
-	                            用户等级
-	                        </th>
-	                      	<th>
-	                            用户状态
-	                        </th>	                      	
-
-							<th> 
 	                        <th  style="text-align: center;">
 	                            用户等级
-	                        </th>
-	                      	<th  style="text-align: center;">
+	                        </th> 
+	                      	<th style="text-align: center;">
 	                            用户状态
-	                        </th>	                      	
+	                        </th>
 
 							<th  style="text-align: center;"> 
 	                            添加时间
-	                        </th>
-	                        <th  style="text-align: center;">
-	                            修改时间
-	                        </th>
+	                        </th> 
 	                        <th  style="text-align: center;">
 	                            操作
 	                        </th>
@@ -97,8 +85,9 @@
 	                           			超级管理员
 	                           		@break
 	                           	@endswitch
-	                        </td>
-	                        <td>
+	                        </td> 
+	                        <td> 
+	                        <td>  
 	                            @switch($k -> status) 
 	                           		@case(0)
 	                           			使用中
@@ -111,12 +100,9 @@
 
 	                        <td>
 	                            {{$k -> created_at }}
-	                        </td>
-	                        <td>
-	                            {{$k -> updated_at }}
-	                        </td>
+	                        </td> 
 	                        <td class="td-manage">
-	                            <a title="编辑" href="user/{{$k -> id}}/edit" style="text-decoration:none">
+	                            <a  class="list" title="编辑" href="user/{{$k -> id}}/edit" style="text-decoration:none">
 	                                <i class="layui-icon"></i>
 	                            </a>
 	                            <a title="用户详情" href="javascript:;" onclick="level_edit('用户详情','level-edit.html','4','','300')" style="text-decoration:none">
@@ -133,7 +119,7 @@
 					    @endforeach
 	                </tbody>
 	            </table>
-                <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button><button class="layui-btn" onclick="level_add('添加用户','user/create','','600','300')"><i class="layui-icon"></i>添加</button>
+                <xblock> 
 	            <!-- 分页 -->
 	            <span class="x-right"> <div class="page_page" style="padding-bottom: 0px;"> {{ $arr->links() }} </div> </span>
 

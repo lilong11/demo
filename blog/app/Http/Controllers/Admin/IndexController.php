@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
+use App\Http\Controllers\Controller;  
+use Illuminate\Support\Facades\Hash;
+use App\Models\Users;
+use Illuminate\Support\Facades\Auth; 
 class IndexController extends Controller
 {
     /**
@@ -24,8 +26,16 @@ class IndexController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    { 
+        $uname = $request['uname'];
+        $password = $request['password']; 
+         // dd($uname);
+        if (Auth::attempt(['uname' => $uname, 'password' => $password])) { 
+            session(['admin'=>$uname]);
+            return redirect('admin')->with('success','登入成功');
+        }else{
+            return redirect('login')->with('errors','登入失败');
+        } 
     }
 
     /**
@@ -35,8 +45,8 @@ class IndexController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    { 
+
     }
 
     /**
@@ -46,8 +56,16 @@ class IndexController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    { 
+        if(empty(session('admin'))){
+            return redirect('login');exit;
+        }
+    	// 统计用户个数
+    	// $user = Users::all();
+    	// $usernum = count($user); 
+        $admin = session('admin');
+        // session()->forget('admin');
+    	return view('Admin.Index.index',['title'=>'商城后台首页']); 
     }
 
     /**
