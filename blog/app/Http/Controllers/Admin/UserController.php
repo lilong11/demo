@@ -11,16 +11,6 @@ use App\Models\Usersinfos;
 use DB;
 class UserController extends Controller
 {
-
-    // 测试无刷新分页
-    public function demo()
-    {
-        dump(1213);
-    }
-
-
-
-
     /**
      * Display a listing of the resource.
      *
@@ -28,22 +18,23 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
+        // dump(123);
         // 接收搜索的关键字
         $search = $request->input('search','');
 
-        // 接收 搜索的 显示条数
+        // // 接收 搜索的 显示条数
         $count = $request->input('count',5);
 
         $user = new Users;
 
         $arr = $user->where('uname','like','%'.$search.'%')->paginate($count);
 
-        // $grade = 2;
-        // 统计用户个数
+        // // $grade = 2;
+        // // 统计用户个数
         $vip =  count($user->where([ 'grade' => 1 ])->get());
         $common =  count($user->where([ 'grade' => 0 ])->get());
         $root =  count($user->where([ 'grade' => 2 ])->get()); 
-        // dd($vip);
+        // // dd($vip);
         return view('Admin.User.index',['title'=>'用户列表','count'=>$count,'search'=>$search,'arr'=>$arr,'vip'=>$vip,'common'=>$common,'root'=>$root]);
     }
 

@@ -13,7 +13,7 @@
         <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
         <ul class="layui-nav right" lay-filter="">
           <li class="layui-nav-item">
-            <a href="javascript:;">admin</a>
+            <a href="javascript:;">{{session('admin')}}</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
               <dd><a href="">个人信息</a></dd>
               <dd><a href="/login">切换帐号</a></dd>
@@ -77,7 +77,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="admin/links/create">
+                            <a href="/links/create">
                                 <i class="iconfont">&#xe6a7;</i>
                                 友情链接添加
                             </a>

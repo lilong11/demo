@@ -5,15 +5,8 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-
-class IndexController extends Controller
+class UserinfoController extends Controller
 {
-
-
-
-
-
-
     /**
      * Display a listing of the resource.
      *
@@ -21,8 +14,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        // dd(session('home'));
-        return view('Home.Index.index',['title'=>'哈哈商城']);
+        dump('userinfo index');
     }
 
     /**
@@ -32,7 +24,7 @@ class IndexController extends Controller
      */
     public function create()
     {
-        return view('Home.Users.create',['title'=>'哈哈商城注册']);
+        return view('home.users.userinfo');
     }
 
     /**
@@ -43,7 +35,25 @@ class IndexController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->file('pic');
+        // dump($data);
+        $file_name = $data->store('userinfo');
+        // echo $file_name;
+        if($file_name){
+            $arr = [
+                'path' => $file_name,
+                'msg' => 'success'
+            ];
+        }else{
+            $arr = [
+                'path' => '',
+                'msg' => 'error'
+            ];
+        }
+
+        echo json_encode($arr);
+          // $pic = $request->file('pic'); 
+          // dump($pic->store('userinfo'));
     }
 
     /**

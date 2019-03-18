@@ -4,16 +4,9 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-
-class IndexController extends Controller
+use DB;
+class EmailController extends Controller
 {
-
-
-
-
-
-
     /**
      * Display a listing of the resource.
      *
@@ -21,8 +14,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        // dd(session('home'));
-        return view('Home.Index.index',['title'=>'哈哈商城']);
+        //
     }
 
     /**
@@ -32,7 +24,7 @@ class IndexController extends Controller
      */
     public function create()
     {
-        return view('Home.Users.create',['title'=>'哈哈商城注册']);
+        return view('Home.users.email',['title'=>'邮箱注册']);
     }
 
     /**
@@ -43,7 +35,20 @@ class IndexController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->password != $request->repassword){ 
+            echo "<script>alert('登入的俩次密码不一致');location='/userEmail/create'</script>";exit;
+        } 
+
+        $data = $request->except('_token','repassword');  
+        // dd($data);
+        $bool = DB::table('users')->insert($data);
+
+        if($bool){ 
+            echo "<script>alert('添加成功');location='/'</script>";exit;
+        }else{
+            echo "<script>alert('添加失败');location='/userEmail/create'</script>";exit;
+        }
+        // dump($request->except('_token'));
     }
 
     /**
