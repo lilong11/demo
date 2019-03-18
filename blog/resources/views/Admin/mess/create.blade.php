@@ -6,18 +6,31 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-	<script type="text/javascript" src="/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+
+	<!-- 继承样式开始 -->
+            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+            <link rel="stylesheet" href="/Admin_public/css/font.css">
+            <link rel="stylesheet" href="/Admin_public/css/xadmin.css">
+            <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+            <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+            <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+            <script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
+            <script type="text/javascript" src="/Admin_public/js/xadmin.js"></script> 
+	<!-- 样式结束 -->
+
+	<link rel="stylesheet" type="text/css" href="/boot/css/bootstrap.min.css">
+	<script type="text/javascript" src="/boot/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/boot/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form  action="/mess" method="post" enctype="multipart/form-data" style="width:600px;margin:100px auto;" >
+<form  action="/admin/mess" method="post"  style="width:600px;margin:100px auto;" >
 {{ csrf_field() }}
 	<div class="center-block">
 	<div class="form-group ">
 		<label for="text"><h3>留言内容</h3></label>
 		<!-- <input type="text" name="text" class="form-control "  id="text" placeholder="请填写内容"> -->
-		<textarea class="form-control" rows="5"></textarea>
+		<textarea name="mess" class="form-control" rows="5"></textarea>
 	</div>
 
 	<!-- <div class="form-group">

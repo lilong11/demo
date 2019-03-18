@@ -104,7 +104,8 @@ Route::resource('userPhone','Home\PhoneController'); //前台用户邮箱注册�
  Route::get('/adv/delete/{id}','Admin\AdvController@delete');
  Route::resource('/adv','Admin\AdvController');
  //留言路由
- Route::resource('/mess','Admin\MessController');   
+  Route::get('/admin/mess/delete/{id}','Admin\MessController@delete');
+ Route::resource('/admin/mess','Admin\MessController');   
 
 
 

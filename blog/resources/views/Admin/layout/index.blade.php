@@ -163,13 +163,13 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="current">
-                            <a href="">
+                            <a href="/admin/mess">
                                 <i class="iconfont">&#xe6a7;</i>
                                 留言列表
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="/admin/mess/create">
                                 <i class="iconfont">&#xe6a7;</i>
                                 留言添加
                             </a>
@@ -284,17 +284,17 @@
     <div class="bg-changer">
         <div class="swiper-container changer-list">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/a.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/b.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/c.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/d.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/e.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/f.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/g.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/h.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/i.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/j.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/k.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/a.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/b.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/c.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/d.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/e.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/f.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/g.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/h.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/i.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/j.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/k.jpg" alt=""></div>
                 <div class="swiper-slide"><span class="reset">初始化</span></div>
             </div>
         </div>

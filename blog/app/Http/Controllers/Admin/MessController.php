@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\mess;
+
 
 class MessController extends Controller
 {
@@ -12,10 +14,23 @@ class MessController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public  function delete($id){
+           $bool = mess::destroy($id);
+            // dump($bool);
+            if($bool){
+
+            return redirect('admin/mess')->with('success','留言删除成功');
+        }else{
+
+            return redirect('admin/mess')->with('error','留言删除失败');
+        }
+    }
+
     public function index(Request $request)
     {
-        $request->all();
-        dump('我是留言首页');
+
+        $mess = mess::all();
+        return view('Admin/mess/index',['mess'=>$mess]);
     }
 
     /**
@@ -25,7 +40,6 @@ class MessController extends Controller
      */
     public function create()
     {
-        dump('留言闯你妈的头');
         return view('Admin/mess/create',['title'=>'添加留言']);
     }
 
@@ -37,7 +51,15 @@ class MessController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dump($request->all());
+        $mess = new Mess;
+        $mess->mess = $request->input('mess','');
+        $bool = $mess->save();
+        if($bool){ 
+            return redirect('admin/mess')->with('success','添加成功');
+         }else{ 
+            return redirect('admin/mess')->with('error','添加失败');
+         }
     }
 
     /**
@@ -59,7 +81,10 @@ class MessController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mess = new mess;
+        $v = $mess::find($id);
+        return view('Admin/mess/edit',['v'=>$v,'title'=>'留言修改']);
+
     }
 
     /**
@@ -71,7 +96,16 @@ class MessController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dump($id);
+        $mess = new mess;
+        $v = $mess->find($id);
+        $v->mess = $request->input('mess','');
+        $bool = $v->save();
+        if($bool){ 
+            return redirect('admin/mess')->with('success','修改成功');
+         }else{ 
+            return redirect('admin/mess')->with('error','修改失败');
+         }
     }
 
     /**
