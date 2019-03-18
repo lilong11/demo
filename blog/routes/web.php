@@ -54,13 +54,14 @@ Route::resource('/works','Admin\WorksController');   //后台文章
 Route::get('/issue/delete/{id}','Admin\IssueController@delete');  //后台问题删除
 Route::resource('/issue','Admin\IssueController');   //后台问题
 // 前台用户路由 
+Route::get('usersexit','Home\UserController@exit');  //前台用户退出
 Route::get('users/login','Home\UserController@login');  //前台用户登入
 Route::post('users/doLogin','Home\UserController@doLogin');  //前台登入处理
 Route::resource('/users','Home\UserController');  //前台用户路由
 Route::resource('workss','Home\WorksController'); //前台文章路由
 Route::resource('usersinfo','Home\UserinfoController'); //前台用户详情路由
 Route::resource('userEmail','Home\EmailController'); //前台用户邮箱注册路由
-Route::resource('userPhone','Home\PhoneController'); //前台用户邮箱注册路由
+Route::resource('userPhone','Home\PhoneController'); //前台用户手机号注册路由
 
 
 

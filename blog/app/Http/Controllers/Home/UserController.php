@@ -33,8 +33,6 @@ class UserController extends Controller
         }
     }
 
-
-
     public function index()
     {
         $works = new works; //查文章表
@@ -81,25 +79,8 @@ class UserController extends Controller
             return redirect('/users/create')->with('errors','注册失败');
         }
   
-    }
+    } 
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        dump('show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         dump('edit');
@@ -127,4 +108,11 @@ class UserController extends Controller
     {
         dump('destroy');
     }
+
+    public function exit()
+    {
+        session()->forget('home');
+        return view('Home.Index.index',['title'=>'哈哈商城']);
+    }
+
 }

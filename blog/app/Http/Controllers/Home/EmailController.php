@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use DB;
+use DB; 
+use App\Models\Users;
+
 class EmailController extends Controller
 {
     /**
@@ -36,13 +38,14 @@ class EmailController extends Controller
     public function store(Request $request)
     {
         if($request->password != $request->repassword){ 
+             $request->flashOnly('email');
             echo "<script>alert('登入的俩次密码不一致');location='/userEmail/create'</script>";exit;
         } 
 
-        $data = $request->except('_token','repassword');  
-        // dd($data);
-        $bool = DB::table('users')->insert($data);
-
+        $user = new Users; 
+        $user->email = $request->input('email','');
+        $user->password = $request->input('password',0);  
+        $bool = $user->save();
         if($bool){ 
             echo "<script>alert('添加成功');location='/'</script>";exit;
         }else{

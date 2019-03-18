@@ -114,7 +114,20 @@
 							</div>
 						</div>
 					</div>
-					<!-- Header Account Login -->
+					<!-- 登入显示开始 -->
+					@if(empty(session('home')))
+					<div class="header-account-login float-right">  
+						<div class="header-login float-left text-center">
+							<a href="#">登入 <i class="zmdi zmdi-chevron-down"></i></a>
+							<div class="header-login-opt top-sub-menu sub-menu-right">
+								<h5>登入 或 注册</h5>
+								<a class="button small" href="users/login">登入</a>
+								<span>or</span>
+								<a class="button small transparent" href="/users/create">立即注册</a>
+							</div>
+						</div>
+					</div>
+					@else
 					<div class="header-account-login float-right">
 						<!-- 右边模块 -->
 						<ul class="header-acc float-left">
@@ -125,22 +138,18 @@
 								</ul>
 							</li>
 						</ul>
-						<!-- 登入 -->
-					 
-						<div class="header-login float-left text-center">
-							<a href="#"> <i class="zmdi zmdi-chevron-down"></i></a>
-							<div class="header-login-opt top-sub-menu sub-menu-right">
-								<h5>登入 或 注册</h5>
-								<a class="button small" href="users/login">登入</a>
-								<span>or</span>
-								<a class="button small transparent" href="/users/create">立即注册</a>
-							</div>
-						</div>
-
-
-
-
+						<!-- 登入 --> 
+						<ul class="header-acc float-left">
+							<li><a href="/users"> <span style="color:red;">{{session('home')}}</span><i class="zmdi zmdi-chevron-down"></i></a>
+								<ul class="top-sub-menu sub-menu-right">
+									<li><a href="usersexit">退出登入</a></li> 
+								</ul>
+							</li>
+						</ul>
 					</div>
+					@endif	
+					<!-- 登入显示结束 -->
+
 				</div>
 			</div>
 		</div>
