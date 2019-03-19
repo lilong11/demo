@@ -24,13 +24,13 @@
 	<script type="text/javascript" src="/boot/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form  action="/admin/mess" method="post"  style="width:600px;margin:100px auto;" >
+<form  action="/admin/notice" method="post"  style="width:600px;margin:100px auto;" >
 {{ csrf_field() }}
 	<div class="center-block">
 	<div class="form-group ">
-		<label for="text"><h3>留言内容</h3></label>
+		<label for="text"><h3>公告内容</h3></label>
 		<!-- <input type="text" name="text" class="form-control "  id="text" placeholder="请填写内容"> -->
-		<textarea name="mess" class="form-control" rows="5"></textarea>
+		<textarea name="notice" class="form-control" rows="5"></textarea>
 	</div>
 
 	<!-- <div class="form-group">

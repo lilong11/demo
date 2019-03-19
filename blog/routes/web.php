@@ -105,8 +105,20 @@ Route::resource('workss','Home\WorksController'); //前台文章路由
  Route::get('/adv/delete/{id}','Admin\AdvController@delete');
  Route::resource('/adv','Admin\AdvController');
  //留言路由
- Route::resource('/mess','Admin\MessController');   
-
+  Route::get('/admin/mess/delete/{id}','Admin\MessController@delete');
+ Route::resource('/admin/mess','Admin\MessController');   
+ //公告路由
+ Route::get('/admin/notice/delete/{id}','Admin\NoticeController@delete');
+ Route::resource('/admin/notice','Admin\NoticeController');
+ //意见
+ Route::get('/admin/opinion/delete/{id}','Admin\OpinionController@delete');
+ Route::resource('/admin/opinion','Admin\OpinionController');
+ //投资人
+Route::get('/admin/investor/delete/{id}','Admin\InvestorController@delete');
+Route::resource('/admin/investor','Admin\InvestorController');
+ //商品举报
+ Route::get('/admin/report/delete/{id}','Admin\ReportController@delete');
+ Route::resource('/admin/report','Admin\ReportController');
 
 
 

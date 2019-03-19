@@ -24,13 +24,14 @@
 	<script type="text/javascript" src="/boot/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form  action="/admin/mess" method="post"  style="width:600px;margin:100px auto;" >
+<form  action="/admin/notice/{{$notice->id}}" method="post"  style="width:600px;margin:100px auto;" >
 {{ csrf_field() }}
+{{ method_field('PUT')}}
 	<div class="center-block">
 	<div class="form-group ">
-		<label for="text"><h3>留言内容</h3></label>
+		<label for="text"><h3>公告内容</h3></label>
 		<!-- <input type="text" name="text" class="form-control "  id="text" placeholder="请填写内容"> -->
-		<textarea name="mess" class="form-control" rows="5"></textarea>
+		<textarea name="notice" class="form-control" rows="5">{{$notice->notice}}</textarea>
 	</div>
 
 	<!-- <div class="form-group">
@@ -39,7 +40,7 @@
 	</div> -->
 	
 	<!-- <input class=" form-conrtol" type="button" name="" value="" placeholder="">提交 -->
-	<button type="submit " class="btn btn-info form-control">提交</button>
+	<button type="submit " class="btn btn-info form-control">确认修改</button>
 	</div>
 </form>
 </body>

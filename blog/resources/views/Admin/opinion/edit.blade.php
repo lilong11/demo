@@ -24,13 +24,20 @@
 	<script type="text/javascript" src="/boot/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form  action="/admin/mess" method="post"  style="width:600px;margin:100px auto;" >
+<form  action="/admin/opinion/{{$opinion->id}}" method="post"  style="width:600px;margin:100px auto;" >
 {{ csrf_field() }}
+{{ method_field('PUT')}}
 	<div class="center-block">
 	<div class="form-group ">
-		<label for="text"><h3>留言内容</h3></label>
-		<!-- <input type="text" name="text" class="form-control "  id="text" placeholder="请填写内容"> -->
-		<textarea name="mess" class="form-control" rows="5"></textarea>
+		<h4>姓名:</h4>	<input value="{{ $opinion->name }}" type="text" name="name" class="form-control "  id="text" placeholder="请填写真实姓名">
+	</div>	
+	<div class="form-group ">
+		<h4>手机号:</h4>	<input value="{{ $opinion->phone }}" type="text" name="phone" class="form-control "  id="text" placeholder="请填写正确11位手机号">
+	</div>
+	<div class="form-group ">
+		<label for="text"><h4>意见内容</h4></label>
+	
+		<textarea name="content" class="form-control" rows="5">{{ $opinion->content }}</textarea>
 	</div>
 
 	<!-- <div class="form-group">
