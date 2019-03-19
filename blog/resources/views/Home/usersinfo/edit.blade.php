@@ -2,8 +2,8 @@
 
 	@section('content') 
 		<div class="comment-form fix">
-			<h2>LEAVE A COMMENT</h2>
-			<form action="#">
+			<h2>资料修改</h2>
+			<form action="" >
 				<div class="input-box transparent"><input type="text" placeholder="Name*"></div>
 				<div class="input-box transparent"><input type="text" placeholder="Email*"></div>
 				<div class="input-box transparent"><input type="text" placeholder="Subject"></div>

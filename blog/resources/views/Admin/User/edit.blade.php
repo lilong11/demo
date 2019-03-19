@@ -24,8 +24,6 @@
                                 </div>
                             @endif
                             <!-- 右侧内容框架，更改从这里开始 --> 
-                            <form class="layui-form" action="/user" method="post">
-                                {{ csrf_field() }}
                                 <div class="layui-form-item"> 
                             <form class="layui-form" action="/user/{{$data -> id}}" method="post">
                                 {{ csrf_field() }}
