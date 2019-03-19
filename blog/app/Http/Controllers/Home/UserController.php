@@ -16,33 +16,46 @@ class UserController extends Controller
 {
     public function login()
     {
-        // dump(123);
         return view('Home.users.login',['title'=>'账号登入']);
     }
 
     public function dologin(Request $request)
     {
         $uname = $request['uname'];
-        $password = $request['password']; 
-         // dd($uname);
-        if (Auth::attempt(['uname' => $uname, 'password' => $password])) { 
-            session(['home'=>$uname]);
-            return redirect('/')->with('success','登入成功');
-        }else{
-            return redirect('/users/login')->with('errors','登入失败');
+        $password = $request['password'];     
+        // 判断用户是否在数据库中存在
+        if (Auth::attempt(['uname' => $uname, 'password' => $password])) {  
+
+            $data = DB::table('users')->where('uname',$uname)->get();
+            // 遍历查出来的用户id
+            foreach($data as $k){
+                $id = $k->id; 
+            }
+
+             session(['uid'=>$id]);
+             session(['home'=>$uname]);
+             echo '<script>alert("登入成功.");location="/"</script>';
+        }else{ 
+            $request->flashOnly('uname');// 闪存用户名
+             echo '<script>alert("登入失败!请检查密码是否正确");location="/users/login"</script>'; 
         }
+
     }
 
     public function index()
     {
-        $works = new works; //查文章表
-        $data = $works->all();  
+        $work = new works; //查文章表
+        $works = $work->all();  
 
 
-        $issues = new Issues; //查文章表
-        $datas = $issues->all(); 
+        $issue = new Issues; //查问题表
+        $issues = $issue->all();   
 
-        return view('Home.users.info',['title'=>'个人中心','data'=>$data,'datas'=>$datas]);
+        $id = session('uid');
+        $user = new Users;
+        $users = $user->find($id); 
+        $userInfo = $users->userinfo;
+        return view('Home.users.info',['title'=>'个人中心','works'=>$works,'issues'=>$issues,'userInfo'=>$userInfo,'users'=>$users]);
     }
 
     /**
@@ -109,9 +122,11 @@ class UserController extends Controller
         dump('destroy');
     }
 
+    // 用户退出
     public function exit()
     {
         session()->forget('home');
+        session()->forget('uid');
         return view('Home.Index.index',['title'=>'哈哈商城']);
     }
 

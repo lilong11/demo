@@ -1,19 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Home;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-
-class IndexController extends Controller
+class UserinfoController extends Controller
 {
-
-
-
-
-
-
     /**
      * Display a listing of the resource.
      *
@@ -21,9 +14,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        // dd(session('home'));
-        // dd(session('uid'));
-        return view('Home.Index.index',['title'=>'哈哈商城']);
+        return view('Admin.User.index',['title'=>'用户列表']);
     }
 
     /**
@@ -33,7 +24,7 @@ class IndexController extends Controller
      */
     public function create()
     {
-        return view('Home.Users.create',['title'=>'哈哈商城注册']);
+        //
     }
 
     /**

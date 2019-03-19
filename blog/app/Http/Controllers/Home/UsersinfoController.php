@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Controller; 
+use App\Models\works;
+use App\Models\Issues;
 
-class UserinfoController extends Controller
+class UsersinfoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,7 @@ class UserinfoController extends Controller
      */
     public function index()
     {
-        dump('userinfo index');
+        dump('index');
     }
 
     /**
@@ -24,7 +26,7 @@ class UserinfoController extends Controller
      */
     public function create()
     {
-        return view('home.users.userinfo');
+        dump('create');
     }
 
     /**
@@ -35,25 +37,7 @@ class UserinfoController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->file('pic');
-        // dump($data);
-        $file_name = $data->store('userinfo');
-        // echo $file_name;
-        if($file_name){
-            $arr = [
-                'path' => $file_name,
-                'msg' => 'success'
-            ];
-        }else{
-            $arr = [
-                'path' => '',
-                'msg' => 'error'
-            ];
-        }
-
-        echo json_encode($arr);
-          // $pic = $request->file('pic'); 
-          // dump($pic->store('userinfo'));
+        dump('store');
     }
 
     /**
@@ -64,7 +48,7 @@ class UserinfoController extends Controller
      */
     public function show($id)
     {
-        //
+        dump('show');
     }
 
     /**
@@ -75,7 +59,15 @@ class UserinfoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $work = new works; //查文章表
+        $works = $work->all();  
+
+
+        $issue = new Issues; //查问题表
+        $issues = $issue->all();   
+
+
+        return view('Home.usersinfo.edit',['title'=>'用户资料修改','works'=>$works,'issues'=>$issues]);
     }
 
     /**
