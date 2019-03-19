@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Home;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use DB; 
-use App\Models\Users;
 
-class EmailController extends Controller
+class UserinfoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,7 @@ class EmailController extends Controller
      */
     public function index()
     {
-        //
+        return view('Admin.User.index',['title'=>'用户列表']);
     }
 
     /**
@@ -26,7 +24,7 @@ class EmailController extends Controller
      */
     public function create()
     {
-        return view('Home.users.email',['title'=>'邮箱注册']);
+        //
     }
 
     /**
@@ -37,21 +35,7 @@ class EmailController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->password != $request->repassword){ 
-             $request->flashOnly('email');
-            echo "<script>alert('登入的俩次密码不一致');location='/userEmail/create'</script>";exit;
-        } 
-
-        $user = new Users; 
-        $user->email = $request->input('email','');
-        $user->password = $request->input('password',0);  
-        $bool = $user->save();
-        if($bool){ 
-            echo "<script>alert('添加成功');location='/'</script>";exit;
-        }else{
-            echo "<script>alert('添加失败');location='/userEmail/create'</script>";exit;
-        }
-        // dump($request->except('_token'));
+        //
     }
 
     /**

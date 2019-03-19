@@ -27,7 +27,7 @@
                           <div class="layui-form-item">
                               <label class="layui-form-label login-form" style="width:90px;width:90px;height:32px"><i class="iconfont">&#xe6b8;</i></label>
                               <div class="layui-input-inline login-inline">
-                                <input type="text" name="uname" lay-verify="required" placeholder="请输入你的帐号" autocomplete="off" class="layui-input " style="width:480px;height:50px">
+                                <input type="text" name="uname" lay-verify="required"  value="{{ old('uname') }}" placeholder="请输入你的帐号" autocomplete="off" class="layui-input " style="width:480px;height:50px">
                               </div>
                           </div>
 
