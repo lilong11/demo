@@ -111,6 +111,29 @@
                 <li class="list">
                     <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
+                        优惠券管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li  class="current">
+                            <a href=" ">
+                                <i class="iconfont">&#xe6a7;</i>
+                                优惠券列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href=" ">
+                                <i class="iconfont">&#xe6a7;</i>
+                                优惠券添加
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i>
                         友情链接管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
@@ -190,14 +213,7 @@
                                 <i class="iconfont">&#xe6a7;</i>
                                 分类列表
                             </a>
-                        </li>
-                        <li>
-                            <a href="/issue/create">
-                                <i class="iconfont">&#xe6a7;</i>
-                                分类添加
-                            </a>
-                        </li>
-
+                        </li>  
                     </ul>
                 </li>
 
@@ -213,13 +229,7 @@
                                 <i class="iconfont">&#xe6a7;</i>
                                 商品列表
                             </a>
-                        </li>
-                        <li>
-                            <a href="/goods/store">
-                                <i class="iconfont">&#xe6a7;</i>
-                                商品添加
-                            </a>
-                        </li>
+                        </li> 
 
                     </ul>
                 </li>
@@ -236,13 +246,7 @@
                                 <i class="iconfont">&#xe6a7;</i>
                                 轮播图列表
                             </a>
-                        </li>
-                        <li>
-                            <a href="/issue/create">
-                                <i class="iconfont">&#xe6a7;</i>
-                                轮播图添加
-                            </a>
-                        </li>
+                        </li> 
 
                     </ul>
                 </li>

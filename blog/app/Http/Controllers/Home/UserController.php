@@ -55,6 +55,7 @@ class UserController extends Controller
         $user = new Users;
         $users = $user->find($id); 
         $userInfo = $users->userinfo;
+        // dd($users);
         return view('Home.users.info',['title'=>'个人中心','works'=>$works,'issues'=>$issues,'userInfo'=>$userInfo,'users'=>$users]);
     }
 

@@ -59,18 +59,18 @@ Route::get('users/login','Home\UserController@login');  //前台用户登入
 Route::post('users/doLogin','Home\UserController@doLogin');  //前台登入处理
 Route::resource('/users','Home\UserController');  //前台用户路由
 
+Route::post('doPhone','Home\RegisterController@doPhone'); //前台用户手机号注册处理
+Route::get('userPhone','Home\RegisterController@phone'); //前台用户手机号注册路由
 
-Route::resource('userEmail','Home\EmailController'); //前台用户邮箱注册路由
-Route::resource('userPhone','Home\PhoneController'); //前台用户手机号注册路由
-
-Route::resource('/usersinfo','Home\UsersinfoController'); //前台用户详情修改
-// Route::post('usersinfo','Home\UserinfoController@update'); //前台用户详情处理
+Route::get('/infoEdit/{id}','Home\UserinfoController@edit'); //前台用户详情修改
+Route::post('/infoUpdate/{id}','Home\UserinfoController@update'); //前台用户详情修改处理
+Route::get('password','Home\UserinfoController@password'); //前台用户修改密码
+Route::post('doPassword/{id}','Home\UserinfoController@doPassword'); //前台用户修改密码处理
 
 
 
 
 Route::resource('workss','Home\WorksController'); //前台文章路由
-
 
 
 

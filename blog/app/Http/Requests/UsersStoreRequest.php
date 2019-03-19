@@ -26,7 +26,7 @@ class UsersStoreRequest extends FormRequest
         // 用户表单请求验证
         return [
             'uname' => 'required|regex:/^[a-zA-Z]{1}[\w]{7,15}$/',
-            'password' => 'required|regex:/^[\w]{6}$/',
+            'password' => 'required|regex:/^[\w]{6,15}$/',
             'repassword' => 'required|same:password',
             'grade' => 'required',
             'tel' => 'required|regex:/^[1]([3-9])[0-9]{9}$/',
@@ -42,7 +42,7 @@ class UsersStoreRequest extends FormRequest
             'grade.required' => '您是不是忘记选择权限了',
             'uname.regex' => '用户名格式不正确',
             'password.required' => '密码不能为空',
-            'password.regex' => '密码不能少于6位',
+            'password.regex' => '密码不能少于6-15位',
             'repassword.required' => '确认密码不能为空',
             'repassword.same' => '俩次密码不一致',
             'repassword.tel' => '手机号不能为空',
