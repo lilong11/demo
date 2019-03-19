@@ -36,8 +36,8 @@
 								</div>
 								<!-- Product Action -->
 								<div class="list-pro-action">
-									<a class="list-pro-act-btn btn-text" href="/usersinfo/{{session('uid')}}/edit" style="cursor:pointer;">修改信息</a>
-									<a class="list-pro-act-btn btn-icon" href="" style="cursor:pointer;">修改密码</a> 
+									<a class="list-pro-act-btn btn-text" href="/infoEdit/{{session('uid')}}" style="cursor:pointer;">修改信息</a>
+									<a class="list-pro-act-btn btn-icon" href="/password" style="cursor:pointer;">修改密码</a> 
 								</div>
 							</div>
 						</div>
