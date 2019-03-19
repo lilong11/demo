@@ -26,7 +26,7 @@
                           <div class="layui-form-item">
                               <label class="layui-form-label login-form" style="width:90px;"><i class="iconfont">&#xe6b8;</i></label>
                               <div class="layui-input-inline login-inline">
-                                <input type="email" name="email" lay-verify="required" placeholder="请输入你的邮箱" autocomplete="off" class="layui-input " style="width:480px;">
+                                <input type="email" name="email" lay-verify="required" value="{{ old('email') }}" placeholder="请输入你的邮箱" autocomplete="off" class="layui-input " style="width:480px;">
                               </div>
                           </div>
 

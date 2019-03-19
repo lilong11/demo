@@ -101,12 +101,10 @@
 	                            {{$k -> created_at }}
 	                        </td> 
 	                        <td class="td-manage">
-	                            <a  class="list" title="编辑" href="user/{{$k -> id}}/edit" style="text-decoration:none">
-	                                <i class="layui-icon"></i>
-	                            </a>
-	                            <a title="用户详情" href="javascript:;" onclick="level_edit('用户详情','level-edit.html','4','','300')" style="text-decoration:none">
-	                                <i class="iconfont">&#xe70b;</i>
-	                            </a>	                            
+	                            <a  class="list" title="编辑" href="user/{{$k -> id}}/edit" style="text-decoration:none"><i class="layui-icon"></i></a>
+	                            
+	                            <a title="用户详情" href="user/{{$k -> id}}/edit" style="text-decoration:none"> <i class="iconfont">&#xe70b;</i></a>	 
+
 	                            <a title="修改密码" href="javascript:;" onclick="level_edit('修改密码','level-edit.html','4','','300')" style="text-decoration:none">
 	                                <i class="iconfont">&#xe70b;</i>
 	                            </a>
