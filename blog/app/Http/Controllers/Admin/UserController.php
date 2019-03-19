@@ -25,12 +25,10 @@ class UserController extends Controller
         // // 接收 搜索的 显示条数
         $count = $request->input('count',5);
 
-        $user = new Users;
-
-        $arr = $user->where('uname','like','%'.$search.'%')->paginate($count);
-
-        // // $grade = 2;
-        // // 统计用户个数
+        $user = new Users; 
+        $arr = $user->where('uname','like','%'.$search.'%')->paginate($count); 
+        // $grade = 2;
+        // 统计用户个数 
         $vip =  count($user->where([ 'grade' => 1 ])->get());
         $common =  count($user->where([ 'grade' => 0 ])->get());
         $root =  count($user->where([ 'grade' => 2 ])->get()); 

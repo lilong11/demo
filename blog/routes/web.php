@@ -42,7 +42,7 @@ Route::resource('/','Home\IndexController');
 
 // 后台路由结束
 // lilong 开始    //101行结束
-
+Route::get('exit','Admin\IndexController@exit'); //后台退出路由
 Route::post('login/dologin','Admin\IndexController@dologin'); //处理登入路由
 Route::get('login','Admin\IndexController@login'); //后台登入路由
 Route::get('/user/delete/{id}','Admin\UserController@delete'); //后台用户删除路由
@@ -172,6 +172,8 @@ Route::resource('/admin/investor','Admin\InvestorController');
 //友情链接路由
 Route::resource('/links','Admin\LinksController');
 
+//购物车路由
+Route::resource('/cart','Home\CartController');
 
 
 

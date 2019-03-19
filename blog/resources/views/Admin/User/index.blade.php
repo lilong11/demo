@@ -84,9 +84,8 @@
 	                           		@case(2)
 	                           			超级管理员
 	                           		@break
-	                           	@endswitch
-	                        </td> 
-	                        <td> 
+	                           	@endswitch 
+	                        </td>  
 	                        <td>  
 	                            @switch($k -> status) 
 	                           		@case(0)
