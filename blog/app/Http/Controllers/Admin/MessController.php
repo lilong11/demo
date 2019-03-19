@@ -56,9 +56,9 @@ class MessController extends Controller
         $mess->mess = $request->input('mess','');
         $bool = $mess->save();
         if($bool){ 
-            return redirect('admin/mess')->with('success','添加成功');
+            return redirect('/admin/mess')->with('success','添加成功');
          }else{ 
-            return redirect('admin/mess')->with('error','添加失败');
+            return redirect('/admin/mess')->with('error','添加失败');
          }
     }
 
