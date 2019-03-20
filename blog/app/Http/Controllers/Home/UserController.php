@@ -16,7 +16,7 @@ class UserController extends Controller
 {
     public function login()
     {
-        return view('Home.users.login',['title'=>'账号登入']);
+        return view('Home.register.login',['title'=>'账号登入']);
     }
 
     public function dologin(Request $request)
@@ -55,6 +55,7 @@ class UserController extends Controller
         $user = new Users;
         $users = $user->find($id); 
         $userInfo = $users->userinfo;
+        // dd($users);
         return view('Home.users.info',['title'=>'个人中心','works'=>$works,'issues'=>$issues,'userInfo'=>$userInfo,'users'=>$users]);
     }
 

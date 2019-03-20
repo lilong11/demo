@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use DB; 
-use App\Models\Users;
-
-class EmailController extends Controller
+use App\Models\Goods;
+use DB;
+class ListController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,11 @@ class EmailController extends Controller
      */
     public function index()
     {
-        //
+
+        dump(session('home'));
+        $goods = DB::select("select * from goods");
+        dump($goods);
+        return view('Home.list.list',['goods'=>$goods]);
     }
 
     /**
@@ -26,7 +29,7 @@ class EmailController extends Controller
      */
     public function create()
     {
-        return view('Home.users.email',['title'=>'邮箱注册']);
+        //
     }
 
     /**
@@ -37,21 +40,7 @@ class EmailController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->password != $request->repassword){ 
-             $request->flashOnly('email');
-            echo "<script>alert('登入的俩次密码不一致');location='/userEmail/create'</script>";exit;
-        } 
-
-        $user = new Users; 
-        $user->email = $request->input('email','');
-        $user->password = $request->input('password',0);  
-        $bool = $user->save();
-        if($bool){ 
-            echo "<script>alert('添加成功');location='/'</script>";exit;
-        }else{
-            echo "<script>alert('添加失败');location='/userEmail/create'</script>";exit;
-        }
-        // dump($request->except('_token'));
+        //
     }
 
     /**

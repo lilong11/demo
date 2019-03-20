@@ -59,18 +59,19 @@ Route::get('users/login','Home\UserController@login');  //前台用户登入
 Route::post('users/doLogin','Home\UserController@doLogin');  //前台登入处理
 Route::resource('/users','Home\UserController');  //前台用户路由
 
+Route::get('doRegister/gain','Home\RegisterController@gain'); //前台用户手机号接收
+Route::post('doRegister','Home\RegisterController@doPhone'); //前台用户手机号注册处理
+Route::get('register','Home\RegisterController@phone'); //前台用户手机号注册路由
 
-Route::resource('userEmail','Home\EmailController'); //前台用户邮箱注册路由
-Route::resource('userPhone','Home\PhoneController'); //前台用户手机号注册路由
-
-Route::resource('/usersinfo','Home\UsersinfoController'); //前台用户详情修改
-// Route::post('usersinfo','Home\UserinfoController@update'); //前台用户详情处理
-
+Route::get('/infoEdit/{id}','Home\UserinfoController@edit'); //前台用户详情修改
+Route::post('/infoUpdate/{id}','Home\UserinfoController@update'); //前台用户详情修改处理
+Route::get('password','Home\UserinfoController@password'); //前台用户修改密码
+Route::post('doPassword/{id}','Home\UserinfoController@doPassword'); //前台用户修改密码处理
 
 
-
+Route::get('love/{id}','Home\WorksController@love');	//文章喜欢+1路由
+Route::get('issues/{id}','Home\WorksController@issue');	//问题显示路由
 Route::resource('workss','Home\WorksController'); //前台文章路由
-
 
 
 
@@ -173,12 +174,21 @@ Route::resource('/admin/investor','Admin\InvestorController');
 //友情链接路由
 Route::resource('/links','Admin\LinksController');
 
+
+//商品列表路由
+Route::resource('list','Home\ListController');
+
 //购物车路由
 Route::resource('/cart','Home\CartController');
+//添加购物车路由
+Route::get('/cart/store/{id}','Home\CartController@store'); 
 
+//购物车删除路由
+Route::get('/cart/destroy/{id}','Home\CartController@destroy'); 
 
-
-
+//购物车商品增加减少路由
+Route::get('/cart/jian/{id}/{num}','Home\CartController@jian'); 
+Route::get('/cart/jia/{id}/{num}','Home\CartController@jia'); 
 
 
 
@@ -228,7 +238,8 @@ Route::resource('/cart','Home\CartController');
 
 
 // 王佳琦 结束
-// 连柯鑫 开始   272结束 
+// 连柯鑫 开始   272结束
+// 后台开始 
 //商品列表
 Route::resource('/goods','Admin\GoodsController');
 Route::post('/goods/store','Admin\GoodsController@store');
@@ -251,14 +262,17 @@ Route::post('/rotationimg/store','Admin\RotationimgController@store');
 Route::post('/rotationimg/edit','Admin\RotationimgController@edit');
 
 
+//最新商品列表
+Route::resource('/newgoods','Admin\NewGoodsController');
+Route::post('/newgoods/store','Admin\NewGoodsController@store');
+Route::post('/newgoods/update','Admin\NewGoodsController@update');
+Route::post('/newgoods/edit','Admin\NewGoodsController@edit');
 
 
-
-
-
-
-
-
+//后台结束
+//前台开始
+//签到管理
+Route::resource('/fsignin','Home\FsigninController');
 
 
 
