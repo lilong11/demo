@@ -160,12 +160,21 @@ Route::resource('userPhone','Home\PhoneController'); //前台用户邮箱注册�
 //友情链接路由
 Route::resource('/links','Admin\LinksController');
 
+
+//商品列表路由
+Route::resource('list','Home\ListController');
+
 //购物车路由
 Route::resource('/cart','Home\CartController');
+//添加购物车路由
+Route::get('/cart/store/{id}','Home\CartController@store'); 
 
+//购物车删除路由
+Route::get('/cart/destroy/{id}','Home\CartController@destroy'); 
 
-
-
+//购物车商品增加减少路由
+Route::get('/cart/jian/{id}/{num}','Home\CartController@jian'); 
+Route::get('/cart/jia/{id}/{num}','Home\CartController@jia'); 
 
 
 
