@@ -8,8 +8,7 @@
 <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
 <script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
 <script type="text/javascript" src="/Admin_public/js/xadmin.js"></script>
-<!-- 中部开始 -->
-<div class="wrapper">
+    <!-- 中部开始 -->
 <!-- 显示错误 信息开始 -->
 @if (count($errors) > 0)
     <div class="alert alert-danger" style="width:300px;background:red;margin-left:100px;margin-top:30px;text-align:center;border-radius:15px;">
@@ -27,16 +26,14 @@
         <div class="page-content">
           <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
-            <form class="layui-form" action="/goods/edit" method="post" enctype="multipart/form-data">
+            <form class="layui-form" action="/newgoods/store" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                <input type="hidden" value="{{ $goods_data->id }}" name="id">
-                <input type="hidden" value="{{ $goods_data->pic }}" name="pic">
                 <div class="layui-form-item">
                     <label for="L_username" class="layui-form-label">
                         <span class="x-red">*</span>商品名称
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="gname" name="gname" value="{{ $goods_data->gname }}" required="" lay-verify="nikename"
+                        <input type="text" id="gname" name="gname" value="{{ old('gname') }}" required="" lay-verify="nikename"
                         autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -44,10 +41,9 @@
                     <label class="layui-form-label">商品分类</label>
                         <div class="layui-input-inline">
                         <select name="tid" value="{{ old('tid') }}">
-                            @foreach($type_data as $k=>$v)
-                                <option value="{{ $v->id }}" @if($tid == $v->id) selected @endif>{{ $v->tname }}</option>
-                             @endforeach
-                          
+                             @foreach($type_data as $k=>$v)
+                                <option value="{{ $v->id }}">{{ $v->tname }}</option>
+                          @endforeach
                         </select>
                     </div>
                 </div>
@@ -56,7 +52,7 @@
                         <span class="x-red">*</span>商品价格
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="price" name="price" value="{{ $goods_data->price }}" required="" lay-verify="nikename"
+                        <input type="text" id="price" name="price" value="{{ old('price') }}" required="" lay-verify="nikename"
                         autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -65,16 +61,8 @@
                         <span class="x-red">*</span>商品数量
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="goodsNum" name="goodsNum" value="{{ $goods_data->goodsNum }}" required="" lay-verify="nikename"
+                        <input type="text" id="goodsNum" name="goodsNum" value="{{ old('goodsNum') }}" required="" lay-verify="nikename"
                         autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label for="L_username" class="layui-form-label">
-                        <span class="x-red">*</span>商品描述
-                    </label>
-                    <div class="layui-input-block">
-                      <textarea placeholder="请输入内容" name="goodsDes" class="layui-textarea">{{ $goods_data->goodsDes }}</textarea>
                     </div>
                 </div>
                 <div class="layui-form-item">

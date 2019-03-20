@@ -1,15 +1,14 @@
 @extends('admin.layout.index')
 @section('content')
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-<link rel="stylesheet" href="/Admin_public/css/font.css">
-<link rel="stylesheet" href="/Admin_public/css/xadmin.css">
-<link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
-<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
-<script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
-<script type="text/javascript" src="/Admin_public/js/xadmin.js"></script>
-    <!-- 中部开始 -->
-    <div class="wrapper">
+            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+            <link rel="stylesheet" href="/Admin_public/css/font.css">
+            <link rel="stylesheet" href="/Admin_public/css/xadmin.css">
+            <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+            <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+            <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+            <script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
+            <script type="text/javascript" src="/Admin_public/js/xadmin.js"></script>  
+
         <!-- 右侧主体开始 -->
         <div class="page-content">
           <div class="content">
@@ -33,7 +32,7 @@
                   </div>
                 </div> 
             </form>
-            <xblock><a href="/rotationimg/create/"><button class="layui-btn" ><i class="layui-icon">&#xe608;</i>添加</button></a><span class="x-right" style="line-height:40px">共有数据：88 条</span></xblock>
+            <xblock><a href="/newgoods/create/"><button class="layui-btn" ><i class="layui-icon">&#xe608;</i>添加</button></a><span class="x-right" style="line-height:40px">共有数据：88 条</span></xblock>
             @if (session('success'))
                 <div class="btn btn-success">
                     {{ session('success') }}
@@ -50,10 +49,16 @@
                             ID
                         </th>
                         <th>
-                            轮播名
+                            最新商品名
                         </th>
                         <th>
-                            轮播图片
+                            最新商品图片
+                        </th>
+                        <th>
+                            最新商品价格
+                        </th>
+                        <th>
+                            最新商品数量
                         </th>
                         <th>
                             状态
@@ -63,7 +68,7 @@
                         </th>
                     </tr>
                 </thead>                
-                @foreach($rotationimg_data as $k=>$v)
+                @foreach($newgoods_data as $k=>$v)
                 <tbody>
                     <tr>                        
                         <td>
@@ -71,28 +76,34 @@
                         </td>
                         <td>
                             <u style="cursor:pointer" onclick="member_show('张三','member-show.html','10001','360','400')">
-                                {{ $v->sname }}
+                                {{ $v->gname }}
                             </u>
                         </td>
                         <td>
-                            <img src="/uploads/{{ $v->simg }}" alt="" width="80px">                            
+                            <img src="/uploads/{{ $v->pic }}" alt="" width="80px">                            
+                        </td>
+                        <td >
+                            {{ $v->price }}
+                        </td>
+                        <td >
+                            {{ $v->goodsNum }}
                         </td>
                         <td class="td-status">
                             <span class="layui-btn layui-btn-normal layui-btn-mini">
-                                {{ $v->status == 1 ? '已启用' : '已停用' }}
+                                {{ $v->goodsState == 1 ? '已启用' : '已停用' }}
                             </span>
                         </td>
                         <td class="td-manage">
                             <a style="text-decoration:none" onclick="member_stop(this,'10001')" href="javascript:;" title="停用">
                                 <i class="layui-icon">&#xe601;</i>
                             </a>
-                            <a title="编辑" href="/rotationimg/show?sid={{ $v->sid }}">
+                            <a title="编辑" href="/newgoods/show?id={{ $v->id }}">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>                                       
-							<form action="/rotationimg/{{ $v->sid }}" method="post">
+                            <form action="/newgoods/{{ $v->id }}" method="post">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
-                                <input type="hidden" name="simg" value="{{ $v->simg }}">
+                                <input type="hidden" name="pic" value="{{ $v->pic }}">
                                 <input type="submit" value="删除" class="btn btn-danger">
                             </form>
                         </td>
