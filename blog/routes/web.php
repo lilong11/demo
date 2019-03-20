@@ -110,13 +110,13 @@ Route::resource('workss','Home\WorksController'); //前台文章路由
  //公告路由
  Route::get('/admin/notice/delete/{id}','Admin\NoticeController@delete');
  Route::resource('/admin/notice','Admin\NoticeController');
- //意见
+ //意见路由
  Route::get('/admin/opinion/delete/{id}','Admin\OpinionController@delete');
  Route::resource('/admin/opinion','Admin\OpinionController');
- //投资人
+ //投资人路由
 Route::get('/admin/investor/delete/{id}','Admin\InvestorController@delete');
 Route::resource('/admin/investor','Admin\InvestorController');
- //商品举报
+ //商品举报路由
  Route::get('/admin/report/delete/{id}','Admin\ReportController@delete');
  Route::resource('/admin/report','Admin\ReportController');
 
