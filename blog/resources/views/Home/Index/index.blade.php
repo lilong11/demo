@@ -1291,16 +1291,12 @@
 			</div>
 		</div>
 	</div>
-</div>
->>>>>>> origin/xinxin
+</div> 
 <!-- Special Offer Area
 ============================================ -->
 
 <!-- Feature Product Area
-============================================ -->
-<<<<<<< HEAD
-
-=======
+============================================ --> 
 <div class="feature-product-area margin-bottom-90">
 	<div class="container">
 		<div class="row">
