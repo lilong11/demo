@@ -213,7 +213,8 @@ Route::resource('/links','Admin\LinksController');
 
 
 // 王佳琦 结束
-// 连柯鑫 开始   272结束 
+// 连柯鑫 开始   272结束
+// 后台开始 
 //商品列表
 Route::resource('/goods','Admin\GoodsController');
 Route::post('/goods/store','Admin\GoodsController@store');
@@ -236,14 +237,17 @@ Route::post('/rotationimg/store','Admin\RotationimgController@store');
 Route::post('/rotationimg/edit','Admin\RotationimgController@edit');
 
 
+//最新商品列表
+Route::resource('/newgoods','Admin\NewGoodsController');
+Route::post('/newgoods/store','Admin\NewGoodsController@store');
+Route::post('/newgoods/update','Admin\NewGoodsController@update');
+Route::post('/newgoods/edit','Admin\NewGoodsController@edit');
 
 
-
-
-
-
-
-
+//后台结束
+//前台开始
+//签到管理
+Route::resource('/fsignin','Home\FsigninController');
 
 
 

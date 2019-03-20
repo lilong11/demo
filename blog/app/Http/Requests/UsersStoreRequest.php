@@ -25,8 +25,8 @@ class UsersStoreRequest extends FormRequest
     {
         // 用户表单请求验证
         return [
-            'uname' => 'required|regex:/^[a-zA-Z]{1}[\w]{7,15}$/',
-            'password' => 'required|regex:/^[\w]{6}$/',
+            'uname' => 'required|regex:/^[a-zA-Z]{1}[\w]{6,15}$/',
+            'password' => 'required|regex:/^[\w]{6,15}$/',
             'repassword' => 'required|same:password',
             'grade' => 'required',
             'tel' => 'required|regex:/^[1]([3-9])[0-9]{9}$/',
