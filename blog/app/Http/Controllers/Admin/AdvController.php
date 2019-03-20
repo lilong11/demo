@@ -18,7 +18,6 @@ class AdvController extends Controller
         // dd($request->input('search','')) ;
       $search =$request->input('search','') ;
         $adv = adv::where('guanggao','like','%'.$search.'%')->simplePaginate(3); 
-        dump($adv);
         $a = $request->all();
         // dump($request->all());
         // dump('我是广告的首页');
@@ -34,7 +33,6 @@ class AdvController extends Controller
     public function create()
     {
         return view('Admin/adv/create',['title'=>'广告添加']);
-        dump('我是广告添加页面');
     }
 
     /**
@@ -47,11 +45,11 @@ class AdvController extends Controller
     {   
         if($request->hasFile('guanggao')){
             $file = $request->file('guanggao');
-            dump($file);
+            // dump($file);
             $exe = $file->extension();
             $filename = time().rand(1000,9999);
             // $filename = time();
-            dump($file->storeAs('adv',$filename.'.'.$exe));
+            // dump($file->storeAs('adv',$filename.'.'.$exe));
 
 
             $adv = new adv;
@@ -96,9 +94,9 @@ class AdvController extends Controller
      */
     public function edit($id)
     {
-        dump($id);
+        // dump($id);
         $adv = adv::find($id);
-         dump($adv);
+         // dump($adv);
          return view('Admin/adv/edit',['adv'=>$adv]);
     }
 

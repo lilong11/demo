@@ -1485,6 +1485,23 @@
 
 <!-- Shipping Service Area
 ============================================ -->
+<div class="blog-area bg-off-white padding-90">
+	<div class="container">
+		<div class='n1'style="border:1px solid red;display: inline-block">
+			<img src="/uploads/images/1.jpeg" alt="我图片呢">
+		</div>
+		<div class='n2'style="border:1px solid red;display: inline-block">
+			<img src="/uploads/images/1.jpeg" alt="我图片呢">
+		</div>
+		<div class='n3'style="border:1px solid red;display: inline-block">
+			<img src="/uploads/images/1.jpeg" alt="我图片呢">
+		</div>
+		
+	</div>
+</div>
+<!-- 结束 -->
+
+
 <div class="shipping-service-area">
 	<div class="container-fluid">
 		<div class="row">

@@ -1,5 +1,21 @@
 @extends('Admin/layout/index');
     @section('content')
+                    @if (session('success'))
+                    <div class="bs-example" data-example-id="dismissible-alert-css">
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                             {{ session('success') }}
+                        </div>
+                    </div>
+                @endif
+                    @if (session('error'))
+                    <div class="bs-example" data-example-id="dismissible-alert-css">
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                             {{ session('error') }}
+                        </div>
+                    </div>
+                @endif
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="/Admin_public/css/font.css">
         <link rel="stylesheet" href="/Admin_public/css/xadmin.css">
@@ -8,6 +24,10 @@
         <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
         <script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
         <script type="text/javascript" src="/Admin_public/js/xadmin.js"></script>
+        <!-- 分页 -->
+            <style> .page_page{background: rgb(0,0,0,0); border-radius: 0.2rem; counter-reset: pagination; text-align: center; margin: 0px; } .page_page li{border: solid 1px #d6d6d6; border-radius: 0.2rem; color: #7d7d7d; text-decoration: none; text-transform: uppercase; display: inline-block; text-align: center; padding: 0.5rem 0.9rem; } </style>
+
+
         <div class="page-content" style="color:white">
                   <div class="content">
                     <!-- 右侧内容框架，更改从这里开始 -->
@@ -36,16 +56,25 @@
                                     ID
                                 </th>
                                 <th>
-                                    广告
+                                    姓名
+                                </th> 
+                                 <th>
+                                    性别
+                                </th> 
+                                  <th>
+                                    手机号
+                                </th>
+                                <th>
+                                    邮箱
                                 </th>
                                 
                              
-                                <!-- <th>
+                                <th>
                                     加入时间
                                 </th>
                                 <th>
                                     修改时间
-                                </th> -->
+                                </th>
                                
                                 <th>
                                     操作
@@ -103,26 +132,48 @@
                                 </a>
                             </td>
     </tr> -->
-     @foreach($adv as $k=>$v)
-    	<tr>
+     @foreach($investor as $k=>$v)
+        <tr>
                             <td>
                                 <input type="checkbox" value="1" name="">
                             </td>
                             <td>
-                                1
+                                {{ $v->id }}
                             </td>
                             <td>
-                            <image src="/uploads/{{ $v->guanggao }}" width='80'>                             
+                                {{ $v->name }}
                             </td>
-                          
-                        
-                           
-                         <!--    <td>
-                             2017-01-01 11:11:42
+                           <!-- <td>
+                                {{ $v->sex }}
+                            </td> -->
+                            <td>
+                             
+                                @switch($v -> sex)
+                                @case(0)
+                                    女
+                                @break
+                                @case(1)
+                                    男
+                                @break
+                                @case(2)
+                                    保密
+                                @break
+                                    
+                            @endswitch
+                            </td>
+                              <td>
+                                {{ $v->phone }}
+                            </td>
+                              <td>
+                                {{ $v->email }}
+                            </td>
+
+                        <td>
+                             {{ $v->created_at }}
                          </td> 
                           <td>
-                             2017-01-01 11:11:42
-                         </td> -->
+                             {{ $v->updated_at }}
+                         </td>
                         
                             <td class="td-manage">
                               <!--   <a style="text-decoration:none" onclick="member_stop(this,'10001')" href="javascript:;" title="停用">
@@ -131,12 +182,12 @@
                                 <!-- <a title="编辑" href="javascript:;" onclick="member_edit('编辑','member-edit.html','4','','510')" class="ml-5" style="text-decoration:none">
                                     <i class="layui-icon"></i>
                                 </a> -->
-                                <a style="text-decoration:none"  href="/adv/{{ $v->id }}/edit" title="修改">
+                                <a style="text-decoration:none"  href="/admin/investor/{{ $v->id }}/edit" title="修改">
                                     <i class="layui-icon"></i>
                                 </a>
 
 
-                                <a title="删除" href="adv/delete/{{ $v->id }}" onclick = 'return confirm("确认删除吗")' style="text-decoration:none">
+                                <a title="删除" href="/admin/investor/delete/{{ $v->id }}" onclick = 'return confirm("确认删除吗")' style="text-decoration:none">
                                     <i class="layui-icon"></i>
                                 </a>
                            
@@ -144,7 +195,7 @@
                  </tr>
      @endforeach
 
-     {{ $adv->appends([])->links() }}
+    
                     </tbody>
                 </table>
                 <!-- 右侧内容框架，更改从这里结束 -->

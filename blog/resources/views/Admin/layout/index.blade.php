@@ -272,13 +272,13 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="current">
-                            <a href="/admin/opinion">
+                            <a href="/admin/investor">
                                 <i class="iconfont">&#xe6a7;</i>
                                 投资人列表
                             </a>
                         </li>
                         <li>
-                            <a href="/admin/opinion/create">
+                            <a href="/admin/investor/create">
                                 <i class="iconfont">&#xe6a7;</i>
                                 投资人添加
                             </a>
