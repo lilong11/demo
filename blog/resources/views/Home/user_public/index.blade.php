@@ -40,7 +40,7 @@
 								<!-- treeview start -->
 									<ul>
 										@foreach($works as $k )
-										<li><a href="#">{{ $k -> title }}</a></li> 
+										<li><a href="/workss/{{$k->id}}">{{ $k -> title }}</a></li> 
 										@endforeach
 									</ul>
 								</div>
@@ -53,7 +53,7 @@
 								<!-- treeview start -->
 									<ul>
 										@foreach($issues as $k )
-										<li><a href="#">{{ $k -> title }}</a></li> 
+										<li><a href="/issues/{{$k->id}}">{{ $k -> title }}</a></li> 
 										@endforeach
 									</ul>
 								</div>

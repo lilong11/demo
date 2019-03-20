@@ -16,7 +16,7 @@ class UserController extends Controller
 {
     public function login()
     {
-        return view('Home.users.login',['title'=>'账号登入']);
+        return view('Home.register.login',['title'=>'账号登入']);
     }
 
     public function dologin(Request $request)
