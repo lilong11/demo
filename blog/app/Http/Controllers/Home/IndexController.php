@@ -45,6 +45,7 @@ class IndexController extends Controller
         return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods]); 
     }
 
+
     /**
      * Show the form for creating a new resource.
      *

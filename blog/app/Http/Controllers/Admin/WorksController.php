@@ -14,7 +14,7 @@ class WorksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    {
+    { 
         // 接收搜索的关键字
         $search = $request->input('search','');
 

@@ -18,6 +18,10 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
+        //判断用户是否登入了
+        if(empty(session('admin'))){
+            return view('Admin.Index.login');exit;
+        }
         // dump(123);
         // 接收搜索的关键字
         $search = $request->input('search','');

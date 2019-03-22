@@ -51,6 +51,8 @@
 	<!-- Modernizer JS
 	============================================ -->
 	<script src="./home_public/js/vendor/modernizr-2.8.3.min.js"></script>
+
+	    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 </head>
 <body>
 <!-- Pre Loader
@@ -1299,13 +1301,10 @@
 ============================================ --> 
 <div class="feature-product-area margin-bottom-90">
 	<div class="container">
-		<div class="row">
-			<!-- Section Title -->
-			<div class="section-title col-xs-12 text-center"><h1>特色产品</h1></div>
-			<div class="col-xs-12">
+		<div class="row"> 
+			<div class="section-title col-xs-12 text-center"><h1>特色产品</h1></div> 			<div class="col-xs-12">
 				<!-- Product Slider -->
-				<div class="product-slider feature-slider">
-					<!-- Single Product -->
+				<div class="product-slider feature-slider"> 
 					<div class="sin-pro">
 						<!-- Product Image -->
 						<div class="sin-pro-img-action fix">
@@ -1715,11 +1714,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+ 
 
 
 <!-- JS -->
@@ -1772,4 +1767,4 @@
 <script src="./home_public/js/main.js"></script>
 
 </body>
-</html>
+</html> 

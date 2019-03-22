@@ -30,8 +30,13 @@ class UserController extends Controller
             // 遍历查出来的用户id
             foreach($data as $k){
                 $id = $k->id; 
+                $status = $k->status;
             }
-
+            // dd($status);
+            // 判断用户是否被禁用
+            if($status != 0){
+             echo '<script>alert("您的用户疑似黑号,已被禁用");location="/users/login"</script>'; exit;
+            }
              session(['uid'=>$id]);
              session(['home'=>$uname]);
              echo '<script>alert("登入成功.");location="/"</script>';
@@ -49,7 +54,7 @@ class UserController extends Controller
 
 
         $issue = new Issues; //查问题表
-        $issues = $issue->all();   
+        $issues = $issue->all();    
 
         $id = session('uid');
         $user = new Users;
