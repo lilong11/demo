@@ -196,6 +196,15 @@ Route::get('/cart/jia/{id}/{num}','Home\CartController@jia');
 
 
 
+//收货地址路由
+Route::resource('address','Home\AddressController');
+
+//添加收货地址路由
+Route::post('/address/create','Home\AddressController@create'); 
+
+//地址确认路由
+Route::post('/address/show/','Home\AddressController@show');
+
 
 
 
