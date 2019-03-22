@@ -106,7 +106,7 @@
 	                        <td class="td-manage">
 	                            <a  class="list" title="编辑" href="user/{{$k -> id}}/edit" style="text-decoration:none"><i class="layui-icon"></i></a>
 	                            
-	                            <a title="用户详情" href="user/{{$k -> id}}/edit" style="text-decoration:none"> <i class="iconfont">&#xe70b;</i></a>	 
+	                            <a title="用户详情" style="text-decoration:none" onclick="level_add('添加用户','/uinfo/{{$k->id}}','','900','600')"> <i class="iconfont">&#xe70b;</i></a>	 
 
 	                            <a title="修改密码" href="/aPassword/{{ $k -> id }}" style="text-decoration:none">
 	                                <i class="iconfont">&#xe70b;</i>

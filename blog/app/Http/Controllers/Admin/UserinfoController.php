@@ -4,18 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Users;
+use App\Models\Usersinfos;
 
 class UserinfoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('Admin.User.index',['title'=>'用户列表']);
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -46,7 +39,12 @@ class UserinfoController extends Controller
      */
     public function show($id)
     {
-        //
+       $user = Users::find($id);//主键
+       $userInfo = $user->userinfo;
+       dump($userInfo);
+
+        return view('Admin.Userinfo.userinfo',['title'=>'用户详情','user'=>$user,'userInfo'=>$userInfo]);
+        
     }
 
     /**

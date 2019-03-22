@@ -49,6 +49,7 @@ Route::group(['middleware' => 'admin'],function(){
 
 Route::get('exit','Admin\IndexController@exit'); //后台退出路由
 
+Route::resource('/uinfo','Admin\UserinfoController'); //后台用户详情
 Route::get('/user/delete/{id}','Admin\UserController@delete'); //后台用户删除
 Route::resource('/user','Admin\UserController');  //后台用户路由
 Route::get('aPassword/{id}','Admin\PasswordController@edit');  //后台用户修改密码
@@ -85,7 +86,6 @@ Route::post('doPassword/{id}','Home\UserinfoController@doPassword'); //前台用
 Route::get('love/{id}','Home\WorksController@love');	//文章喜欢+1路由
 Route::get('issues/{id}','Home\WorksController@issue');	//问题显示路由
 Route::resource('workss','Home\WorksController'); //前台文章路由 
-
 
 
 
