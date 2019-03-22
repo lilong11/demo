@@ -107,7 +107,28 @@
 
                     </ul>
                 </li>
-
+                
+                <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i>
+                        订单管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="current">
+                            <a href="/links">
+                                <i class="iconfont">&#xe6a7;</i>
+                                订单列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/links/create">
+                                <i class="iconfont">&#xe6a7;</i>
+                                购物车管理
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="list">
                     <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
@@ -139,7 +160,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="current">
-                            <a href="admin/links">
+                            <a href="/links">
                                 <i class="iconfont">&#xe6a7;</i>
                                 友情链接列表
                             </a>
@@ -185,15 +206,103 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="current">
-                            <a href="">
+                            <a href="/admin/mess">
                                 <i class="iconfont">&#xe6a7;</i>
                                 留言列表
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="/admin/mess/create">
                                 <i class="iconfont">&#xe6a7;</i>
                                 留言添加
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+
+               <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i> 
+                        公告管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="current">
+                            <a href="/admin/notice">
+                                <i class="iconfont">&#xe6a7;</i>
+                                公告列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/notice/create">
+                                <i class="iconfont">&#xe6a7;</i>
+                                公告添加
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+               <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i> 
+                        意见管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="current">
+                            <a href="/admin/opinion">
+                                <i class="iconfont">&#xe6a7;</i>
+                                意见列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/opinion/create">
+                                <i class="iconfont">&#xe6a7;</i>
+                                意见添加
+                            </a>
+                        </li>
+                    </ul>
+                </li>  
+
+                 <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i> 
+                        投资人管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="current">
+                            <a href="/admin/investor">
+                                <i class="iconfont">&#xe6a7;</i>
+                                投资人列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/investor/create">
+                                <i class="iconfont">&#xe6a7;</i>
+                                投资人添加
+                            </a>
+                        </li>
+                    </ul>
+                </li>  
+
+                 <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i> 
+                        商品举报管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="current">
+                            <a href="/admin/opinion">
+                                <i class="iconfont">&#xe6a7;</i>
+                                商品举报列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/opinion/create">
+                                <i class="iconfont">&#xe6a7;</i>
+                                商品举报添加
                             </a>
                         </li>
                     </ul>
@@ -250,6 +359,21 @@
 
                     </ul>
                 </li>
+                <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i>
+                        最新商品管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li  class="current">
+                            <a href="/newgoods">
+                                <i class="iconfont">&#xe6a7;</i>
+                                最新商品列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <!-- 左边管理栏目结束 -->
             </ul>
           </div>
@@ -287,17 +411,17 @@
     <div class="bg-changer">
         <div class="swiper-container changer-list">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/a.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/b.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/c.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/d.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/e.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/f.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/g.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/h.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/i.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/j.jpg" alt=""></div>
-                <div class="swiper-slide"><img class="item" src="../Admin_public/images/k.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/a.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/b.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/c.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/d.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/e.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/f.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/g.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/h.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/i.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/j.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/k.jpg" alt=""></div>
                 <div class="swiper-slide"><span class="reset">初始化</span></div>
             </div>
         </div>

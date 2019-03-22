@@ -104,8 +104,25 @@ Route::resource('workss','Home\WorksController'); //前台文章路由
  Route::get('/adv/delete/{id}','Admin\AdvController@delete');
  Route::resource('/adv','Admin\AdvController');
  //留言路由
- Route::resource('/mess','Admin\MessController');   
+  Route::get('/admin/mess/delete/{id}','Admin\MessController@delete');
+ Route::resource('/admin/mess','Admin\MessController');   
+ //公告路由
+ Route::get('/admin/notice/delete/{id}','Admin\NoticeController@delete');
+ Route::resource('/admin/notice','Admin\NoticeController');
+ //意见路由
+ Route::get('/admin/opinion/delete/{id}','Admin\OpinionController@delete');
+ Route::resource('/admin/opinion','Admin\OpinionController');
+ //投资人路由
+Route::get('/admin/investor/delete/{id}','Admin\InvestorController@delete');
+Route::resource('/admin/investor','Admin\InvestorController');
+ //商品举报路由
+ Route::get('/admin/report/delete/{id}','Admin\ReportController@delete');
+ Route::resource('/admin/report','Admin\ReportController');
+ //前台
+ Route::get('/yijian','YijianController@yijian');
 
+ //前台加盟
+ Route::get('/home/investor/create','Home\InvestorController@create');
 
 
 
@@ -161,9 +178,20 @@ Route::resource('workss','Home\WorksController'); //前台文章路由
 Route::resource('/links','Admin\LinksController');
 
 
+//商品列表路由
+Route::resource('list','Home\ListController');
 
+//购物车路由
+Route::resource('/cart','Home\CartController');
+//添加购物车路由
+Route::get('/cart/store/{id}','Home\CartController@store'); 
 
+//购物车删除路由
+Route::get('/cart/destroy/{id}','Home\CartController@destroy'); 
 
+//购物车商品增加减少路由
+Route::get('/cart/jian/{id}/{num}','Home\CartController@jian'); 
+Route::get('/cart/jia/{id}/{num}','Home\CartController@jia'); 
 
 
 
@@ -213,7 +241,8 @@ Route::resource('/links','Admin\LinksController');
 
 
 // 王佳琦 结束
-// 连柯鑫 开始   272结束 
+// 连柯鑫 开始   272结束
+// 后台开始 
 //商品列表
 Route::resource('/goods','Admin\GoodsController');
 Route::post('/goods/store','Admin\GoodsController@store');
@@ -236,14 +265,17 @@ Route::post('/rotationimg/store','Admin\RotationimgController@store');
 Route::post('/rotationimg/edit','Admin\RotationimgController@edit');
 
 
+//最新商品列表
+Route::resource('/newgoods','Admin\NewGoodsController');
+Route::post('/newgoods/store','Admin\NewGoodsController@store');
+Route::post('/newgoods/update','Admin\NewGoodsController@update');
+Route::post('/newgoods/edit','Admin\NewGoodsController@edit');
 
 
-
-
-
-
-
-
+//后台结束
+//前台开始
+//签到管理
+Route::resource('/fsignin','Home\FsigninController');
 
 
 

@@ -112,7 +112,7 @@
                                 1
                             </td>
                             <td>
-                                {{ $v->guanggao }}
+                            <image src="/uploads/{{ $v->guanggao }}" width='80'>                             
                             </td>
                           
                         
