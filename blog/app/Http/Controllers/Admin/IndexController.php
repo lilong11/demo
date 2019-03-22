@@ -19,32 +19,36 @@ class IndexController extends Controller
     {  
         $uname = $request['uname'];
         $password = $request['password'];  
-
-        // $data = DB::table('users')->where('uname',$uname)->get(); 
-        // dump($data);exit;
-        // if($data['grade'] != 2){
-        //     echo '权限不够';exit;
-        // }
-
+        // 判断是有用户存在
         if (Auth::attempt(['uname' => $uname, 'password' => $password])) { 
-            
+                
+
+            $data = DB::table('users')->where('uname',$uname)->get();
+            // 循环用户列表
+            foreach($data as $k){
+                $status = $k->status; 
+                $grade = $k->grade;
+            }
+
+            if($grade != 2){
+             echo '<script>alert("抱歉您的权限不够");location="/login"</script>'; exit;
+            }
+
+            if($status != 0){
+             echo '<script>alert("您的用户疑似黑号,已禁用,请联系超级管理员");location="/login"</script>'; exit;
+            }
+
+
+
             session(['admin'=>$uname]);
              echo '<script>alert("登入成功");location="/admin"</script>';
         }else{
             $request->flashOnly('uname');
              echo '<script>alert("登入失败!密码错误");location="/login"</script>';
         } 
-        $uname = $request['uname'];
-        $password = $request['password']; 
-         // dd($uname);
-        if (Auth::attempt(['uname' => $uname, 'password' => $password])) { 
-            session(['admin'=>$uname]);
-            return redirect('admin')->with('success','登入成功');
-        }else{
-            return redirect('login')->with('errors','登入失败');
-        } 
-    }
 
+    }
+    // 后台用户退出
     public function exit()
     {
         session()->forget('admin');
@@ -58,11 +62,6 @@ class IndexController extends Controller
      */
     public function index()
     { 
-        //判断用户是否登入了
-        if(empty(session('admin'))){
-            return view('Admin.Index.login');exit;
-        }
-
         return view('Admin.Index.index'); 
     }
 

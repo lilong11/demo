@@ -2,16 +2,19 @@
  @extends('Admin.layout.index')
         @section('content')
 	            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-			    <link rel="stylesheet" href="../Admin_public/css/font.css">
-			    <link rel="stylesheet" href="../Admin_public/css/xadmin.css">
-			    <link rel="stylesheet" href="../Admin_public/css/swiper.min.css"> 
-			    <!-- 统计图js 引入 -->
-				<script type="text/javascript" src="../js/echarts.min.js"></script> 
-			    <script type="text/javascript" src="../Admin_public/js/jquery.min.js"></script>
-			    <script type="text/javascript" src="../Admin_public/js/swiper.jquery.min.js"></script>
-			    <script src="../Admin_public/lib/layui/layui.js" charset="utf-8"></script>
-			    <script type="text/javascript" src="../Admin_public/js/xadmin.js"></script> 
-            <style> .page_page{background: rgb(0,0,0,0); border-radius: 0.2rem; counter-reset: pagination; text-align: center; margin: 0px; } .page_page li{border: solid 1px #d6d6d6; border-radius: 0.2rem; color: #7d7d7d; text-decoration: none; text-transform: uppercase; display: inline-block; text-align: center; padding: 0.5rem 0.9rem; } </style>{{-- 分页样式 --}}
+			    <link rel="stylesheet" href="/Admin_public/css/font.css">
+			    <link rel="stylesheet" href="/Admin_public/css/xadmin.css">
+			    <link rel="stylesheet" href="/Admin_public/css/swiper.min.css"> 
+
+			    <script type="text/javascript" src="/Admin_public/js/jquery.min.js"></script>
+			    <script type="text/javascript" src="/Admin_public/js/swiper.jquery.min.js"></script>
+			    <script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
+			    <script type="text/javascript" src="/Admin_public/js/xadmin.js"></script>  
+
+			    			    <!-- 统计图js 引入 -->
+				<script type="text/javascript" src="/js/echarts.min.js"></script> 
+
+                <style> .page_page{background: rgb(0,0,0,0); border-radius: 0.2rem; counter-reset: pagination; text-align: center; margin: 0px; } .page_page li{border: solid 1px #d6d6d6; border-radius: 0.2rem; color: #7d7d7d; text-decoration: none; text-transform: uppercase; display: inline-block; text-align: center; padding: 0.5rem 0.9rem; } </style>{{-- 分页样式 --}}
 
 
 			    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
@@ -86,15 +89,15 @@
 	                           		@break
 	                           	@endswitch 
 	                        </td>  
-	                        <td>  
-	                            @switch($k -> status) 
+	                        <td>   
+	                            @switch($k -> status)
 	                           		@case(0)
-	                           			使用中
+	                           		<a href="/show/1/{{$k->id}}"><img src="/uploads/public/0.png" style="width:30px;"></a> 
 	                           		@break
 	                           		@case(1)
-	                           			已禁用
-	                           		@break
-	                           	@endswitch
+	                           			<a href="/show/0/{{$k->id}}"><img src="/uploads/public/1.png" style="width:30px;"></a> 
+	                           		@break 
+	                           	@endswitch 
 	                        </td>
 
 	                        <td>
@@ -105,7 +108,7 @@
 	                            
 	                            <a title="用户详情" href="user/{{$k -> id}}/edit" style="text-decoration:none"> <i class="iconfont">&#xe70b;</i></a>	 
 
-	                            <a title="修改密码" href="javascript:;" onclick="level_edit('修改密码','level-edit.html','4','','300')" style="text-decoration:none">
+	                            <a title="修改密码" href="/aPassword/{{ $k -> id }}" style="text-decoration:none">
 	                                <i class="iconfont">&#xe70b;</i>
 	                            </a>
 	                            <a title="删除" onclick="return confirm('确定要删除吗?')" href="user/delete/{{$k -> id }}" style="text-decoration:none">
@@ -119,7 +122,7 @@
                 <xblock> 
 	            <!-- 分页 -->
 	            <span class="x-right"> <div class="page_page" style="padding-bottom: 0px;"> {{ $arr->links() }} </div> </span>
-
+				<button class="layui-btn" onclick="level_add('添加用户','/user/create','','1200','600')"><i class="layui-icon"></i>添加</button>
                 </xblock>
         		<!-- 继承提示是否添加成功开始 -->
 		        @section('issue')
@@ -145,6 +148,16 @@
 			    @endif
 		        @endsection
 				<!-- 继承提示是否添加结束 -->
+		
+				<script>
+		            // 增加
+		            function level_add (title,url,id,w,h) {
+		                x_admin_show(title,url,w,h); 
+		            }
+
+		            // 开关按钮
+		            $("#demo").alert('123');//返回结果：1
+				</script>
 
 	            <script>
 			        // 基于准备好的dom，初始化echarts实例

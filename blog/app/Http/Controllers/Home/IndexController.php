@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-
 class IndexController extends Controller
 {
 
@@ -24,7 +23,7 @@ class IndexController extends Controller
         // dd(session('home'));
         // dd(session('uid'));
         return view('Home.Index.index',['title'=>'哈哈商城']);
-    }
+     }
 
     /**
      * Show the form for creating a new resource.

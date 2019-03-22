@@ -23,12 +23,10 @@ class WorksController extends Controller
 
         $issue = new Issues; //查问题表
         $issues = $issue->all(); 
-
-        // dump($id);
+ 
        $workShow = $work->find($id);
-       // dump($data);
-
-        return view('Home.works.index',['works'=>$works,'issues'=>$issues,'workShow'=>$workShow]);
+ 
+        return view('Home.works.index',['works'=>$works,'issues'=>$issues,'workShow'=>$workShow]);  
     }
 
 
@@ -40,7 +38,7 @@ class WorksController extends Controller
      */
     public function issue($id)
     {
-        dump($id);
+        // dump($id);
         $work = new works; //查文章表
         $works = $work->all();  
 
