@@ -118,6 +118,11 @@ Route::resource('/admin/investor','Admin\InvestorController');
  //商品举报路由
  Route::get('/admin/report/delete/{id}','Admin\ReportController@delete');
  Route::resource('/admin/report','Admin\ReportController');
+ //前台
+ Route::get('/yijian','YijianController@yijian');
+
+ //前台加盟
+ Route::get('/home/investor/create','Home\InvestorController@create');
 
 
 

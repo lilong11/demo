@@ -16,18 +16,26 @@
 		</div>
 	</div>
 </div>
+
 <!-- Blog Details Page
 ============================================ -->
-<div class="blog-details-page blog-details-sidebar bg-off-white padding-bottom-90">
+
+<!-- <div class="blog-details-page blog-details-sidebar bg-off-white padding-bottom-90"> -->
+<div class="page-breadcrumb bg-off-white">
 	<div class="container">
 		<div class="row"> 
-			 @section('content')
-
-	         @show
+		{{--@section('content')
+		@show--}}
 		</div>
 	</div>
 </div>
+{{--<div>
+	@section('content')
+	@show
+</div>
+--}}
 
 {{--底部引入--}}
+</div>
 @include('Home.public.footer')
 

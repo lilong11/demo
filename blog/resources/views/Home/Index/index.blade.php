@@ -81,6 +81,7 @@
 						<li><a href="/">首页</a></li>
 						<li><a href="">问题</a></li>
 						<li><a href="/workss">文章</a></li>
+						<li><a href="/home/investor/create">我要加盟</a></li>
 					</ul>
 				</div>
 				<div class="col-sm-6 col-xs-8 header-top-right">
@@ -339,7 +340,11 @@
 		<div class="slide-text-right text-white slide-text">
 			<div class="middle-text text-center">
 				<h2 class="cap-sub-title wow fadeInDown" data-wow-duration=".9s" data-wow-delay="0.8s">XOSS SHOP</h2>
-				<h1 class="cap-title wow fadeInLeft" data-wow-duration=".9s" data-wow-delay="1.5s">Women’s NEW FASHION</h1>
+				
+	@foreach($notice as $k=>$v)
+				<h1 class="cap-title wow fadeInLeft" data-wow-duration=".9s" data-wow-delay="1.5s">{{ $v->notice }}</h1>
+				
+	@endforeach
 				<p class="cap-dec wow fadeInRight" data-wow-duration="0.9s" data-wow-delay="2.2s">See our full collection.s summer 2016 Lookbook</p>
 				<a href="#" class="cap-readmore button color white-hover wow fadeInUp" data-wow-duration="0.9s" data-wow-delay="3s">Shop Now</a>
 			</div>										
@@ -1484,7 +1489,7 @@
 
 <!-- Shipping Service Area
 ============================================ -->
-<div class="blog-area bg-off-white padding-90">
+<!-- <div class="blog-area bg-off-white padding-90">
 	<div class="container">
 		<div class='n1'style="border:1px solid red;display: inline-block">
 			<img src="/uploads/images/1.jpeg" alt="我图片呢">
@@ -1497,8 +1502,941 @@
 		</div>
 		
 	</div>
-</div>
-<!-- 结束 -->
+</div> -->
+<!-- 广告开始 -->
+<div class="latest-product-area tab-product-area margin-bottom-25">
+	<div class="container">
+		<div class="row">
+			<!-- Section Title -->
+			<div class="section-title col-xs-12 text-center"><h1>因为后台强大,被迫植入广告,所以为所欲为</h1></div>
+			<div class="col-xs-12">
+				<!-- Product Tab List -->
+				<div class="pro-tab-list text-center fix">
+<!-- 					<ul>
+						<li class="active"><a href="#women" data-toggle="tab">最新上市商品</a></li>
+					</ul> -->
+				</div>
+				<!-- Product Tab Content -->
+				<div class="pro-tab-content tab-content row">
+					<!-- Product Tab -->
+					<div class="pro-tab tab-pane active" id="women">
+						<!-- Single Product -->
+
+
+						@foreach($adv as $k=>$v)
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="/uploads/{{ $v->guanggao }}"  alt="" /></a>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"></a>
+									<!-- Product Action -->
+									<!-- <div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">加入购物车</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div> -->
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<!-- <a class="sin-pro-title" href="#">娃娃</a> -->
+									<!-- Product Price -->
+									<!-- <div class="sin-pro-price float-left">
+										<span class="new">$ 111</span>
+									</div> -->
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<!-- <div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div> -->
+										
+									</div>
+								</div>
+							</div>
+						</div>
+						@endforeach
+
+
+
+
+					</div>
+					<!-- Product Tab -->
+					<div class="pro-tab tab-pane" id="men">
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/2.jpg" alt="" /></a>
+									<span class="pro-label label-new">new</span>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Loafers Men's shoes</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 45.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(5)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
+									<span class="pro-label label-new">new</span>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Women’s handbag</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 99.99</span>
+										<span class="old">145.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(23)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/4.jpg" alt="" /></a>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Women’s winter dress</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 45.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+										</div>
+										<span>(0)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/1.jpg" alt="" /></a>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Full sleev women shirt</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 85.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(23)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/2.jpg" alt="" /></a>
+									<span class="pro-label label-new">new</span>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Loafers Men's shoes</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 45.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(5)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
+									<span class="pro-label label-new">new</span>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Women’s handbag</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 99.99</span>
+										<span class="old">145.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(23)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/4.jpg" alt="" /></a>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Women’s winter dress</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 45.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+										</div>
+										<span>(0)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/1.jpg" alt="" /></a>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Full sleev women shirt</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 85.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(23)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Product Tab -->
+					<div class="pro-tab tab-pane" id="accessories">
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
+									<span class="pro-label label-new">new</span>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Women’s handbag</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 99.99</span>
+										<span class="old">145.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(23)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/4.jpg" alt="" /></a>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Women’s winter dress</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 45.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+										</div>
+										<span>(0)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/1.jpg" alt="" /></a>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Full sleev women shirt</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 85.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(23)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/2.jpg" alt="" /></a>
+									<span class="pro-label label-new">new</span>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Loafers Men's shoes</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 45.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(5)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
+									<span class="pro-label label-new">new</span>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Women’s handbag</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 99.99</span>
+										<span class="old">145.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(23)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/4.jpg" alt="" /></a>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Women’s winter dress</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 45.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+										</div>
+										<span>(0)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/1.jpg" alt="" /></a>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Full sleev women shirt</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 85.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(23)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/2.jpg" alt="" /></a>
+									<span class="pro-label label-new">new</span>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Loafers Men's shoes</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 45.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(5)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Product Tab -->
+					<div class="pro-tab tab-pane" id="trendy">
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/4.jpg" alt="" /></a>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Women’s winter dress</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 45.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+										</div>
+										<span>(0)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/1.jpg" alt="" /></a>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Full sleev women shirt</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 85.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(23)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/2.jpg" alt="" /></a>
+									<span class="pro-label label-new">new</span>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Loafers Men's shoes</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 45.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(5)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
+									<span class="pro-label label-new">new</span>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Women’s handbag</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 99.99</span>
+										<span class="old">145.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(23)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/4.jpg" alt="" /></a>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Women’s winter dress</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 45.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+											<i class="zmdi zmdi-star-outline"></i>
+										</div>
+										<span>(0)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/1.jpg" alt="" /></a>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Full sleev women shirt</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 85.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(23)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/2.jpg" alt="" /></a>
+									<span class="pro-label label-new">new</span>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Loafers Men's shoes</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 45.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(5)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Single Product -->
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
+									<span class="pro-label label-new">new</span>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">Women’s handbag</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ 99.99</span>
+										<span class="old">145.00</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(23)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> 
+<!-- 广告结束 -->
 
 
 <div class="shipping-service-area">
