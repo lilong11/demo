@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Type;
 use App\Models\Slid;
+use App\Models\adv;
+use App\Models\notice;
+use App\Models\mess;
 use DB;
 
 class IndexController extends Controller
@@ -42,7 +45,15 @@ class IndexController extends Controller
         // 获取最新商品数据
         $new_goods = DB::table('new_goods')->get();
         // dump($new_goods);
-        return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods]); 
+
+        //yyl
+        $adv = adv::all();
+        $notice = notice::all();
+
+
+
+        //adv表没有
+        return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice]); 
     }
 
     /**
