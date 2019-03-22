@@ -43,7 +43,7 @@
 								</div></td>
 								<td><p class="cart-price-total">{{ $v->price*$arr1[$k] }} 元</p></td>
 								<td><button class="cart-pro-remove" >
-									<a href="/cart/destroy/{{ $v->id }}">删除</a>
+									<a href="/cart/destroy/{{ $v->id }}"><button type="button" class="btn btn-danger">删除</button></a>
 									<!-- <i class="zmdi zmdi-delete"></i> -->
 								</button></td>
 							</tr>
@@ -77,8 +77,7 @@
 							
 							<h4><span>总价:</span><span>{{ $total }}</span></h4>
 
-							<button class="button color-hover"><a href="">去结算</a></button>
-						
+							<a href="/address"><button type="button" class="btn btn-success  btn-block">去结算</button></a>
 						</div>
 					</div>
 				</div>
