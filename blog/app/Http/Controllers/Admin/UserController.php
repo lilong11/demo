@@ -99,7 +99,7 @@ class UserController extends Controller
     {
         // dump($id);
         $data = Users::find($id);
-        // dump($data);
+        dump($data);
         return view('Admin.User.edit',['title'=>'用户修改','data'=>$data]);
     }
 
