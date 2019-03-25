@@ -214,13 +214,34 @@
                                 商品列表
                             </a>
                         </li>
-                        <li>
-                            <a href="/goods/store">
+                    </ul>
+                </li>
+
+                <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i>
+                        商品详情
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="current">
+                            <a href="/detailsgoods">
                                 <i class="iconfont">&#xe6a7;</i>
-                                商品添加
+                                商品详情
                             </a>
                         </li>
-
+                        <li class="current">
+                            <a href="/goodscolor">
+                                <i class="iconfont">&#xe6a7;</i>
+                                服饰颜色详情
+                            </a>
+                        </li>
+                        <li class="current">
+                            <a href="/goodssize">
+                                <i class="iconfont">&#xe6a7;</i>
+                                服饰尺寸详情
+                            </a>
+                        </li>
                     </ul>
                 </li>
 

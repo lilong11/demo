@@ -92,15 +92,18 @@
                             {{ $v->goodsNum }}
                         </td>
                         <td>
-                            {{ $v->goodsDes }}
+                            <a href="/detailsgoods"><button class="layui-btn" ><i class="layui-icon"></i>查看</button></a>
+                            <a href="/detailsgoods/create?id={{ $v->id }}"><button class="layui-btn" ><i class="layui-icon"></i>添加</button></a>
                         </td>
                         <td class="td-status">
                             <span class="layui-btn layui-btn-normal layui-btn-mini">
                                 {{ $v->goodsState == 1 ? '已启用' : '已停用' }}
                             </span>
+
+                            <a href="/status/goods?id={{ $v->id }}">修改</a>
                         </td>
                         <td class="td-manage">
-                            <a style="text-decoration:none" onclick="member_stop(this,'10001')" href="javascript:;" title="停用">
+                            <a style="text-decoration:none" onclick="member_stop(this,'10001')" href="" title="">
                                 <i class="layui-icon">&#xe601;</i>
                             </a>
                             <a title="编辑" href="/goods/show?id={{ $v->id }}">

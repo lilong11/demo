@@ -61,6 +61,9 @@
                             最新商品数量
                         </th>
                         <th>
+                            最新商品详情
+                        </th>
+                        <th>
                             状态
                         </th>
                         <th>
@@ -88,10 +91,15 @@
                         <td >
                             {{ $v->goodsNum }}
                         </td>
+                        <td>
+                            <a href="/detailsgoods"><button class="layui-btn" ><i class="layui-icon"></i>查看</button></a>
+                            <a href="/detailsgoods/create?id={{ $v->id }}"><button class="layui-btn" ><i class="layui-icon"></i>添加</button></a>
+                        </td>
                         <td class="td-status">
                             <span class="layui-btn layui-btn-normal layui-btn-mini">
                                 {{ $v->goodsState == 1 ? '已启用' : '已停用' }}
                             </span>
+                            <a href="/status/newgoods?id={{ $v->id }}">修改</a>
                         </td>
                         <td class="td-manage">
                             <a style="text-decoration:none" onclick="member_stop(this,'10001')" href="javascript:;" title="停用">

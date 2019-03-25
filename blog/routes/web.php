@@ -215,80 +215,60 @@ Route::resource('/links','Admin\LinksController');
 // 王佳琦 结束
 // 连柯鑫 开始   272结束
 // 后台开始 
-//商品列表
+//商品列表开始
 Route::resource('/goods','Admin\GoodsController');
+Route::resource('/goods/status','Admin\GoodsController@status');
 Route::post('/goods/store','Admin\GoodsController@store');
-Route::post('/goods/update','Admin\GoodsController@update');
 Route::post('/goods/edit','Admin\GoodsController@edit');
-//商品添加
-// Route::get('admin/goods/add','Admin\GoodsController@create');
-//商品接收,存入数据库
-// Route::post('admin/goods/store','Admin\GoodsController@store');
+//商品列表结束
 
+//商品详情开始
+Route::resource('/detailsgoods','Admin\DetailsGoodsController');
+Route::post('/detailsgoods/store','Admin\DetailsGoodsController@store');
+//商品详情结束
 
-//分类列表
+//服饰颜色详情开始
+Route::resource('/goodscolor','Admin\GoodsColorController');
+Route::post('/goodscolor/store','Admin\GoodsColorController@store');
+//服饰颜色详情结束
+
+//服饰尺寸详情开始
+Route::resource('/goodssize','Admin\GoodsSizeController');
+Route::post('/goodssize/store','Admin\GoodsSizeController@store');
+//服饰尺寸详情结束
+
+//分类列表开始
 Route::resource('/type','Admin\TypeController');
 Route::post('/type/store','Admin\TypeController@store');
+//分类列表结束
 
-
-//轮播图列表
+//轮播图列表开始
 Route::resource('/rotationimg','Admin\RotationimgController');
 Route::post('/rotationimg/store','Admin\RotationimgController@store');
 Route::post('/rotationimg/edit','Admin\RotationimgController@edit');
+//轮播图列表结束
 
-
-//最新商品列表
+//最新商品列表开始
 Route::resource('/newgoods','Admin\NewGoodsController');
 Route::post('/newgoods/store','Admin\NewGoodsController@store');
 Route::post('/newgoods/update','Admin\NewGoodsController@update');
 Route::post('/newgoods/edit','Admin\NewGoodsController@edit');
+//最新商品列表结束
 
+//后台状态管理开始
+Route::get('/status/goods','Admin\StatusController@goods');
+Route::get('/status/type','Admin\StatusController@type');
+Route::get('/status/rotationimg','Admin\StatusController@rotationimg');
+Route::get('/status/newgoods','Admin\StatusController@newgoods');
+Route::get('/status/goodscolor','Admin\StatusController@goodscolor');
+Route::get('/status/goodssize','Admin\StatusController@goodssize');
+Route::get('/status/detailsgoods','Admin\StatusController@detailsgoods');
+//后台状态管理开始
 
 //后台结束
 //前台开始
-//签到管理
+//签到管理开始
 Route::resource('/fsignin','Home\FsigninController');
+//签到管理结束
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 连柯鑫 结束
+// 连柯鑫 272结束

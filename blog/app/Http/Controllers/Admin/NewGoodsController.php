@@ -112,7 +112,7 @@ class NewGoodsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request)
+    public function edit(NewGoodsStoreRequest $request)
     {
          //接收文件上传对象
         $file = $request->file('pic');
