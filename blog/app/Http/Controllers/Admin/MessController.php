@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\mess;
+use App\Http\Requests\MessRequest;
 
 
 class MessController extends Controller
@@ -49,15 +50,23 @@ class MessController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MessRequest $request)
     {
-        dump($request->all());
         $mess = new Mess;
+
+        $mess->name = $request->input('name','');
+        $mess->phone = $request->input('phone','');
         $mess->mess = $request->input('mess','');
+        $hidden = $request->input('hidden','');
+   
         $bool = $mess->save();
-        if($bool){ 
+        if($bool &&  $hidden){ 
+            return redirect('/')->with('success','添加成功');
+         }elseif($bool && $hidden==''){
             return redirect('/admin/mess')->with('success','添加成功');
-         }else{ 
+
+         }else{
+
             return redirect('/admin/mess')->with('error','添加失败');
          }
     }

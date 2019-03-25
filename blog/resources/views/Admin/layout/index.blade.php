@@ -294,13 +294,13 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="current">
-                            <a href="/admin/opinion">
+                            <a href="/admin/report">
                                 <i class="iconfont">&#xe6a7;</i>
                                 商品举报列表
                             </a>
                         </li>
                         <li>
-                            <a href="/admin/opinion/create">
+                            <a href="/admin/report/create">
                                 <i class="iconfont">&#xe6a7;</i>
                                 商品举报添加
                             </a>

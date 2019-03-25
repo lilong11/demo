@@ -7,8 +7,13 @@ use App\Http\Controllers\Controller;
 
 class InvestorController extends Controller
 {
-    public function create(){
+    public function create(Request $request){
     	// dd('嘚嘚');
-    	return  view('Home/investor/create');
+    	if(session('uid')){
+    		return  view('Home/investor/create');
+    		
+    	}else{
+    		return view('Home.register.login',['title'=>'账号登入']);
+    	}
     }
 }

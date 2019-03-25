@@ -58,6 +58,7 @@ class InvestorController extends Controller
         $investor->name = $request->input('name','');
         $investor->phone = $request->input('phone','');
         $investor->email = $request->input('email','');
+        $hidden = $request->input('hidden','');
 /*        if($request->input('sex')=='0'){
         	$investor->sex = '女';
         }elseif($request->input('sex')=='1'){
@@ -67,11 +68,15 @@ class InvestorController extends Controller
         }*/
         $investor->sex = $request->input('sex','');
 
+       
         $bool =$investor->save();
-        if ($bool) {
+        if ($bool && $hidden) {
+             return redirect('/')->with('success','投资人添加成功');
+        }elseif($bool && $hidden == ''){
         	return redirect('/admin/investor')->with('success','投资人添加成功');
         }else{
         	return redirect('/admin/investor')->with('error','投资人添加失败');
+
         }
         // dump($investor);
     // dump('添加成功');

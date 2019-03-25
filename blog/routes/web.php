@@ -100,6 +100,7 @@ Route::resource('workss','Home\WorksController'); //前台文章路由
  
 // lilong 结束
 // 杨玉龙 开始  //158 结束
+// 后台
  //广告路由
  Route::get('/adv/delete/{id}','Admin\AdvController@delete');
  Route::resource('/adv','Admin\AdvController');
@@ -118,11 +119,18 @@ Route::resource('/admin/investor','Admin\InvestorController');
  //商品举报路由
  Route::get('/admin/report/delete/{id}','Admin\ReportController@delete');
  Route::resource('/admin/report','Admin\ReportController');
- //前台
- Route::get('/yijian','YijianController@yijian');
 
- //前台加盟
+ //前台
+ //前台添加加盟路由
  Route::get('/home/investor/create','Home\InvestorController@create');
+ //前台添加意见路由
+ Route::get('/home/opinion/create','Home\OpinionController@create');
+ //前台添加留言路由
+ Route::get('/home/mess/create','Home\MessController@create');
+ //前台添加举报内容路由
+  Route::get('/home/report/create','Home\ReportController@create');
+
+ 
 
 
 

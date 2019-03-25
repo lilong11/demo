@@ -131,9 +131,9 @@
                                 <!-- <a title="编辑" href="javascript:;" onclick="member_edit('编辑','member-edit.html','4','','510')" class="ml-5" style="text-decoration:none">
                                     <i class="layui-icon"></i>
                                 </a> -->
-                                <a style="text-decoration:none"  href="/adv/{{ $v->id }}/edit" title="修改">
+                             <!--    <a style="text-decoration:none"  href="/adv/{{ $v->id }}/edit" title="修改">
                                     <i class="layui-icon"></i>
-                                </a>
+                                </a> -->
 
 
                                 <a title="删除" href="adv/delete/{{ $v->id }}" onclick = 'return confirm("确认删除吗")' style="text-decoration:none">

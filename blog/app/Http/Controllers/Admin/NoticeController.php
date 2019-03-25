@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\notice;
+use App\Http\Requests\NoticeRequest;
 class NoticeController extends Controller
 {
     /**
@@ -46,7 +47,7 @@ class NoticeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NoticeRequest $request)
     {
         $notice = new notice;
         $notice->notice = $request->input('notice');

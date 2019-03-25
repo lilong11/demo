@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\opinion;
+use App\Http\Requests\OpinionRequest;
 class OpinionController extends Controller
 {
     /**
@@ -47,18 +48,22 @@ class OpinionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OpinionRequest $request)
     {
         $opinion = new opinion;
         $opinion->name = $request->input('name','');
         $opinion->phone = $request->input('phone','');
         $opinion->content = $request->input('content','');
+        $hidden = $request->input('hidden','');
         $bool = $opinion->save();
-         if($bool){
-            return redirect('admin/opinion')->with('success','意见添加成功');
-        }else{
 
-            return redirect('admin/opinion')->with('error','意见添加失败');
+        if ($bool && $hidden) {
+             return redirect('/')->with('success','投资人添加成功');
+        }elseif($bool && $hidden == ''){
+            return redirect('/admin/opinion')->with('success','投资人添加成功');
+        }else{
+            return redirect('/admin/opinion')->with('error','投资人添加失败');
+
         }
     }
 

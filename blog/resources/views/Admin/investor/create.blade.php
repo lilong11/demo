@@ -39,10 +39,10 @@
 				</h4> -->
 		<h4>性别:</h4>
 		<label class="radio-inline">
-		  	<input type="radio" name="sex" id="inlineRadio1" value="0">男
+		  	<input type="radio" name="sex" id="inlineRadio1" value="0">女
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="sex" id="inlineRadio2" value="1">女
+			<input type="radio" name="sex" id="inlineRadio2" value="1">男
 		</label>
 		<label class="radio-inline">
 		 	<input type="radio" name="sex" id="inlineRadio3" value="2">保密

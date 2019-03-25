@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\AdvRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\adv;
@@ -41,7 +42,7 @@ class AdvController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdvRequest $request)
     {   
         if($request->hasFile('guanggao')){
             $file = $request->file('guanggao');

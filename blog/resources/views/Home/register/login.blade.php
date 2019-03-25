@@ -5,13 +5,13 @@
   <title>{{$title or '用户操作'}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../admin_public/css/font.css">
-    <link rel="stylesheet" href="../admin_public/css/xadmin.css">
+    <link rel="stylesheet" href="/admin_public/css/font.css">
+    <link rel="stylesheet" href="/admin_public/css/xadmin.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
-    <script src="../admin_public/lib/layui/layui.js" charset="utf-8"></script>
-    <script type="text/javascript" src="../admin_public/js/xadmin.js"></script>
+    <script src="/admin_public/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/admin_public/js/xadmin.js"></script>
 
 </head>
 <body>
@@ -64,7 +64,7 @@
   <div class="bg-changer">
         <div class="swiper-container changer-list">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img class="item" src="../admin_public/images/l.jpg" alt=""></div>
+                <div class="swiper-slide"><img class="item" src="/admin_public/images/l.jpg" alt=""></div>
                 <div class="swiper-slide"><span class="reset">初始化</span></div>
             </div>
         </div>
