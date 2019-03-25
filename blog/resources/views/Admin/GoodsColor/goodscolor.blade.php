@@ -8,6 +8,7 @@
 <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
 <script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
 <script type="text/javascript" src="/Admin_public/js/xadmin.js"></script>  
+
         <!-- 右侧主体开始 -->
         <div class="page-content">
           <div class="content">
@@ -31,7 +32,7 @@
                   </div>
                 </div> 
             </form>
-            <xblock><a href="/type/create"><button class="layui-btn" ><i class="layui-icon">&#xe608;</i>添加</button></a><span class="x-right" style="line-height:40px">共有数据：88 条</span></xblock>
+            <xblock><a href="/goodscolor/create/"><button class="layui-btn" ><i class="layui-icon">&#xe608;</i>添加</button></a><span class="x-right" style="line-height:40px">共有数据：88 条</span></xblock>
             @if (session('success'))
                 <div class="btn btn-success">
                     {{ session('success') }}
@@ -48,16 +49,7 @@
                             ID
                         </th>
                         <th>
-							PID
-                        </th>
-                        <th>
-                            分类名
-                        </th>
-                        <th>
-                            分类路径
-                        </th>
-                        <th>
-							子类
+                            服饰颜色名
                         </th>
                         <th>
                             状态
@@ -66,46 +58,33 @@
                             操作
                         </th>
                     </tr>
-                </thead>
-				@foreach($type_data as $k=>$v)
-				@if($v->path == 0)
-                <tbody>                	
-                    <tr>
+                </thead>                
+                @foreach($goods_data as $k=>$v)
+                <tbody>
+                    <tr>                        
                         <td>
-                            {{ $v->id }}
+                            {{ $id++ }}
                         </td>
                         <td>
-							{{ $v->pid }}
+                            <u style="cursor:pointer" onclick="member_show('张三','member-show.html','10001','360','400')">
+                                {{ $v->gcolorname }}
+                            </u>
                         </td>
-                        <td>
-                            {{ $v->tname }}
-                        </td>
-          				<td>
-							{{ $v->path }}
-          				</td>
-          				<td>
-							<a href="/type/create?id={{ $v->id }}">
-                            <span class="layui-btn layui-btn-normal layui-btn-mini">
-                                添加子类
-                            </span>
-                            </a>
-          				</td>
                         <td class="td-status">
                             <span class="layui-btn layui-btn-normal layui-btn-mini">
-                                {{ $v->status == 1 ?'已启用' : '未启用' }}
+                                {{ $v->status == 1 ? '已启用' : '已停用' }}
                             </span>
-                            <a href="/status/type?id={{ $v->id }}">修改</a>
+                            <a href="/status/goodscolor?id={{ $v->id }}">修改</a>
                         </td>
-                        <td class="td-manage">
-                           	<form action="/type/{{ $v->id }}" method="post">
-                           		{{ csrf_field() }}
-                           		{{ method_field('DELETE') }}
-								<input type="submit" value="删除" class="btn btn-danger">
-                           	</form>
+                        <td class="td-manage">                         
+                            <form action="/goodscolor/{{ $v->id }}" method="post">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <input type="submit" value="删除" class="btn btn-danger">
+                            </form>
                         </td>
                     </tr>
                 </tbody>
-                @endif
                 @endforeach
             </table>
             <!-- 右侧内容框架，更改从这里结束 -->

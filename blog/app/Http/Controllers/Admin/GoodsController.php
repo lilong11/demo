@@ -145,7 +145,7 @@ class GoodsController extends Controller
      */
     public function update(Request $request)
     {
-       
+
     }
 
     /**

@@ -26,8 +26,7 @@ class NewGoodsStoreRequest extends FormRequest
         return [
             'gname' => 'required|unique:goods',
             'tid' => 'required',
-            'price' => 'required|regex:/^[0-9]{1,}$/',
-            'goodsDes' => 'required',
+            'price' => 'required',
             'goodsNum' => 'required',
             'pic' => 'required',
         ];
@@ -40,7 +39,6 @@ class NewGoodsStoreRequest extends FormRequest
             'gname.unique' => '最新商品名已存在',
             'tid.required' => '最新商品类型不能为空',
             'price.required' => '最新商品价格不能为空',
-            'goodsDes.required' => '最新商品描述不能为空',
             'goodsNum.required' => '最新商品数量不能为空',
             'pic.required' => '最新商品图片不能为空',
         ];
