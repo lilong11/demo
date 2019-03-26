@@ -24,6 +24,19 @@
 	<script type="text/javascript" src="/boot/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+<!-- 添加不能空的提示信息开始 -->
+	@if ($errors->any())
+	<!-- <div class=" layui-btn layui-btn-danger"> -->
+	<div class="alert alert-info " style="color:red;text-align:center;">
+	    <ul>
+	        @foreach ($errors->all() as $error)
+	            <li>{{ $error }}</li>
+	        @endforeach
+	    </ul>
+	</div>
+	@endif
+<!-- 添加不能空的提示信息结束 -->
 <form  action="/admin/investor" method="post"  style="width:600px;margin:100px auto;" >
 {{ csrf_field() }}
 	<div class="center-block">
@@ -39,10 +52,10 @@
 				</h4> -->
 		<h4>性别:</h4>
 		<label class="radio-inline">
-		  	<input type="radio" name="sex" id="inlineRadio1" value="0">男
+		  	<input type="radio" name="sex" id="inlineRadio1" value="0">女
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="sex" id="inlineRadio2" value="1">女
+			<input type="radio" name="sex" id="inlineRadio2" value="1">男
 		</label>
 		<label class="radio-inline">
 		 	<input type="radio" name="sex" id="inlineRadio3" value="2">保密

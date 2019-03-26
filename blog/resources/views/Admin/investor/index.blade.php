@@ -31,13 +31,13 @@
         <div class="page-content" style="color:white">
                   <div class="content">
                     <!-- 右侧内容框架，更改从这里开始 -->
-                    <form class="layui-form xbs" action="/adv" method="get">
+                    <form class="layui-form xbs" action="/admin/investor" method="get">
                         <div class="layui-form-pane" style="text-align: center;">
                           <div class="layui-form-item" style="display: inline-block;">
                          
                             
                             <div class="layui-input-inline">
-                              <input type="text" name="search" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                              <input value="{{ $all['search'] or '' }}" type="text" name="search" placeholder="请输入用户名" autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-input-inline" style="width:80px">
                                 <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon"></i></button>
@@ -198,6 +198,8 @@
     
                     </tbody>
                 </table>
+                <!-- 分页 -->
+                {{ $investor->appends($all)->links() }}
                 <!-- 右侧内容框架，更改从这里结束 -->
               </div>
             </div>

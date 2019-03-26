@@ -23,13 +23,14 @@
 		<div class="container">
 			<div class="row"> 
 			@section('content') 
-
+ 
 			@show
 			</div>
 		</div>
 	</div> 
 
 </div>
+
 {{--底部引入--}}
 @include('Home.public.footer')
 

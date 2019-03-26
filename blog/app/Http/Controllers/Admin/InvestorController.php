@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\investor;
+use App\Http\Requests\InvestorRequest;
 class InvestorController extends Controller
 {
     /**
@@ -25,10 +26,13 @@ class InvestorController extends Controller
 		}
     	}
 
-	public function index()
+	public function index(Request $request)
 	{
-	   $investor = investor::all();
-	    return view('Admin/investor/index',['investor'=>$investor]);
+                $search = $request->input('search','');
+	   $investor = investor::where('name','like',"%$search%")->paginate(5);
+                $all = $request->all();
+
+	    return view('Admin/investor/index',['investor'=>$investor,'all' => $all]);
 	}
 
     /**
@@ -47,7 +51,7 @@ class InvestorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(InvestorRequest $request)
     {
         // dump('我是store方法,我负责接收添加的数据');
         // dump($request->all());
@@ -58,6 +62,7 @@ class InvestorController extends Controller
         $investor->name = $request->input('name','');
         $investor->phone = $request->input('phone','');
         $investor->email = $request->input('email','');
+        $hidden = $request->input('hidden','');
 /*        if($request->input('sex')=='0'){
         	$investor->sex = '女';
         }elseif($request->input('sex')=='1'){
@@ -67,11 +72,15 @@ class InvestorController extends Controller
         }*/
         $investor->sex = $request->input('sex','');
 
+       
         $bool =$investor->save();
-        if ($bool) {
+        if ($bool && $hidden) {
+             return redirect('/')->with('success','投资人添加成功');
+        }elseif($bool && $hidden == ''){
         	return redirect('/admin/investor')->with('success','投资人添加成功');
         }else{
         	return redirect('/admin/investor')->with('error','投资人添加失败');
+
         }
         // dump($investor);
     // dump('添加成功');
@@ -108,7 +117,7 @@ class InvestorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(InvestorRequest $request, $id)
     {
         dump($request->all());
         dump($id);

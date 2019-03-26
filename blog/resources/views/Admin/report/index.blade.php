@@ -11,13 +11,13 @@
         <div class="page-content" style="color:white">
                   <div class="content">
                     <!-- 右侧内容框架，更改从这里开始 -->
-                    <form class="layui-form xbs" action="/adv" method="get">
+                    <form class="layui-form xbs" action="/admin/report" method="get">
                         <div class="layui-form-pane" style="text-align: center;">
                           <div class="layui-form-item" style="display: inline-block;">
                          
                             
                             <div class="layui-input-inline">
-                              <input value="{{ $all['search'] or ''}}" type="text" name="search" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                              <input value="{{ $all['search']  or '' }}" type="text" name="search" placeholder="请输入用户名" autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-input-inline" style="width:80px">
                                 <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon"></i></button>
@@ -36,8 +36,27 @@
                                     ID
                                 </th>
                                 <th>
-                                    广告
+                                    姓名
                                 </th>
+                                <th>
+                                    手机号
+                                </th> 
+                                <th>
+                                    邮箱
+                                </th>
+                                <th>
+                                    举报图片
+                                </th>   
+                                <th>
+                                    说明
+                                </th>  
+                                <th>
+                                    加入时间
+                                </th> 
+                                <th>
+                                    修改时间
+                                </th>
+
                                 
                              
                                 <!-- <th>
@@ -103,26 +122,36 @@
                                 </a>
                             </td>
     </tr> -->
-     @foreach($adv as $k=>$v)
-    	<tr>
+     @foreach($report as $k=>$v)
+        <tr>
                             <td>
                                 <input type="checkbox" value="1" name="">
                             </td>
                             <td>
                                 {{ $v->id }}
+                            </td>                           
+                             <td>
+                                {{ $v->name }}
+                            </td> 
+                            <td>
+                                {{ $v->phone }}
+                            </td>                            
+                            <td>
+                                {{ $v->email }}
                             </td>
                             <td>
-                            <image src="/uploads/{{ $v->guanggao }}" width='80'>                             
+                            <image src="/uploads/{{ $v->pic }}" width='80'>                             
+                            </td>
+                            <td>
+                                {{ $v->content }}
                             </td>
                           
-                        
-                           
-                         <!--    <td>
-                             2017-01-01 11:11:42
+                            <td>
+                            {{ $v->created_at }}
                          </td> 
                           <td>
-                             2017-01-01 11:11:42
-                         </td> -->
+                             {{ $v->updated_at }}
+                         </td>
                         
                             <td class="td-manage">
                               <!--   <a style="text-decoration:none" onclick="member_stop(this,'10001')" href="javascript:;" title="停用">
@@ -131,12 +160,12 @@
                                 <!-- <a title="编辑" href="javascript:;" onclick="member_edit('编辑','member-edit.html','4','','510')" class="ml-5" style="text-decoration:none">
                                     <i class="layui-icon"></i>
                                 </a> -->
-                             <!--    <a style="text-decoration:none"  href="/adv/{{ $v->id }}/edit" title="修改">
+                             <!--    <a style="text-decoration:none"  href="/admin/report/{{ $v->id }}/edit" title="修改">
                                     <i class="layui-icon"></i>
                                 </a> -->
 
 
-                                <a title="删除" href="adv/delete/{{ $v->id }}" onclick = 'return confirm("确认删除吗")' style="text-decoration:none">
+                                <a title="删除" href="/admin/report/delete/{{ $v->id }}" onclick = 'return confirm("确认删除吗")' style="text-decoration:none">
                                     <i class="layui-icon"></i>
                                 </a>
                            
@@ -146,7 +175,7 @@
 
                     </tbody>
                 </table>
-     {{ $adv->appends($all)->links() }}
+                {{ $report->appends($all)->links() }}
                 <!-- 右侧内容框架，更改从这里结束 -->
               </div>
             </div>

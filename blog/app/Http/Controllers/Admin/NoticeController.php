@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\notice;
+use App\Http\Requests\NoticeRequest;
 class NoticeController extends Controller
 {
     /**
@@ -13,12 +14,20 @@ class NoticeController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function index()
+    public function index(Request $request)
     {
-        $a = new notice;
-        $notice = $a->all();
-        return view('Admin/notice/index',['notice'=>$notice,'title'=>'公告展示页']);
+        // $a = new notice;
+        // notice::paginate();
+        $search = $request->input('search','');
+        // dump($search);
+        // $notice = $a->paginate(3);
+        $all = $request->all();
+        // dump($all);
+        $notice = notice::where('notice','like',"%$search%")->paginate(3);
+        return view('Admin/notice/index',['notice'=>$notice,'title'=>'公告展示页','all'=>$all]);
     }
+
+
     public function  delete($id){
         $bool = notice::destroy($id);
             // dump($bool);
@@ -46,7 +55,7 @@ class NoticeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NoticeRequest $request)
     {
         $notice = new notice;
         $notice->notice = $request->input('notice');
@@ -89,7 +98,7 @@ class NoticeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(NoticeRequest $request, $id)
     {
         // dump($request->all());
         $notice = notice::find($id);
