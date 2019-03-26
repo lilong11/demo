@@ -205,9 +205,14 @@ Route::post('/address/create','Home\AddressController@create');
 //地址确认路由
 Route::post('/address/show/','Home\AddressController@show');
 
+//支付路由
+Route::post('/address/pay/','Home\PayController@index');
 
 
-
+//后台订单路由
+Route::resource('orders','Admin\OrdersController');
+//订单详情路由
+Route::get('/orders/orderdetail/{id}','Admin\OrdersController@show'); 
 
 
 

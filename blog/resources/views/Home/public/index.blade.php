@@ -24,16 +24,12 @@
 <div class="page-breadcrumb bg-off-white">
 	<div class="container">
 		<div class="row"> 
-		{{--@section('content')
-		@show--}}
+		@section('content')
+		@show
 		</div>
 	</div>
 </div>
-{{--<div>
-	@section('content')
-	@show
-</div>
---}}
+
 
 {{--底部引入--}}
 </div>
