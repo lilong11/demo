@@ -24,7 +24,7 @@
                         </div>
                     @endif
                     <!-- 右侧内容框架，更改从这里开始 -->
-                    <form class="layui-form" action="/works" method="post">
+                    <form class="layui-form" action="/works/{{$data->id}}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                        @if (count($errors) > 0)
                             <div class="alert alert-danger">
@@ -35,6 +35,8 @@
                                 </ul>
                             </div>
                         @endif
+                        <input name="_method" type="hidden" value="PUT"> 
+
                         <div class="layui-form-item">
                             <label for="L_username" class="layui-form-label">
                                 <span class="x-red">*</span>文章标题
@@ -53,6 +55,15 @@
                               <option value="1">不显示</option>
                             </select>
                           </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <label for="L_username" class="layui-form-label">
+                                <span class="x-red">*</span>图片上传
+                            </label>
+                            <div class="layui-input-inline">
+                               <input type="file" name="img">
+                            </div>
                         </div>
 
                         <div class="layui-form-item layui-form-text">

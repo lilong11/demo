@@ -48,32 +48,23 @@ class WorksController extends Controller
         //文章添加处理 
         $user = new works;
 
+        //接收文件上传对象
+        $file = $request->file('img');
+        $file_name = $file->store('works');
+
         $user->title = $request->input('title','');
         $user->status = $request->input('status','');
         $user->content = $request->input('content','');
+        $user->img = $file_name;
         // 执行添加到数据库
         $res1 = $user->save();
         // dump($res1);
         if($res1){
-
-            return redirect('works')->with('success','添加成功');
+            echo '<script>alert("添加成功!");location="/works"</script>'; exit;
         }else{
-
-            return redirect('works')->with('error','添加失败');
-        }
-        // dump($request->except('_token'));
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        dump($id);
-    }
+            echo '<script>alert("添加失败!");location="/works/create"</script>'; exit;
+        } 
+    } 
 
     /**
      * Show the form for editing the specified resource.
@@ -86,6 +77,39 @@ class WorksController extends Controller
         // dump($id);
         $data = works::find($id);
         return view('Admin.works.edit',['title'=>'文章修改','data'=>$data]);
+    }
+
+        /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+
+        $works =  works::find($id);
+
+        // 用户传过来的信息
+        $data = $request->all();
+        // dd($works);
+        $file = $request->file('img');
+        $file_name = $file->store('works');
+        
+        $works->status = $data['status']; 
+        $works->title = $data['title']; 
+        $works->content = $data['content'];
+        $works->img = $file_name;
+        // dd($works);
+        $bool = $works->save(); 
+
+        if($bool){
+            echo '<script>alert("文章.公告修改成功");location="/works"</script>'; 
+        }else{
+            echo '<script>alert("文章.公告修改失败!");location="/works/{{$id}}/edit"</script>'; 
+        }
+
     }
 
     public function delete($id)
@@ -102,14 +126,4 @@ class WorksController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        dump($id);
-    }
 }

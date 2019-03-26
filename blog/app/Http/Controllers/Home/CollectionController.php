@@ -4,82 +4,60 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\collections;
+use App\Models\Goods;
+use App\Models\Users;
 
 class CollectionController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * 收藏显示.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $uid = session('uid');
+        // dd($uid);
+        $user = Users::find($uid);
+        $collection = $user->collection;
+        $i = 1;
+        return view('Home.Collections.index',['title'=>'个人收藏','collection'=>$collection,'i'=>$i]);
+    }
+    public function add($gid)
+    {
+        //商品收藏添加
+        // dd($gid); //商品传过来的id
+        $goods = new Goods;
+        $good = $goods->find($gid);
+
+        $collection = new collections;
+        $collection->gid = $gid;
+        $collection->uid = session('uid');
+        $collection->gname = $good['gname'];
+        $collection->img = $good['pic'];
+        $collection->price = $good['price'];
+        $collection->num = $good['goodsNum'];
+        $bool = $collection->save();
+
+       if($bool){
+            echo '<script>alert("收藏成功.");location="/Collection"</script>';
+       }else{
+            echo '<script>alert("收藏失败!");location="/"</script>';
+       }
+
+ 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function delete($id)
     {
-        //
-    }
+       $bool = collections::destroy($id);
+       if($bool){
+            echo '<script>alert("收藏删除成功.");location="/Collection"</script>'; 
+        }else{
+            echo '<script>alert("收藏删除失败!");location="/Collection"</script>'; 
+        }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+ 
     }
 }

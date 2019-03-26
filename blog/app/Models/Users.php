@@ -15,5 +15,10 @@ class Users extends Model
     {
    		 return $this->hasOne('App\Models\Usersinfos', 'uid');
     }
+    //商品一对多
+    public function collection()
+    {
+   		 return $this->hasMany('App\Models\collections', 'uid');
+    }
 
 }

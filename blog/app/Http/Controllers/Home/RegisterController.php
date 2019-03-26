@@ -47,6 +47,7 @@ class RegisterController extends Controller
         //用户添加处理 
         $user = new Users;
         $user->uname = $request->input('tel',''); 
+        $user->tel = $request->input('tel',''); 
         $user->password = Hash::make($request->input('password',''));
         // 执行添加到数据库
         // dd($user);

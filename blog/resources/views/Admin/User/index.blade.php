@@ -1,23 +1,23 @@
  <!-- 引入左边模块 -->
  @extends('Admin.layout.index')
         @section('content')
-	            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-			    <link rel="stylesheet" href="/Admin_public/css/font.css">
-			    <link rel="stylesheet" href="/Admin_public/css/xadmin.css">
-			    <link rel="stylesheet" href="/Admin_public/css/swiper.min.css"> 
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/Admin_public/css/font.css">
+<link rel="stylesheet" href="/Admin_public/css/xadmin.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+<script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
+<script type="text/javascript" src="/Admin_public/js/xadmin.js"></script>   
 
-			    <script type="text/javascript" src="/Admin_public/js/jquery.min.js"></script>
-			    <script type="text/javascript" src="/Admin_public/js/swiper.jquery.min.js"></script>
-			    <script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
-			    <script type="text/javascript" src="/Admin_public/js/xadmin.js"></script>  
 
-			    			    <!-- 统计图js 引入 -->
-				<script type="text/javascript" src="/js/echarts.min.js"></script> 
 
                 <style> .page_page{background: rgb(0,0,0,0); border-radius: 0.2rem; counter-reset: pagination; text-align: center; margin: 0px; } .page_page li{border: solid 1px #d6d6d6; border-radius: 0.2rem; color: #7d7d7d; text-decoration: none; text-transform: uppercase; display: inline-block; text-align: center; padding: 0.5rem 0.9rem; } </style>{{-- 分页样式 --}}
 
 
-			    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+			    <!-- 统计图 -->
+			    <!-- 统计图js 引入 -->
+				<script type="text/javascript" src="/js/echarts.min.js"></script> 
 			    <div id="main" style="width: 300px;height:300px; user-select: none;background:color: yellow;"></div> 
 				<div class="layui-form-pane" style="text-align: center;">
                   <div class="layui-form-item" style="display: inline-block;">
@@ -106,11 +106,9 @@
 	                        <td class="td-manage">
 	                            <a  class="list" title="编辑" href="user/{{$k -> id}}/edit" style="text-decoration:none"><i class="layui-icon"></i></a>
 	                            
-	                            <a title="用户详情" href="user/{{$k -> id}}/edit" style="text-decoration:none"> <i class="iconfont">&#xe70b;</i></a>	 
+	                            <a title="修改密码" onclick="level_add('修改密码','/aPassword/{{ $k -> id }}','','900','600')" style="cursor:pointer;"><i class="iconfont">&#xe82b;</i></a>
 
-	                            <a title="修改密码" href="/aPassword/{{ $k -> id }}" style="text-decoration:none">
-	                                <i class="iconfont">&#xe70b;</i>
-	                            </a>
+	                            <a title="用户详情" onclick="level_add('用户详情','/uinfo/{{$k->id}}','','900','600')" style="cursor:pointer;"> <i class="iconfont">&#xe70b;</i></a>	 
 	                            <a title="删除" onclick="return confirm('确定要删除吗?')" href="user/delete/{{$k -> id }}" style="text-decoration:none">
 	                                <i class="layui-icon"></i>
 	                            </a>
@@ -124,41 +122,13 @@
 	            <span class="x-right"> <div class="page_page" style="padding-bottom: 0px;"> {{ $arr->links() }} </div> </span>
 				<button class="layui-btn" onclick="level_add('添加用户','/user/create','','1200','600')"><i class="layui-icon"></i>添加</button>
                 </xblock>
-        		<!-- 继承提示是否添加成功开始 -->
-		        @section('issue')
-		        <!-- <link rel="stylesheet" href="/boot/css/bootstrap.css">  -->
-		        <script src="/boot/js/jquery.min.js"></script>
-		        <script src="/boot/js/bootstrap.js"></script>
-		            @if (session('success'))
-			        <div class="bs-example" data-example-id="dismissible-alert-css">
-			            <div class="alert alert-success alert-dismissible" role="alert">
-			              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-			                 {{ session('success') }}
-			            </div>
-			        </div>
-			    @endif
-
-			    @if (session('error'))
-			        <div class="bs-example" data-example-id="dismissible-alert-css">
-			            <div class="alert alert-danger alert-dismissible" role="alert">
-			              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-			                 {{ session('error') }}
-			            </div>
-			        </div>
-			    @endif
-		        @endsection
-				<!-- 继承提示是否添加结束 -->
-		
+                
 				<script>
 		            // 增加
 		            function level_add (title,url,id,w,h) {
 		                x_admin_show(title,url,w,h); 
 		            }
-
-		            // 开关按钮
-		            $("#demo").alert('123');//返回结果：1
 				</script>
-
 	            <script>
 			        // 基于准备好的dom，初始化echarts实例
 			        var myChart = echarts.init(document.getElementById('main'));

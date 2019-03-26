@@ -8,8 +8,13 @@
 						<div class="sin-list-pro fix" style="width:850px">
 							<!-- Product Image -->
 							<div class="sin-list-pro-img float-left">
-
-								<a href="#" class="list-pro-img"><img src="uploads/userinfo/feiGOvvOQRoKzfaULk2N7xq12mAinVO1RgIsVdeG.jpeg" alt="头像"></a> 
+								<form action="/img" method="post" enctype="multipart/form-data">
+			                        {{ csrf_field() }}
+	                                <label> 头像上传 </label>
+	                                 <input type="file" name="img">
+	                                 <input type="submit" value="上传头像" />
+								</form>
+								<a href="#" class="list-pro-img"><img src="/uploads/{{ $userInfo->img }}" alt="头像"></a> 
 								<a href="#pro-quick-view" class="list-pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 							</div>
 							<div class="list-pro-details fix">

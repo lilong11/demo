@@ -7,7 +7,7 @@
 				<div class="sin-blog fix">
 					<!-- Blog Image -->
 					<div class="blog-image">
-						<img src="Home_public/img/blog/blog-details.jpg" style="width:870px;height:400px">
+						<img src="/uploads/{{$workShow -> img }}" style="width:870px;height:400px">
 						<!-- Blog Date -->
 						<div class="blog-date text-center"><h4><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">05</font></font></h4><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">123</font></font></p></div>
 					</div>
