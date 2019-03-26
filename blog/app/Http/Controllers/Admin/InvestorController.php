@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\investor;
+use App\Http\Requests\InvestorRequest;
 class InvestorController extends Controller
 {
     /**
@@ -25,10 +26,13 @@ class InvestorController extends Controller
 		}
     	}
 
-	public function index()
+	public function index(Request $request)
 	{
-	   $investor = investor::all();
-	    return view('Admin/investor/index',['investor'=>$investor]);
+                $search = $request->input('search','');
+	   $investor = investor::where('name','like',"%$search%")->paginate(5);
+                $all = $request->all();
+
+	    return view('Admin/investor/index',['investor'=>$investor,'all' => $all]);
 	}
 
     /**
@@ -47,7 +51,7 @@ class InvestorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(InvestorRequest $request)
     {
         // dump('我是store方法,我负责接收添加的数据');
         // dump($request->all());
@@ -113,7 +117,7 @@ class InvestorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(InvestorRequest $request, $id)
     {
         dump($request->all());
         dump($id);

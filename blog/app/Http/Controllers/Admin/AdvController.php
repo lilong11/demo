@@ -18,12 +18,13 @@ class AdvController extends Controller
     {
         // dd($request->input('search','')) ;
       $search =$request->input('search','') ;
-        $adv = adv::where('guanggao','like','%'.$search.'%')->simplePaginate(3); 
-        $a = $request->all();
+        $adv = adv::where('id','like','%'.$search.'%')->Paginate(3); 
+        // $adv = adv::where('guanggao','like',"%$search%")->Paginate(3); 
+        $all = $request->all();
         // dump($request->all());
         // dump('我是广告的首页');
         // return view('Admin/adv/index');
-        return view('Admin/adv/index',['title'=>'广告首页','adv'=>$adv,'a'=>$a]);
+        return view('Admin/adv/index',['title'=>'广告首页','adv'=>$adv,'all'=>$all]);
     }
 
     /**

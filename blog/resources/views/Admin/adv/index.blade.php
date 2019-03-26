@@ -17,7 +17,7 @@
                          
                             
                             <div class="layui-input-inline">
-                              <input type="text" name="search" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                              <input value="{{ $all['search'] or ''}}" type="text" name="search" placeholder="请输入用户名" autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-input-inline" style="width:80px">
                                 <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon"></i></button>
@@ -109,7 +109,7 @@
                                 <input type="checkbox" value="1" name="">
                             </td>
                             <td>
-                                1
+                                {{ $v->id }}
                             </td>
                             <td>
                             <image src="/uploads/{{ $v->guanggao }}" width='80'>                             
@@ -144,9 +144,9 @@
                  </tr>
      @endforeach
 
-     {{ $adv->appends([])->links() }}
                     </tbody>
                 </table>
+     {{ $adv->appends($all)->links() }}
                 <!-- 右侧内容框架，更改从这里结束 -->
               </div>
             </div>

@@ -26,10 +26,12 @@ class OpinionController extends Controller
 
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $opinion = opinion::all();
-        return view('Admin/opinion/index',['opinion'=>$opinion,'title'=>'意见首页']);
+        $search = $request->input('search','');
+        $opinion = opinion::where('name','like',"%$search%")->paginate(5);
+        $all = $request->all();
+        return view('Admin/opinion/index',['opinion'=>$opinion,'title'=>'意见首页','all'=>$all]);
     }
 
     /**

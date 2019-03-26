@@ -24,6 +24,18 @@
 	<script type="text/javascript" src="/boot/js/bootstrap.min.js"></script>
 </head>
 <body>
+<!-- 添加不能空的提示信息开始 -->
+	@if ($errors->any())
+	    <!-- <div class=" layui-btn layui-btn-danger"> -->
+	    <div class="alert alert-info " style="color:red;text-align:center;">
+	        <ul>
+	            @foreach ($errors->all() as $error)
+	                <li>{{ $error }}</li>
+	            @endforeach
+	        </ul>
+	    </div>
+	@endif
+<!-- 添加不能空的提示信息结束 -->
 <form  action="/admin/report" method="post" enctype="multipart/form-data" style="width:600px;margin:100px auto;" >
 		{{ csrf_field() }}
 			<div class="center-block">

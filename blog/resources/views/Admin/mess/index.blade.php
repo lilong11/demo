@@ -24,6 +24,10 @@
         <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
         <script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
         <script type="text/javascript" src="/Admin_public/js/xadmin.js"></script>
+        <!-- bootstrap -->
+<!--       <link rel="stylesheet" type="text/css" href="/boot/css/bootstrap.min.css">
+    <script type="text/javascript" src="/boot/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/boot/js/bootstrap.min.js"></script> -->
         <!-- 分页 -->
             <style> .page_page{background: rgb(0,0,0,0); border-radius: 0.2rem; counter-reset: pagination; text-align: center; margin: 0px; } .page_page li{border: solid 1px #d6d6d6; border-radius: 0.2rem; color: #7d7d7d; text-decoration: none; text-transform: uppercase; display: inline-block; text-align: center; padding: 0.5rem 0.9rem; } </style>
 
@@ -31,13 +35,13 @@
         <div class="page-content" style="color:white">
                   <div class="content">
                     <!-- 右侧内容框架，更改从这里开始 -->
-                    <form class="layui-form xbs" action="/adv" method="get">
+                    <form class="layui-form xbs" action="/admin/mess" method="get">
                         <div class="layui-form-pane" style="text-align: center;">
                           <div class="layui-form-item" style="display: inline-block;">
                          
                             
                             <div class="layui-input-inline">
-                              <input type="text" name="search" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                              <input value="{{ $all['search'] or '' }}" type="text" name="search" placeholder="请输入用户名" autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-input-inline" style="width:80px">
                                 <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon"></i></button>
@@ -174,9 +178,20 @@
                  </tr>
      @endforeach
 
+
     
-                    </tbody>
-                </table>
+            </tbody>
+            </table>
+<!-- 分页开始 -->
+<!--             <div class="text-info">
+                试试少时诵诗书
+            </div> -->
+
+            <div class="">
+            {{ $mess->appends($all)->links() }}
+            </div>
+
+
                 <!-- 右侧内容框架，更改从这里结束 -->
               </div>
             </div>

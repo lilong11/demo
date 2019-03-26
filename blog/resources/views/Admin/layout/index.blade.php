@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <title>{{$title or '用户操作'}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" type="text/css" href="/admin_public/css/page_page1.css">
 </head>
 <body>
     <!-- 顶部开始 -->
     <div class="container" style="  width: 100%;height: 71px;background-color: rgba(0, 0, 0, 0.25);border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
-        <div class="logo"><a href="../Admin_public/index.html">{{$title or '用户操作'}}</a></div>
+        <div class="logo"><a href="/Admin_public/index.html">{{$title or '用户操作'}}</a></div>
         <div class="open-nav"><i class="iconfont">&#xe699;</i></div>
         <ul class="layui-nav right" lay-filter="">
           <li class="layui-nav-item">

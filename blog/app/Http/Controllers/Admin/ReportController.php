@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\report;
+use App\Http\Requests\ReportRequest;
 class ReportController extends Controller
 {
     /**
@@ -24,10 +25,15 @@ class ReportController extends Controller
 
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $report = report::all();
-        return view('Admin/report/index',['report'=>$report]);
+        $search = $request->input('search','');
+        // dump($request->all());
+        // $report = report::where('name','like','%'.$search.'%')->paginate(5);
+        $report = report::where('name','like',"%$search%")->Paginate(3); 
+
+        // return view('Admin/report/index',['report'=>$report,'search'=>$search]);
+        return view('Admin/report/index',['report'=>$report,'all' => ($request->all())]);
     }
 
     /**
@@ -47,7 +53,7 @@ class ReportController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ReportRequest $request)
     {
         $file = $request->file('pic');
         // dump($request->file('pic'));

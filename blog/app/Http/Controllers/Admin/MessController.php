@@ -29,9 +29,15 @@ class MessController extends Controller
 
     public function index(Request $request)
     {
+        $search = $request->input('search','');
+        // dump($search);
+        $mess = mess::where('name','like',"%$search%")->Paginate(3);
+        // $report = report::where('name','like',"%$search%")->Paginate(3); 
 
-        $mess = mess::all();
-        return view('Admin/mess/index',['mess'=>$mess]);
+        $all = $request->all();
+        // dump($all);
+        // return view('Admin/mess/index',['mess'=>$mess,'all'=>$all]);
+        return view('Admin/mess/index',['mess'=>$mess,'all'=>$all]);
     }
 
     /**

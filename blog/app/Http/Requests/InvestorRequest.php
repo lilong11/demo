@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class NoticeRequest extends FormRequest
+class InvestorRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,14 +24,19 @@ class NoticeRequest extends FormRequest
     public function rules()
     {
         return [
-            'notice'=>'required'
+            'name' => 'required',
+            'sex' => 'required',
+            'phone' => 'required',
+            'email' => 'required'
         ];
     }
 
-    public function messages(){
-        return [
-            'content.required' => '公告内容不能为空'
-
+    public  function messages(){
+        return [ 
+        'name.required' => '姓名不能为空',
+        'sex.required' => '性别不能为空',
+        'phone.required' => '手机号不能为空',
+        'email.required' => '邮箱不能为空'
         ];
     }
 }
