@@ -27,6 +27,7 @@
 												{{ csrf_field() }}
 												<!-- <button type="button" class="btn btn-default"> </button> -->
 												<input type="text" name="address" value="{{ $v3->name }}&nbsp;{{ $v3->phone }}&nbsp;{{ $v3->address }}">
+												<input type="hidden" name="aid" value="{{ $v3->id }}"> 
 												<input type="submit" value="选择" >
 											</form>
 										</li>
@@ -118,7 +119,8 @@
 				<div class="order-details-wrapper">
 					<h2>商品信息</h2>
 					<div class="order-details fix">
-						<form action="#">
+						<form action="/address/pay" method="post">
+							{{ csrf_field() }}
 							<ul>
 								<li>
 									<p class="strong float-left" style="width:250px">商品</p>
@@ -129,7 +131,7 @@
 								@foreach($arr1 as $k1=>$v1)
 								
 								@endforeach
-
+								
 								@foreach($arr as $k=>$v)
 								<li>
 									<p class="float-left" style="width:250px">{{ $v->gname }}</p>
@@ -149,7 +151,7 @@
 									</p>
 								</li>
 								<li>
-									<button type="button" class="btn btn-success float-right btn-lg btn-block">提交订单</button>
+									<button type="submit" class="btn btn-success float-right btn-lg btn-block">提交订单</button>
 								</li>
 							</ul>
 						</form>

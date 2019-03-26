@@ -2,23 +2,8 @@
         
         @section('title','购物车')
         @section('content')
-		<!-- Page Breadcrumb Area
-============================================ -->
-<div class="page-breadcrumb bg-off-white">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
-				<ul class="breadcrumbs">
-					<li><a href="#">home</a></li>
-					<li><a href="#">category</a></li>
-					<li><span>full grid</span></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- Shop Product Area
-============================================ -->
+
+
 <div class="shop-page bg-off-white padding-bottom-90">
 	<div class="container">
 		<div class="row">
