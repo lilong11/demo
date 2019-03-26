@@ -63,14 +63,14 @@
 	                            文章内容
 	                        </th>
 	                      	<th  style="text-align: center;">
-	                            用户状态
+	                            公告状态
+	                        </th>
+	                        <th>
+	                        	图片
 	                        </th>
 							<th  style="text-align: center;">
 	                            添加时间
-	                        </th>
-	                        <th  style="text-align: center;">
-	                            修改时间
-	                        </th>
+	                        </th> 
 	                        <th  style="text-align: center;">
 	                            操作
 	                        </th>
@@ -92,22 +92,26 @@
 	                        <td>
 	                            {{ $k -> content }}
 	                        </td>
-	                        <td>
+	                        <td>   
 	                            @switch($k -> status)
 	                           		@case(0)
-	                           			显示
+	                           		<a href="/aworks/1/{{$k->id}}"><img src="/uploads/public/0.png" style="width:30px;"></a> 
 	                           		@break
 	                           		@case(1)
-	                           			不显示
-	                           		@break
-	                           	@endswitch
+	                           			<a href="/aworks/0/{{$k->id}}"><img src="/uploads/public/1.png" style="width:30px;"></a> 
+	                           		@break 
+	                           	@endswitch 
 	                        </td>
+	                       <td>
+	                        @if(!empty($k -> img))
+	                        <img src="/uploads/{{$k -> img }}" style="width:50px">
+	                        @else
+								 <img src="/uploads/works/7XM1CmFOiS4zoVhD0DRT3Xk6nb5CXrrhxb7Q2c2Q.png" style="width:50px">
+	                        @endif
+ 							</td> 
 	                        <td>
 	                             {{ $k -> created_at }}
-	                        </td>
-	                        <td>
-	                             {{ $k -> created_at }}
-	                        </td>
+	                        </td> 
 	                        <td class="td-manage">
 	                            <a title="编辑" href="works/{{$k -> id }}/edit" style="text-decoration:none">
 	                                <i class="layui-icon"></i>

@@ -48,11 +48,18 @@
 <body>
 <div class="sin-list-pro fix" style="width:850px">
 	<!-- Product Image -->
-	<div class="sin-list-pro-img float-left">
+	@if(empty($userInfo->img))
+			<div class="sin-list-pro-img float-left">
+			
+			</div>		
+	@else
+			<div class="sin-list-pro-img float-left">
+				<a href="#" class="list-pro-img"><img src="/uploads/{{ $userInfo->img }}"></a> 
+				<a href="#pro-quick-view" class="list-pro-quick-view" data-toggle="modal"></a>
+			</div>
+	@endif
 
-		<a href="#" class="list-pro-img"><img src="uploads/userinfo/feiGOvvOQRoKzfaULk2N7xq12mAinVO1RgIsVdeG.jpeg" alt="头像"></a> 
-		<a href="#pro-quick-view" class="list-pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
-	</div>
+
 	<div class="list-pro-details fix">
 		<a class="list-pro-title" href="#">用户名详情:</a> 
 		<p class="list-pro-availability">用户名: <span class="in-stock"> {{$user->uname}} </span></p> 
@@ -73,11 +80,11 @@
 		<p class="list-pro-availability fix">城市: <span class="in-stock"> {{$userInfo->city or '还没有填'}}  </span></p> 
 		<div class="list-pro-overview">
 			<h5>个新签名:</h5>
-			<p>{{$userInfo->sign or '这个人很懒,什么也没留下'}}</p>
+			<p>{{$userInfo->sign or '这个人很懒,什么也没留下.'}} </p>
 		</div>
 		<!-- Product Action -->
 		<div class="list-pro-action">
-			<a class="list-pro-act-btn btn-text" href="/infoEdit/74" style="cursor:pointer;">修改信息</a>
+			<a class="list-pro-act-btn btn-text" href="/uinfo/{{$userInfo->id}}/edit" style="cursor:pointer;">修改信息</a>
 			<a class="list-pro-act-btn btn-icon" href="/password" style="cursor:pointer;">修改密码</a> 
 		</div>
 	</div>

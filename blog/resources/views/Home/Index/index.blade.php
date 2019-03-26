@@ -130,7 +130,7 @@
 								<h5>登入 或 注册</h5>
 								<a class="button small" href="users/login">登入</a>
 								<span>or</span>
-								<a class="button small transparent" href="/users/create">立即注册</a>
+								<a class="button small transparent" href="/register">立即注册</a>
 							</div>
 						</div>
 					</div>
@@ -145,7 +145,7 @@
 							<li><a href="/users">个人中心<i class="zmdi zmdi-chevron-down"></i></a>
 								<ul class="top-sub-menu sub-menu-right">
 									<li><a href="#">个人中心</a></li> 
-									<li><a href="#">我的收藏</a></li>  
+									<li><a href="/Collection">我的收藏</a></li>  
 								</ul>
 							</li>
 						</ul>

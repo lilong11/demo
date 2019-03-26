@@ -10,6 +10,7 @@ use App\Models\works;
 use App\Models\Issues;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use DB;
 
 class UserinfoController extends Controller
 {
@@ -104,4 +105,24 @@ class UserinfoController extends Controller
              // echo '<script>alert("旧密码不正确");location="/password"</script>'; 
         }
     }
+    //用户头像上传
+    public function img(Request $request)
+    {
+        //接收文件上传对象 
+        $file = $request->file('img');
+        $file_name = $file->store('userinfo');  
+        $uid = session('uid');
+        // dd($uid);
+        if($file_name){
+            $bool = DB::table('Users_infos')->where('uid',$uid)->update(['img' => $file_name]);
+            if($bool){
+                 echo '<script>alert("头像上传成功.");location="/users"</script>';
+            }else{
+                 echo '<script>alert("头像上传失败.");location="/users"</script>';
+            }
+        }else{ 
+             echo '<script>alert("文件上传失败.");location="/users"</script>';exit;
+        }
+    }
+
 }

@@ -82,10 +82,10 @@ class UserController extends Controller
 
          if($res1 && $res2){
             DB::commit();
-            return redirect('user')->with('success','添加成功');
+            echo '<script>alert("添加成功");location="/user"</script>';
         }else{
              DB::rollBack();
-            return redirect('user')->with('error','添加失败');
+            echo '<script>alert("添加失败");location="/user/create"</script>'; 
         } 
     }
 
@@ -124,9 +124,9 @@ class UserController extends Controller
         $bool = $user->save(); 
 
         if($bool){
-            return redirect('user')->with('success','用户修改成功');
+            echo '<script>alert("用户修改成功");location="/user"</script>'; 
         }else{
-            return redirect('user')->with('error','用户修改失败');
+            echo '<script>alert("用户修改失败!");location="/user/{{$id}}/edit"</script>'; 
         }
 
     }
@@ -138,11 +138,9 @@ class UserController extends Controller
         // dd($id);
         $bool = Users::destroy($id);
         if($bool){
-
-            return redirect('user')->with('success','用户删除成功');
+            echo '<script>alert("用户删除成功.");location="/user"</script>'; 
         }else{
-
-            return redirect('user')->with('error','用户删除失败');
+            echo '<script>alert("用户删除失败!");location="/user"</script>'; 
         }
     }
 

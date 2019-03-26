@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
@@ -91,42 +90,22 @@ class UserController extends Controller
         $user->tel = $request->input('tel','');
         // 执行添加到数据库
         $res1 = $user->save();
+
+        // 获取用户刚刚添加的id
+        $uid = $user->id;
+        // 用户详情表
+        $userinfo = new Usersinfos;
+        $userinfo->uid = $uid;
+        $userinfo->tel = $request->input('tel','');
+        $res2 = $userinfo->save();
         // dump($res1);
-        if ($res1) { 
-            return redirect('/users/login')->with('success','注册成功');
+        if ($res1 && $res2) {  
+            echo '<script>alert("注册成功,将跳转到去登入");location="/users/login"</script>'; exit; 
         }else{
-            return redirect('/users/create')->with('errors','注册失败');
+            echo '<script>alert("注册失败!请重新注册!")location="/users/create"</script>';  exit;
         }
   
     } 
-
-    public function edit($id)
-    {
-        dump('edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        dump('update');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        dump('destroy');
-    }
 
     // 用户退出
     public function exit()

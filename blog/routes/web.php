@@ -56,6 +56,7 @@ Route::get('aPassword/{id}','Admin\PasswordController@edit');  //后台用户修
 Route::post('doPasswords/{id}','Admin\PasswordController@doPassword');//后台用户修改密码处理
 
 Route::get('show/{status}/{id}','Admin\ShowController@users'); //后台用户是否显示路由
+Route::get('aworks/{status}/{id}','Admin\ShowController@works'); //后台文章是否显示路由
 
 Route::get('/worke/delete/{id}','Admin\WorksController@delete');  //后台文章删除
 Route::resource('/works','Admin\WorksController');   //后台文章
@@ -71,7 +72,7 @@ Route::get('usersexit','Home\UserController@exit');  //前台用户退出
 Route::get('users/login','Home\UserController@login');  //前台用户登入
 Route::post('users/doLogin','Home\UserController@doLogin');  //前台登入处理
 
- 
+Route::post('img','Home\UserinfoController@img');  // 
 Route::resource('/users','Home\UserController');  //前台用户路由
 Route::get('doRegister/gain','Home\RegisterController@gain'); //前台用户手机号接收
 Route::post('doRegister','Home\RegisterController@doPhone'); //前台用户手机号注册处理
@@ -87,9 +88,9 @@ Route::get('love/{id}','Home\WorksController@love');	//文章喜欢+1路由
 Route::get('issues/{id}','Home\WorksController@issue');	//问题显示路由
 Route::resource('workss','Home\WorksController'); //前台文章路由 
 
-
-
-
+Route::get('Collections/{gid}','Home\CollectionController@delete'); //前台商品收藏删除 
+Route::get('Collectionadd/{gid}','Home\CollectionController@add'); //前台商品收藏添加 
+Route::resource('Collection','Home\CollectionController'); //前台商品收藏路由 
 
 
 
