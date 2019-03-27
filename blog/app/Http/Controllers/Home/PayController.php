@@ -55,7 +55,7 @@ class PayController extends Controller
             $Orderdetail->save();
         }
 
-        return view('Home.pay.pay');
+        return view('Home.pay.pay',['oid'=>$oid]);
     }
 
     /**
@@ -98,7 +98,15 @@ class PayController extends Controller
      */
     public function edit($id)
     {
-        //
+        $res = DB::table('orders')->where('oid', $id)->update(['status' => 1]);
+
+        if($res){
+            //判断支付成功  然后跳转到个人中心订单页面
+            echo '<script>alert("支付成功");location="/index/orders"</script>';
+        }else{ 
+            echo '<script>alert("支付失败");location="/index/orders"</script>';
+        }
+        
     }
 
     /**

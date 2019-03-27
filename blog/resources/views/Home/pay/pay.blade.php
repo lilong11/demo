@@ -489,7 +489,7 @@
 		<div class="bgcolor4">
 			<div class="bgcolor41">
 				<div class="bgcolor4_text1">支付</div>
-				<a href="./index.php?c=order&a=zfcg"><div class="bgcolor4_text2">确认支付</div></a>
+				<a href="/orders/pay/{{ $oid }}"><div class="bgcolor4_text2">确认支付</div></a>
 			</div>
 		</div>
 	</div>

@@ -9,7 +9,7 @@
 				<!-- Service Content -->
 				<div class="content fix">
 					<h3>免费送货</h3>
-					<p>Lorem ipsum虚拟文本到这里</p>
+					<p>顺丰快递全部包邮</p>
 				</div>
 			</div>
 			<!-- Single Service -->
@@ -19,7 +19,7 @@
 				<!-- Service Content -->
 				<div class="content fix">
 					<h3>退款保证</h3>
-					<p>Lorem ipsum虚拟文本到这里</p>
+					<p>1小时极速退款</p>
 				</div>
 			</div>
 			<!-- Single Service -->
@@ -29,7 +29,7 @@
 				<!-- Service Content -->
 				<div class="content fix">
 					<h3>安全购物</h3>
-					<p>Lorem ipsum虚拟文本到这里</p>
+					<p>全程保驾续航</p>
 				</div>
 			</div>
 			<!-- Single Service -->
@@ -38,13 +38,19 @@
 				<div class="icon text-center"><i class="zmdi zmdi-headset-mic"></i></div>
 				<!-- Service Content -->
 				<div class="content fix">
+<<<<<<< HEAD
 					<h3>退款保证</h3>
 					<p>Lorem ipsum虚拟文本到这里</p>
+=======
+					<h3>贴心售后</h3>
+					<p>专属客服在线售后</p> 
+>>>>>>> origin/qiqi
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
 <!-- Footer Top Area
 ============================================ -->
 <div class="footer-top bg-off-white padding-top-80 padding-bottom-90">
@@ -120,6 +126,7 @@
 		</div>
 	</div>
 </div>
+
 </div>
 </div>
 <!-- Quick View Area
@@ -212,7 +219,7 @@
 							</div>
 						</div>
 					</div>
- 
+
 
 
 <!-- JS -->
