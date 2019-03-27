@@ -1,5 +1,21 @@
 @extends('Admin/layout/index');
     @section('content')
+
+
+        @if (session('success'))
+            <div class="n1" style=" height='100'; color:#48D1CC;">
+                
+            {{ session('success') }}
+            </div>
+
+        @endif
+        @if (session('error'))
+            <div class="n1" style=" height='100'; color:red;">
+            {{ session('error') }}
+            </div>
+        @endif
+
+
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="/Admin_public/css/font.css">
         <link rel="stylesheet" href="/Admin_public/css/xadmin.css">
@@ -86,7 +102,7 @@
                                 </th>
                                 
                              
-                                <!-- <th>
+                             <!--    <th>
                                     加入时间
                                 </th>
                                 <th>

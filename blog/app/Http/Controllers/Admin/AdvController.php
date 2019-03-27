@@ -129,10 +129,10 @@ class AdvController extends Controller
        // dump($bool);
         if($bool){
 
-            return redirect('adv')->with('success','文章删除成功');
+            return redirect('adv')->with('success','广告删除成功');
         }else{
 
-            return redirect('adv')->with('error','文章删除失败');
+            return redirect('adv')->with('error','广告删除失败');
         }
     }
 
