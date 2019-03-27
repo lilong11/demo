@@ -19,7 +19,10 @@
           <div class="content">
             <!-- 右侧内容框架，更改从这里开始 -->
            
-            
+           <!-- 统计图js 引入 -->
+                
+
+
             <div class="layui-btn">订单列表</div>
             <table class="layui-table" style="width:1000px">
                 <thead>
@@ -82,7 +85,24 @@
                                         </td>
                                         <td>
                                                 <a href="/orders/orderdetail/{{ $v1->oid }}"><button type="button" class="layui-btn">查看详情</button></a>
-                                                <a href="/orders/fahuo/{{ $v1->oid }}"><button type="button" class="layui-btn">发货</button></a>
+                                                
+                                                @switch($v1->status)
+                                                    @case(0)
+                                                        
+                                                    @break
+                                                    @case(1)
+                                                            <a href="/orders/fahuo/{{ $v1->oid }}"><button type="button" class="layui-btn">发货</button></a>
+                                                    @break
+                                                    @case(2)
+                                                           
+                                                    @break
+                                                    @case(3)
+                                                           
+                                                    @break
+                                                    @case(4)
+                                                           
+                                                    @break
+                                                @endswitch
                                         </td>
                                                 
                                        
@@ -91,10 +111,40 @@
                         @endforeach
                 </tbody>
             </table>
+            <script type="text/javascript" src="/js/echarts.min.js"></script> 
+                <div id="main" style="width: 700px;height:400px; user-select: none;background:color: yellow;"></div> 
+
             <!-- 右侧内容框架，更改从这里结束 -->
           </div>
+
         </div>
         <!-- 右侧主体结束 -->
+                <script>
+                    // 基于准备好的dom，初始化echarts实例
+                    var myChart = echarts.init(document.getElementById('main'));
 
+                    // 指定图表的配置项和数据
+                    var option = {
+                        title: {
+                            text: ' 订单统计 '
+                        },
+                        tooltip: {},
+                        legend: {
+                            data:['用户数量']
+                        },
+                        xAxis: {
+                            data: ["等待支付","等待发货中","商品运输中","订单已完成","订单已取消"]
+                        },
+                        yAxis: {},
+                        series: [{
+                            name: '订单数量',
+                            type: 'bar',
+                            data: [{{ $a0 }}, {{ $a1 }}, {{$a2}}, {{$a3}}, {{$a4}}]
+                        }]
+                    };
+
+                    // 使用刚指定的配置项和数据显示图表。
+                    myChart.setOption(option);
+                </script>
 
  @endsection

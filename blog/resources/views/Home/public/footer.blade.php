@@ -38,13 +38,8 @@
 				<div class="icon text-center"><i class="zmdi zmdi-headset-mic"></i></div>
 				<!-- Service Content -->
 				<div class="content fix">
-<<<<<<< HEAD
-					<h3>退款保证</h3>
-					<p>Lorem ipsum虚拟文本到这里</p>
-=======
 					<h3>贴心售后</h3>
 					<p>专属客服在线售后</p> 
->>>>>>> origin/qiqi
 				</div>
 			</div>
 		</div>

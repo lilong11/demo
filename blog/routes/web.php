@@ -185,6 +185,10 @@ Route::resource('/admin/investor','Admin\InvestorController');
 // 王佳琦 开始    //215 结束
 //友情链接路由
 Route::resource('/links','Admin\LinksController');
+//友情链接添加
+Route::get('/links/create','Admin\LinksController@create'); 
+Route::post('/links/store','Admin\LinksController@store'); 
+
 
 
 //商品列表路由
