@@ -52,7 +52,7 @@
 		<div class="row">
 			<!-- Footer Address -->
 			<div class="sin-footer footer-address col-lg-3 col-md-4 col-sm-6 col-xs-12">
-				<div class="footer-logo"><img src="./home_public/img/logo-2.png" alt="logo" /></div>
+				<div class="footer-logo"><img src="/home_public/img/logo-2.png" alt="logo" /></div>
 				<p><span>地址：</span> 28 Green Tower，Street Name，纽约，美国</p>
 				<p><span>电话：</span> +88017 222 333</p>
 				<p><span>电子邮件：</span>  contact@shopieee.com</p>
@@ -115,7 +115,7 @@
 			</div>
 			<!-- Payment Method -->
 			<div class="payment-method col-sm-6 col-xs-12 text-right">
-				<img src="./home_public/img/payment-method.png" alt="" />
+				<img src="/home_public/img/payment-method.png" alt="" />
 			</div>
 		</div>
 	</div>
@@ -134,16 +134,16 @@
 						<!-- Product Details Image -->
 						<div class="product-details-image col-md-6 col-xs-12">
 							<ul class="quick-pro-thumb" role="tablist">
-								<li class="active"><a href="#big-image-1" data-toggle="tab"><img src="./home_public/img/product-details/thumb-2.jpg" alt="" /></a></li>
-								<li><a href="#big-image-2" data-toggle="tab"><img src="./home_public/img/product-details/thumb-1.jpg" alt="" /></a></li>
-								<li><a href="#big-image-3" data-toggle="tab"><img src="./home_public/img/product-details/thumb-3.jpg" alt="" /></a></li>
-								<li><a href="#big-image-4" data-toggle="tab"><img src="./home_public/img/product-details/thumb-4.jpg" alt="" /></a></li>
+								<li class="active"><a href="#big-image-1" data-toggle="tab"><img src="/home_public/img/product-details/thumb-2.jpg" alt="" /></a></li>
+								<li><a href="#big-image-2" data-toggle="tab"><img src="/home_public/img/product-details/thumb-1.jpg" alt="" /></a></li>
+								<li><a href="#big-image-3" data-toggle="tab"><img src="/home_public/img/product-details/thumb-3.jpg" alt="" /></a></li>
+								<li><a href="#big-image-4" data-toggle="tab"><img src="/home_public/img/product-details/thumb-4.jpg" alt="" /></a></li>
 							</ul>
 							<div class="quick-pro-big tab-content fix">
-								<div class="tab-pane active" id="big-image-1"><img src="./home_public/img/product-details/big-2.jpg" alt="" /></div>								
-								<div class="tab-pane" id="big-image-2"><img src="./home_public/img/product-details/big-1.jpg" alt="" /></div>								
-								<div class="tab-pane" id="big-image-3"><img src="./home_public/img/product-details/big-3.jpg" alt="" /></div>								
-								<div class="tab-pane" id="big-image-4"><img src="./home_public/img/product-details/big-4.jpg" alt="" /></div>								
+								<div class="tab-pane active" id="big-image-1"><img src="/home_public/img/product-details/big-2.jpg" alt="" /></div>								
+								<div class="tab-pane" id="big-image-2"><img src="/home_public/img/product-details/big-1.jpg" alt="" /></div>								
+								<div class="tab-pane" id="big-image-3"><img src="/home_public/img/product-details/big-3.jpg" alt="" /></div>								
+								<div class="tab-pane" id="big-image-4"><img src="/home_public/img/product-details/big-4.jpg" alt="" /></div>								
 							</div>
 						</div>
 						<!-- Product Details Content -->
@@ -219,50 +219,50 @@
 
 <!-- jQuery JS
 ============================================ -->
-<script src="./home_public/js/vendor/jquery-1.12.0.min.js"></script>
+<script src="/home_public/js/vendor/jquery-1.12.0.min.js"></script>
 <!-- Bootstrap JS
 ============================================ -->
-<script src="./home_public/js/bootstrap.min.js"></script>
+<script src="/home_public/js/bootstrap.min.js"></script>
 <!-- Nivo Slider JS
 ============================================ -->
-<script src="./home_public/js/jquery.nivo.slider.pack.js"></script>
+<script src="/home_public/js/jquery.nivo.slider.pack.js"></script>
 <!-- Mean Menu JS
 ============================================ -->
-<script src="./home_public/js/jquery.meanmenu.min.js"></script>
+<script src="/home_public/js/jquery.meanmenu.min.js"></script>
 <!-- Owl Carousel JS
 ============================================ -->
-<script src="./home_public/js/owl.carousel.min.js"></script>
+<script src="/home_public/js/owl.carousel.min.js"></script>
 <!-- Count Down JS
 ============================================ -->
-<script src="./home_public/js/jquery.countdown.min.js"></script>
+<script src="/home_public/js/jquery.countdown.min.js"></script>
 <!-- ScrollUP JS
 ============================================ -->
-<script src="./home_public/js/jquery.scrollup.min.js"></script>
+<script src="/home_public/js/jquery.scrollup.min.js"></script>
 <!-- TreeView JS
 ============================================ -->
-<script src="./home_public/js/jquery.treeview.js"></script>
+<script src="/home_public/js/jquery.treeview.js"></script>
 <!-- Price Slider JS
 ============================================ -->
-<script src="./home_public/js/jquery-ui.min.js"></script>
+<script src="/home_public/js/jquery-ui.min.js"></script>
 <!-- simpleLens JS
 ============================================ -->
-<script src="./home_public/js/jquery.elevateZoom-3.0.8.min.js"></script>
+<script src="/home_public/js/jquery.elevateZoom-3.0.8.min.js"></script>
 <!-- Magnific Popup JS
 ============================================ -->
-<script src="./home_public/js/jquery.magnific-popup.min.js"></script>
+<script src="/home_public/js/jquery.magnific-popup.min.js"></script>
 <!-- Nice Scroll JS
 ============================================ -->
-<script src="./home_public/js/jquery.nicescroll.min.js"></script>
+<script src="/home_public/js/jquery.nicescroll.min.js"></script>
 
 <!-- WOW JS
 ============================================ -->
-<script src="./home_public/js/wow.min.js"></script>
+<script src="/home_public/js/wow.min.js"></script>
 <script>
 	new WOW().init();
 </script>	
 <!-- Main JS
 ============================================ -->
-<script src="./home_public/js/main.js"></script>
+<script src="/home_public/js/main.js"></script>
 
 </body>
 </html> 
