@@ -58,25 +58,17 @@
                             
                         
                         <td>
-                            @if($v->limg) 
-                                <img src="{{ $v->limg }}" width="100" height="100%" style="border-radius:10px"> 
-                            
-                            @endif
+                                <img src="/uploads/{{ $v->limg }}" width="100" height="100" style="border-radius:8px"> 
                         </td>
                            
                         <td>{{ $v->created_at }}</td>
                        
                         <td>
-                            <!-- <a href="" class="layui-btn">修改</a> -->
-
-                            <input type="button" value="修改" class="layui-btn">
-
-                            <form action="/admin/links/{{ $v->id }}" method="post">
+                            <form action="links/{{ $v->id }}" method="post">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
                                 <input type="submit" value="删除" class="layui-btn layui-btn-danger" 
-                                    onclick="return confirm('确定要删除吗?')" >
-                             
+                                    onclick="return confirm('确定要删除吗?')" > 
                             </form>
                         </td>
                     </tr>
@@ -87,5 +79,6 @@
           </div>
         </div>
         <!-- 右侧主体结束 -->
-
+        
+        <!-- @include('Home.Tongji.tongji') -->
         @endsection

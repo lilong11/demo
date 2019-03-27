@@ -38,7 +38,17 @@ class OrdersController extends Controller
         dump($uname);
         dump($orders);
 
-        return view('Admin.Orders.orders',['orders'=>$orders,'uname'=>$uname]);
+        //统计图订单信息
+        $Orders = new Orders; 
+        // 统计订单个数 
+        $a0 =  count($Orders->where([ 'status' => 0 ])->get());
+        $a1 =  count($Orders->where([ 'status' => 1 ])->get());
+        $a2 =  count($Orders->where([ 'status' => 2 ])->get()); 
+        $a3 =  count($Orders->where([ 'status' => 3 ])->get()); 
+        $a4 =  count($Orders->where([ 'status' => 4 ])->get()); 
+
+
+        return view('Admin.Orders.orders',['orders'=>$orders,'uname'=>$uname,'a0'=>$a0,'a1'=>$a1,'a2'=>$a2,'a3'=>$a3,'a4'=>$a4,]);
     }
 
     /**

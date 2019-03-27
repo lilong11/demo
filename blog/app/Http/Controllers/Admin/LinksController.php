@@ -29,6 +29,7 @@ class LinksController extends Controller
      */
     public function create()
     {
+
         return view('Admin.Links.create');
     }
 
@@ -41,54 +42,37 @@ class LinksController extends Controller
     public function store(Request $request)
     {
 
-
+        // dd($request->lname);
         //数据验证
         $this->validate($request, [
-            'lname' => 'required|regex:/^[a-zA-Z{1}[\w]{5,15}$/', //以字母开头  6到16位的名字
+            'lname' => 'required', //以字母开头  6到16位的名字
             'lurl' => 'required|unique:links', //数据库里的名字不会有重复的
             'limg' => 'required',
         ],[
             'lname.required'=>'* 名称不能为空',
-            'lname.regex'=>'* 名称格式错误',
+            'lurl.unique'=>'* 地址不能重复',
+            // 'lurl.regex'=>'* 地址格式有问题:以https://开头',
             'lurl.required'=>'* 地址不能为空',
             'limg.required'=>'* 图片不能为空',
         ]);
 
-        // dump($request->all());
+        //接收文件上传对象
+        $file = $request->file('limg');
+        $file_name = $file->store('links');
 
         $links = new Links;
         $links->lname = $request->input('lname','');
         $links->lurl = $request->input('lurl','');
-        $links->limg = $request->input('limg','');
+        $links->limg = $file_name;
          // 执行添加到数据库
         $res = $links->save();
 
-       
-
-        $data = $request->except(['_token','limg','pic']);     //过滤一下子数据
-
-         if($request->hasFile('limg')){             //  如果有图片上传：
-
-            $file = Input::file('limg');
-
-            $enev = $file->getClientOriginalExtension();   //上传文件的后缀名
-        
-            $newName = 'link_'.date('YmdHis').mt_rand(1000,9999).'.'.$enev;    //设置文件名称 
-         
-            $path = $file->move(public_path().'/uploads/',$newName);     // 移动文件
-
-            $filepath = '/uploads/'.$newName;             //拼接文件路径
-
-            $data['limg'] = $filepath;         
-        }
-
-        $res = Links::create($data);                // 执行修改 
          if($res){
             DB::commit();
-            return redirect('admin/links')->with('success','添加成功'); //添加数据库成功后跳转到显示页面
+            return redirect('links')->with('success','添加成功'); //添加数据库成功后跳转到显示页面
         }else{
             DB::rollBack();
-            return redirect('admin/links')->with('error','添加失败');
+            return redirect('links')->with('error','添加失败');
         }
 
 
@@ -137,14 +121,11 @@ class LinksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //链接删除
-        // echo $id;
-        
+    {   
         if (Links::destroy($id)) {
-            return redirect('admin/links')->with('success','删除成功');
+            return redirect('/links')->with('success','删除成功');
         }else{
-            return redirect('admin/links')->with('success','删除失败');
+            return redirect('/links')->with('success','删除失败');
 
         }
     }

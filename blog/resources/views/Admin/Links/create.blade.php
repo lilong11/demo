@@ -26,8 +26,9 @@
                         @endif
                         <!-- 显示错误提示  结束-->
 
-                        <form class="layui-form"  method="post" action="/links">
+                        <form class="layui-form"  method="post" action="/links/store" enctype="multipart/form-data">
                         {{ csrf_field() }}
+
                             <div class="layui-form-item">
                                 <label for="level-name" class="layui-form-label">
                                     <span class="x-red">*</span>链接名称
@@ -50,24 +51,9 @@
                                 <label for="level-name" class="layui-form-label">
                                     <span class="x-red">*</span>链接图片
                                 </label>
-                                <input type="file" name="limg" value="" />
-                                <input type="hidden" name="pic" value="">
-                                <img src="" alt="" width="100" height="100" style="margin-left:200px;margin-top:-50px">
-                                
-                                    
-                                <!-- <input id="file" type="file"  name="limg"  > -->
-                                                  
+                                <input type="file" name="limg" value="">
+                                   
                             </div>
-
-                          
-
-                            <!-- <div class="layui-form-item">
-                                <label for="L_repass" class="layui-form-label">
-                                </label>
-                                <button  class="layui-btn" lay-filter="save" lay-submit="">
-                                    提交
-                                </button>
-                            </div> -->
                             <div class="layui-form-item">
                             <label for="L_repass" class="layui-form-label"></label>
                                 <input class="layui-btn" type="submit" value="确认添加" style="border-radius:5px;" >
