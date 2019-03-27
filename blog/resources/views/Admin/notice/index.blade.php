@@ -3,7 +3,7 @@
                     @if (session('success'))
                     <div class="bs-example" data-example-id="dismissible-alert-css">
                         <div class="alert alert-success alert-dismissible" role="alert">
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                          <button type="button" class="close btn" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                              {{ session('success') }}
                         </div>
                     </div>
@@ -58,6 +58,9 @@
                                 <th>
                                     公告
                                 </th>
+                                <th>
+                                    状态
+                                </th>
                                 
                              
                                 <th>
@@ -84,6 +87,19 @@
                             </td>
                             <td>
                                 {{ $v->notice }}
+                            </td>  
+                            <td>
+                            <button type="" class="btn">
+                            <a href="/admin/notice/status/{{ $v->id }}">
+                                @switch($v->status)
+                                @case(1)
+                                开启
+                                @break
+                                @case(0)
+                                关闭
+                                @endswitch
+                            </a>
+                            </button>
                             </td>
                           
                         

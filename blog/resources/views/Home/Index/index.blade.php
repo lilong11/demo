@@ -348,17 +348,22 @@
 		<div class="slide-text-right text-white slide-text">
 			<div class="middle-text text-center">
 				<h2 class="cap-sub-title wow fadeInDown" data-wow-duration=".9s" data-wow-delay="0.8s">XOSS SHOP</h2>
-				
+<!-- 前台遍历公告开始 -->
 	@foreach($notice as $k=>$v)
-				<h1 class="cap-title wow fadeInLeft" data-wow-duration=".9s" data-wow-delay="1.5s">{{ $v->notice }}</h1>
+				@if($v->status == 1)
+				<h1 class="cap-title wow fadeInLeft" data-wow-duration=".9s" data-wow-delay="1.5s">
+				{{ $v->notice }}
+				</h1>
+				@endif
 				
 	@endforeach
-				<p class="cap-dec wow fadeInRight" data-wow-duration="0.9s" data-wow-delay="2.2s">See our full collection.s summer 2016 Lookbook</p>
+<!-- 前台遍历公告结束 -->
+				<p class="cap-dec wow fadeInRight" data-wow-duration="0.9s" data-wow-delay="2.2s">See our full collection.s summer 2019 Lookbook</p>
 				<a href="#" class="cap-readmore button color white-hover wow fadeInUp" data-wow-duration="0.9s" data-wow-delay="3s">Shop Now</a>
 			</div>										
 		</div>
 	</div>
-	<div id="htmlcaption2" class="nivo-html-caption">				
+	<!-- <div id="htmlcaption2" class="nivo-html-caption">				
 		<div class="slide-text-left text-white slide-text">
 			<div class="middle-text text-center">
 				<h2 class="cap-sub-title wow fadeInDown" data-wow-duration=".9s" data-wow-delay="0.8s">XOSS SHOP</h2>
@@ -367,7 +372,7 @@
 				<a href="#" class="cap-readmore button color white-hover wow fadeInUp" data-wow-duration="0.9s" data-wow-delay="3s">Shop Now</a>
 			</div>	
 		</div>						
-	</div>
+	</div> -->
 </div>
 
 <!-- Banner Add Area
@@ -1532,11 +1537,16 @@
 
 
 						@foreach($adv as $k=>$v)
+						@if($v->status == 1)
 						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="/uploads/{{ $v->guanggao }}"  alt="" /></a>
+									<a href="#" class="sin-pro-img">
+									
+									<img src="/uploads/{{ $v->guanggao }}"  alt="" />
+
+									</a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"></a>
 									<!-- Product Action -->
 									<!-- <div class="sin-pro-action">
@@ -1566,6 +1576,7 @@
 								</div>
 							</div>
 						</div>
+						@endif
 						@endforeach
 
 
