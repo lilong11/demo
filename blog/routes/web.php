@@ -208,13 +208,26 @@ Route::post('/address/show/','Home\AddressController@show');
 
 //支付路由
 Route::post('/address/pay/','Home\PayController@index');
+//支付成功路由
+Route::get('/orders/pay/{id}','Home\PayController@edit'); 
 
 
 //后台订单路由
 Route::resource('orders','Admin\OrdersController');
 //订单详情路由
 Route::get('/orders/orderdetail/{id}','Admin\OrdersController@show'); 
+//后台订单发货路由
+Route::get('/orders/fahuo/{id}','Admin\OrdersController@edit'); 
 
+
+//个人中心订单路由
+Route::get('/index/orders','Home\OrdersController@index'); 
+//个人中心确认收货路由路由
+Route::get('/orders/show/{id}','Home\OrdersController@show'); 
+//个人中心订单取消路由
+Route::get('/orders/edit/{id}','Home\OrdersController@edit'); 
+//个人中心订单删除路由
+Route::get('/orders/destroy/{id}','Home\OrdersController@destroy'); 
 
 
 

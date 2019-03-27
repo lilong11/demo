@@ -13,7 +13,7 @@
 				<!-- Service Content -->
 				<div class="content fix">
 					<h3>免费送货</h3>
-					<p>Lorem ipsum虚拟文本到这里</p>
+					<p>顺丰快递全部包邮</p>
 				</div>
 			</div>
 			<!-- Single Service -->
@@ -23,7 +23,7 @@
 				<!-- Service Content -->
 				<div class="content fix">
 					<h3>退款保证</h3>
-					<p>Lorem ipsum虚拟文本到这里</p>
+					<p>1小时极速退款</p>
 				</div>
 			</div>
 			<!-- Single Service -->
@@ -33,7 +33,7 @@
 				<!-- Service Content -->
 				<div class="content fix">
 					<h3>安全购物</h3>
-					<p>Lorem ipsum虚拟文本到这里</p>
+					<p>全程保驾续航</p>
 				</div>
 			</div>
 			<!-- Single Service -->
@@ -42,24 +42,14 @@
 				<div class="icon text-center"><i class="zmdi zmdi-headset-mic"></i></div>
 				<!-- Service Content -->
 				<div class="content fix">
-					<h3>退款保证</h3>
-					<p>Lorem ipsum虚拟文本到这里</p> 
-				<div class="brand-slider">
-					<div class="sin-brand"><img src="home_public/img/brands/1.png" alt="" /></div>
-					<div class="sin-brand"><img src="home_public/img/brands/2.png" alt="" /></div>
-					<div class="sin-brand"><img src="home_public/img/brands/3.png" alt="" /></div>
-					<div class="sin-brand"><img src="home_public/img/brands/4.png" alt="" /></div>
-					<div class="sin-brand"><img src="home_public/img/brands/5.png" alt="" /></div>
-					<div class="sin-brand"><img src="home_public/img/brands/6.png" alt="" /></div>
-					<div class="sin-brand"><img src="home_public/img/brands/7.png" alt="" /></div>
-					<div class="sin-brand"><img src="home_public/img/brands/8.png" alt="" /></div>
-					<div class="sin-brand"><img src="home_public/img/brands/9.png" alt="" /></div>
-					<div class="sin-brand"><img src="home_public/img/brands/10.png" alt="" /></div> 
+					<h3>贴心售后</h3>
+					<p>专属客服在线售后</p> 
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
 <!-- Footer Top Area
 ============================================ -->
 <div class="footer-top bg-off-white padding-top-80 padding-bottom-90">
@@ -67,7 +57,7 @@
 		<div class="row">
 			<!-- Footer Address -->
 			<div class="sin-footer footer-address col-lg-3 col-md-4 col-sm-6 col-xs-12">
-				<div class="footer-logo"><img src="home_public/img/logo-2.png" alt="logo" /></div>
+				<div class="footer-logo"><img src="./home_public/img/logo-2.png" alt="logo" /></div>
 				<p><span>ADDRESS:</span> 28 Green Tower, Street Name New York City, USA</p>
 				<p><span>Telephone:</span> +88017 222 333</p>
 				<p><span>Email:</span> contact@shopieee.com</p>
@@ -134,8 +124,6 @@
 			</div>
 		</div>
 	</div>
-</div>
-</div>
 </div>
 
 

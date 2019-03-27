@@ -146,6 +146,7 @@
 								<ul class="top-sub-menu sub-menu-right">
 									<li><a href="#">个人中心</a></li> 
 									<li><a href="/Collection">我的收藏</a></li>  
+									<li><a href="/index/orders">我的订单</a></li>
 								</ul>
 							</li>
 						</ul>

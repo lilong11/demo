@@ -93,7 +93,13 @@ class OrdersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $res = DB::table('orders')->where('oid', $id)->update(['status' => 2]);
+        if($res){
+            //判断发货成功  然后跳转到个人中心订单页面
+            echo '<script>alert("订单已发货");location="/orders"</script>';
+        }else{ 
+            echo '<script>alert("订单发货失败");location="/orders"</script>';
+        }
     }
 
     /**

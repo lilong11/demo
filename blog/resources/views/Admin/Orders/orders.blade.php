@@ -62,7 +62,7 @@
                                         <td>{{ $v1->number }}</td>
                                         <td>{{ $v1->oprice }}</td>
                                         <td>
-                                                @switch($v1->status)
+                                            @switch($v1->status)
                                                 @case(0)
                                                         等待支付
                                                 @break
@@ -78,11 +78,11 @@
                                                 @case(4)
                                                         订单已取消
                                                 @break
-                                        @endswitch 
+                                            @endswitch 
                                         </td>
                                         <td>
                                                 <a href="/orders/orderdetail/{{ $v1->oid }}"><button type="button" class="layui-btn">查看详情</button></a>
-                                                <a href=""><button type="button" class="layui-btn">发货</button></a>
+                                                <a href="/orders/fahuo/{{ $v1->oid }}"><button type="button" class="layui-btn">发货</button></a>
                                         </td>
                                                 
                                        
