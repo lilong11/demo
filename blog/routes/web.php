@@ -104,12 +104,14 @@ Route::resource('Collection','Home\CollectionController'); //前台商品收藏�
 // 后台
  //广告路由
  Route::get('/adv/delete/{id}','Admin\AdvController@delete');
+ Route::get('/adv/status/{id}','Admin\AdvController@status');
  Route::resource('/adv','Admin\AdvController');
  //留言路由
   Route::get('/admin/mess/delete/{id}','Admin\MessController@delete');
  Route::resource('/admin/mess','Admin\MessController');   
  //公告路由
  Route::get('/admin/notice/delete/{id}','Admin\NoticeController@delete');
+ Route::get('/admin/notice/status/{id}','Admin\NoticeController@status');//公告修改显示状态路由
  Route::resource('/admin/notice','Admin\NoticeController');
  //意见路由
  Route::get('/admin/opinion/delete/{id}','Admin\OpinionController@delete');

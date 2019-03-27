@@ -135,4 +135,30 @@ class AdvController extends Controller
             return redirect('adv')->with('error','文章删除失败');
         }
     }
+
+    // 修改广告显示状态的方法
+    public function status($id){
+         $adv = new adv;
+         // $adv = adv::all();
+         // $adv->
+         $adv = adv::find($id);
+         // dump($adv);
+         if($adv->status == 0){
+
+             $adv->status = 1;
+             $bool = $adv->save();
+         }else{
+            $adv->status = 0;
+            $bool = $adv->save();
+         }
+         if($bool){
+            return redirect('/adv')->with('success','广告权限修改成功');
+         }else{
+            return redirect('/adv')->with('error','广告权限修改失败');
+         }
+    }
+
+
+
+
 }

@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <title>{{$title or '用户操作'}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap -->
+<!--     <link rel="stylesheet" type="text/css" href="/boot/css/bootstrap.min.css">
+    <script type="text/javascript" src="/boot/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/boot/js/bootstrap.min.js"></script> -->
+        <!-- 修饰分页的css -->
     <link rel="stylesheet" type="text/css" href="/admin_public/css/page_page1.css">
+    
 </head>
 <body>
     <!-- 顶部开始 -->

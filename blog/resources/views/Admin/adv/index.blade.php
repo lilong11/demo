@@ -3,7 +3,7 @@
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="/Admin_public/css/font.css">
         <link rel="stylesheet" href="/Admin_public/css/xadmin.css">
-        <link rel="stylesheet" href="../Admin_public/css/swiper.min.css">
+        <link rel="stylesheet" href="/Admin_public/css/swiper.min.css">
         <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
         <script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
@@ -25,6 +25,49 @@
                           </div>
                         </div> 
                     </form>
+                    <style type="text/css" media="screen">
+                        
+                    .page_page1{
+                        float: right;
+                        margin: 0px auto;
+                    }
+                    li.active {
+                        display: inline-block;
+                        background-color:  #48D1CC;
+                        /* border: 8px solid #4CAF50; */
+                        padding: 8px 16px;
+                        /* width: 44px; */
+                    }
+                    /* li{
+                        display: inline-block;
+                        background-color: #4CAF50;
+                    } */
+                    ul.page_page1 {
+                        display: inline-block;
+                        padding: 0;
+                        margin: 0 auto;
+                       
+                    }
+
+                    ul.page_page1 li {display: inline;}
+
+                    ul.page_page1 li a {
+                        color: black;
+                        /* float: left; */
+                        padding: 8px 16px;
+                        text-decoration: none;
+                        border-radius: 5px;
+                    }
+
+                    ul.page_page1 li a.active {
+                        background-color: #4CAF50;
+                        color: white;
+                        border-radius: 5px;
+                        border: 1px solid #4CAF50;
+                    }
+
+                    ul.page_page1 li a:hover:not(.active) {background-color: #ddd;}
+                    </style>
                 
                     <table class="layui-table">
                         <thead>
@@ -119,7 +162,18 @@
                             </td>
 
                             <td>
-                                {{ $v->status }}
+                                <button type="button" class="btn ">
+                                    <a href="/adv/status/{{ $v->id }}">
+                                    @switch($v->status)
+                                        @case(1)
+                                        开启
+                                        @break
+                                        @case(0)
+                                        禁用
+                                    @endswitch
+                                    </a>
+
+                                 </button>
                             </td>
                           
                         
@@ -153,7 +207,10 @@
 
                     </tbody>
                 </table>
-     {{ $adv->appends($all)->links() }}
+                <div class="page_page1" class="page_page1">
+    
+                {{ $adv->appends($all)->links() }}
+                </div>
                 <!-- 右侧内容框架，更改从这里结束 -->
               </div>
             </div>

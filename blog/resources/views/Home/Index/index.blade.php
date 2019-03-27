@@ -347,11 +347,16 @@
 		<div class="slide-text-right text-white slide-text">
 			<div class="middle-text text-center">
 				<h2 class="cap-sub-title wow fadeInDown" data-wow-duration=".9s" data-wow-delay="0.8s">XOSS SHOP</h2>
-				
+<!-- 前台遍历公告开始 -->
 	@foreach($notice as $k=>$v)
-				<h1 class="cap-title wow fadeInLeft" data-wow-duration=".9s" data-wow-delay="1.5s">{{ $v->notice }}</h1>
+				@if($v->status == 1)
+				<h1 class="cap-title wow fadeInLeft" data-wow-duration=".9s" data-wow-delay="1.5s">
+				{{ $v->notice }}
+				</h1>
+				@endif
 				
 	@endforeach
+<!-- 前台遍历公告结束 -->
 				<p class="cap-dec wow fadeInRight" data-wow-duration="0.9s" data-wow-delay="2.2s">See our full collection.s summer 2016 Lookbook</p>
 				<a href="#" class="cap-readmore button color white-hover wow fadeInUp" data-wow-duration="0.9s" data-wow-delay="3s">Shop Now</a>
 			</div>										

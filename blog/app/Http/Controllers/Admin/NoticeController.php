@@ -13,6 +13,23 @@ class NoticeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function status($id){
+        // dump($id);
+        $notice = notice::find($id);
+        if($notice->status == 0){
+            $notice->status = 1;
+            $bool = $notice->save();
+        }else{
+            $notice->status =0;
+            $bool = $notice->save();
+        }
+        if($bool){
+            return redirect('/admin/notice')->with('success','公告显示状态修改成功');
+        }else{
+            return redirect('/admin/notice')->with('error','公告显示状态修改失败');
+        }
+
+    }
 
     public function index(Request $request)
     {
