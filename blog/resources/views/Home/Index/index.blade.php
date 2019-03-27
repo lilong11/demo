@@ -1531,11 +1531,16 @@
 
 
 						@foreach($adv as $k=>$v)
+						@if($v->status == 1)
 						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="/uploads/{{ $v->guanggao }}"  alt="" /></a>
+									<a href="#" class="sin-pro-img">
+									
+									<img src="/uploads/{{ $v->guanggao }}"  alt="" />
+
+									</a>
 									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"></a>
 									<!-- Product Action -->
 									<!-- <div class="sin-pro-action">
@@ -1565,6 +1570,7 @@
 								</div>
 							</div>
 						</div>
+						@endif
 						@endforeach
 
 

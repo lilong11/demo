@@ -37,6 +37,9 @@
                                 </th>
                                 <th>
                                     广告
+                                </th> 
+                                <th>
+                                    状态
                                 </th>
                                 
                              
@@ -113,6 +116,10 @@
                             </td>
                             <td>
                             <image src="/uploads/{{ $v->guanggao }}" width='80'>                             
+                            </td>
+
+                            <td>
+                                {{ $v->status }}
                             </td>
                           
                         
