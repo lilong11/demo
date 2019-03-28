@@ -22,22 +22,22 @@ class DetailsGoodsController extends Controller
         // dump($details_goods);
         //获取颜色,尺寸,图片数据,并切割字符串
         foreach($details_goods as $k=>$v){
-            $gcolor[] = explode('&&',$v->gcolor);
+            // $gcolor[] = explode('&&',$v->gcolor);
             $gsize[] = explode('&&',$v->gsize);
             $goodsDePic[] = explode('&&',$v->goodsDePic);
         }
         // dump($gcolor);
         // $gcolors = $gcolor;
-        if(empty($gcolor)){
+        if(empty($gsize)){
             return '<h1>暂无数据请添加</h1>3秒后自动跳转,如不跳转请点击<a href="newgoods">返回</a><meta http-equiv="refresh" content="3;URL=newgoods">';
 
         }
         //获取服装颜色
-        foreach($gcolor as $k=>$v){
-            for($i=0;$i<count($v);$i++){
-            $gcolor_datas[$k][] = DB::table('goods_colors')->where('id',$v[$i])->first();
-            }
-        }
+        // foreach($gcolor as $k=>$v){
+        //     for($i=0;$i<count($v);$i++){
+        //     $gcolor_datas[$k][] = DB::table('goods_colors')->where('id',$v[$i])->first();
+        //     }
+        // }
         // dump($gcolor_datas);
         // dump($gcolor_datas);
         
@@ -52,7 +52,7 @@ class DetailsGoodsController extends Controller
         // exit;
         $gid = -1;
         $id = 1;
-        return view('Admin.DetailsGoods.detailsgoods',['details_goods'=>$details_goods,'gcolor_datas'=>$gcolor_datas,'gsize_datas'=>$gsize_datas,'goodsDePic'=>$goodsDePic,'id'=>$id,'gid'=>$gid]);
+        return view('Admin.DetailsGoods.detailsgoods',['details_goods'=>$details_goods,'gsize_datas'=>$gsize_datas,'goodsDePic'=>$goodsDePic,'id'=>$id,'gid'=>$gid]);
     }
 
     /**
@@ -62,11 +62,11 @@ class DetailsGoodsController extends Controller
      */
     public function create(Request $request)
     {
-        $goods_color = DB::table('goods_colors')->get();
+        // $goods_color = DB::table('goods_colors')->get();
         $goods_size = DB::table('goods_sizes')->get();
         $id = $request->all();
         //商品详情的添加
-        return view('Admin.DetailsGoods.add',['id'=>$id,'goods_color'=>$goods_color,'goods_size'=>$goods_size]);
+        return view('Admin.DetailsGoods.add',['id'=>$id,'goods_size'=>$goods_size]);
     }
 
     /**
@@ -99,8 +99,8 @@ class DetailsGoodsController extends Controller
         $data = $request->all();
         // dump($details_img);
         // 获取服装颜色，切割成字符串,用于保存到数据库中
-        $gcolor = $data['gcolor'];
-        $details_color = implode('&&',$gcolor);
+        // $gcolor = $data['gcolor'];
+        // $details_color = implode('&&',$gcolor);
         // 获取服装尺寸，切割成字符串,用于保存到数据库中
         $gsize = $data['gsize'];
         $details_size = implode('&&',$gsize);
@@ -112,7 +112,7 @@ class DetailsGoodsController extends Controller
         $details_goods = new DetailsGoods;
         $details_goods->gid = $request->input('gid','');
         $details_goods->content = $request->input('content','');
-        $details_goods->gcolor = $details_color;
+        // $details_goods->gcolor = $details_color;
         $details_goods->gsize = $details_size;
         $details_goods->GoodsDePic = $details_img;
         $details_goods->status = 1;
@@ -161,12 +161,12 @@ class DetailsGoodsController extends Controller
             
         }
         //获取服装颜色
-        $goods_color = DB::table('goods_colors')->get();
+        // $goods_color = DB::table('goods_colors')->get();
         //获取服装尺寸
         $goods_size = DB::table('goods_sizes')->get();
         //获取详情数据
         $details_data = DB::table('details_goods')->where('id',$id)->first();
-        return view('Admin.DetailsGoods.edit',['details_data'=>$details_data,'goods_color'=>$goods_color,'goods_size'=>$goods_size]);
+        return view('Admin.DetailsGoods.edit',['details_data'=>$details_data,'goods_size'=>$goods_size]);
     }
 
     /**
@@ -200,15 +200,15 @@ class DetailsGoodsController extends Controller
         $data = $request->all();
         // dump($details_img);
         // 获取服装颜色，切割成字符串,用于保存到数据库中
-        $gcolor = $data['gcolor'];
-        $details_color = implode('&&',$gcolor);
+        // $gcolor = $data['gcolor'];
+        // $details_color = implode('&&',$gcolor);
         // 获取服装尺寸，切割成字符串,用于保存到数据库中
         $gsize = $data['gsize'];
         $details_size = implode('&&',$gsize);
 
         //把数据压入到数组中
         unset($data['_token']);
-        $data['gcolor'] = $details_color;
+        // $data['gcolor'] = $details_color;
         $data['gsize'] = $details_size;
         $data['goodsDePic'] = $details_img;
         //获取id

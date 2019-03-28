@@ -35,14 +35,7 @@
                       <textarea placeholder="请输入内容" class="layui-textarea" name="content"></textarea>
                     </div>
                 </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">服装颜色</label>
-                    <div class="layui-input-block">
-                        @foreach($goods_color as $k=>$v)
-                      <input type="checkbox" name="gcolor[]" title="{{ $v->gcolorname }}" value="{{ $v->id }}"><div class="layui-unselect layui-form-checkbox"><span></span><i class="layui-icon"></i></div>
-                      @endforeach
-                    </div>
-                  </div>
+                
                   <div class="layui-form-item">
                     <label class="layui-form-label">服装尺寸</label>
                     <div class="layui-input-block">

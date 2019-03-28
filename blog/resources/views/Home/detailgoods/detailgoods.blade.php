@@ -81,20 +81,7 @@
 					<a href="#" style="width:100px;">{{ $vv->gsizename }}</a>
 					@endforeach
 				</div>
-				<div class="pro-details-color-quantity fix">
-					<div class="pro-details-size fix">
-						<h5>颜色:</h5>
-						@foreach($gcolor_datas as $kkk=>$vvv )
-						<a href="#" style="width:100px;">{{ $vvv->gcolorname }}</a>
-						@endforeach
-					</div>
-					<div class="pro-details-quantity float-left">
-						<h5>quantity:</h5>
-						<div class="pro-qty float-left fix">
-							<input type="text" value="0" name="qtybutton" class="cart-plus-minus-box">
-						<span class="inc qtybtn"><i class="zmdi zmdi-chevron-up"></i></span><span class="dec qtybtn"><i class="zmdi zmdi-chevron-down"></i></span></div>
-					</div>
-				</div>
+				
 				<!-- Product Action -->
 				<div class="pro-details-action fix">
 					<button class="pro-details-act-btn btn-text">add to bag</button>
