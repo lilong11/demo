@@ -191,6 +191,13 @@ Route::resource('/links','Admin\LinksController');
 Route::get('/links/create','Admin\LinksController@create'); 
 Route::post('/links/store','Admin\LinksController@store'); 
 
+//订单广告路由
+Route::resource('/orders/adver','Admin\AdverController'); 
+//订单广告添加
+Route::get('/orders/adver/create','Admin\AdverController@create'); 
+Route::post('/orders/adver/store','Admin\AdverController@store'); 
+
+
 
 
 //商品列表路由

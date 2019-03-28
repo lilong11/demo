@@ -10,7 +10,7 @@ use App\Models\Orderdetail;
 use App\Models\Users;
 use App\Models\Goods;
 use App\Models\Address;
-
+use App\Models\Adver;
 
 class OrdersController extends Controller
 {
@@ -46,7 +46,11 @@ class OrdersController extends Controller
         }
         dump($oname);
 
-    return view('Home.Orders.orders',['orders'=>$orders,'orderdetail'=>$orderdetail,'goods'=>$goods,'oname'=>$oname]);
+
+        //取出广告表中的数据
+        $adver = adver::all(); //查询adver数据表里的全部数据
+
+    return view('Home.Orders.orders',['orders'=>$orders,'orderdetail'=>$orderdetail,'goods'=>$goods,'oname'=>$oname,'adver'=>$adver]);
     }
 
     /**

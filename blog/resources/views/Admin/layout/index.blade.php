@@ -139,26 +139,24 @@
                 <li class="list">
                     <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
-                        优惠券管理
+                        订单广告管理
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
-                        <li  class="current">
-                            <a href=" ">
+                        <li class="current">
+                            <a href="/orders/adver">
                                 <i class="iconfont">&#xe6a7;</i>
-                                优惠券列表
+                                广告列表
                             </a>
                         </li>
                         <li>
-                            <a href=" ">
+                            <a href="/orders/adver/create">
                                 <i class="iconfont">&#xe6a7;</i>
-                                优惠券添加
+                                广告添加
                             </a>
                         </li>
-
                     </ul>
                 </li>
-
                 <li class="list">
                     <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
@@ -180,6 +178,29 @@
                         </li>
                     </ul>
                 </li>
+                <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i>
+                        优惠券管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li  class="current">
+                            <a href=" ">
+                                <i class="iconfont">&#xe6a7;</i>
+                                优惠券列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href=" ">
+                                <i class="iconfont">&#xe6a7;</i>
+                                优惠券添加
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
 
                 <li class="list">
                     <a href="javascript:;">
