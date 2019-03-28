@@ -14,6 +14,22 @@
     
 </head>
 <body>
+
+<!-- 增删改提示信息开始
+        @if (session('success'))
+            <div class="n1" style=" height='100'; color:#2bf666;">
+                
+            {{ session('success') }}
+            </div>
+
+        @endif
+        @if (session('error'))
+            <div class="n1" style=" height='100'; color:red;">
+            {{ session('error') }}
+            </div>
+        @endif
+增删改提示信息结束 -->
+
     <!-- 顶部开始 -->
     <div class="container" style="  width: 100%;height: 71px;background-color: rgba(0, 0, 0, 0.25);border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
         <div class="logo"><a href="/Admin_public/index.html">{{$title or '用户操作'}}</a></div>

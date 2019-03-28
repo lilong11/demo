@@ -60,11 +60,11 @@ class OpinionController extends Controller
         $bool = $opinion->save();
 
         if ($bool && $hidden) {
-             return redirect('/')->with('success','投资人添加成功');
+             return redirect('/')->with('success','意见添加成功');
         }elseif($bool && $hidden == ''){
-            return redirect('/admin/opinion')->with('success','投资人添加成功');
+            return redirect('/admin/opinion')->with('success','意见添加成功');
         }else{
-            return redirect('/admin/opinion')->with('error','投资人添加失败');
+            return redirect('/admin/opinion')->with('error','意见添加失败');
 
         }
     }
