@@ -235,7 +235,7 @@
 											</div>
 										</div>
 									</li>
-									<li><a href="contact.html">商城</a></li>
+									<li><a href="/homegoods">商城</a></li>
 								</ul>
 							</nav>
 						</div>
@@ -399,8 +399,8 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img"><img src="uploads/{{ $v->pic }}"  alt="" /></a>
-									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<a href="/newdetailgoods?id={{ $v->id }}" class="sin-pro-img"><img src="uploads/{{ $v->pic }}"  alt="" /></a>
+									<a href="/newdetailgoods?id={{ $v->id }}" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 									<!-- Product Action -->
 									<div class="sin-pro-action">
 										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>

@@ -401,6 +401,14 @@
                             </a>
                         </li>
                     </ul>
+                    <ul class="sub-menu">
+                        <li  class="current">
+                            <a href="/newdetailsgoods">
+                                <i class="iconfont">&#xe6a7;</i>
+                                最新商品详情列表
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <!-- 左边管理栏目结束 -->
             </ul>

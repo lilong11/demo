@@ -45,6 +45,17 @@
 	<!-- Responsive CSS 
 	============================================ -->
 	<link rel="stylesheet" href="/home_public/css/responsive.css">
+	<!-- 商品详情图 
+	============================================ -->
+	<link rel="stylesheet" type="text/css" href="/home_public/css/normalize.css" />
+	<link href="/home_public/src/jquery.exzoom.css" rel="stylesheet" type="text/css"/>
+	<style>
+	    #exzoom {
+	        width: 500px;
+	        /*height: 400px;*/
+	       
+	    }
+	</style>
 	<!-- Modernizer JS
 	============================================ -->
 	<script src="/home_public/js/vendor/modernizr-2.8.3.min.js"></script>
