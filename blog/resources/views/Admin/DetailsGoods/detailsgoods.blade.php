@@ -3,13 +3,6 @@
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="/Admin_public/css/font.css">
 <link rel="stylesheet" href="/Admin_public/css/xadmin.css">
-<!--可无视-->
-<!-- <link rel="stylesheet" type="text/css" href="/Admin_public/css/reset.css">
-<link rel="stylesheet" type="text/css" href="/Admin_public/css/body.css">
- --><!--主要样式-->
-<!-- <link rel="stylesheet" href="/Admin_public/css/demo.css">
-<link rel="stylesheet" href="/Admin_public/src/css/dialog.css"> -->
-
 <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
@@ -127,7 +120,7 @@
                             <a style="text-decoration:none" onclick="member_stop(this,'10001')" href="" title="">
                                 <i class="layui-icon">&#xe601;</i>
                             </a>
-                            <a title="编辑" href="/detailsgoods/show?id=">
+                            <a title="编辑" href="/detailsgoods/show?id={{ $value->id }}">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>                                       
                             <form action="/detailsgoods/{{ $value->id }}" method="post">
@@ -147,33 +140,4 @@
         <!-- 右侧主体结束 -->
     </div>
     <!-- 中部结束 -->
-<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-<script src="/Admin_public/src/jquery.dialog.js"></script>
-@foreach($details_goods as $key=>$value)
-<script>
-    // 确认框：标题+提示语+描述文本+确认+取消
-    
-    $('#confirm').click(function() {
-      $.sendConfirm({
-        title: '商品描述',
-        
-        desc: {{ $value->content }},
-        
-        button: {
-          confirm: '确认',
-          cancel: '取消'
-        },
-        onConfirm: function() {
-          console.log('点击确认！');
-        },
-        onCancel: function() {
-          console.log('点击取消！');
-        },
-        onClose: function() {
-          console.log('点击关闭！');
-        }
-      });
-    });
-</script>
-@endforeach
 @endsection

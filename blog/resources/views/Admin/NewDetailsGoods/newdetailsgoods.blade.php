@@ -1,13 +1,13 @@
 @extends('admin.layout.index')
 @section('content')
-            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-            <link rel="stylesheet" href="/Admin_public/css/font.css">
-            <link rel="stylesheet" href="/Admin_public/css/xadmin.css">
-            <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
-            <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-            <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
-            <script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
-            <script type="text/javascript" src="/Admin_public/js/xadmin.js"></script>  
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/Admin_public/css/font.css">
+<link rel="stylesheet" href="/Admin_public/css/xadmin.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+<script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
+<script type="text/javascript" src="/Admin_public/js/xadmin.js"></script>  
 
         <!-- 右侧主体开始 -->
         <div class="page-content">
@@ -32,7 +32,7 @@
                   </div>
                 </div> 
             </form>
-            <xblock><a href="/newgoods/create/"><button class="layui-btn" ><i class="layui-icon">&#xe608;</i>添加</button></a><span class="x-right" style="line-height:40px">共有数据：88 条</span></xblock>
+            <xblock><span class="x-right" style="line-height:40px">共有数据：88 条</span></xblock>
             @if (session('success'))
                 <div class="btn btn-success">
                     {{ session('success') }}
@@ -49,19 +49,16 @@
                             ID
                         </th>
                         <th>
-                            最新商品名
+                            服装颜色
                         </th>
                         <th>
-                            最新商品图片
+                            服装尺寸
                         </th>
                         <th>
-                            最新商品价格
+                            服装图片
                         </th>
                         <th>
-                            最新商品数量
-                        </th>
-                        <th>
-                            最新商品详情
+                            服装简介
                         </th>
                         <th>
                             状态
@@ -71,47 +68,65 @@
                         </th>
                     </tr>
                 </thead>                
-                @foreach($newgoods_data as $k=>$v)
+                @foreach($details_goods as $key=>$value)
                 <tbody>
                     <tr>                        
                         <td>
                             {{ $id++ }}
                         </td>
+                        <p style="display:none">{{ $gid++ }}</p>
                         <td>
-                            <u style="cursor:pointer" onclick="member_show('张三','member-show.html','10001','360','400')">
-                                {{ $v->gname }}
-                            </u>
-                        </td>
-                        <td>
-                            <img src="/uploads/{{ $v->pic }}" alt="" width="80px">                            
+                            @foreach($gcolor_datas as $k=>$v)
+                                @if($k == $gid)
+                                @foreach($v as $kk=>$vv)
+                                    {{ $vv->gcolorname }}<br/>
+                                @endforeach
+                                @endif
+                            @endforeach
                         </td>
                         <td >
-                            {{ $v->price }}
-                        </td>
-                        <td >
-                            {{ $v->goodsNum }}
+                            @foreach($gsize_datas as $k=>$v)
+                                @if($k == $gid)
+                                @foreach($v as $kk=>$vv)
+                                    {{ $vv->gsizename }}<br/>
+                                @endforeach
+                                @endif
+                            @endforeach
                         </td>
                         <td>
-                            <a href="/newdetailsgoods"><button class="layui-btn" ><i class="layui-icon"></i>查看</button></a>
-                            <a href="/newdetailsgoods/create?id={{ $v->id }}"><button class="layui-btn" ><i class="layui-icon"></i>添加</button></a>
+                            @foreach($goodsDePic as $k=>$v)
+                                @if($k == $gid)
+                                @for($i = 0;$i<count($v);$i++)
+                                <img src="{{ $v[$i] }}" alt="" width="80px" height="80px"> 
+                                @endfor
+                                @endif
+                            @endforeach
+                            
+                        </td>
+                        <td class="td-status">
+                            <!-- <span class="layui-btn layui-btn-normal layui-btn-mini" id="confirm">
+                                点击查看
+                            </span> -->
+                            {{ $value->content }}
                         </td>
                         <td class="td-status">
                             <span class="layui-btn layui-btn-normal layui-btn-mini">
-                                {{ $v->goodsState == 1 ? '已启用' : '已停用' }}
+                                {{ $value->status == 1 ? '已启用' : '已停用' }}
                             </span>
-                            <a href="/status/newgoods?id={{ $v->id }}">修改</a>
+
+                            <a href="/status/newdetailsgoods?id={{ $value->id }}">修改</a>
                         </td>
                         <td class="td-manage">
-                            <a style="text-decoration:none" onclick="member_stop(this,'10001')" href="javascript:;" title="停用">
+                            <a style="text-decoration:none" onclick="member_stop(this,'10001')" href="" title="">
                                 <i class="layui-icon">&#xe601;</i>
                             </a>
-                            <a title="编辑" href="/newgoods/show?id={{ $v->id }}">
+                            <a title="编辑" href="/newdetailsgoods/show?id={{ $value->id }}">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>                                       
-                            <form action="/newgoods/{{ $v->id }}" method="post">
+                            <form action="/newdetailsgoods/{{ $value->id }}" method="post">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
-                                <input type="hidden" name="pic" value="{{ $v->pic }}">
+                                <input type="hidden" name="id" value="{{ $value->id }}">
                                 <input type="submit" value="删除" class="btn btn-danger">
                             </form>
                         </td>

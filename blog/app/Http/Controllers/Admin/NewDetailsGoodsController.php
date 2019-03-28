@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\DetailsGoods;
+use App\Models\NewDetailsGoods;
 use DB;
 use Storage;
 
-class DetailsGoodsController extends Controller
+class NewDetailsGoodsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class DetailsGoodsController extends Controller
     public function index()
     {
         //获取详情数据
-        $details_goods = DB::table('details_goods')->get();
+        $details_goods = DB::table('new_details_goods')->get();
         // dump($details_goods);
         //获取颜色,尺寸,图片数据,并切割字符串
         foreach($details_goods as $k=>$v){
@@ -52,7 +52,7 @@ class DetailsGoodsController extends Controller
         // exit;
         $gid = -1;
         $id = 1;
-        return view('Admin.DetailsGoods.detailsgoods',['details_goods'=>$details_goods,'gcolor_datas'=>$gcolor_datas,'gsize_datas'=>$gsize_datas,'goodsDePic'=>$goodsDePic,'id'=>$id,'gid'=>$gid]);
+        return view('Admin.NewDetailsGoods.newdetailsgoods',['details_goods'=>$details_goods,'gcolor_datas'=>$gcolor_datas,'gsize_datas'=>$gsize_datas,'goodsDePic'=>$goodsDePic,'id'=>$id,'gid'=>$gid]);
     }
 
     /**
@@ -66,7 +66,7 @@ class DetailsGoodsController extends Controller
         $goods_size = DB::table('goods_sizes')->get();
         $id = $request->all();
         //商品详情的添加
-        return view('Admin.DetailsGoods.add',['id'=>$id,'goods_color'=>$goods_color,'goods_size'=>$goods_size]);
+        return view('Admin.NewDetailsGoods.add',['id'=>$id,'goods_color'=>$goods_color,'goods_size'=>$goods_size]);
     }
 
     /**
@@ -109,7 +109,7 @@ class DetailsGoodsController extends Controller
         DB::beginTransaction();
         //把数据压入到数据库
         $request->except(['_token']);
-        $details_goods = new DetailsGoods;
+        $details_goods = new NewDetailsGoods;
         $details_goods->gid = $request->input('gid','');
         $details_goods->content = $request->input('content','');
         $details_goods->gcolor = $details_color;
@@ -120,10 +120,10 @@ class DetailsGoodsController extends Controller
         //判断商品是否添加成功
         if($res){
             DB::commit();
-            return redirect('/detailsgoods')->with('success','添加成功');
+            return redirect('/newdetailsgoods')->with('success','添加成功');
         }else{
             DB::rollBack();
-            return redirect('/detailsgoods')->with('error','添加失败');
+            return redirect('/newdetailsgoods')->with('error','添加失败');
 
         }
     }
@@ -140,7 +140,7 @@ class DetailsGoodsController extends Controller
         $id = $request->all();
         //获取详情数据
         //获取图片路径
-        $details_goods = DB::table('details_goods')->where('id',$id)->get();
+        $details_goods = DB::table('new_details_goods')->where('id',$id)->get();
         // dump($details_goods);
         foreach($details_goods as $k=>$v){
             $pic = $v->goodsDePic;
@@ -165,8 +165,8 @@ class DetailsGoodsController extends Controller
         //获取服装尺寸
         $goods_size = DB::table('goods_sizes')->get();
         //获取详情数据
-        $details_data = DB::table('details_goods')->where('id',$id)->first();
-        return view('Admin.DetailsGoods.edit',['details_data'=>$details_data,'goods_color'=>$goods_color,'goods_size'=>$goods_size]);
+        $details_data = DB::table('new_details_goods')->where('id',$id)->first();
+        return view('Admin.NewDetailsGoods.edit',['details_data'=>$details_data,'goods_color'=>$goods_color,'goods_size'=>$goods_size]);
     }
 
     /**
@@ -214,14 +214,14 @@ class DetailsGoodsController extends Controller
         //获取id
         $id = $data['id'];
         //把数据压入到数据库中
-        $detailsgoods_datas = DB::table('details_goods')->where('id',$id)->update($data);
+        $detailsgoods_datas = DB::table('new_details_goods')->where('id',$id)->update($data);
         //判断商品是否修改成功
         if($detailsgoods_datas == 1){
             DB::commit();
-            return redirect('/detailsgoods')->with('success','修改成功');
+            return redirect('/newdetailsgoods')->with('success','修改成功');
         }else{
             DB::rollBack();
-            return redirect('/detailsgoods')->with('error','修改失败');
+            return redirect('/newdetailsgoods')->with('error','修改失败');
 
         }
     }
@@ -248,7 +248,7 @@ class DetailsGoodsController extends Controller
     {
         //获取详情数据
         //获取图片路径
-        $details_goods = DB::table('details_goods')->where('id',$id)->get();
+        $details_goods = DB::table('new_details_goods')->where('id',$id)->get();
         // dump($details_goods);
         foreach($details_goods as $k=>$v){
             $pic = $v->goodsDePic;
@@ -272,14 +272,14 @@ class DetailsGoodsController extends Controller
         
         
         //删除商品
-        $delete = DB::table('details_goods')->where('id',$id)->delete();
+        $delete = DB::table('new_details_goods')->where('id',$id)->delete();
         //判断商品是否删除成功
         if($delete == 1){
             DB::commit();
-            return redirect('/detailsgoods')->with('success','删除成功');
+            return redirect('/newdetailsgoods')->with('success','删除成功');
         }else{
             DB::rollBack();
-            return redirect('/detailsgoods')->with('error','删除失败');
+            return redirect('/newdetailsgoods')->with('error','删除失败');
 
         }
     }

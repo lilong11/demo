@@ -295,7 +295,14 @@ Route::post('/goods/edit','Admin\GoodsController@edit');
 //商品详情开始
 Route::resource('/detailsgoods','Admin\DetailsGoodsController');
 Route::post('/detailsgoods/store','Admin\DetailsGoodsController@store');
+Route::post('/detailsgoods/edit','Admin\DetailsGoodsController@edit');
 //商品详情结束
+
+//最新商品详情开始
+Route::resource('/newdetailsgoods','Admin\NewDetailsGoodsController');
+Route::post('/newdetailsgoods/store','Admin\NewDetailsGoodsController@store');
+Route::post('/newdetailsgoods/edit','Admin\NewDetailsGoodsController@edit');
+//最新商品详情结束
 
 //服饰颜色详情开始
 Route::resource('/goodscolor','Admin\GoodsColorController');
@@ -341,4 +348,14 @@ Route::get('/status/detailsgoods','Admin\StatusController@detailsgoods');
 Route::resource('/fsignin','Home\FsigninController');
 //签到管理结束
 
+//商城开始
+Route::resource('/homegoods','Home\HomeGoodsController');
+//商城结束
+
+//商品详情开始
+Route::resource('/detailgoods','Home\DetailGoodsController');
+//商品详情结束
+//最新商品详情开始
+Route::resource('/newdetailgoods','Home\NewDetailGoodsController');
+//最新商品详情结束
 // 连柯鑫 272结束

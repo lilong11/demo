@@ -4,21 +4,10 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Type;
-use App\Models\Slid;
-use App\Models\adv;
-use App\Models\notice;
-use App\Models\mess;
 use DB;
 
-class IndexController extends Controller
+class HomeGoodsController extends Controller
 {
-
-
-
-
-
-
     /**
      * Display a listing of the resource.
      *
@@ -26,37 +15,11 @@ class IndexController extends Controller
      */
     public function index()
     {
-        //获取一级分类
-        $yiji_data = Type::where('pid',0)->get();
-        // dump($yiji_data);
-        //通过一级分类 获取二级分类
-        foreach($yiji_data as $key=>$value){
-            //$value->id; 一级分类的id
-            $erji_data = Type::where('pid',$value->id)->get();
-            // dump($erji_data);
-            $value['sub'] = $erji_data;
-        }
-        // dump($yiji_data);
-        // dd(session('home')); 
-        //获取轮播图
-        $slids_data = Slid::get();
-        // dump($slids_data);
-    
-        // 获取最新商品数据
-        $new_goods = DB::table('new_goods')->get();
-        // dump($new_goods);
-
-        //yyl
-        $adv = adv::all();
-        $notice = notice::all();
-
-
-        //获取特色商品
-        
-        //adv表没有
-        return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice]); 
+        //商城遍历
+        $goods = DB::table('goods')->where('goodsState',1)->get();
+        // dump($goods);
+        return view('Home.goods.homegoods',['goods'=>$goods]);
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -65,7 +28,7 @@ class IndexController extends Controller
      */
     public function create()
     {
-        return view('Home.Users.create',['title'=>'哈哈商城注册']);
+        //
     }
 
     /**
