@@ -48,9 +48,7 @@
                         <th>
                             ID
                         </th>
-                        <th>
-                            服装颜色
-                        </th>
+                       
                         <th>
                             服装尺寸
                         </th>
@@ -75,15 +73,7 @@
                             {{ $id++ }}
                         </td>
                         <p style="display:none">{{ $gid++ }}</p>
-                        <td>
-                            @foreach($gcolor_datas as $k=>$v)
-                                @if($k == $gid)
-                                @foreach($v as $kk=>$vv)
-                                    {{ $vv->gcolorname }}<br/>
-                                @endforeach
-                                @endif
-                            @endforeach
-                        </td>
+                        
                         <td >
                             @foreach($gsize_datas as $k=>$v)
                                 @if($k == $gid)

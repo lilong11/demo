@@ -312,8 +312,8 @@ Route::post('/newdetailsgoods/edit','Admin\NewDetailsGoodsController@edit');
 //最新商品详情结束
 
 //服饰颜色详情开始
-Route::resource('/goodscolor','Admin\GoodsColorController');
-Route::post('/goodscolor/store','Admin\GoodsColorController@store');
+// Route::resource('/goodscolor','Admin\GoodsColorController');
+// Route::post('/goodscolor/store','Admin\GoodsColorController@store');
 //服饰颜色详情结束
 
 //服饰尺寸详情开始

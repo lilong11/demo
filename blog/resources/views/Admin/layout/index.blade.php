@@ -400,12 +400,7 @@
                                 商品详情
                             </a>
                         </li>
-                        <li class="current">
-                            <a href="/goodscolor">
-                                <i class="iconfont">&#xe6a7;</i>
-                                服饰颜色详情
-                            </a>
-                        </li>
+                        
                         <li class="current">
                             <a href="/goodssize">
                                 <i class="iconfont">&#xe6a7;</i>
