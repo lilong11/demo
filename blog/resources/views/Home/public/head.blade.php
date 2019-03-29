@@ -179,36 +179,20 @@
 						<div class="main-menu text-center">
 							<nav>
 								<ul>
-									<li><a href="#">衣服<i class="zmdi zmdi-chevron-down"></i></a>
+									
+									<li><a href="#"><i class="zmdi zmdi-chevron-down"></i></a>
 										<!-- Mega Menu -->
 										<div class="mega-menu mega-menu-link mm-right">
 
 											<div class="mm-column mm-column-link float-left">
-												<h4>shop pages</h4>
-												<a href="shop.html">shop grid</a>
+												<h4>商品</h4>
+												
+												<a href="/homegoods?id="></a>
+												
 											</div>
 										</div>
 									</li> 
-									<li><a href="#">鞋子<i class="zmdi zmdi-chevron-down"></i></a>
-										<!-- Mega Menu -->
-										<div class="mega-menu mega-menu-link mm-right">
-
-											<div class="mm-column mm-column-link float-left">
-												<h4>shop pages</h4>
-												<a href="shop.html">shop grid</a>
-											</div>
-										</div>
-									</li> 
-									<li><a href="#">手表<i class="zmdi zmdi-chevron-down"></i></a>
-										<!-- Mega Menu -->
-										<div class="mega-menu mega-menu-link mm-right">
-
-											<div class="mm-column mm-column-link float-left">
-												<h4>shop pages</h4>
-												<a href="shop.html">shop grid</a>
-											</div>
-										</div>
-									</li> 
+									
 								</ul>
 							</nav>
 						</div>
@@ -298,9 +282,9 @@
 					</div>
 					<!-- Header Search -->
 					<div class="header-search col-lg-3 col-md-3">
-						<form action="#">
-							<input type="text" placeholder="search" />
-							<button><i class="zmdi zmdi-search"></i></button>
+						<form action="/homegoods" method="get">
+							<input type="text" name="search" placeholder="搜索" />
+							<button type="submit"><i class="zmdi zmdi-search"></i></button>
 						</form>
 					</div>
 				</div>

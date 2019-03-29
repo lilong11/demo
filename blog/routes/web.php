@@ -344,6 +344,7 @@ Route::resource('/fsignin','Home\FsigninController');
 
 //商城开始
 Route::resource('/homegoods','Home\HomeGoodsController');
+// Route::resource('/homegoods','Home\HeadTypesController');
 //商城结束
 
 //商品详情开始

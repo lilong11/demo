@@ -4,36 +4,28 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Goods;
-use DB;
+use App\Models\Type;
 
-class HomeGoodsController extends Controller
+class HeadTypesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $id = $request->filled('id');
-        $search = $request->input('search','');
-        // dump($id);
-        if(empty($id)){
-            $goods = Goods::where('gname','like','%'.$search.'%')->paginate(6);
-            // dump($goods);
-            return view('Home.goods.homegoods',['goods'=>$goods]);
+        //获取一级分类
+        $yiji_data = Type::where('pid',0)->get();
+        // dump($yiji_data);
+        //通过一级分类 获取二级分类
+        foreach($yiji_data as $key=>$value){
+            //$value->id; 一级分类的id
+            $erji_data = Type::where('pid',$value->id)->get();
+            // dump($erji_data);
+            $value['sub'] = $erji_data;
         }
-        
-            // exit;
-            //商城遍历
-        // $goods = DB::table('goods')->where('goodsState',1)->get();
-        //商城遍历
-        $goods = DB::table('goods')->where('tid',$id)->get();
-        //  dump($goods);
-        return view('Home.goods.homegoods',['goods'=>$goods]);
-       
-        
+        return view('Home.public.head',['type_data'=>$yiji_data]);
     }
 
     /**
