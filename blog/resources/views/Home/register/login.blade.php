@@ -21,8 +21,7 @@
         <form class="layui-form layui-form-pane" action="/users/doLogin" method="post" >
                           
                           {{ csrf_field() }}
-                          <h3><a href=""><i class="iconfont">&#xe6b8;</i> 手机号登入</a></h3>
-                          <h3 style="position: absolute;right:680px;top:140px;"><a href=""><i class="iconfont">&#xe6b8;</i> 普通登入</a></h3>
+                          <h3 ><a href=""><i class="iconfont">&#xe6b8;</i> 账号登入</a></h3>
                           <label class="login-title" for="username">帐号</label>
                           <div class="layui-form-item">
                               <label class="layui-form-label login-form" style="width:90px;width:90px;height:32px"><i class="iconfont">&#xe6b8;</i></label>

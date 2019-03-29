@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>{{$title or '用户操作'}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
 </head>
 <body>
     <!-- 顶部开始 -->
@@ -137,7 +137,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li  class="current">
-                            <a href=" ">
+                            <a href="/ticket">
                                 <i class="iconfont">&#xe6a7;</i>
                                 优惠券列表
                             </a>

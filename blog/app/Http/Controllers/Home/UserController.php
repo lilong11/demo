@@ -112,7 +112,7 @@ class UserController extends Controller
     {
         session()->forget('home');
         session()->forget('uid');
-        return view('Home.Index.index',['title'=>'哈哈商城']);
+        return redirect('/');
     }
 
 }

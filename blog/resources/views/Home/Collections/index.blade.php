@@ -32,7 +32,7 @@
 					                           @endif 
 										</font></font></p></td>
 										<td><p class="cart-pro-price"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ {{ $v->price }}元</font></font></p></td>
-										<td><button class="add-cart-btn button small color-hover"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">添加到购物车</font></font></button></td>
+										<td><a href="/cart/store/{{ $v->gid }}" class="add-cart-btn button small color-hover"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">添加到购物车</font></font></a></td>
 										<td><a href="Collections/{{ $v->id }}" class="cart-pro-remove" onclick="return confirm('确定要删除吗?')" style="cursor:pointer;"><i class="zmdi zmdi-delete"></i></a></td>
 									</tr>
 									@endforeach

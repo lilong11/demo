@@ -1,6 +1,5 @@
 {{--头部引入--}}
 @include('Home.public.head')
-
 <div class="main-content-wrapper">
 <!-- Page Breadcrumb Area
 ============================================ -->
@@ -48,7 +47,7 @@
 						</div>  
 						<div class="col-md-12 col-sm-6 col-xs-12">
 							<div class="sin-sidebar category-sidebar">
-								<h3 class="sidebar-title">问题</h3>
+								<h3 class="sidebar-title">问题 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/issuesAdd">提问</a></h3>
 								<div class="sidebar-wrapper fix">
 								<!-- treeview start -->
 									<ul>

@@ -82,10 +82,10 @@ class UserController extends Controller
 
          if($res1 && $res2){
             DB::commit();
-            echo '<script>alert("添加成功");location="/user"</script>';
+            echo '<script>alert("添加成功");location="'.$_SERVER['HTTP_REFERER'].'"</script>';
         }else{
              DB::rollBack();
-            echo '<script>alert("添加失败");location="/user/create"</script>'; 
+            echo '<script>alert("添加失败");location="'.$_SERVER['HTTP_REFERER'].'"</script>'; 
         } 
     }
 
@@ -137,8 +137,8 @@ class UserController extends Controller
         //用户删除
         // dd($id);
         $bool = Users::destroy($id);
-        if($bool){
-            echo '<script>alert("用户删除成功.");location="/user"</script>'; 
+        if($bool){ 
+            echo '<script>alert("用户删除成功.");location="'.$_SERVER['HTTP_REFERER'].'"</script>'; 
         }else{
             echo '<script>alert("用户删除失败!");location="/user"</script>'; 
         }

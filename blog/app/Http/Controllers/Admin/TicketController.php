@@ -1,20 +1,36 @@
 <?php
 
-namespace App\Http\Controllers\Home;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+use DB;
+use App\Models\Goods;
+use App\Models\Type;
 
-class IssueController extends Controller
+
+class TicketController extends Controller
 {
+
+    public function getType()
+    {
+        $type_data = Type::select('*',DB::raw('concat(path,",",id) as paths'))->orderBy('paths','asc')->get();
+        foreach($type_data as $key=>$value){
+            
+            $n = substr_count($value->path,',');
+            $type_data[$key]->tname = str_repeat('|---',$n).$value->tname;
+        }
+        return $type_data;
+    }
     /**
-     * Display a listing of the resource.
-     *
+     * 优惠券列表
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('Home.works.index',['title'=>'问题首页']);
+        return view('Admin.Ticket.index',['title'=>'优惠券列表']);
+        
     }
 
     /**
@@ -24,7 +40,7 @@ class IssueController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Ticket.create',['title'=>'优惠券添加','type_data'=>self::getType()]);
     }
 
     /**
@@ -35,7 +51,7 @@ class IssueController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dump($request);
     }
 
     /**

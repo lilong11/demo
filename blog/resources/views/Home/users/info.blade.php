@@ -6,7 +6,8 @@
 				<div class="row">
 					<div class="col-md-9 col-xs-12 blog-container">
 						<div class="sin-list-pro fix" style="width:850px">
-							<!-- Product Image -->
+						
+							<!-- 头像上传 -->
 							<div class="sin-list-pro-img float-left">
 								<form action="/img" method="post" enctype="multipart/form-data">
 			                        {{ csrf_field() }}
@@ -17,6 +18,9 @@
 								<a href="#" class="list-pro-img"><img src="/uploads/{{ $userInfo->img }}" alt="头像"></a> 
 								<a href="#pro-quick-view" class="list-pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 							</div>
+
+
+
 							<div class="list-pro-details fix">
 								<a class="list-pro-title" href="#">用户名:admin</a> 
 								<p class="list-pro-availability">用户名: <span class="in-stock"> {{ $users->uname }} </span></p> 

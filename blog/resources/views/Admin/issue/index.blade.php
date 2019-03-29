@@ -65,17 +65,24 @@
                            {{ $k ->  content }} 
                         </td>
                         <td>
-	                        @switch($k -> status)
-	                       		@case(0)
-	                       			显示
-	                       		@break
-	                       		@case(1)
-	                       			不显示
-	                       		@break
-	                       	@endswitch
+                                @switch($k -> status)
+                                    @case(0)
+                                    <a href="/issue/1/{{$k->id}}"><img src="/uploads/public/0.png" style="width:30px;"></a> 
+                                    @break
+                                    @case(1)
+                                        <a href="/issue/0/{{$k->id}}"><img src="/uploads/public/1.png" style="width:30px;"></a> 
+                                    @break 
+                                    @case(2)
+                                        <p style="color:red;">待处理</p>
+                                    @break 
+                                @endswitch 
                         </td>
                         <td class="td-manage">
                             <a title="编辑" href="/issue/{{$k->id}}/edit" style="text-decoration:none">
+                                <i class="layui-icon"></i>
+                            </a>
+
+                            <a title="解决问题" href="/solve/{{ $k->id }}" style="text-decoration:none">
                                 <i class="layui-icon"></i>
                             </a>
 
