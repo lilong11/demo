@@ -194,7 +194,7 @@
 											<div class="mm-column mm-column-link float-left">
 												<h3>商品</h3>
 												@foreach($v['sub'] as $kk=>$vv)
-													<a href="#">{{	$vv->tname }}</a>
+													<a href="/homegoods?id={{ $vv->id }}">{{	$vv->tname }}</a>
 												@endforeach
 											</div>
 											
