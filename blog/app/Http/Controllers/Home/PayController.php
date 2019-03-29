@@ -16,9 +16,10 @@ class PayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-
+        if (session('aid')) {
+    
         //把session中的信息拿出来  添加到数据库中
         $uid = session('uid');
         $number = session('number');
@@ -59,7 +60,13 @@ class PayController extends Controller
             $Orderdetail->save();
         }
 
+        $request->session()->forget('aid');
+        // dump(session());
+
         return view('Home.pay.pay',['oid'=>$oid]);
+        }else{
+            echo '<script>alert("请选择收获地址");location="/address"</script>';
+        }
     }
 
     /**

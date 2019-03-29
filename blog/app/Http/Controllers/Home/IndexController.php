@@ -24,7 +24,7 @@ class IndexController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //获取一级分类
         $yiji_data = Type::where('pid',0)->get();
@@ -51,11 +51,88 @@ class IndexController extends Controller
         $notice = notice::all();
 
 
+        // =====================判断是否登录=======================  
+        if (session('home')){
+        
+        // =====================购物车信息开始=======================
+        //查询出购物车表里的全部数据
+        $home = session('home');
+        $cart = DB::table('cart')->where('uname','=',$home)->get();
+        $cart1 = DB::table('cart')->where('uname','=',$home)->first();
+        // dd($cart1);
+        if (!isset($cart1)) {
+            return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice]);  
+            
+        }else{
+
+        //取出gid -----商品ID
+        foreach($cart as $k=>$v){
+           $arr[$k] = $v->gid;
+        }
+        
+        //取出num ----商品数量
+        foreach($cart as $k=>$v){
+           $arr1[$k] = $v->num;
+        }
+        //取出size
+        foreach($cart as $k=>$v){
+
+           $size = $v->size;
+           // dump($size);
+           $arr5[$k] = DB::table('goods_sizes')->where('id','=',$size)->first();
+        }
+        
+
+        //通过商品ID 查询出商品表里的具体数据
+        foreach ($arr as $key => $value) {
+            $goods = DB::table('goods')->where('id','=',$value)->get();
+            $array[] = $goods;
+        }
+
+        //把遍历出来的商品压成一个数组
+        foreach ($array as $kk => $vv) {
+            foreach ($vv as $kkk => $vvv) {
+                    $array1[] = $vvv;
+            }
+        }
+
+        //商品单价 * 数量
+        foreach ($array1 as $k1 => $v1) {
+            $total = ($v1->price)*($arr1[$k1]);
+            $arr2[] = $total;
+        }
+        //商品总数量
+        $num = 0;
+        foreach ($array1 as $k1 => $v1) {
+            $num += $arr1[$k1];
+        }
+
+
+
+        // 商品总价
+        $total2=0;
+        foreach ($arr2 as $k2 => $v2) {
+            $total2 +=$v2;
+        }
+
+        dump($array1);
+        // =====================购物车信息结束=======================
+
+        return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num,'size'=>$arr5]); 
+        }
+    }else{
+        return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice]); 
+
+    }
+
+
+}
+
+
         //获取特色商品
         
         //adv表没有
-        return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice]); 
-    }
+
 
 
     /**

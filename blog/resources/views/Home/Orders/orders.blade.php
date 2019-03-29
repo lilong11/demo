@@ -55,10 +55,10 @@
 	                                                        <a href="/orders/show/{{ $orders[$k]->oid }}"><button type="button" class="btn btn-success">确认收货</button></a>
 	                                                @break
 	                                                @case(3)
-	                                                        <a href="/orders/destroy/{{ $orders[$k]->oid }}"><button type="button" class="btn btn-danger">删除订单</button></a>
+	                                                        <a onclick="return confirm('确定要删除吗?')" href="/orders/destroy/{{ $orders[$k]->oid }}"><button type="button" class="btn btn-danger">删除订单</button></a>
 	                                                @break
 	                                                @case(4)
-	                                                        <a href="/orders/destroy/{{ $orders[$k]->oid }}"><button type="button" class="btn btn-danger">删除订单</button></a>
+	                                                        <a onclick="return confirm('确定要删除吗?')" href="/orders/destroy/{{ $orders[$k]->oid }}"><button type="button" class="btn btn-danger">删除订单</button></a>
 	                                                @break
 	                                            @endswitch 
 											</p>
@@ -90,12 +90,14 @@
 
 									<ul>
 										@foreach($goods[$k] as $k2=>$v2)
+
 										<li>
-											
 												<p class="float-left" style="width:150px"><img src="../uploads/{{ $v2->pic }}" alt="" style="width:100px" ></p>
 												<p class="float-left" style="width:150px">{{ $v2->gname }}</p>
-												<p class="float-left" style="width:150px">{{ $v[$k2]->gnum }}件</p>
+												<p class="float-left" style="width:150px">{{ $size[$k][$k2]->gsizename }}</p>
+												<p class="float-left" style="width:80px">{{ $v[$k2]->gnum }}件</p>
 										</li>
+
 										@endforeach
 										
 									</ul>
