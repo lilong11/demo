@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
+use App\Models\Goods_sizes;
 use DB;
 
 class CartController extends Controller
@@ -30,6 +31,14 @@ class CartController extends Controller
         foreach($cart as $k=>$v){
            $arr1[$k] = $v->num;
         }
+        //取出size
+        foreach($cart as $k=>$v){
+
+           $size = $v->size;
+           dump($size);
+           $arr5[$k] = DB::table('goods_sizes')->where('id','=',$size)->first();
+        }
+        dump($arr5);
 
         //通过商品ID 查询出商品表里的具体数据
         foreach ($arr as $key => $value) {
@@ -56,13 +65,15 @@ class CartController extends Controller
         }
 
 
+
         // 商品总价
         $total2=0;
         foreach ($arr2 as $k2 => $v2) {
             $total2 +=$v2;
         }
         
-        return view('Home.cart.cart',['arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num]);
+
+        return view('Home.cart.cart',['arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num,'size'=>$arr5]);
     }
 
     /**
@@ -81,35 +92,35 @@ class CartController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($id)
+    public function store()
     {
+        
+        $data = $_POST;
+        $size = ($data['size']);
+        $gid = ($data['gid']);
+        $uname = ($data['uname']);
         //添加到购物车操作
         // dump($id);
-        $uname = session('home');
         // dump($uname);
         $cart = new Cart;
         // ($cart);
         $cart->uname = $uname;
-        $res = DB::table('cart')->where('gid',$id)->where('uname',$uname)->first();
+        $cart->size = $size;
+        $res = DB::table('cart')->where('size',$size)->where('gid',$gid)->where('uname',$uname)->first();
 
         //判断商品是否是第一次加入购物车
         if ($res){
             $n =$res->num ;
             $n++;
-            $result = DB::table('cart')->where('gid',$res->gid)->update(['num'=>$n]);
+            $result = DB::table('cart')->where('gid',$gid)->where('size',$size)->update(['num'=>$n]);
             // dump(1);
             
-            if ($result) {
-                return redirect('/cart');
-            }
         }else{
-            $cart->gid = $id;
+            $cart->gid = $gid;
             $cart->num = 1;
             $res = $cart->save();
 
-            if ($res) {
-                return redirect('/cart');
-            }
+            echo $res;
             // dump(2);
             
         }
@@ -158,30 +169,30 @@ class CartController extends Controller
      */
     
     // 购物车商品删除操作
-    public function destroy($id)
+    public function destroy($id,$size)
     {
-        $res = DB::table('cart')->where('uname', '=', session('home'))->where('gid','=',$id)->delete();
+        $res = DB::table('cart')->where('uname', '=', session('home'))->where('gid','=',$id)->where('size','=',$size)->delete();
          
                 return redirect('/cart');
           
     }
 
     //购物车商品减少操作
-    public function jian($id,$num)
+    public function jian($id,$size,$num)
     {
 
         $n=$num-1;
-        $res1 = DB::table('cart') ->where('gid',$id)->where('uname',session('home'))->update(['num'=>$n]);
+        $res1 = DB::table('cart') ->where('gid',$id) ->where('size',$size)->where('uname',session('home'))->update(['num'=>$n]);
         if ($res1==1) {
                 return redirect('/cart'); 
        }
     }
 
     //购物车商品增加操作
-    public function jia($id,$num)
+    public function jia($id,$size,$num)
     {
         $n=$num+1;
-        $res = DB::table('cart') ->where('gid',$id)->where('uname',session('home'))->update(['num'=>$n]);
+        $res = DB::table('cart') ->where('gid',$id) ->where('size',$size)->where('uname',session('home'))->update(['num'=>$n]);
         if ($res==1) {
                 return redirect('/cart');
        }

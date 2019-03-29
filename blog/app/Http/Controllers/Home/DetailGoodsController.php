@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Users;
+
 use DB;
 
 class DetailGoodsController extends Controller
@@ -39,12 +41,31 @@ class DetailGoodsController extends Controller
         //     }
         // }
         //获取服装尺寸
+        // dump($gsize);
         foreach($gsize as $k=>$v){
             for($i=0;$i<count($v);$i++){
+                    // DB::table('goods_sizes')->insert(['gid' => ($goods[0]->id) ] );
             $gsize_datas[] = DB::table('goods_sizes')->where('id',$v[$i])->first();
+                
             }
         }
-        // dump($goodsDePic);
+
+        // dump($gsize_datas);
+        foreach ($gsize_datas as $key => $value) {
+            $value->gid = $goods[0]->id;
+        }
+
+        $uid = session('uid');
+        $uname = DB::table('users')->where('id',$uid)->first();
+        
+
+        foreach ($gsize_datas as $key => $value) {
+            $value->uname = $uname->uname;
+        }
+        // dump($uid);
+        // dump($goods);
+        dump($gsize_datas);
+
         return view('Home.detailgoods.detailgoods',['goods'=>$goods,'details_goods'=>$details_goods,'gsize_datas'=>$gsize_datas,'goodsDePic'=>$goodsDePic]);
     }
 

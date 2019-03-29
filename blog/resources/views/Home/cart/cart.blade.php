@@ -2,7 +2,18 @@
         
         @section('title','购物车')
         @section('content')
-
+<div class="page-breadcrumb bg-off-white">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<ul class="breadcrumbs">
+					<li><a href="/">首页</a></li>
+					<li><span>我的购物车</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
 <!-- Cart Page
 ============================================ -->
 <div class="cart-page bg-off-white padding-bottom-90">
@@ -16,6 +27,7 @@
 								<th class="number">ID</th>
 								<th class="name">商品名称</th>
 								<th class="image">图片</th>
+								<th class="image">尺寸</th>
 								<th class="price">单价</th>
 								<th class="num">数量</th>
 								<th class="total">小计</th>
@@ -31,19 +43,20 @@
 							 
 							<tr>
 								<td><span class="cart-number">1</span></td>
-								<td><a href="#" class="cart-pro-title">{{ $v->gname }}</a></td>
-								<td><a href="#" class="cart-pro-image"><img src="uploads/{{ $v->pic }}" style="width:150px" alt="" /></a></td>
+								<td>{{ $v->gname }}</td>
+								<td><img src="uploads/{{ $v->pic }}" style="width:150px" alt="" /></td>
+								<td>{{ $size[$k]->gsizename }}</td>
 								<td><p class="cart-pro-price">{{ $v->price }} 元</p></td>
 								<td><div class="cart-pro-qunantuty">
-								<a href="/cart/jian/{{ $v->id }}/{{ $arr1[$k] }}"><button>-</button></a>
+								<a href="/cart/jian/{{ $v->id }}/{{ $size[$k]->id }}/{{ $arr1[$k] }}"><button>-</button></a>
 									{{ $arr1[$k] }}
-								<a href="/cart/jia/{{ $v->id }}/{{ $arr1[$k] }}"><button>+</button></a>
+								<a href="/cart/jia/{{ $v->id }}/{{ $size[$k]->id }}/{{ $arr1[$k] }}"><button>+</button></a>
 
 
 								</div></td>
 								<td><p class="cart-price-total">{{ $v->price*$arr1[$k] }} 元</p></td>
 								<td><button class="cart-pro-remove" >
-									<a href="/cart/destroy/{{ $v->id }}"><button type="button" class="btn btn-danger">删除</button></a>
+									<a href="/cart/destroy/{{ $v->id }}/{{ $size[$k]->id }}"><button type="button" class="btn btn-danger">删除</button></a>
 									<!-- <i class="zmdi zmdi-delete"></i> -->
 								</button></td>
 							</tr>

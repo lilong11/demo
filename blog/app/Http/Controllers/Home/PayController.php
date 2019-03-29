@@ -27,7 +27,8 @@ class PayController extends Controller
         $oid = session('oid');
         $gnum = session('gnum');
         $gid = session('gid');
-        // dump($gid);
+        $size = session('size');
+        // dd($size);
         // dump($gnum);
         
         
@@ -47,10 +48,13 @@ class PayController extends Controller
         foreach ($gid as $k1=>$v1) {
             $gid1 = $v1->id;    //单个商品id
             $gnum1 = $gnum[$k1];    //单个商品数量
+            $size1 = ($size[$k1]->id);    //单个商品尺寸
+
             $Orderdetail = new Orderdetail;
             $Orderdetail->oid = $oid;
             $Orderdetail->gid = $gid1;
             $Orderdetail->gnum = $gnum1;
+            $Orderdetail->size = $size1;
             //添加时间  需要在数据表中添加created_at updated_at 字段  datetime 格式  然后在model中添加 public $timestamps = true;  不写也可以  默认是添加时间的意思
             $Orderdetail->save();
         }

@@ -123,9 +123,10 @@
 							{{ csrf_field() }}
 							<ul>
 								<li>
-									<p class="strong float-left" style="width:250px">商品</p>
-									<p class="last-child strong float-left"  style="width:120px">数量</p>
+									<p class="strong float-left" style="width:150px">商品</p>
 									<p class="last-child strong float-right"  style="width:120px">单价</p>
+									<p class="last-child strong float-right"  style="width:80px">数量</p>
+									<p class="last-child strong float-right"  style="width:120px">尺寸</p>
 								</li>
 								
 								@foreach($arr1 as $k1=>$v1)
@@ -134,15 +135,16 @@
 								
 								@foreach($arr as $k=>$v)
 								<li>
-									<p class="float-left" style="width:250px">{{ $v->gname }}</p>
-									<p class="last-child float-left" style="width:120px">{{ $arr1[$k] }}</p>
+									<p class="float-left" style="width:150px">{{ $v->gname }}</p>
 									<p class="last-child float-right" style="width:120px">¥{{ $v->price }} </p>
+									<p class="last-child float-right" style="width:80px">{{ $arr1[$k] }}</p>
+									<p class="last-child float-right" style="width:120px">{{ $size[$k]->gsizename }}</p>
 								</li>
 								@endforeach
 								
 								<li>
 									<p class="strong float-left">商品数量</p>
-									<p class="last-child strong float-right" style="width:120px">
+									<p class="last-child strong float-right" style="width:80px">
 										{{ $num }}件
 									</p>
 									<p class="strong float-left">总价</p>

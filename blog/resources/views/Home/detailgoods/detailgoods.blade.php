@@ -77,14 +77,17 @@
 				</div>
 				<div class="pro-details-size fix">
 					<h5>尺寸:</h5>
+
 					@foreach($gsize_datas as $kk=>$vv )
-					<a href="#" style="width:100px;">{{ $vv->gsizename }}</a>
+					<label>
+						<input type="radio" name="size" class="btn btn-success" style="width:100px,height:30px" gid='{{ $vv->gid }}' uname='{{ $vv->uname }}' value="{{ $vv->id }}" onclick="show(this)">{{ $vv->gsizename }}
+					</label>
 					@endforeach
 				</div>
 				
 				<!-- Product Action -->
 				<div class="pro-details-action fix">
-					<button class="pro-details-act-btn btn-text">add to bag</button>
+					<a href="/cart"><button class="pro-details-act-btn btn-text">加入购物车</button></a>
 					<button class="pro-details-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
 					<button class="pro-details-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
 				</div>
@@ -726,5 +729,38 @@
 	    $("#exzoom").exzoom({
 	        autoPlay: false,
 	    });
+	   
 	</script>
+	<script>
+
+		function show(obj){
+			var size = $(obj).val();
+			var gid = $(obj).attr('gid');
+			var uname = $(obj).attr('uname');
+
+				$.ajaxSetup({
+	    		headers: {
+	        		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	    		}
+			});
+		
+
+		$.ajax({
+	            url:'/cart/store',
+	            method: "POST",
+	            data: {'size':size,'gid':gid,'uname':uname, "_token":"{{csrf_token()}}"},
+	            dataType: "json",
+	           	success:function(data){
+				  //数据给后端php文件并成功返回
+				  console.log(data);//打印返回的值
+				
+				} ,
+				error:function(data){
+				  //数据给后端后返回错误
+				  console.log(data);//打印返回的信息
+				}
+	   		});
+		}
+	</script>
+
 @endsection
