@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
 	<meta charset="utf-8">
-
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<title>{{$title or '商城' }}</title>
 	<!-- Favicon -->
 	<link rel="shortcut icon" type="image/x-icon" href="/home_public/img/favicon.ico">

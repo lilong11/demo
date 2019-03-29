@@ -207,14 +207,14 @@ Route::resource('list','Home\ListController');
 //购物车路由
 Route::resource('/cart','Home\CartController');
 //添加购物车路由
-Route::get('/cart/store/{id}','Home\CartController@store'); 
+Route::post('/cart/store','Home\CartController@store');
 
 //购物车删除路由
-Route::get('/cart/destroy/{id}','Home\CartController@destroy'); 
+Route::get('/cart/destroy/{id}/{size}','Home\CartController@destroy'); 
 
 //购物车商品增加减少路由
-Route::get('/cart/jian/{id}/{num}','Home\CartController@jian'); 
-Route::get('/cart/jia/{id}/{num}','Home\CartController@jia'); 
+Route::get('/cart/jian/{id}/{size}/{num}','Home\CartController@jian'); 
+Route::get('/cart/jia/{id}/{size}/{num}','Home\CartController@jia'); 
 
 
 

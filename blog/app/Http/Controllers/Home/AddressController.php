@@ -31,6 +31,14 @@ class AddressController extends Controller
            $arr1[$k] = $v->num;
         }
 
+        //取出size
+        foreach($cart as $k=>$v){
+
+           $size = $v->size;
+           // dump($size);
+           $arr5[$k] = DB::table('goods_sizes')->where('id','=',$size)->first();
+        }
+
         //通过商品ID 查询出商品表里的具体数据
         foreach ($arr as $key => $value) {
             $goods = DB::table('goods')->where('id','=',$value)->get();
@@ -69,33 +77,16 @@ class AddressController extends Controller
         session(['oid'=>$osn]);
         session(['gnum'=>$arr1]);
         session(['gid'=>$array1]);
-
-
-
-        // dump(session('uid'));
-        // dump(session('number'));
-        // dump(session('oprice'));
-        // dump(session('address'));
-        // dump(session('oid'));
-        // dump(session('gnum'));
-        // dump(session('gid'));
-       
-
-        
-        // dump($arr);
-        // dump($arr1);
-        // dump($array1);
-        // dump($total2);
-        // dump($num);
+        session(['size'=>$arr5]);
 
 
         //收货地址信息
         $address2 = DB::table('address')->where('uid','=',session('uid'))->get();
         
-        dump($address2);
+        dump($arr5);
 
 
-        return view('Home.address.address',['arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num,'address'=>$address2]);
+        return view('Home.address.address',['arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num,'address'=>$address2,'size'=>$arr5]);
     }
 
     /**
