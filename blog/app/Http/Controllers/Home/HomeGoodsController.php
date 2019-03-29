@@ -17,10 +17,12 @@ class HomeGoodsController extends Controller
     public function index(Request $request)
     {
         $id = $request->filled('id');
+        $data = $request->all();
         $search = $request->input('search','');
         // dump($id);
-        if(empty($id)){
-            $goods = Goods::where('gname','like','%'.$search.'%')->paginate(6);
+        if($id){
+            $tid = $data['id'];
+            $goods = Goods::where('gname','like','%'.$search.'%')->where('tid',$tid)->paginate(16);
             // dump($goods);
             return view('Home.goods.homegoods',['goods'=>$goods]);
         }
@@ -29,7 +31,7 @@ class HomeGoodsController extends Controller
             //商城遍历
         // $goods = DB::table('goods')->where('goodsState',1)->get();
         //商城遍历
-        $goods = DB::table('goods')->where('tid',$id)->get();
+        $goods = Goods::where('gname','like','%'.$search.'%')->paginate(16);
         //  dump($goods);
         return view('Home.goods.homegoods',['goods'=>$goods]);
        

@@ -325,9 +325,9 @@
 					</div>
 					<!-- Header Search -->
 					<div class="header-search col-lg-3 col-md-3">
-						<form action="#">
-							<input type="text" placeholder="search" />
-							<button><i class="zmdi zmdi-search"></i></button>
+						<form action="/homegoods" method="get">
+							<input type="text" name="search" placeholder="搜索" />
+							<button type="submit"><i class="zmdi zmdi-search"></i></button>
 						</form>
 					</div>
 				</div>
