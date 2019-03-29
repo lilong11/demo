@@ -6,8 +6,28 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller; 
 use App\Models\works;
 use App\Models\Issues;
+
 class WorksController extends Controller
 {
+        /**
+     * 显示问题列表
+     * 
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $issue = new Issues; //查问题表
+        $status = 0;
+        $issues = $issue->where('status',0)->get(); 
+        // dd($issues);
+        return view('Home.issue.index',['issues'=>$issues,'title'=>'问题列表']);
+           
+        
+    }
+
+
+
 
     /**
      * 显示文章和问题
@@ -18,11 +38,11 @@ class WorksController extends Controller
     public function show($id)
     {
         $work = new works; //查文章表
-        $works = $work->all();  
+        $works = $work->where('status',0)->get();  
 
 
         $issue = new Issues; //查问题表
-        $issues = $issue->all(); 
+        $issues = $issue->where('status',0)->get(); 
  
        $workShow = $work->find($id);
  
@@ -40,11 +60,11 @@ class WorksController extends Controller
     {
         // dump($id);
         $work = new works; //查文章表
-        $works = $work->all();  
+        $works = $work->where('status',0)->get();  
 
 
         $issue = new Issues; //查问题表
-        $issues = $issue->all(); 
+        $issues = $issue->where('status',0)->get(); 
 
         // dump($id);
        $workShow = $issue->find($id);
@@ -53,5 +73,34 @@ class WorksController extends Controller
         return view('Home.works.index',['works'=>$works,'issues'=>$issues,'workShow'=>$workShow]);
     }
 
+    public function add()
+    {
+        // dump($id);
+        $work = new works; //查文章表
+        $works = $work->where('status',0)->get();  
+
+
+        $issue = new Issues; //查问题表
+        $issues = $issue->where('status',0)->get(); 
+
+        return view('Home.issue.add',['works'=>$works,'issues'=>$issues]);
+    }
+
+    public function doAdd(Request $request)
+    {
+        $Issues = new Issues;
+        $Issues->title = $request['title'];
+        $Issues->status = 2;
+        $Issues->uname = session('home');
+        // dd($Issues);
+       $bool = $Issues->save();
+        // dump($bool);
+
+        if($bool){
+             echo '<script>alert("问题已提交管理员审核.");location="/hissues"</script>';
+        }else{  
+             echo '<script>alert("问题申请失败!");location="/issuesAdd"</script>'; 
+        }
+    }
     
 }

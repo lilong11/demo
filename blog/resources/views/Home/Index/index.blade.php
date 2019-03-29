@@ -79,7 +79,7 @@
 					<ul class="header-lan-cur float-left">
 						<!-- Header Language -->
 						<li><a href="/">首页</a></li>
-						<li><a href="">问题</a></li>
+						<li><a href="/hissues">问题</a></li>
 						<li><a href="/workss">文章</a></li>
 						<li><a href="/home/opinion/create">意见</a></li>
 						<li><a href="/home/mess/create">留言</a></li>
@@ -161,7 +161,7 @@
 						<ul class="header-acc float-left">
 							<li><a href="/users"> <span style="color:red;">{{session('home')}}</span><i class="zmdi zmdi-chevron-down"></i></a>
 								<ul class="top-sub-menu sub-menu-right">
-									<li><a href="usersexit">退出登入</a></li> 
+									<li><a href="/usersexit">退出登入</a></li> 
 								</ul>
 							</li>
 						</ul>

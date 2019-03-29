@@ -1,16 +1,14 @@
  <!-- 引入左边模块 -->
  @extends('Admin.layout.index')
         @section('content')
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-<link rel="stylesheet" href="/Admin_public/css/font.css">
-<link rel="stylesheet" href="/Admin_public/css/xadmin.css">
-<link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
-<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
-<script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
-<script type="text/javascript" src="/Admin_public/js/xadmin.js"></script>   
-
-
+				<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+				<link rel="stylesheet" href="/Admin_public/css/font.css">
+				<link rel="stylesheet" href="/Admin_public/css/xadmin.css">
+				<link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+				<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+				<script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+				<script src="/Admin_public/lib/layui/layui.js" charset="utf-8"></script>
+				<script type="text/javascript" src="/Admin_public/js/xadmin.js"></script>   
 
                 <style> .page_page{background: rgb(0,0,0,0); border-radius: 0.2rem; counter-reset: pagination; text-align: center; margin: 0px; } .page_page li{border: solid 1px #d6d6d6; border-radius: 0.2rem; color: #7d7d7d; text-decoration: none; text-transform: uppercase; display: inline-block; text-align: center; padding: 0.5rem 0.9rem; } </style>{{-- 分页样式 --}}
 
@@ -19,6 +17,7 @@
 			    <!-- 统计图js 引入 -->
 				<script type="text/javascript" src="/js/echarts.min.js"></script> 
 			    <div id="main" style="width: 300px;height:300px; user-select: none;background:color: yellow;"></div> 
+			    
 				<div class="layui-form-pane" style="text-align: center;">
                   <div class="layui-form-item" style="display: inline-block;">
 					<form action="/user" method="git">

@@ -23,8 +23,8 @@
     <div class="login-box" style="width:600px;height:600px;">
     <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
     <ul id="myTabs" class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true" style="left:370px;">手机号注册 </a></li>
-      <li role="presentation" class=""><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" aria-expanded="false">普通注册</a></li> 
+      <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true" style="left:370px;color:#000">手机号注册 </a></li>
+      <li role="presentation" class=""><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" aria-expanded="false" style="color:#000">普通注册</a></li> 
     </ul>
     <div id="myTabContent" class="tab-content">
       <!-- 手机号注册 -->

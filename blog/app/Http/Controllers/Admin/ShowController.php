@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Users;
 use App\Models\works;
+use App\Models\Issues;
+use App\Models\Background;
 
 class ShowController extends Controller
 {
@@ -40,6 +42,36 @@ class ShowController extends Controller
             echo '<script>alert("禁用失败!");location="/works"</script>'; exit;
         } 
     }
+
+
+    //问题是否显示
+    public function issue($status,$id)
+    {   
+        // dump($id);
+        $issue = Issues::find($id);
+        $issue->status = $status; 
+        $bool = $issue->save();    
+        if($bool){
+            return redirect($_SERVER['HTTP_REFERER']);
+        }else{
+            echo '<script>alert("禁用失败!");location="/issue"</script>'; exit;
+        } 
+    }
+
+    //背景是否显示
+    public function background($status,$id)
+    {   
+        // dump($id);
+        $Background = Background::find($id);
+        $Background->status = $status; 
+        $bool = $Background->save();    
+        if($bool){
+            return redirect($_SERVER['HTTP_REFERER']);
+        }else{
+            echo '<script>alert("禁用失败!");location="/background"</script>'; exit;
+        } 
+    }
+
 
 
 }

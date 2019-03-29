@@ -33,7 +33,8 @@ Route::resource('/','Home\IndexController');
  Route::group(['middleware' => 'admin'],function(){
  Route::get('admin','Admin\IndexController@index'); 
  });
-
+Route::get('backgroundExit/{id}','Admin\BackgroundController@exit');
+Route::resource('background','Admin\BackgroundController');
 
  
 
@@ -45,60 +46,60 @@ Route::resource('/','Home\IndexController');
 Route::post('login/dologin','Admin\IndexController@dologin'); //处理登入路由
 Route::get('login','Admin\IndexController@login'); //后台登入路由
 
+// 后台中间件
 Route::group(['middleware' => 'admin'],function(){
-
 Route::get('exit','Admin\IndexController@exit'); //后台退出路由
-
 Route::resource('/uinfo','Admin\UserinfoController'); //后台用户详情
 Route::get('/user/delete/{id}','Admin\UserController@delete'); //后台用户删除
 Route::resource('/user','Admin\UserController');  //后台用户路由
 Route::get('aPassword/{id}','Admin\PasswordController@edit');  //后台用户修改密码
 Route::post('doPasswords/{id}','Admin\PasswordController@doPassword');//后台用户修改密码处理
-
 Route::get('show/{status}/{id}','Admin\ShowController@users'); //后台用户是否显示路由
+Route::get('Background/{status}/{id}','Admin\ShowController@background'); //后台背景是否显示路由
 Route::get('aworks/{status}/{id}','Admin\ShowController@works'); //后台文章是否显示路由
-
+Route::get('issue/{status}/{id}','Admin\ShowController@issue'); //后台文章是否显示路由
 Route::get('/worke/delete/{id}','Admin\WorksController@delete');  //后台文章删除
 Route::resource('/works','Admin\WorksController');   //后台文章
 
+Route::post('/doSolve/{id}','Admin\IssueController@doSolve');  //后台解决问题处理
+Route::get('/solve/{id}','Admin\IssueController@solve');  //后台解决问题
 Route::get('/issue/delete/{id}','Admin\IssueController@delete');  //后台问题删除
 Route::resource('/issue','Admin\IssueController');   //后台问题
+Route::resource('/ticket','Admin\TicketController');   //后台优惠券
 
  });
-
-
 // 前台路由 
 Route::get('usersexit','Home\UserController@exit');  //前台用户退出
 Route::get('users/login','Home\UserController@login');  //前台用户登入
 Route::post('users/doLogin','Home\UserController@doLogin');  //前台登入处理
-
-Route::post('img','Home\UserinfoController@img');  // 
-Route::resource('/users','Home\UserController');  //前台用户路由
 Route::get('doRegister/gain','Home\RegisterController@gain'); //前台用户手机号接收
 Route::post('doRegister','Home\RegisterController@doPhone'); //前台用户手机号注册处理
 Route::get('register','Home\RegisterController@phone'); //前台用户手机号注册路由
+
+// 前台中间件
+Route::group(['middleware' => 'home'],function(){
+Route::post('img','Home\UserinfoController@img');  
+
+Route::resource('/users','Home\UserController');  //前台用户路由
 
 Route::get('/infoEdit/{id}','Home\UserinfoController@edit'); //前台用户详情修改
 Route::post('/infoUpdate/{id}','Home\UserinfoController@update'); //前台用户详情修改处理
 Route::get('password','Home\UserinfoController@password'); //前台用户修改密码
 Route::post('doPassword/{id}','Home\UserinfoController@doPassword'); //前台用户修改密码处理
 
-
-Route::get('love/{id}','Home\WorksController@love');	//文章喜欢+1路由
-Route::get('issues/{id}','Home\WorksController@issue');	//问题显示路由
-Route::resource('workss','Home\WorksController'); //前台文章路由 
+Route::post('doIssues','Home\WorksController@doAdd');	//前台问题添加处理
+Route::get('issuesAdd','Home\WorksController@add');	//前台问题添加
 
 Route::get('Collections/{gid}','Home\CollectionController@delete'); //前台商品收藏删除 
 Route::get('Collectionadd/{gid}','Home\CollectionController@add'); //前台商品收藏添加 
 Route::resource('Collection','Home\CollectionController'); //前台商品收藏路由 
+ });
+Route::get('issues/{id}','Home\WorksController@issue');	//问题显示路由
+Route::get('hissues','Home\WorksController@index');	//问题列表
+Route::resource('workss','Home\WorksController'); //前台文章路由 
 
 
 
-
-
-
-
- 
 // lilong 结束
 // 杨玉龙 开始  //158 结束
 // 后台

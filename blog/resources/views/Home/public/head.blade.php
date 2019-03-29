@@ -86,7 +86,7 @@
 						<!-- Header Language -->
 						<li><a href="/">首页</a></li>
 						<li><a href="">文章</a></li>
-						<li><a href="">问题</a></li>
+						<li><a href="/hissues">问题</a></li>
 					</ul>
 				</div>
 				<div class="col-sm-6 col-xs-8 header-top-right">
@@ -144,7 +144,7 @@
 						<ul class="header-acc float-left">
 							<li><a href="/users">个人中心<i class="zmdi zmdi-chevron-down"></i></a>
 								<ul class="top-sub-menu sub-menu-right">
-									<li><a href="#">个人中心</a></li> 
+									<li><a href="/users">个人中心</a></li> 
 									<li><a href="/Collection">我的收藏</a></li>  
 								</ul>
 							</li>
@@ -153,7 +153,7 @@
 						<ul class="header-acc float-left">
 							<li><a href="/users"> <span style="color:red;">{{session('home')}}</span><i class="zmdi zmdi-chevron-down"></i></a>
 								<ul class="top-sub-menu sub-menu-right">
-									<li><a href="usersexit">退出登入</a></li> 
+									<li><a href="/usersexit">退出登入</a></li> 
 								</ul>
 							</li>
 						</ul>

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\Users;
 use Illuminate\Support\Facades\Auth; 
 use DB;  
+use App\Models\Background;
 
 class IndexController extends Controller
 {
@@ -62,7 +63,15 @@ class IndexController extends Controller
      */
     public function index()
     { 
-        return view('Admin.Index.index'); 
+       $user = new Users;
+      // $grade = 2;
+      // 统计用户个数 
+      $vip =  count($user->where([ 'grade' => 1 ])->get());
+      $common =  count($user->where([ 'grade' => 0 ])->get());
+     $root =  count($user->where([ 'grade' => 2 ])->get()); 
+     // dd($root);
+
+        return view('Admin.Index.index',['title'=>'商城后台','vip'=>$vip,'common'=>$common,'$root'=>$root]); 
     }
 
     /**

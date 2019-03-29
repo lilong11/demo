@@ -65,10 +65,6 @@ class UserinfoController extends Controller
              echo '<script>alert("修改失败!");location="/infoEdit/{{$id}}"</script>'; 
         }
 
-
-
-    	// dump($id);
-        // dump($request->except('_token'));
     } 
 
 

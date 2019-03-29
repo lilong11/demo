@@ -22,6 +22,7 @@ class CollectionController extends Controller
         $user = Users::find($uid);
         $collection = $user->collection;
         $i = 1;
+
         return view('Home.Collections.index',['title'=>'个人收藏','collection'=>$collection,'i'=>$i]);
     }
     public function add($gid)
@@ -41,6 +42,8 @@ class CollectionController extends Controller
         $bool = $collection->save();
 
        if($bool){
+            session(['gids'=>$gid]);//商品di
+            // dd(session('gids'));
             echo '<script>alert("收藏成功.");location="/Collection"</script>';
        }else{
             echo '<script>alert("收藏失败!");location="/"</script>';

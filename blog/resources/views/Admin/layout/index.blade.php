@@ -3,32 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>{{$title or '用户操作'}}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- bootstrap -->
-<!--     <link rel="stylesheet" type="text/css" href="/boot/css/bootstrap.min.css">
-    <script type="text/javascript" src="/boot/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/boot/js/bootstrap.min.js"></script> -->
-        <!-- 修饰分页的css -->
-    <link rel="stylesheet" type="text/css" href="/admin_public/css/page_page1.css">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
 </head>
 <body>
-
-<!-- 增删改提示信息开始
-        @if (session('success'))
-            <div class="n1" style=" height='100'; color:#2bf666;">
-                
-            {{ session('success') }}
-            </div>
-
-        @endif
-        @if (session('error'))
-            <div class="n1" style=" height='100'; color:red;">
-            {{ session('error') }}
-            </div>
-        @endif
-增删改提示信息结束 -->
 
     <!-- 顶部开始 -->
     <div class="container" style="  width: 100%;height: 71px;background-color: rgba(0, 0, 0, 0.25);border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
@@ -159,8 +136,8 @@
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
-                        <li class="current">
-                            <a href="/orders/adver">
+                        <li  class="current">
+                            <a href="/ticket">
                                 <i class="iconfont">&#xe6a7;</i>
                                 广告列表
                             </a>

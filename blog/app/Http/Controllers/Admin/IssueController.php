@@ -56,17 +56,6 @@ class IssueController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        dump($id);
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -112,4 +101,26 @@ class IssueController extends Controller
         return redirect('issue')->with('error','删除失败');
      }
     }
+
+
+    public  function solve($id)
+    {
+        $issue = new Issues;
+        $data = $issue->find($id);
+        return view('Admin\issue\solve',['title'=>'解决用户问题','data'=>$data]);
+    }
+
+    public  function doSolve(Request $request,$id)
+    {
+        $Issues = Issues::find($id);
+        $Issues->content = $request['content'];
+        $Issues->status = 0;
+        $bool = $Issues->save();    
+         if($bool){ 
+             echo '<script>alert("问题已解决.");location="/issue"</script>';
+         }else{ 
+             echo '<script>alert("问题解决失败!!");location="/issue"</script>';
+         }
+    }
+
 }
