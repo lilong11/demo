@@ -17,6 +17,8 @@ class DetailGoodsController extends Controller
      */
     public function index(Request $request)
     {
+        if (session('home')) {
+            
         
         //获取id
         $id = $request->all();
@@ -67,6 +69,10 @@ class DetailGoodsController extends Controller
         dump($gsize_datas);
 
         return view('Home.detailgoods.detailgoods',['goods'=>$goods,'details_goods'=>$details_goods,'gsize_datas'=>$gsize_datas,'goodsDePic'=>$goodsDePic]);
+
+        }else{
+            echo '<script>alert("您还没有登录,请先登录账号");location="/users/login"</script>';
+        }
     }
 
     /**

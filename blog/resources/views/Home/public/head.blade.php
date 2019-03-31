@@ -90,41 +90,8 @@
 					</ul>
 				</div>
 				<div class="col-sm-6 col-xs-8 header-top-right">
-					<!-- Header Mini Cart -->
-					<div class="mini-cart float-right">
-						<a href="#"><i class="zmdi zmdi-shopping-basket"></i><sub>2</sub></a>
-						<!-- Mini Cart Wrapper -->
-						<div class="mini-cart-wrapper top-sub-menu sub-menu-right">
-							<!-- Product List -->
-							<div class="mc-pro-list fix">
-								<div class="mc-sin-pro fix">
-									<a href="#" class="mc-pro-image float-left"><img src="/home_public/img/mini-cart/1.jpg" alt="" /></a>
-									<div class="mc-pro-details fix">
-										<a href="#">Women’s winter dress</a>
-										<span>1x$45.00</span>
-										<button class="pro-del"><i class="zmdi zmdi-delete"></i></button>
-									</div>
-								</div>
-								<div class="mc-sin-pro fix">
-									<a href="#" class="mc-pro-image float-left"><img src="home_public/img/mini-cart/2.jpg" alt="" /></a>
-									<div class="mc-pro-details fix">
-										<a href="#">Full sleev women shirt</a>
-										<span>1x$85.00</span>
-										<button class="pro-del"><i class="zmdi zmdi-delete"></i></button>
-									</div>
-								</div>
-							</div>
-							<!-- Sub Total -->
-							<div class="mc-subtotal fix">
-								<h4>Subtotal <span>$130.00</span></h4>
-								
-							</div>
-							<!-- Cart Button -->
-							<div class="mc-button">
-								<a href="#" class="button color-hover small">checkout</a>
-							</div>
-						</div>
-					</div>
+					
+
 					<!-- 登入显示开始 -->
 					@if(empty(session('home')))
 					<div class="header-account-login float-right">  
@@ -157,6 +124,52 @@
 								</ul>
 							</li>
 						</ul>
+						<!-- =============================购物车图标开始================================ -->
+						@if(empty($arr))
+						<div class="mini-cart float-right">
+							<a onclick="return confirm('您还没有购物~')" href="/"><i class="zmdi zmdi-shopping-basket"></i></a>
+						</div>
+					
+
+						@else
+					<div class="mini-cart float-right">
+						<a href="/cart"><i class="zmdi zmdi-shopping-basket"></i><sub>{{ $num }}</sub></a>
+						<!-- Mini Cart Wrapper -->
+						<div class="mini-cart-wrapper top-sub-menu sub-menu-right">
+							<!-- Product List -->
+							@foreach($arr as $k=>$v)
+							<div class="mc-pro-list fix">
+							
+								<div class="mc-sin-pro fix">
+									<a href="#" class="mc-pro-image float-left"><img src="uploads/{{ $v->pic }}" alt=""></a>
+									<div class="mc-pro-details fix">
+										<a href="#">{{ $v->gname }}</a>
+										<span>尺寸:{{ $size[$k]->gsizename }}</span>
+										<span>数量: {{ $arr1[$k] }}</span>
+
+										
+									</div>
+									<div class="mc-pro-details fix float-right">
+										<span>{{ $v->price }} 元</span>
+										
+									</div>
+								</div>
+								
+							</div>
+						@endforeach
+							<!-- Sub Total -->
+							<div class="mc-subtotal fix">
+								<h4>小计<span>{{ $total }} 元</span></h4>
+								
+							</div>
+							<!-- Cart Button -->
+							<div class="mc-button">
+								<a href="/cart" class="button color-hover small">我的购物车</a>
+							</div>
+						</div>
+					</div>
+					@endif
+<!-- =============================购物车图标结束================================ -->
 					</div>
 					@endif	
 					<!-- 登入显示结束 -->

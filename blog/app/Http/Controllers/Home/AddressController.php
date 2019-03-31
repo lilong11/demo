@@ -16,6 +16,7 @@ class AddressController extends Controller
      */
     public function index()
     {
+        if (session('home')) {
         //查询出购物车表里的全部数据
         $home = session('home');
         $cart = DB::table('cart')->where('uname','=',$home)->get();
@@ -87,6 +88,10 @@ class AddressController extends Controller
 
 
         return view('Home.address.address',['arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num,'address'=>$address2,'size'=>$arr5]);
+
+        }else{
+            echo '<script>alert("您还没有登录,请先登录账号");location="/users/login"</script>';
+        }
     }
 
     /**

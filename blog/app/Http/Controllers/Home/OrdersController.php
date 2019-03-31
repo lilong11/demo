@@ -21,6 +21,8 @@ class OrdersController extends Controller
      */
     public function index()
     {
+        if (session('home')) {
+        
         //通过uid查询
         $uid = session('uid');
         $orders = DB::table('orders')->where('uid','=',$uid)->get();
@@ -40,6 +42,15 @@ class OrdersController extends Controller
         }
         dump($goods);
 
+        for ($a=0; $a <=$key ; $a++) { 
+            $bbb = $orderdetail[$a];
+            foreach ($bbb as $k6 => $v6) {
+                $bbb = $v6->size;
+               $size[$a][] = DB::table('goods_sizes')->where('id','=',$bbb)->first();
+            };
+        }
+        dump($size);
+
         foreach ($orders as $k3 => $v3) {
            $aid = $v3->aid;
            $oname[] = DB::table('address')->where('id','=',$aid)->first();
@@ -50,7 +61,11 @@ class OrdersController extends Controller
         //取出广告表中的数据
         $adver = adver::all(); //查询adver数据表里的全部数据
 
-    return view('Home.Orders.orders',['orders'=>$orders,'orderdetail'=>$orderdetail,'goods'=>$goods,'oname'=>$oname,'adver'=>$adver]);
+    return view('Home.Orders.orders',['orders'=>$orders,'orderdetail'=>$orderdetail,'goods'=>$goods,'oname'=>$oname,'adver'=>$adver,'size'=>$size]);
+
+    }else{
+            echo '<script>alert("您还没有登录,请先登录账号");location="/users/login"</script>';
+        }
     }
 
     /**

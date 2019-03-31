@@ -28,7 +28,7 @@
 												<!-- <button type="button" class="btn btn-default"> </button> -->
 												<input type="text" name="address" value="{{ $v3->name }}&nbsp;{{ $v3->phone }}&nbsp;{{ $v3->address }}">
 												<input type="hidden" name="aid" value="{{ $v3->id }}"> 
-												<input type="submit" value="选择" >
+												<input type="submit" value="选择" onclick="return confirm('已选择收获地址')">
 											</form>
 										</li>
 										@endforeach
@@ -153,7 +153,7 @@
 									</p>
 								</li>
 								<li>
-									<button type="submit" class="btn btn-success float-right btn-lg btn-block">提交订单</button>
+									<button type="submit" class="btn btn-success float-right btn-lg btn-block"  onclick="return confirm('确认提交订单?')">提交订单</button>
 								</li>
 							</ul>
 						</form>

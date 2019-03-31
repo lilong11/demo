@@ -17,11 +17,19 @@ class CartController extends Controller
      */
     public function index()
     {
+        if (session('home')) {
+           
+        
         //查询出购物车表里的全部数据
         $home = session('home');
         $cart = DB::table('cart')->where('uname','=',$home)->get();
+        $cart1 = DB::table('cart')->where('uname','=',$home)->first();
 
-        
+        // dd($cart);
+        //判断购物车里有没有商品  有的话执行下面的
+        if(!isset($cart1)){
+             return view('Home.cart.cart');
+        }else{
         //取出gid -----商品ID
         foreach($cart as $k=>$v){
            $arr[$k] = $v->gid;
@@ -35,10 +43,10 @@ class CartController extends Controller
         foreach($cart as $k=>$v){
 
            $size = $v->size;
-           dump($size);
+           // dump($size);
            $arr5[$k] = DB::table('goods_sizes')->where('id','=',$size)->first();
         }
-        dump($arr5);
+        // dump($arr5);
 
         //通过商品ID 查询出商品表里的具体数据
         foreach ($arr as $key => $value) {
@@ -58,22 +66,25 @@ class CartController extends Controller
             $total = ($v1->price)*($arr1[$k1]);
             $arr2[] = $total;
         }
+
         //商品总数量
         $num = 0;
         foreach ($array1 as $k1 => $v1) {
             $num += $arr1[$k1];
         }
 
-
-
         // 商品总价
         $total2=0;
         foreach ($arr2 as $k2 => $v2) {
             $total2 +=$v2;
         }
+        return view('Home.cart.cart',['arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num,'size'=>$arr5]);
         
 
-        return view('Home.cart.cart',['arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num,'size'=>$arr5]);
+        }
+    }else{
+            echo '<script>alert("您还没有登录,请先登录账号");location="/users/login"</script>';
+        }
     }
 
     /**
@@ -172,8 +183,15 @@ class CartController extends Controller
     public function destroy($id,$size)
     {
         $res = DB::table('cart')->where('uname', '=', session('home'))->where('gid','=',$id)->where('size','=',$size)->delete();
-         
-                return redirect('/cart');
+        
+        if ($res) {
+            return redirect('/cart')->with('success','删除成功');
+
+        }else{
+            return redirect('/cart')->with('success','删除失败');
+
+
+        }
           
     }
 
