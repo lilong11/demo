@@ -87,6 +87,9 @@
 						<li><a href="/">首页</a></li>
 						<li><a href="">文章</a></li>
 						<li><a href="/hissues">问题</a></li>
+						<li><a href="/home/opinion/create">意见</a></li>
+						<li><a href="/home/mess/create">留言</a></li>
+						<li><a href="/home/investor/create">我要加盟</a></li>
 					</ul>
 				</div>
 				<div class="col-sm-6 col-xs-8 header-top-right">
@@ -142,6 +145,17 @@
 					<div class="header-account-login float-right">
 						<!-- 右边模块 -->
 						<ul class="header-acc float-left">
+							<li><a href="/home/report/create">举报</a>
+							</li>
+						</ul>
+
+						<ul class="header-acc float-left">
+							<li><a href="/fsignin">签到</a>
+							</li>
+						</ul>
+						
+						<ul class="header-acc float-left">
+
 							<li><a href="/users">个人中心<i class="zmdi zmdi-chevron-down"></i></a>
 								<ul class="top-sub-menu sub-menu-right">
 									<li><a href="/users">个人中心</a></li> 

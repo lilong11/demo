@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\report;
 use App\Http\Requests\ReportRequest;
+use Illuminate\Support\Facades\Storage;//删除本地文件所用到的命名空间类
 class ReportController extends Controller
 {
     /**
@@ -14,7 +15,11 @@ class ReportController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function delete($id){
-        dump($id);
+        // dump($id);
+        $report = report::find($id);
+        // dump($report);
+        Storage::delete($report->pic);
+
         $bool = report::destroy($id);
         if($bool){
                  return redirect('/admin/report')->with('success','删除成功');
@@ -31,9 +36,9 @@ class ReportController extends Controller
         // dump($request->all());
         // $report = report::where('name','like','%'.$search.'%')->paginate(5);
         $report = report::where('name','like',"%$search%")->Paginate(3); 
-
+        $i = 0;
         // return view('Admin/report/index',['report'=>$report,'search'=>$search]);
-        return view('Admin/report/index',['report'=>$report,'all' => ($request->all())]);
+        return view('Admin/report/index',['report'=>$report,'all' => ($request->all()),'i'=>$i]);
     }
 
     /**
@@ -55,6 +60,7 @@ class ReportController extends Controller
      */
     public function store(ReportRequest $request)
     {
+        // 接收生成图片对象$file
         $file = $request->file('pic');
         // dump($request->file('pic'));
         // dump($request->all());

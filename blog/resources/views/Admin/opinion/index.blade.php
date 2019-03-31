@@ -83,7 +83,7 @@
                                 <input type="checkbox" value="1" name="">
                             </td>
                             <td>
-                                {{ $v->id }}
+                                {{ $opinion->firstItem()+$i++ }}
                             </td>
                             <td>
                                 {{ $v->name }}

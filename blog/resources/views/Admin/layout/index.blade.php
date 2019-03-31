@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
 </head>
 <body>
+<!-- 引入分页开始 -->
+    <link rel="stylesheet" type="text/css" href="/admin_public/css/page_page1.css">
+<!-- 引入分页结束 -->
 
     <!-- 顶部开始 -->
     <div class="container" style="  width: 100%;height: 71px;background-color: rgba(0, 0, 0, 0.25);border-bottom: 1px solid rgba(255, 255, 255, 0.2);">

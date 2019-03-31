@@ -33,11 +33,11 @@ class MessController extends Controller
         // dump($search);
         $mess = mess::where('name','like',"%$search%")->Paginate(3);
         // $report = report::where('name','like',"%$search%")->Paginate(3); 
-
+        $i = 0;
         $all = $request->all();
         // dump($all);
         // return view('Admin/mess/index',['mess'=>$mess,'all'=>$all]);
-        return view('Admin/mess/index',['mess'=>$mess,'all'=>$all]);
+        return view('Admin/mess/index',['mess'=>$mess,'all'=>$all,'i'=>$i]);
     }
 
     /**

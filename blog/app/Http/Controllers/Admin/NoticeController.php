@@ -39,9 +39,10 @@ class NoticeController extends Controller
         // dump($search);
         // $notice = $a->paginate(3);
         $all = $request->all();
+        $i = 1;
         // dump($all);
         $notice = notice::where('notice','like',"%$search%")->paginate(3);
-        return view('Admin/notice/index',['notice'=>$notice,'title'=>'公告展示页','all'=>$all]);
+        return view('Admin/notice/index',['notice'=>$notice,'title'=>'公告展示页','all'=>$all,'i'=>$i]);
     }
 
 

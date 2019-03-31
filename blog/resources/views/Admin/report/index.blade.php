@@ -144,7 +144,7 @@
                                 <input type="checkbox" value="1" name="">
                             </td>
                             <td>
-                                {{ $v->id }}
+                                {{ $report->firstItem() + $i++ }}
                             </td>                           
                              <td>
                                 {{ $v->name }}

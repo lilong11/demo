@@ -165,13 +165,15 @@
                                 </a>
                             </td>
     </tr> -->
+     <!-- $i=1; -->
      @foreach($adv as $k=>$v)
     	<tr>
                             <td>
                                 <input type="checkbox" value="1" name="">
                             </td>
                             <td>
-                                {{ $v->id }}
+                                <!-- {{ $v->id }} -->
+                                {{ ($adv->currentPage()-1)*3+$i++ }}
                             </td>
                             <td>
                             <image src="/uploads/{{ $v->guanggao }}" width='80'>                             

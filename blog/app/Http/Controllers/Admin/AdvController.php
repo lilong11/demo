@@ -6,7 +6,7 @@ use App\Http\Requests\AdvRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\adv;
-
+use Illuminate\Support\Facades\Storage;
 class AdvController extends Controller
 {
     /**
@@ -21,10 +21,15 @@ class AdvController extends Controller
         $adv = adv::where('id','like','%'.$search.'%')->Paginate(3); 
         // $adv = adv::where('guanggao','like',"%$search%")->Paginate(3); 
         $all = $request->all();
+        // dump($all);
+        // dump($results->lastItem());
+        // dump($adv->lastItem());
+        $i=1;
+        
         // dump($request->all());
         // dump('我是广告的首页');
         // return view('Admin/adv/index');
-        return view('Admin/adv/index',['title'=>'广告首页','adv'=>$adv,'all'=>$all]);
+        return view('Admin/adv/index',['title'=>'广告首页','adv'=>$adv,'all'=>$all,'i'=>$i]);
     }
 
     /**
@@ -47,16 +52,20 @@ class AdvController extends Controller
     {   
         if($request->hasFile('guanggao')){
             $file = $request->file('guanggao');
-            // dump($file);
-            $exe = $file->extension();
+            dump($file);
+            foreach($file as $k=>$v){
+
+           
+            $exe = $v->extension();
             $filename = time().rand(1000,9999);
             // $filename = time();
-            // dump($file->storeAs('adv',$filename.'.'.$exe));
+            // dump($v->storeAs('adv',$filename.'.'.$exe));
 
 
             $adv = new adv;
-            $adv->guanggao =  $file->storeAs('adv',$filename.'.'.$exe);
+            $adv->guanggao =  $v->storeAs('adv',$filename.'.'.$exe);
             $adv->save();
+             }
 
 
 
@@ -125,6 +134,14 @@ class AdvController extends Controller
         // dump($id);
     }
     public function delete($id){
+       // dump($id);
+       // dd(adv::find($id));
+
+       $adv = adv::find($id);
+       // dd( $adv->guanggao);
+
+       Storage::delete($adv->guanggao);
+
        $bool = adv::destroy($id);
        // dump($bool);
         if($bool){

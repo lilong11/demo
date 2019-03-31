@@ -31,8 +31,13 @@ class InvestorController extends Controller
                 $search = $request->input('search','');
 	   $investor = investor::where('name','like',"%$search%")->paginate(5);
                 $all = $request->all();
+                // dump($all);
 
-	    return view('Admin/investor/index',['investor'=>$investor,'all' => $all]);
+                $i = 1;
+                // $arr = ['i'=>$i];
+                // dump($arr);
+
+	    return view('Admin/investor/index',['investor'=>$investor,'all' => $all,'i'=>$i,'i'=>$i]);
 	}
 
     /**
