@@ -104,9 +104,8 @@
 	                        </td> 
 	                        <td class="td-manage">
 	                            <a  class="list" title="编辑" href="user/{{$k -> id}}/edit" style="text-decoration:none"><i class="layui-icon"></i></a>
+	                            <a  class="list" title="修改密码" href="/aPassword/{{ $k -> id }}" style="text-decoration:none"><i i class="iconfont">&#xe82b;</i></a>
 	                            
-	                            <a title="修改密码" onclick="level_add('修改密码','/aPassword/{{ $k -> id }}','','900','600')" style="cursor:pointer;"><i class="iconfont">&#xe82b;</i></a>
-
 	                            <a title="用户详情" onclick="level_add('用户详情','/uinfo/{{$k->id}}','','900','600')" style="cursor:pointer;"> <i class="iconfont">&#xe70b;</i></a>	 
 	                            <a title="删除" onclick="return confirm('确定要删除吗?')" href="user/delete/{{$k -> id }}" style="text-decoration:none">
 	                                <i class="layui-icon"></i>

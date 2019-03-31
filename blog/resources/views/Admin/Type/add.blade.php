@@ -1,6 +1,5 @@
 @extends('admin.layout.index')
 @section('content')
-<<<<<<< HEAD
             <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
             <link rel="stylesheet" href="/Admin_public/css/font.css">
             <link rel="stylesheet" href="/Admin_public/css/xadmin.css">

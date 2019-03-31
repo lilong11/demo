@@ -39,9 +39,8 @@ class IndexController extends Controller
              echo '<script>alert("您的用户疑似黑号,已禁用,请联系超级管理员");location="/login"</script>'; exit;
             }
 
-
-
-            session(['admin'=>$uname]);
+            
+              session(['admin'=>$uname]);
              echo '<script>alert("登入成功");location="/admin"</script>';
         }else{
             $request->flashOnly('uname');

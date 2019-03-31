@@ -74,7 +74,7 @@
 					<ul class="header-lan-cur float-left">
 						<!-- Header Language -->
 						<li><a href="/">首页</a></li>
-						<li><a href="">文章</a></li>
+						<li><a href="">博客</a></li>
 						<li><a href="/hissues">问题</a></li>
 					</ul>
 				</div>

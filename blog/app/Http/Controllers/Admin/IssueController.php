@@ -63,9 +63,10 @@ class IssueController extends Controller
      */
     public function edit($id)
     {
-        $issues = new Issues;
-        $data = $issues->find($id);
-        return view('Admin\issue\edit',['title'=>'问题修改','data'=>$data]);
+        // dump($id);
+        $data = Issues::find($id);
+        // dd($data);
+        return view('Admin.issue.edit',['title'=>'问题修改','data'=>$data]);
     }
 
     /**

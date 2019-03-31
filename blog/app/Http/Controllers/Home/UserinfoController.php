@@ -71,11 +71,11 @@ class UserinfoController extends Controller
     public function password()
     {
     	$work = new works; //查文章表
-        $works = $work->all();  
+        $works = $work->where('status',0)->get(); 
 
 
         $issue = new Issues; //查问题表
-        $issues = $issue->all(); 
+        $issues = $issue->where('status',0)->get(); 
  
         return view('Home.usersinfo.password',['title'=>'用户密码修改','works'=>$works,'issues'=>$issues]);
     }
@@ -119,6 +119,25 @@ class UserinfoController extends Controller
         }else{ 
              echo '<script>alert("文件上传失败.");location="/users"</script>';exit;
         }
+    }
+
+     public function head(Request $request)
+    {
+        $profile = $request->file('profile');
+        $filename = $profile->store('images');
+        if($filename){
+            $arr = [
+                'path' => $filename,
+                'msg' => 'success',
+            ];
+        }else{
+            $arr = [
+                'path' => '',
+                'msg' => 'error',
+            ];
+        }
+
+        echo json_encode($arr);
     }
 
 }

@@ -102,5 +102,15 @@ class WorksController extends Controller
              echo '<script>alert("问题申请失败!");location="/issuesAdd"</script>'; 
         }
     }
+
+    public function userIssue($uname)
+    {
+        dump($uname);
+        $Issues = new Issues;
+        $data = $Issues->where('uname',$uname)->get();  
+        return view('Home.issue.userissue',['title'=>'我的问题中心','data'=>$data]);
+
+    }
+    
     
 }

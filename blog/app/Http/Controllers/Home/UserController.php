@@ -5,12 +5,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\UsersStoreRequest;
+use App\Http\Requests\UsershomeStoreRequest;
 use App\Models\Users;
 use App\Models\Usersinfos; 
 use App\Models\works;
 use App\Models\Issues;
 use Illuminate\Support\Facades\Auth;
 use DB;
+
 class UserController extends Controller
 {
     public function login()
@@ -49,11 +51,11 @@ class UserController extends Controller
     public function index()
     {
         $work = new works; //查文章表
-        $works = $work->all();  
+        $works = $work->where('status',0)->get(); 
 
 
         $issue = new Issues; //查问题表
-        $issues = $issue->all();    
+        $issues = $issue->where('status',0)->get();
 
         $id = session('uid');
         $user = new Users;
@@ -80,8 +82,9 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function addUsers(UsershomeStoreRequest $request)
     {
+        // dd(123);
         $user = new Users; 
         $user->uname = $request->input('uname','');
         $user->grade = $request->input('grade',0); 
