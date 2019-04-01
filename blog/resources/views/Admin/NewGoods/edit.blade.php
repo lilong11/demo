@@ -60,6 +60,7 @@
                         autocomplete="off" class="layui-input">
                     </div>
                 </div>
+
                 <div class="layui-form-item">
                     <label for="L_username" class="layui-form-label">
                         <span class="x-red">*</span>商品数量
@@ -67,6 +68,14 @@
                     <div class="layui-input-inline">
                         <input type="text" id="goodsNum" name="goodsNum" value="{{ $goods_data->goodsNum }}" required="" lay-verify="nikename"
                         autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="L_username" class="layui-form-label">
+                        <span class="x-red">*</span>商品描述
+                    </label>
+                    <div class="layui-input-block">
+                      <textarea placeholder="请输入内容" name="goodsDes" class="layui-textarea">{{ $goods_data->goodsDes }}</textarea>
                     </div>
                 </div>
                 <div class="layui-form-item">

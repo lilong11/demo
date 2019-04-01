@@ -66,6 +66,7 @@ class NewGoodsController extends Controller
         $goods->gname = $request->input('gname','');
         $goods->tid = $request->input('tid','');
         $goods->price = $request->input('price','');
+        $goods->goodsDes = $request->input('goodsDes','');
         $goods->goodsNum = $request->input('goodsNum','');
         $goods->pic = $file_name;
         $goods->goodsState = 1;
