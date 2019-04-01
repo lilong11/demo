@@ -52,7 +52,7 @@ class AdvController extends Controller
     {   
         if($request->hasFile('guanggao')){
             $file = $request->file('guanggao');
-            dump($file);
+            // dump($file);
             foreach($file as $k=>$v){
 
            

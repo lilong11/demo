@@ -67,7 +67,7 @@ class DetailGoodsController extends Controller
         }
         // dump($uid);
         // dump($goods);
-        dump($gsize_datas);
+        // dump($gsize_datas);
 
          //友情链接
         $links = DB::table('links')->get();

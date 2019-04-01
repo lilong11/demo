@@ -54,13 +54,13 @@
 		<label class="radio-inline">
 		  	<!-- <input   type="radio" name="sex" id="inlineRadio1" value="0">女 -->
 		  	<!-- <input @if(!empty(old('sex'))) checked @endif  type="radio" name="sex" id="inlineRadio1">女 -->
-		  	<input @if(!empty(old('sex'))) checked @endif  type="radio" name="sex" id="inlineRadio1">女
+		  	<input  type="radio" name="sex" id="inlineRadio1">女
 		</label>
 		<label class="radio-inline">
-			<input @if(!empty(old('sex'))) checked @endif value="{{ old('sex') }}" type="radio" name="sex" id="inlineRadio2">男
+			<input value="{{ old('sex') }}" type="radio" name="sex" id="inlineRadio2">男
 		</label>
 		<label class="radio-inline">
-		 	<input @if(!empty(old('sex'))) checked @endif value="{{ old('sex') }}" type="radio" name="sex" id="inlineRadio3" >保密
+		 	<input value="{{ old('sex') }}" type="radio" name="sex" id="inlineRadio3" >保密
 		</label>
 	</div>
 

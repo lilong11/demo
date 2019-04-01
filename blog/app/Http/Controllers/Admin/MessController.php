@@ -111,7 +111,7 @@ class MessController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dump($id);
+        // dump($id);
         $mess = new mess;
         $v = $mess->find($id);
         $v->mess = $request->input('mess','');

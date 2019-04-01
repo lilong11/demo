@@ -15,7 +15,7 @@ class InvestorController extends Controller
      */
     	public function delete($id)
     	{
-    	    dump($id);
+    	    // dump($id);
     	    $bool = investor::destroy($id);
 	             if($bool){
 
@@ -56,12 +56,13 @@ class InvestorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(InvestorRequest $request)
+    public function store(Request $request)
     {
         // dump('我是store方法,我负责接收添加的数据');
         // dump($request->all());
         // dump($request->name);
          // dd($request->input('sex',''));
+         dd($request->all());
         $investor = new investor;
         
         $investor->name = $request->input('name','');
@@ -124,10 +125,10 @@ class InvestorController extends Controller
      */
     public function update(InvestorRequest $request, $id)
     {
-        dump($request->all());
-        dump($id);
+        // dump($request->all());
+        // dump($id);
         $investor = investor::find($id);
-        dump($investor);
+        // dump($investor);
         $investor->name = $request->name;
         $investor->sex = $request->sex;
         $investor->phone = $request->phone;

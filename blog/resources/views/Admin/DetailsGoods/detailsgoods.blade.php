@@ -22,7 +22,7 @@
                     </div>
                     <div class="layui-input-inline xbs768">
                       <input class="layui-input" placeholder="截止日" id="LAY_demorange_e">
-                    </div>
+                    </div>good
                     <div class="layui-input-inline">
                       <input type="text" name="username"  placeholder="请输入用户名" autocomplete="off" class="layui-input">
                     </div>
@@ -66,7 +66,7 @@
                         </th>
                     </tr>
                 </thead>                
-                @foreach($details_goods as $key=>$value)
+                @foreach($details_ as $key=>$value)
                 <tbody>
                     <tr>                        
                         <td>
