@@ -84,7 +84,7 @@
 	                            <input type="checkbox" value="1" name="">
 	                        </td>
 	                        <td>
-	                            {{ $k -> id }}
+	                            {{ $i++ }}
 	                        </td>
 	                        <td>
 	                            {{ $k -> title }}
@@ -103,11 +103,8 @@
 	                           	@endswitch 
 	                        </td>
 	                       <td>
-	                        @if(!empty($k -> img))
-	                        <img src="/uploads/{{$k -> img }}" style="width:50px">
-	                        @else
-								 <img src="/uploads/works/7XM1CmFOiS4zoVhD0DRT3Xk6nb5CXrrhxb7Q2c2Q.png" style="width:50px">
-	                        @endif
+                            <img src="/uploads/{{ $k->img }}" alt="暂无图片" style="width:50px">
+	                        
  							</td> 
 	                        <td>
 	                             {{ $k -> created_at }}

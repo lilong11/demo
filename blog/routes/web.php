@@ -40,7 +40,6 @@ Route::resource('background','Admin\BackgroundController');
 
 
 
-
 // 后台路由结束
 // lilong 开始    //101行结束
 Route::post('login/dologin','Admin\IndexController@dologin'); //处理登入路由
@@ -57,7 +56,7 @@ Route::post('doPasswords/{id}','Admin\PasswordController@doPassword');//后台�
 Route::get('show/{status}/{id}','Admin\ShowController@users'); //后台用户是否显示路由
 Route::get('Background/{status}/{id}','Admin\ShowController@background'); //后台背景是否显示路由
 Route::get('aworks/{status}/{id}','Admin\ShowController@works'); //后台文章是否显示路由
-Route::get('issue/{status}/{id}','Admin\ShowController@issue'); //后台文章是否显示路由
+Route::get('aissue/{status}/{id}','Admin\ShowController@issue'); //后台问题是否显示路由
 Route::get('/worke/delete/{id}','Admin\WorksController@delete');  //后台文章删除
 Route::resource('/works','Admin\WorksController');   //后台文章
 
@@ -75,11 +74,17 @@ Route::post('users/doLogin','Home\UserController@doLogin');  //前台登入处�
 Route::get('doRegister/gain','Home\RegisterController@gain'); //前台用户手机号接收
 Route::post('doRegister','Home\RegisterController@doPhone'); //前台用户手机号注册处理
 Route::get('register','Home\RegisterController@phone'); //前台用户手机号注册路由
+Route::post('addUsers','Home\UserController@addUsers'); //前台用户添加
+
+Route::get('issues/{id}','Home\WorksController@issue');	//问题显示路由
+Route::get('hissues','Home\WorksController@index');	//问题列表
+Route::get('hworks','Home\WorksController@works');	//文章列表
+Route::resource('workss','Home\WorksController'); //前台文章路由 
 
 // 前台中间件
 Route::group(['middleware' => 'home'],function(){
-Route::post('img','Home\UserinfoController@img');  
-
+// Route::post('img','Home\UserinfoController@img');  
+Route::post('/head','Home\UserinfoController@head');  //前台用户头像上传路由
 Route::resource('/users','Home\UserController');  //前台用户路由
 
 Route::get('/infoEdit/{id}','Home\UserinfoController@edit'); //前台用户详情修改
@@ -87,16 +92,14 @@ Route::post('/infoUpdate/{id}','Home\UserinfoController@update'); //前台用户
 Route::get('password','Home\UserinfoController@password'); //前台用户修改密码
 Route::post('doPassword/{id}','Home\UserinfoController@doPassword'); //前台用户修改密码处理
 
+Route::get('userIssue/{uname}','Home\WorksController@userIssue');	//前台用户问题显示
 Route::post('doIssues','Home\WorksController@doAdd');	//前台问题添加处理
 Route::get('issuesAdd','Home\WorksController@add');	//前台问题添加
 
 Route::get('Collections/{gid}','Home\CollectionController@delete'); //前台商品收藏删除 
 Route::get('Collectionadd/{gid}','Home\CollectionController@add'); //前台商品收藏添加 
 Route::resource('Collection','Home\CollectionController'); //前台商品收藏路由 
- });
-Route::get('issues/{id}','Home\WorksController@issue');	//问题显示路由
-Route::get('hissues','Home\WorksController@index');	//问题列表
-Route::resource('workss','Home\WorksController'); //前台文章路由 
+ });//前台中间件结束
 
 
 

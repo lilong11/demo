@@ -35,6 +35,7 @@ class ShowController extends Controller
         // dump($id);
         $works = works::find($id);
         $works->status = $status; 
+
         $bool = $works->save();    
         if($bool){
             return redirect('/works');

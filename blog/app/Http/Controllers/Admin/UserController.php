@@ -18,11 +18,6 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        //判断用户是否登入了
-        if(empty(session('admin'))){
-            return view('Admin.Index.login');exit;
-        }
-        // dump(123);
         // 接收搜索的关键字
         $search = $request->input('search','');
 
@@ -37,7 +32,8 @@ class UserController extends Controller
         $common =  count($user->where([ 'grade' => 0 ])->get());
         $root =  count($user->where([ 'grade' => 2 ])->get()); 
         // // dd($vip);
-        return view('Admin.User.index',['title'=>'用户列表','count'=>$count,'search'=>$search,'arr'=>$arr,'vip'=>$vip,'common'=>$common,'root'=>$root]);
+        $i = 1;
+        return view('Admin.User.index',['title'=>'用户列表','count'=>$count,'search'=>$search,'arr'=>$arr,'vip'=>$vip,'common'=>$common,'root'=>$root,'i'=>$i]);
     }
 
     /**
@@ -82,7 +78,7 @@ class UserController extends Controller
 
          if($res1 && $res2){
             DB::commit();
-            echo '<script>alert("添加成功");location="'.$_SERVER['HTTP_REFERER'].'"</script>';
+            echo '<script>alert("添加成功");location="/user"</script>';
         }else{
              DB::rollBack();
             echo '<script>alert("添加失败");location="'.$_SERVER['HTTP_REFERER'].'"</script>'; 

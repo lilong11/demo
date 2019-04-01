@@ -24,7 +24,7 @@
                         </div>
                     @endif
                     <!-- 右侧内容框架，更改从这里开始 -->
-                    <form class="layui-form" action="/doSolve/{{ $data->id }}" method="post">
+                    <form class="layui-form" action="/doSolve/{{ $data->id }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                         <div class="layui-form-item layui-form-text" style="position: absolute;left:400px;color:red">问题: {{ $data->title }} </div><br><br>
@@ -35,6 +35,13 @@
                             <textarea placeholder="请输入内容" name="content"  class="layui-textarea"></textarea>
                           </div>
                         </div>
+
+                          <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">解决帮助图片:</label>
+                            <div class="col-sm-10">
+                             <input type="file" name="img">
+                            </div>
+                          </div>  
 
                         <div class="layui-form-item">
                             <label for="L_repass" class="layui-form-label">

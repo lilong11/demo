@@ -15,7 +15,7 @@
           <li class="layui-nav-item">
             <a href="javascript:;">{{session('admin')}}</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-              <dd><a href="">个人信息</a></dd>
+              <dd><a href="exit">切换用户</a></dd>
               <dd><a href="exit">退出</a></dd>
             </dl>
           </li>
@@ -62,6 +62,27 @@
                     </ul>
                 </li>
 
+                <li class="list">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe70b;</i>
+                        背景图片管理
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="current">
+                            <a href="/background">
+                                <i class="iconfont">&#xe6a7;</i>
+                                背景图片列表
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/background/create">
+                                <i class="iconfont">&#xe6a7;</i>
+                                背景图片添加
+                            </a>
+                        </li> 
+                    </ul>
+                </li>
                 <li class="list">
                     <a href="javascript:;">
                         <i class="iconfont">&#xe70b;</i>
@@ -474,6 +495,12 @@
                 <div class="swiper-slide"><img class="item" src="/admin_public/images/i.jpg" alt=""></div>
                 <div class="swiper-slide"><img class="item" src="/admin_public/images/j.jpg" alt=""></div>
                 <div class="swiper-slide"><img class="item" src="/admin_public/images/k.jpg" alt=""></div>
+                @if(!empty($background))
+                 @foreach($background as $v)
+                <div class="swiper-slide"><img class="item" src="/uploads/{{ $v->img }}" alt=""></div>
+                @endforeach
+                @endif
+               
                 <div class="swiper-slide"><span class="reset">初始化</span></div>
             </div>
         </div>
@@ -482,4 +509,10 @@
     </div>
     <!-- 背景切换结束 -->
 </body>
+<script>
+    // 增加
+    function level_add (title,url,id,w,h) {
+        x_admin_show(title,url,w,h); 
+    }
+</script>
 </html>

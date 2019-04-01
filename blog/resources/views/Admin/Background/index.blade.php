@@ -15,11 +15,7 @@
                 <style> .page_page{background: rgb(0,0,0,0); border-radius: 0.2rem; counter-reset: pagination; text-align: center; margin: 0px; } .page_page li{border: solid 1px #d6d6d6; border-radius: 0.2rem; color: #7d7d7d; text-decoration: none; text-transform: uppercase; display: inline-block; text-align: center; padding: 0.5rem 0.9rem; } </style>{{-- 分页样式 --}}
 
 
-			    <!-- 统计图 -->
-			    <!-- 统计图js 引入 -->
-				<script type="text/javascript" src="/js/echarts.min.js"></script> 
-			    <div id="main" style="width: 300px;height:300px; user-select: none;background:color: yellow;"></div> 
-				<div class="layui-form-pane" style="text-align: center;">
+		<div class="layui-form-pane" style="text-align: center;">
                   <div class="layui-form-item" style="display: inline-block;">
 					
 
@@ -56,7 +52,7 @@
 	                            <input type="checkbox" value="1" name="">
 	                        </td>
 	                        <td>
-	                            {{$k -> id }}
+	                            {{ $i++ }}
 	                        </td>  
 	                        <td>
 	                        <img src="/uploads/{{$k->img}}" alt="" style="width:100px">
@@ -72,7 +68,7 @@
 	                           	@endswitch 
 	                        </td>  
 	                        <td class="td-manage">
-	                            <a  class="list" title="编辑" onclick="level_add('背景添加','/background/{{$k -> id}}/edit','','1200','600')" style="text-decoration:none"><i class="layui-icon"></i></a>
+	                            <a  class="list" title="编辑" href='/background/{{$k -> id}}/edit'><i class="layui-icon"></i></a>
 
 	                            <a title="删除" onclick="return confirm('确定要删除吗?')" href="backgroundExit/{{$k -> id }}" style="text-decoration:none">
 	                                <i class="layui-icon"></i>

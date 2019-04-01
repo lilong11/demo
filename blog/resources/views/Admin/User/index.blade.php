@@ -12,11 +12,6 @@
 
                 <style> .page_page{background: rgb(0,0,0,0); border-radius: 0.2rem; counter-reset: pagination; text-align: center; margin: 0px; } .page_page li{border: solid 1px #d6d6d6; border-radius: 0.2rem; color: #7d7d7d; text-decoration: none; text-transform: uppercase; display: inline-block; text-align: center; padding: 0.5rem 0.9rem; } </style>{{-- 分页样式 --}}
 
-
-			    <!-- 统计图 -->
-			    <!-- 统计图js 引入 -->
-				<script type="text/javascript" src="/js/echarts.min.js"></script> 
-			    <div id="main" style="width: 300px;height:300px; user-select: none;background:color: yellow;"></div> 
 			    
 				<div class="layui-form-pane" style="text-align: center;">
                   <div class="layui-form-item" style="display: inline-block;">
@@ -70,7 +65,7 @@
 	                            <input type="checkbox" value="1" name="">
 	                        </td>
 	                        <td>
-	                            {{$k -> id }}
+                               {{ $i++ }}
 	                        </td>
 	                        <td>
 	                            {{$k -> uname }}
@@ -104,9 +99,8 @@
 	                        </td> 
 	                        <td class="td-manage">
 	                            <a  class="list" title="编辑" href="user/{{$k -> id}}/edit" style="text-decoration:none"><i class="layui-icon"></i></a>
+	                            <a  class="list" title="修改密码" href="/aPassword/{{ $k -> id }}" style="text-decoration:none"><i i class="iconfont">&#xe82b;</i></a>
 	                            
-	                            <a title="修改密码" onclick="level_add('修改密码','/aPassword/{{ $k -> id }}','','900','600')" style="cursor:pointer;"><i class="iconfont">&#xe82b;</i></a>
-
 	                            <a title="用户详情" onclick="level_add('用户详情','/uinfo/{{$k->id}}','','900','600')" style="cursor:pointer;"> <i class="iconfont">&#xe70b;</i></a>	 
 	                            <a title="删除" onclick="return confirm('确定要删除吗?')" href="user/delete/{{$k -> id }}" style="text-decoration:none">
 	                                <i class="layui-icon"></i>
@@ -121,6 +115,10 @@
 	            <span class="x-right"> <div class="page_page" style="padding-bottom: 0px;"> {{ $arr->links() }} </div> </span>
 				<button class="layui-btn" onclick="level_add('添加用户','/user/create','','1200','600')"><i class="layui-icon"></i>添加</button>
                 </xblock>
+                			    <!-- 统计图 -->
+			    <!-- 统计图js 引入 -->
+				<script type="text/javascript" src="/js/echarts.min.js"></script> 
+			    <div id="main" style="width: 300px;height:300px; user-select: none;background:color: yellow;"></div> 
                 
 				<script>
 		            // 增加

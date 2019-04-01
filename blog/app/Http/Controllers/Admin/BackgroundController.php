@@ -16,15 +16,10 @@ class BackgroundController extends Controller
      */
     public function index()
     {
-              // 接收搜索的关键字
-        // $search = $request->input('search','');
-
-        // // 接收 搜索的 显示条数
-        // $count = $request->input('count',5);
-
+        $i = 1;
         $Background = new Background;
         $Backgrounds = $Background->paginate(5); 
-        return view('Admin.Background.index',['title'=>'文章列表','Backgrounds'=>$Backgrounds]);
+        return view('Admin.Background.index',['title'=>'文章列表','Backgrounds'=>$Backgrounds,'i'=>$i]);
     }
 
     /**
@@ -53,7 +48,7 @@ class BackgroundController extends Controller
         $Background->img = $file_name;
         $bool = $Background->save();
         if($bool){
-            echo '<script>alert("添加成功");location="'.$_SERVER['HTTP_REFERER'].'"</script>'; 
+            echo '<script>alert("添加成功");location="/background"</script>'; 
         }else{
             echo '<script>alert("添加失败!");location="/background"</script>'; 
         }
@@ -84,11 +79,11 @@ class BackgroundController extends Controller
         $file = $request->file('img');
         $file_name = $file->store('background');
         
-        $users = Users::find($id);
+        $users = Background::find($id);
         $users->img = $file_name;
         $bool = $users->save();    
         if($bool){ 
-            echo '<script>alert("背景修改成功.");location="'.$_SERVER['HTTP_REFERER'].'"</script>'; 
+            echo '<script>alert("背景修改成功.");location="/background"</script>'; 
         }else{
             echo '<script>alert("背景修改失败!");location="/background"</script>'; 
         }

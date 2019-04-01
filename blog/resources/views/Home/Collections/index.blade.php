@@ -15,7 +15,7 @@
 										<th class="stock"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">库存状态</font></font></th>
 										<th class="price"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">价钱</font></font></th>
 										<th class="add-cart"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">添加到购物车</font></font></th>
-										<th class="remove"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">去掉</font></font></th>
+										<th class="remove"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">操作</font></font></th>
 									</tr>
 								</thead>
 								<tbody>

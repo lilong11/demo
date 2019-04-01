@@ -79,9 +79,9 @@ class RegisterController extends Controller
     	session(['rand'=>$rand]);
 		$url = "http://v.juhe.cn/sms/send";
 		$params = array(
-		    'key'   => '135aefedc80f3430290b8d63c62e4880', //您申请的APPKEY
+		    'key'   => '3a077680212a9e4ca193da855cc0e160', //您申请的APPKEY
 		    'mobile'    => $phone, //接受短信的用户手机号码
-		    'tpl_id'    => '144430', //您申请的短信模板ID，根据实际情况修改
+		    'tpl_id'    => '147184', //您申请的短信模板ID，根据实际情况修改
 		    'tpl_value' =>'#code#='.$rand //您设置的模板变量，根据实际情况修改
 		);
 

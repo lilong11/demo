@@ -19,6 +19,15 @@
 
 </head>
 <body>
+                         @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
     <div class="login-logo"><h1>{{$title or '用户操作'}}</h1></div>
     <div class="login-box" style="width:600px;height:600px;">
     <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
@@ -72,7 +81,7 @@
       </div>
       <!-- 普通注册 -->
       <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
-            <form class="layui-form layui-form-pane" action="/users" method="post" >
+            <form class="layui-form layui-form-pane" action="/addUsers" method="post" >
 
                 {{ csrf_field() }} 
                 <label class="login-title" for="username">帐号</label>

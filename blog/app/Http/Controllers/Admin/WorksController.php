@@ -24,8 +24,9 @@ class WorksController extends Controller
 
         $work = new works;
         $works = $work->where('title','like','%'.$search.'%')->paginate($count); 
+        $i = 1;
 
-        return view('Admin.works.index',['search'=>$search,'count'=>$count,'title'=>'文章列表','works'=>$works]);
+        return view('Admin.works.index',['search'=>$search,'count'=>$count,'title'=>'文章列表','works'=>$works,'i'=>$i]);
     }
 
     /**
@@ -47,18 +48,21 @@ class WorksController extends Controller
     public function store(WorksStoreBlogPost $request)
     {
         //文章添加处理 
-        $user = new works;
+        $works = new works;
 
-        //接收文件上传对象
-        $file = $request->file('img');
-        $file_name = $file->store('works');
+        if(!empty($request->img)){
+                    //接收文件上传对象
+            $file = $request->file('img');
+            $file_name = $file->store('works');
+            $works->img = $file_name;
+            $works->save();
+        } 
 
-        $user->title = $request->input('title','');
-        $user->status = $request->input('status','');
-        $user->content = $request->input('content','');
-        $user->img = $file_name;
+        $works->title = $request->input('title','');
+        $works->status = $request->input('status','');
+        $works->content = $request->input('content','');
         // 执行添加到数据库
-        $res1 = $user->save();
+        $res1 = $works->save();
         // dump($res1);
         if($res1){
             echo '<script>alert("添加成功!");location="/works"</script>'; exit;
@@ -94,14 +98,17 @@ class WorksController extends Controller
 
         // 用户传过来的信息
         $data = $request->all();
-        // dd($works);
-        $file = $request->file('img');
-        $file_name = $file->store('works');
+        
+        if(!empty($request->img)){
+            $file = $request->file('img');
+            $file_name = $file->store('works');
+            $works->img = $file_name;
+            $works->save();
+        }
         
         $works->status = $data['status']; 
         $works->title = $data['title']; 
         $works->content = $data['content'];
-        $works->img = $file_name;
         // dd($works);
         $bool = $works->save(); 
 

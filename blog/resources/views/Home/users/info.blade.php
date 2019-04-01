@@ -1,6 +1,8 @@
 @extends('Home.user_public.index')
 
 	@section('content') 
+	
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 		<div class="blog-details-page blog-details-sidebar bg-off-white padding-bottom-90">
 			<div class="container">
 				<div class="row">
@@ -9,20 +11,17 @@
 						
 							<!-- 头像上传 -->
 							<div class="sin-list-pro-img float-left">
-								<form action="/img" method="post" enctype="multipart/form-data">
-			                        {{ csrf_field() }}
-	                                <label> 头像上传 </label>
-	                                 <input type="file" name="img">
-	                                 <input type="submit" value="上传头像" />
+								<label for="file"><img id="profile" src="/uploads/{{ $userInfo->img }}" alt="点击我上传头像" style="width:270px;height:270px;cursor:pointer;"> </label>
+								<form  action="/head" method="post" enctype="multipart/form-data"> 
+									{{ csrf_field() }}
+								    
+									<input type="file" name="profile" id="file" style="display: none;"  onchange="uploadimg()"/>
+								    <input type="submit" class="list-pro-act-btn btn-text" value="上传头像" />
 								</form>
-								<a href="#" class="list-pro-img"><img src="/uploads/{{ $userInfo->img }}" alt="头像"></a> 
-								<a href="#pro-quick-view" class="list-pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 							</div>
 
-
-
 							<div class="list-pro-details fix">
-								<a class="list-pro-title" href="#">用户名:admin</a> 
+								<a class="list-pro-title" href="#">用户详情:</a> 
 								<p class="list-pro-availability">用户名: <span class="in-stock"> {{ $users->uname }} </span></p> 
 								<p class="list-pro-availability fix">性别: 
 								<span class="in-stock">                         
@@ -38,14 +37,14 @@
 			                           		@break
 			                           	@endswitch 
 			                           	 </span></p> 
-								<p class="list-pro-availability fix">城市: <span class="in-stock"> {{ $userInfo->city }} </span></p> 
+								<p class="list-pro-availability fix">城市: <span class="in-stock"> {{ $userInfo->city or '您还没留下什么' }} </span></p> 
 								<div class="list-pro-overview">
 									<h5>个新签名:</h5>
 									<p>{{ $userInfo->sign }}</p>
 								</div>
 								<!-- Product Action -->
 								<div class="list-pro-action">
-									<a class="list-pro-act-btn btn-text" href="/infoEdit/{{session('uid')}}" style="cursor:pointer;">修改信息</a>
+									<a class="list-pro-act-btn btn-text" href="/infoEdit/{{session('uid')}}" style="cursor:pointer;text-align: center;">修改信息</a>
 									<a class="list-pro-act-btn btn-icon" href="/password" style="cursor:pointer;">修改密码</a> 
 								</div>
 							</div>

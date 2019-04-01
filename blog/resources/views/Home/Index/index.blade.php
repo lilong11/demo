@@ -80,18 +80,13 @@
 						<!-- Header Language -->
 						<li><a href="/">首页</a></li>
 						<li><a href="/hissues">问题</a></li>
-						<li><a href="/workss">文章</a></li>
+						<li><a href="/hworks">文章</a></li>
 						<li><a href="/home/opinion/create">意见</a></li>
 						<li><a href="/home/mess/create">留言</a></li>
 						<li><a href="/home/investor/create">我要加盟</a></li>
 					</ul>
 				</div>
 				<div class="col-sm-6 col-xs-8 header-top-right">
-
-
-
-
-
 
 					<!-- 登入显示开始 -->
 					@if(empty(session('home')))
@@ -132,7 +127,8 @@
 						<ul class="header-acc float-left">
 							<li><a href="/users"> <span style="color:red;">{{session('home')}}</span><i class="zmdi zmdi-chevron-down"></i></a>
 								<ul class="top-sub-menu sub-menu-right">
-									<li><a href="/usersexit">退出登入</a></li> 
+									<li><a class="button small transparent" href="/usersexit">退出登入</a></li> 
+									<li><a class="button small transparent" href="/register">立即注册</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -216,132 +212,14 @@
 												@endforeach
 											</div>
 											
-											<div class="mm-column mm-column-banner float-left">
-												<a href="#"><img src="./home_public/img/menu-banner/1.jpg" alt="banner" /></a>
-												<a href="#"><img src="./home_public/img/menu-banner/2.jpg" alt="banner" /></a>
-											</div>
 										</div>
 									</li>
 									@endforeach
-									<li><a href="#">pages <i class="zmdi zmdi-chevron-down"></i></a>
-										<!-- Mega Menu -->
-										<div class="mega-menu mega-menu-link mm-right">
-
-											<div class="mm-column mm-column-link float-left">
-												<h4>shop pages</h4>
-												<a href="shop.html">shop grid</a>
-												<a href="product-details.html">product details</a>
-												<a href="product-details-left-sidebar.html">product details left sidebar</a>
-											</div>
-											<div class="mm-column mm-column-link float-left">
-												<h4>shop pages</h4>
-												<a href="cart.html">cart</a>
-												<a href="checkout.html">check out</a>
-												<a href="wishlist.html">wishlist</a>
-											</div>
-											<div class="mm-column mm-column-link float-left">
-												<h4>blog pages</h4>
-												<a href="blog.html">blog</a>
-												<a href="blog-details.html">blog details</a>
-											</div>
-											<div class="mm-column mm-column-link float-left">
-												<h4>other pages</h4>
-												<a href="about-us.html">about us</a>
-												<a href="contact.html">contact</a>
-												<a href="coming-soon.html">coming soon</a>
-												<a href="404.html">404</a>
-											</div>
-										</div>
-									</li>
-									<li><a href="/homegoods">商城</a></li>
 								</ul>
 							</nav>
 						</div>
 					</div>
-					<!-- Mobile Menu -->
-					<div class="mobile-menu text-center hidden-lg hidden-md">
-						<nav>
-							<ul>
-								<li><a href="index.html">home</a></li>
-								<li><a href="shop.html">shop</a>
-									<ul>
-										<li><a href="#">men</a>
-											<ul>
-												<li><a href="#">Blazers</a></li>
-												<li><a href="#">Jackets</a></li>
-												<li><a href="#">Collections</a></li>
-												<li><a href="#">T-Shirts</a></li>
-												<li><a href="#">jens pant’s</a></li>
-												<li><a href="#">sports shoes</a></li>
-											</ul>
-										</li>
-										<li><a href="#">women</a>
-											<ul>
-												<li><a href="#">Cocktail</a></li>
-												<li><a href="#">Sunglass</a></li>
-												<li><a href="#">Evening</a></li>
-												<li><a href="#">Footwear</a></li>
-												<li><a href="#">Bootees Bags</a></li>
-												<li><a href="#">Furniture</a></li>
-											</ul>
-										</li>
-										<li><a href="#">accessories</a>
-											<ul>
-												<li><a href="#">gagets</a></li>
-												<li><a href="#">laptop</a></li>
-												<li><a href="#">mobile</a></li>
-												<li><a href="#">lifestyle</a></li>
-												<li><a href="#">jens pant’s</a></li>
-												<li><a href="#">sports items</a></li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-								<li><a href="shop.html">men</a>
-									<ul>
-										<li><a href="#">women</a>
-											<ul>
-												<li><a href="#">Cocktail</a></li>
-												<li><a href="#">Sunglass</a></li>
-												<li><a href="#">Evening</a></li>
-												<li><a href="#">Footwear</a></li>
-												<li><a href="#">Bootees Bags</a></li>
-												<li><a href="#">Furniture</a></li>
-											</ul>
-										</li>
-										<li><a href="#">accessories</a>
-											<ul>
-												<li><a href="#">gagets</a></li>
-												<li><a href="#">laptop</a></li>
-												<li><a href="#">mobile</a></li>
-												<li><a href="#">lifestyle</a></li>
-												<li><a href="#">jens pant’s</a></li>
-												<li><a href="#">sports items</a></li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-								<li><a href="#">pages</a>
-									<!-- Sub Menu -->
-									<ul>
-										<li><a href="about-us.html">about us</a></li>
-										<li><a href="blog.html">blog</a></li>
-										<li><a href="blog-details.html">blog details</a></li>
-										<li><a href="contact.html">contact</a></li>
-										<li><a href="cart.html">cart</a></li>
-										<li><a href="checkout.html">check out</a></li>
-										<li><a href="product-details.html">product details</a></li>
-										<li><a href="shop.html">shop grid</a></li>
-										<li><a href="wishlist.html">wishlist</a></li>
-										<li><a href="coming-soon.html">coming soon</a></li>
-										<li><a href="404.html">404</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.html">contact</a></li>
-							</ul>
-						</nav>
-					</div>
-					<!-- Header Search -->
+
 					<div class="header-search col-lg-3 col-md-3">
 						<form action="/homegoods" method="get">
 							<input type="text" name="search" placeholder="搜索" />
@@ -381,16 +259,9 @@
 			</div>										
 		</div>
 	</div>
-	<!-- <div id="htmlcaption2" class="nivo-html-caption">				
-		<div class="slide-text-left text-white slide-text">
-			<div class="middle-text text-center">
-				<h2 class="cap-sub-title wow fadeInDown" data-wow-duration=".9s" data-wow-delay="0.8s">XOSS SHOP</h2>
-				<h1 class="cap-title wow fadeInRight" data-wow-duration=".9s" data-wow-delay="1.5s">Women’s NEW FASHION</h1>
-				<p class="cap-dec wow fadeInLeft" data-wow-duration="0.9s" data-wow-delay="2.2s">See our full collection.s summer 2016 Lookbook</p>
-				<a href="#" class="cap-readmore button color white-hover wow fadeInUp" data-wow-duration="0.9s" data-wow-delay="3s">Shop Now</a>
-			</div>	
-		</div>						
-	</div> -->
+			</div>										
+		</div>
+	</div>
 </div>
 
 <!-- Banner Add Area
@@ -1331,209 +1202,7 @@
 	</div>
 </div> 
 <!-- Special Offer Area
-============================================ -->
 
-<!-- Feature Product Area
-============================================ --> 
-<div class="feature-product-area margin-bottom-90">
-	<div class="container">
-		<div class="row"> 
-			<div class="section-title col-xs-12 text-center"><h1>特色产品</h1></div> 			<div class="col-xs-12">
-				<!-- Product Slider -->
-				<div class="product-slider feature-slider"> 
-					<div class="sin-pro">
-						<!-- Product Image -->
-						<div class="sin-pro-img-action fix">
-							<a href="#" class="sin-pro-img"><img src="./home_public/img/product/1.jpg" alt="" /></a>
-							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
-							<!-- Product Action -->
-							<div class="sin-pro-action">
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
-								<button class="pro-act-btn btn-text">add to bag</button>
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
-							</div>
-						</div>
-						<!-- Product Details -->
-						<div class="sin-pro-details fix">
-							<a class="sin-pro-title" href="#">Full sleev women shirt</a>
-							<!-- Product Price -->
-							<div class="sin-pro-price float-left">
-								<span class="new">$ 85.00</span>
-							</div>
-							<!-- Product Ratting -->
-							<div class="sin-pro-ratting float-right">
-								<div class="rattings float-left">
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star-half"></i>
-								</div>
-								<span>(23)</span>
-							</div>
-						</div>
-					</div>
-					<!-- Single Product -->
-					<div class="sin-pro">
-						<!-- Product Image -->
-						<div class="sin-pro-img-action fix">
-							<a href="#" class="sin-pro-img"><img src="./home_public/img/product/2.jpg" alt="" /></a>
-							<span class="pro-label label-new">new</span>
-							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
-							<!-- Product Action -->
-							<div class="sin-pro-action">
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
-								<button class="pro-act-btn btn-text">add to bag</button>
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
-							</div>
-						</div>
-						<!-- Product Details -->
-						<div class="sin-pro-details fix">
-							<a class="sin-pro-title" href="#">Loafers Men's shoes</a>
-							<!-- Product Price -->
-							<div class="sin-pro-price float-left">
-								<span class="new">$ 45.00</span>
-							</div>
-							<!-- Product Ratting -->
-							<div class="sin-pro-ratting float-right">
-								<div class="rattings float-left">
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star-half"></i>
-								</div>
-								<span>(5)</span>
-							</div>
-						</div>
-					</div>
-					<!-- Single Product -->
-					<div class="sin-pro">
-						<!-- Product Image -->
-						<div class="sin-pro-img-action fix">
-							<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
-							<span class="pro-label label-new">new</span>
-							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
-							<!-- Product Action -->
-							<div class="sin-pro-action">
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
-								<button class="pro-act-btn btn-text">add to bag</button>
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
-							</div>
-						</div>
-						<!-- Product Details -->
-						<div class="sin-pro-details fix">
-							<a class="sin-pro-title" href="#">Women’s handbag</a>
-							<!-- Product Price -->
-							<div class="sin-pro-price float-left">
-								<span class="new">$ 99.99</span>
-								<span class="old">145.00</span>
-							</div>
-							<!-- Product Ratting -->
-							<div class="sin-pro-ratting float-right">
-								<div class="rattings float-left">
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star-half"></i>
-								</div>
-								<span>(23)</span>
-							</div>
-						</div>
-					</div>
-					<!-- Single Product -->
-					<div class="sin-pro">
-						<!-- Product Image -->
-						<div class="sin-pro-img-action fix">
-							<a href="#" class="sin-pro-img"><img src="./home_public/img/product/4.jpg" alt="" /></a>
-							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
-							<!-- Product Action -->
-							<div class="sin-pro-action">
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
-								<button class="pro-act-btn btn-text">add to bag</button>
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
-							</div>
-						</div>
-						<!-- Product Details -->
-						<div class="sin-pro-details fix">
-							<a class="sin-pro-title" href="#">Women’s winter dress</a>
-							<!-- Product Price -->
-							<div class="sin-pro-price float-left">
-								<span class="new">$ 45.00</span>
-							</div>
-							<!-- Product Ratting -->
-							<div class="sin-pro-ratting float-right">
-								<div class="rattings float-left">
-									<i class="zmdi zmdi-star-outline"></i>
-									<i class="zmdi zmdi-star-outline"></i>
-									<i class="zmdi zmdi-star-outline"></i>
-									<i class="zmdi zmdi-star-outline"></i>
-									<i class="zmdi zmdi-star-outline"></i>
-								</div>
-								<span>(0)</span>
-							</div>
-						</div>
-					</div>
-					<!-- Single Product -->
-					<div class="sin-pro">
-						<!-- Product Image -->
-						<div class="sin-pro-img-action fix">
-							<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
-							<span class="pro-label label-new">new</span>
-							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
-							<!-- Product Action -->
-							<div class="sin-pro-action">
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
-								<button class="pro-act-btn btn-text">add to bag</button>
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i><i class="zmdi zmdi-favorite-outline"></i></button>
-							</div>
-						</div>
-						<!-- Product Details -->
-						<div class="sin-pro-details fix">
-							<a class="sin-pro-title" href="#">Full sleev women shirt</a>
-							<!-- Product Price -->
-							<div class="sin-pro-price float-left">
-								<span class="new">$ 85.00</span>
-							</div>
-							<!-- Product Ratting -->
-							<div class="sin-pro-ratting float-right">
-								<div class="rattings float-left">
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star-half"></i>
-								</div>
-								<span>(23)</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
- 
-<!-- Blog Area
-============================================ -->
-
-<!-- Shipping Service Area
-============================================ -->
-<!-- <div class="blog-area bg-off-white padding-90">
-	<div class="container">
-		<div class='n1'style="border:1px solid red;display: inline-block">
-			<img src="/uploads/images/1.jpeg" alt="我图片呢">
-		</div>
-		<div class='n2'style="border:1px solid red;display: inline-block">
-			<img src="/uploads/images/1.jpeg" alt="我图片呢">
-		</div>
-		<div class='n3'style="border:1px solid red;display: inline-block">
-			<img src="/uploads/images/1.jpeg" alt="我图片呢">
-		</div>
-		
-	</div>
-</div> -->
 <!-- 广告开始 -->
 <div class="latest-product-area tab-product-area margin-bottom-25">
 	<div class="container">
@@ -2474,5 +2143,76 @@
 	</div>
 </div> 
 <!-- 广告结束 -->
+<div class="latest-product-area tab-product-area margin-bottom-25">
+	<div class="container">
+		<div class="row">
+			<!-- Section Title -->
+			<div class="section-title col-xs-12 text-center"><h1>latest products</h1></div>
+			<div class="col-xs-12">
+				<!-- Product Tab List -->
+				<div class="pro-tab-list text-center fix">
+					<ul>
+						<li class="active"><a href="#women" data-toggle="tab">women</a></li>
+					</ul>
+				</div>
+				<!-- Product Tab Content -->
+				<div class="pro-tab-content tab-content row">
+					<!-- Product Tab -->
+					<div class="pro-tab tab-pane active" id="women">
+						<!-- Single Product -->
+
+						@foreach($goodss as $v)
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+							<div class="sin-pro">
+								<!-- Product Image -->
+								<div class="sin-pro-img-action fix">
+									<a href="#" class="sin-pro-img"><img src="/uploads/{{ $v->pic }}" alt=""></a>
+									<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+									<!-- Product Action -->
+									<div class="sin-pro-action">
+										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
+										<button class="pro-act-btn btn-text">加入购物车</button>
+										<a href="/Collectionadd/{{ $v->id }}" class="pro-act-btn btn-icon">&nbsp;&nbsp;&nbsp;&nbsp;<i class="zmdi zmdi-favorite-outline"></i></a>
+									</div>
+								</div>
+								<!-- Product Details -->
+								<div class="sin-pro-details fix">
+									<a class="sin-pro-title" href="#">{{ $v->gname }}</a>
+									<!-- Product Price -->
+									<div class="sin-pro-price float-left">
+										<span class="new">$ {{ $v->price }}</span>
+									</div>
+									<!-- Product Ratting -->
+									<div class="sin-pro-ratting float-right">
+										<div class="rattings float-left">
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star"></i>
+											<i class="zmdi zmdi-star-half"></i>
+										</div>
+										<span>(23)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						@endforeach
+	
+
+
+
+					</div>
+					
+				
+			
+
+				
+					</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
 {{--底部引入--}}
 @include('Home.public.footer')

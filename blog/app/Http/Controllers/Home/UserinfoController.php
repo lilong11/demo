@@ -71,11 +71,11 @@ class UserinfoController extends Controller
     public function password()
     {
     	$work = new works; //查文章表
-        $works = $work->all();  
+        $works = $work->where('status',0)->get(); 
 
 
         $issue = new Issues; //查问题表
-        $issues = $issue->all(); 
+        $issues = $issue->where('status',0)->get(); 
  
         return view('Home.usersinfo.password',['title'=>'用户密码修改','works'=>$works,'issues'=>$issues]);
     }
@@ -102,22 +102,23 @@ class UserinfoController extends Controller
         }
     }
     //用户头像上传
-    public function img(Request $request)
+    public function head(Request $request)
     {
-        //接收文件上传对象 
-        $file = $request->file('img');
-        $file_name = $file->store('userinfo');  
+        if(empty($request->profile)){
+             echo '<script>alert("您的没有选择图片.");location="/users"</script>';exit;
+        }
         $uid = session('uid');
-        // dd($uid);
-        if($file_name){
-            $bool = DB::table('Users_infos')->where('uid',$uid)->update(['img' => $file_name]);
-            if($bool){
-                 echo '<script>alert("头像上传成功.");location="/users"</script>';
-            }else{
-                 echo '<script>alert("头像上传失败.");location="/users"</script>';
-            }
-        }else{ 
-             echo '<script>alert("文件上传失败.");location="/users"</script>';exit;
+        // dd($id);
+        $profile = $request->file('profile');
+        $filename = $profile->store('userinfo');
+
+        $bool = DB::table('users_infos')->where('uid', $uid)->update(['img' => $filename]);
+        if($bool){
+            // echo 123;
+             echo '<script>alert("头像上传成功.");location="/users"</script>';
+        }else{
+            // echo 2222;
+             echo '<script>alert("头像上传失败.");location="/users"</script>';
         }
     }
 

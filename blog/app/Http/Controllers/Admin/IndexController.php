@@ -8,6 +8,7 @@ use App\Models\Users;
 use Illuminate\Support\Facades\Auth; 
 use DB;  
 use App\Models\Background;
+use App\Models\Issues;
 
 class IndexController extends Controller
 {
@@ -29,6 +30,7 @@ class IndexController extends Controller
             foreach($data as $k){
                 $status = $k->status; 
                 $grade = $k->grade;
+                $adminuid = $k->id;
             }
 
             if($grade != 2){
@@ -39,9 +41,9 @@ class IndexController extends Controller
              echo '<script>alert("您的用户疑似黑号,已禁用,请联系超级管理员");location="/login"</script>'; exit;
             }
 
-
-
-            session(['admin'=>$uname]);
+            
+              session(['admin'=>$uname]);
+              session(['adminuid'=>$adminuid]);
              echo '<script>alert("登入成功");location="/admin"</script>';
         }else{
             $request->flashOnly('uname');
@@ -53,7 +55,7 @@ class IndexController extends Controller
     public function exit()
     {
         session()->forget('admin');
-        return view('Admin.Index.login',['title'=>'商城后台登入']);exit;
+        return view('Admin.Index.login',['title'=>'海天商城后台登入']);exit;
     }
 
     /**
@@ -63,81 +65,27 @@ class IndexController extends Controller
      */
     public function index()
     { 
-       $user = new Users;
-      // $grade = 2;
-      // 统计用户个数 
-      $vip =  count($user->where([ 'grade' => 1 ])->get());
-      $common =  count($user->where([ 'grade' => 0 ])->get());
-     $root =  count($user->where([ 'grade' => 2 ])->get()); 
-     // dd($root);
+        $user = new Users;
+        // 统计用户个数 
+        $vip =  count($user->where([ 'grade' => 1 ])->get());
+        $common =  count($user->where([ 'grade' => 0 ])->get());
+        $root =  count($user->where([ 'grade' => 2 ])->get()); 
 
-        return view('Admin.Index.index',['title'=>'商城后台','vip'=>$vip,'common'=>$common,'$root'=>$root]); 
+        $Issues = new Issues;
+        // 统计用户个数 
+        $forbidden =  count($Issues->where([ 'status' => 1 ])->get());
+        $reveal =  count($Issues->where([ 'status' => 0 ])->get());
+        $dispose =  count($Issues->where([ 'status' => 2 ])->get()); 
+
+
+        $back = new  Background;
+        $background =  $back->where([ 'status' => 0 ])->get(); 
+
+        // dd($background);
+        
+        // dd(session('adminuid'));
+        return view('Admin.Index.index',['title'=>'海天商城后台','vip'=>$vip,'common'=>$common,'root'=>$root,'dispose'=>$dispose,'reveal'=>$reveal,'forbidden'=>$forbidden,'background'=>$background]); 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {  
 
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request) 
-    { 
- 
-
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id) 
-    { 
-          
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

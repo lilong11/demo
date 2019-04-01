@@ -24,7 +24,8 @@ class IssueController extends Controller
         $issue = new Issues;
         $data = $issue->where('title','like','%'.$search.'%')->paginate($count); 
 
-        return view('Admin.issue.index',['search'=>$search,'count'=>$count,'title'=>'问题列表','data'=>$data]);
+        $i = 1;
+        return view('Admin.issue.index',['search'=>$search,'count'=>$count,'title'=>'问题列表','data'=>$data,'i'=>$i]);
     }
 
     /**
@@ -63,9 +64,10 @@ class IssueController extends Controller
      */
     public function edit($id)
     {
-        $issues = new Issues;
-        $data = $issues->find($id);
-        return view('Admin\issue\edit',['title'=>'问题修改','data'=>$data]);
+        // dump($id);
+        $data = Issues::find($id);
+        // dd($data);
+        return view('Admin.issue.edit',['title'=>'问题修改','data'=>$data]);
     }
 
     /**
@@ -113,6 +115,14 @@ class IssueController extends Controller
     public  function doSolve(Request $request,$id)
     {
         $Issues = Issues::find($id);
+
+        if(!empty($request->img)){
+            $file = $request->file('img');
+            $file_name = $file->store('issue'); 
+            $Issues->img = $file_name;
+            $Issues->save();
+        }  
+
         $Issues->content = $request['content'];
         $Issues->status = 0;
         $bool = $Issues->save();    

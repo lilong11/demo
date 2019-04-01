@@ -9,11 +9,8 @@ use App\Models\Issues;
 
 class WorksController extends Controller
 {
-        /**
+    /**
      * 显示问题列表
-     * 
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -21,11 +18,19 @@ class WorksController extends Controller
         $status = 0;
         $issues = $issue->where('status',0)->get(); 
         // dd($issues);
-        return view('Home.issue.index',['issues'=>$issues,'title'=>'问题列表']);
-           
-        
+        return view('Home.issue.index',['issues'=>$issues,'title'=>'问题列表']);     
     }
 
+    /**
+     * 显示文章列表
+     */
+    public function works()
+    {
+        $works = new works; //查文章表
+        $status = 0;
+        $workss = $works->where('status',0)->get(); 
+        return view('Home.works.works',['workss'=>$workss,'title'=>'文章列表']);     
+    }
 
 
 
@@ -102,5 +107,16 @@ class WorksController extends Controller
              echo '<script>alert("问题申请失败!");location="/issuesAdd"</script>'; 
         }
     }
+
+    // 用户问题显示
+    public function userIssue($uname)
+    {
+        // dump($uname);
+        $Issues = new Issues;
+        $data = $Issues->where('uname',$uname)->get();  
+        return view('Home.issue.userissue',['title'=>'我的问题中心','data'=>$data]);
+
+    }
+    
     
 }

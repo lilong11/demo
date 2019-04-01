@@ -45,6 +45,9 @@
                            问题状态
                         </th> 
                         <th  style="text-align: center;">
+                           辅助图片
+                        </th> 
+                        <th  style="text-align: center;">
                             操作
                         </th>
                     </tr>
@@ -56,7 +59,7 @@
                             <input type="checkbox" value="1" name="">
                         </td>
                         <td>
-                          {{ $k -> id }}
+                          {{ $i++ }}
                         </td>
                         <td>
                           {{ $k -> title }}
@@ -67,15 +70,18 @@
                         <td>
                                 @switch($k -> status)
                                     @case(0)
-                                    <a href="/issue/1/{{$k->id}}"><img src="/uploads/public/0.png" style="width:30px;"></a> 
+                                    <a href="/aissue/1/{{$k->id}}"><img src="/uploads/public/0.png" style="width:30px;"></a> 
                                     @break
                                     @case(1)
-                                        <a href="/issue/0/{{$k->id}}"><img src="/uploads/public/1.png" style="width:30px;"></a> 
+                                        <a href="/aissue/0/{{$k->id}}"><img src="/uploads/public/1.png" style="width:30px;"></a> 
                                     @break 
                                     @case(2)
                                         <p style="color:red;">待处理</p>
                                     @break 
                                 @endswitch 
+                        </td>
+                        <td>
+                            <img src="/uploads/{{ $k->img }}" alt="暂无图片" style="width:50px">
                         </td>
                         <td class="td-manage">
                             <a title="编辑" href="/issue/{{$k->id}}/edit" style="text-decoration:none">
