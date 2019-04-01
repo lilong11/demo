@@ -116,17 +116,12 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="current">
-                            <a href="orders">
+                            <a href="/orders">
                                 <i class="iconfont">&#xe6a7;</i>
                                 订单列表
                             </a>
                         </li>
-                        <li>
-                            <a href="/links/create">
-                                <i class="iconfont">&#xe6a7;</i>
-                                购物车管理
-                            </a>
-                        </li>
+                        
                     </ul>
                 </li>
                 <li class="list">
@@ -137,7 +132,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li  class="current">
-                            <a href="/ticket">
+                            <a href="/orders/adver">
                                 <i class="iconfont">&#xe6a7;</i>
                                 广告列表
                             </a>

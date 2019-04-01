@@ -31,7 +31,10 @@ class HomeGoodsController extends Controller
         //商城遍历
         $goods = DB::table('goods')->where('tid',$id)->get();
         //  dump($goods);
-        return view('Home.goods.homegoods',['goods'=>$goods]);
+         //友情链接
+        $links = DB::table('links')->get();
+
+        return view('Home.goods.homegoods',['goods'=>$goods,'links'=>$links]);
        
         
     }

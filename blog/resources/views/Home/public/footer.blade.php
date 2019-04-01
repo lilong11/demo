@@ -68,13 +68,11 @@
 			</div>
 			<!-- Footer Service -->
 			<div class="sin-footer footer-service footer-link col-lg-3 col-md-2 col-sm-6 col-xs-12">
-				<h3>services</h3>
+				<h3>友情链接</h3>
 				<ul>
-					<li><a href="#">About us</a></li>
-					<li><a href="#">Return Policy</a></li>
-					<li><a href="#">Our Blog</a></li>
-					<li><a href="#">Contact Us</a></li>
-					<li><a href="#">Terms & Condition</a></li>
+					@foreach($links as $k=>$v)
+					<li><a href="http://{{ $v->lurl }}">{{ $v->lname }}</a></li>
+					@endforeach
 				</ul>
 			</div>
 			<!-- Footer Account -->

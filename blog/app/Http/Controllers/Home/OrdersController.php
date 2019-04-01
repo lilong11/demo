@@ -26,13 +26,13 @@ class OrdersController extends Controller
         //通过uid查询
         $uid = session('uid');
         $orders = DB::table('orders')->where('uid','=',$uid)->get();
-        dump($orders);
+        // dump($orders);
         foreach ($orders as $key => $value) {
             $v = $value->oid;
             $orderdetail[]= DB::table('orderdetail')->where('oid','=',$v)->get();
         }
 
-        dump($orderdetail);
+        // dump($orderdetail);
         for ($i=0; $i <=$key ; $i++) { 
             $aaa = $orderdetail[$i];
             foreach ($aaa as $k1 => $v1) {
@@ -40,7 +40,7 @@ class OrdersController extends Controller
                $goods[$i][] = DB::table('goods')->where('id','=',$bbb)->first();
             };
         }
-        dump($goods);
+        // dump($goods);
 
         for ($a=0; $a <=$key ; $a++) { 
             $bbb = $orderdetail[$a];
@@ -49,19 +49,21 @@ class OrdersController extends Controller
                $size[$a][] = DB::table('goods_sizes')->where('id','=',$bbb)->first();
             };
         }
-        dump($size);
+        // dump($size);
 
         foreach ($orders as $k3 => $v3) {
            $aid = $v3->aid;
            $oname[] = DB::table('address')->where('id','=',$aid)->first();
         }
-        dump($oname);
+        // dump($oname);
 
 
         //取出广告表中的数据
         $adver = adver::all(); //查询adver数据表里的全部数据
+         //友情链接
+        $links = DB::table('links')->get();
 
-    return view('Home.Orders.orders',['orders'=>$orders,'orderdetail'=>$orderdetail,'goods'=>$goods,'oname'=>$oname,'adver'=>$adver,'size'=>$size]);
+    return view('Home.Orders.orders',['orders'=>$orders,'orderdetail'=>$orderdetail,'goods'=>$goods,'oname'=>$oname,'adver'=>$adver,'size'=>$size,'links'=>$links]);
 
     }else{
             echo '<script>alert("您还没有登录,请先登录账号");location="/users/login"</script>';

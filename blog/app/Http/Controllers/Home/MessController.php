@@ -12,8 +12,10 @@ class MessController extends Controller
 		// {{--dump('我是前台添加留言部分');--}}	{{-- --}}是view视图里面代替<!-- -->用的
 		$users = Users::find(session('uid'));
 	    	if(session('uid')){
+	    		 //友情链接
+        $links = DB::table('links')->get();
 
-	    		return view('Home/mess/create',['users'=>$users]);
+	    		return view('Home/mess/create',['users'=>$users,'links'=>$links]);
 	    		
 	    	}else{
 	    		return view('Home.register.login',['title'=>'账号登入']);

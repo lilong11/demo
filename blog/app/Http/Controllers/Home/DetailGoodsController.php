@@ -68,7 +68,11 @@ class DetailGoodsController extends Controller
         // dump($goods);
         dump($gsize_datas);
 
-        return view('Home.detailgoods.detailgoods',['goods'=>$goods,'details_goods'=>$details_goods,'gsize_datas'=>$gsize_datas,'goodsDePic'=>$goodsDePic]);
+         //友情链接
+        $links = DB::table('links')->get();
+
+        
+        return view('Home.detailgoods.detailgoods',['goods'=>$goods,'details_goods'=>$details_goods,'gsize_datas'=>$gsize_datas,'goodsDePic'=>$goodsDePic,'links'=>$links]);
 
         }else{
             echo '<script>alert("您还没有登录,请先登录账号");location="/users/login"</script>';

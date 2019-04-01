@@ -60,7 +60,10 @@ class UserController extends Controller
         $users = $user->find($id); 
         $userInfo = $users->userinfo;
         // dd($users);
-        return view('Home.users.info',['title'=>'个人中心','works'=>$works,'issues'=>$issues,'userInfo'=>$userInfo,'users'=>$users]);
+         //友情链接
+        $links = DB::table('links')->get();
+
+        return view('Home.users.info',['title'=>'个人中心','works'=>$works,'issues'=>$issues,'userInfo'=>$userInfo,'users'=>$users,'links'=>$links]);
     }
 
     /**

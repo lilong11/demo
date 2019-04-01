@@ -21,7 +21,10 @@ class WorksController extends Controller
         $status = 0;
         $issues = $issue->where('status',0)->get(); 
         // dd($issues);
-        return view('Home.issue.index',['issues'=>$issues,'title'=>'问题列表']);
+         //友情链接
+        $links = DB::table('links')->get();
+
+        return view('Home.issue.index',['issues'=>$issues,'title'=>'问题列表','links'=>$links]);
            
         
     }
@@ -45,8 +48,10 @@ class WorksController extends Controller
         $issues = $issue->where('status',0)->get(); 
  
        $workShow = $work->find($id);
- 
-        return view('Home.works.index',['works'=>$works,'issues'=>$issues,'workShow'=>$workShow]);  
+         //友情链接
+        $links = DB::table('links')->get();
+
+        return view('Home.works.index',['works'=>$works,'issues'=>$issues,'workShow'=>$workShow,'links'=>$links]);  
     }
 
 
@@ -69,8 +74,10 @@ class WorksController extends Controller
         // dump($id);
        $workShow = $issue->find($id);
        // dump($workShow);   
+        //友情链接
+        $links = DB::table('links')->get();
 
-        return view('Home.works.index',['works'=>$works,'issues'=>$issues,'workShow'=>$workShow]);
+        return view('Home.works.index',['works'=>$works,'issues'=>$issues,'workShow'=>$workShow,'links'=>$links]);
     }
 
     public function add()
@@ -82,8 +89,10 @@ class WorksController extends Controller
 
         $issue = new Issues; //查问题表
         $issues = $issue->where('status',0)->get(); 
+         //友情链接
+        $links = DB::table('links')->get();
 
-        return view('Home.issue.add',['works'=>$works,'issues'=>$issues]);
+        return view('Home.issue.add',['works'=>$works,'issues'=>$issues,'links'=>$links]);
     }
 
     public function doAdd(Request $request)
