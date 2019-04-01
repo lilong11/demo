@@ -67,6 +67,14 @@
                 </div>
                 <div class="layui-form-item">
                     <label for="L_username" class="layui-form-label">
+                        <span class="x-red">*</span>商品描述
+                    </label>
+                    <div class="layui-input-block">
+                      <textarea placeholder="请输入内容" name="goodsDes" class="layui-textarea">{{ old('goodsDes') }}</textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="L_username" class="layui-form-label">
                         <span class="x-red">*</span>商品上传
                     </label>
                     <div class="layui-input-inline">
