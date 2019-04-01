@@ -116,6 +116,7 @@ class NewDetailsGoodsController extends Controller
         $details_goods->gsize = $details_size;
         $details_goods->GoodsDePic = $details_img;
         $details_goods->status = 1;
+        // dd($details_goods);
         $res = $details_goods->save();
         //判断商品是否添加成功
         if($res){

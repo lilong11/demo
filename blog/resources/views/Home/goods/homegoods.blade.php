@@ -51,7 +51,7 @@
 								<div class="sin-pro-action">
 									<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
 									<button class="pro-act-btn btn-text">加入购物车</button>
-									<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
+									<a href="/Collectionadd/{{ $v->id }}" class="pro-act-btn btn-icon">&nbsp;&nbsp;<i class="zmdi zmdi-favorite-outline"></i></a>
 								</div>
 							</div>
 							<!-- Product Details -->

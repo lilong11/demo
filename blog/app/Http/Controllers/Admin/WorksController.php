@@ -54,8 +54,10 @@ class WorksController extends Controller
                     //接收文件上传对象
             $file = $request->file('img');
             $file_name = $file->store('works');
+            
             $works->img = $file_name;
-            $works->save();
+            
+
         } 
 
         $works->title = $request->input('title','');
@@ -63,7 +65,7 @@ class WorksController extends Controller
         $works->content = $request->input('content','');
         // 执行添加到数据库
         $res1 = $works->save();
-        // dump($res1);
+        // dd($res1);
         if($res1){
             echo '<script>alert("添加成功!");location="/works"</script>'; exit;
         }else{
@@ -103,7 +105,7 @@ class WorksController extends Controller
             $file = $request->file('img');
             $file_name = $file->store('works');
             $works->img = $file_name;
-            $works->save();
+
         }
         
         $works->status = $data['status']; 
