@@ -59,14 +59,14 @@ class IndexController extends Controller
         $cart = DB::table('cart')->where('uname','=',$home)->get();
         $cart1 = DB::table('cart')->where('uname','=',$home)->first();
 
-        $goodss = DB::table('goods')->where('goodsState','=',1)->get();
-        // dd($goodss);
+ 
+        dd($goodss);
         // dd($cart1);
         if (!isset($cart1)) {
 
             // return view('Home.Index.index',['title'=>'海天商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'goodss'=>$goodss]);  
 
-
+              $goodss = DB::table('goods')->where('goodsState',1)->get();
             return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'links'=>$links,'goodss'=>$goodss]);  
 
             
@@ -133,12 +133,14 @@ class IndexController extends Controller
 
         
 
+         $goodss = DB::table('goods')->where('goodsState',1)->get();
 
-
-        return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num,'size'=>$arr5,'links'=>$links]); 
+        return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num,'size'=>$arr5,'links'=>$links,'goodss'=>$goodss]); 
         }
     }else{
-        return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'links'=>$links]); 
+        $goodss = DB::table('goods')->where('goodsState',1)->get();
+
+        return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'links'=>$links,'goodss'=>$goodss]); 
 
 
 
