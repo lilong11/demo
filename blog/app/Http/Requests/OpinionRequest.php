@@ -24,8 +24,8 @@ class OpinionRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'phone' => 'required',
+            'name' => 'required|unique:opinion|regex:/^[a-zA-Z]{1}[\w]{4,15}$/',
+            'phone' => 'required|regex:/^[1]{1}[3-8]{1}[\d]{9}$/',
             'content' =>'required'
 
         ];
@@ -40,6 +40,8 @@ class OpinionRequest extends FormRequest
         return[
 
         'name.required' => '姓名不能为空',
+        'name.regex' => '姓名格式不正确',
+        'name.unique' => '该用户名已被使用请重新添加',
         'phone.required' => '手机号不能为空',
         'content.required' => '意见内容不能为空'
         ];

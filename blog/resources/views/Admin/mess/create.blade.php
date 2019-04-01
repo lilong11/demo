@@ -39,18 +39,18 @@
 	<div class="center-block">
 	<div class="form-group">
 		<label for="name"><h3>姓名:</h3></label>
-		<input type="text" name="name" id="name" class="form-control ">
+		<input value="{{ old('name') }}" type="text" name="name" id="name" class="form-control ">
 	</div>	
 
 	<div class="form-group">
 		<label for="phone"><h3>手机号:</h3></label>
-		<input type="text" name="phone" id="phone" class="form-control ">
+		<input value="{{ old('phone') }}" type="text" name="phone" id="phone" class="form-control ">
 	</div>
 
 	<div class="form-group ">
 		<label for="text"><h3>留言内容:</h3></label>
 		<!-- <input type="text" name="text" class="form-control "  id="text" placeholder="请填写内容"> -->
-		<textarea name="mess" class="form-control" rows="5"></textarea>
+		<textarea name="mess" class="form-control" rows="5">{{ old('mess') }}</textarea>
 	</div>
 
 	<!-- <div class="form-group">
