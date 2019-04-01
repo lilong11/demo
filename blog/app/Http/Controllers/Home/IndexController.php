@@ -50,6 +50,7 @@ class IndexController extends Controller
         $links = DB::table('links')->get();
         // dump($links);
 
+        $goods = DB::table('goods')->get();
 
         // =====================判断是否登录=======================  
         if (session('home')){
@@ -61,13 +62,11 @@ class IndexController extends Controller
         $cart1 = DB::table('cart')->where('uname','=',$home)->first();
 
         //获取特色商品
-        $goods = DB::table('goods')->get();
         //adv表没有
-        return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'goods'=>$goods]); 
-    }
+        
 
  
-        dd($goodss);
+
         // dd($cart1);
         if (!isset($cart1)) {
 
@@ -146,7 +145,7 @@ class IndexController extends Controller
         }
     }else{
         $goodss = DB::table('goods')->where('goodsState',1)->get();
-
+        // dd($goodss);
         return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'links'=>$links,'goodss'=>$goodss]); 
 
 

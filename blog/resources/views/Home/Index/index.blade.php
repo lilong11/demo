@@ -1205,61 +1205,6 @@
 		</div>
 	</div>
 </div> 
-<!-- Special Offer Area
-<<<<<<< HEAD
-=======
-============================================ -->
-
-<!-- Feature Product Area
-============================================ --> 
-<div class="feature-product-area margin-bottom-90">
-	<div class="container">
-		<div class="row"> 
-			<div class="section-title col-xs-12 text-center"><h1>特色产品</h1></div> 			<div class="col-xs-12">
-				<!-- Product Slider -->
-				<div class="product-slider feature-slider">
-					@foreach($goods as$k=>$v) 
-					<div class="sin-pro">
-						<!-- Product Image -->
-						<div class="sin-pro-img-action fix">
-							<a href="/detailgoods?id={{ $v->id }}" class="sin-pro-img"><img src="uploads/{{ $v->pic }}" alt="" /></a>
-							<a href="/detailgoods?id={{ $v->id }}" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
-							<!-- Product Action -->
-							<div class="sin-pro-action">
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
-								<button class="pro-act-btn btn-text">加入购物车</button>
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
-							</div>
-						</div>
-						<!-- Product Details -->
-						<div class="sin-pro-details fix">
-							<a class="sin-pro-title" href="#">{{ $v->gname }}</a>
-							<!-- Product Price -->
-							<div class="sin-pro-price float-left">
-								<span class="new">$ {{ $v->price }}</span>
-							</div>
-							<!-- Product Ratting -->
-							<div class="sin-pro-ratting float-right">
-								<div class="rattings float-left">
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star-half"></i>
-								</div>
-								<span>(23)</span>
-							</div>
-						</div>
-					</div>
-					@endforeach
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
- 
-<!-- Blog Area
-============================================ -->
 
 
 <!-- 广告开始 -->
@@ -2215,7 +2160,7 @@
 					<div class="pro-tab tab-pane active" id="women">
 						<!-- Single Product -->
 				
-					@if(!empty($goodss))
+				@if(!empty($goodss))
 					
 						@foreach($goodss as $v)
 						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
