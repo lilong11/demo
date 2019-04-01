@@ -18,10 +18,10 @@
 					<div class="blog-details">
 						<!-- Blog Meta -->
 						<div class="blog-meta fix">
-							<p class="author float-left"><a href="#"><i class="zmdi zmdi-account"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 由管理员</font></font></a></p>
+							<!-- <p class="author float-left"><a href="#"><i class="zmdi zmdi-account"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 由管理员</font></font></a></p> -->
 							<p class="comment-like float-right">
-								<a href="#"><i class="zmdi zmdi-comment-outline"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> （15）</font></font></a>
-								<a onclick="love()" name="loves"><i class="zmdi zmdi-favorite-outline"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 喜欢（222225）</font></font></a>
+								<!-- <a href="#"><i class="zmdi zmdi-comment-outline"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> （15）</font></font></a> -->
+							<!-- 	<a onclick="love()" name="loves"><i class="zmdi zmdi-favorite-outline"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 喜欢（222225）</font></font></a> -->
 							</p>
 						</div>
 						<!-- Blog Title -->

@@ -57,10 +57,10 @@
 		  	<input  type="radio" name="sex" id="inlineRadio1">女
 		</label>
 		<label class="radio-inline">
-			<input value="{{ old('sex') }}" type="radio" name="sex" id="inlineRadio2">男
+			<input  type="radio" name="sex" id="inlineRadio2">男
 		</label>
 		<label class="radio-inline">
-		 	<input value="{{ old('sex') }}" type="radio" name="sex" id="inlineRadio3" >保密
+		 	<input  type="radio" name="sex" id="inlineRadio3" >保密
 		</label>
 	</div>
 

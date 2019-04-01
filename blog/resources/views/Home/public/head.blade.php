@@ -127,6 +127,8 @@
 								<ul class="top-sub-menu sub-menu-right">
 									<li><a href="/users">个人中心</a></li> 
 									<li><a href="/Collection">我的收藏</a></li>  
+									<li><a href="/index/orders">我的订单</a></li>
+									
 								</ul>
 							</li>
 						</ul>
@@ -201,7 +203,7 @@
 				<div class="header-bottom-wrap">
 					<!-- Logo -->
 					<div class="header-logo col-lg-3 col-md-2">
-						<div class="logo"><a href="index.html"><img src="/home_public/img/logo-3.png" alt="logo" /></a></div>
+						<div class="logo"><a href="index.html"><img src="/home_public/public/logo.png" alt="无" style="width:60px" /></a></div>
 					</div>
 					<!-- Main Menu -->
 					<div class="main-menu-wrap col-lg-6 col-md-7 hidden-sm hidden-xs">

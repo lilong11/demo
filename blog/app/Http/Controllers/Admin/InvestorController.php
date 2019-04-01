@@ -56,13 +56,13 @@ class InvestorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(InvestorRequest $request)
     {
         // dump('我是store方法,我负责接收添加的数据');
         // dump($request->all());
         // dump($request->name);
          // dd($request->input('sex',''));
-         dd($request->all());
+         // dd($request->all());
         $investor = new investor;
         
         $investor->name = $request->input('name','');

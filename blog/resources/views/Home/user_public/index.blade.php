@@ -38,6 +38,7 @@
 								<div class="sidebar-wrapper fix">
 								<!-- treeview start -->
 									<ul>
+										<li>  &nbsp;</li>
 										@foreach($works as $k )
 										<li><a href="/workss/{{$k->id}}">{{ $k -> title }}</a></li> 
 										@endforeach
@@ -51,6 +52,8 @@
 								<div class="sidebar-wrapper fix">
 								<!-- treeview start -->
 									<ul>
+										<li>  &nbsp;</li>
+									
 										@foreach($issues as $k )
 										<li><a href="/issues/{{$k->id}}">{{ $k -> title }}</a></li> 
 										@endforeach

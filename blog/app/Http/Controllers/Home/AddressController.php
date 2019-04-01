@@ -84,7 +84,7 @@ class AddressController extends Controller
         //收货地址信息
         $address2 = DB::table('address')->where('uid','=',session('uid'))->get();
         
-        dump($arr5);
+        // dump($arr5);
 
          //友情链接
         $links = DB::table('links')->get();

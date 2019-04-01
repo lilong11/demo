@@ -59,7 +59,8 @@ class CollectionController extends Controller
     {
        $bool = collections::destroy($id);
        if($bool){
-            echo '<script>alert("收藏删除成功.");location="/Collection"</script>'; 
+         return redirect($_SERVER['HTTP_REFERER']);
+            // echo '<script>alert("收藏删除成功.");location="/Collection"</script>'; 
         }else{
             echo '<script>alert("收藏删除失败!");location="/Collection"</script>'; 
         }

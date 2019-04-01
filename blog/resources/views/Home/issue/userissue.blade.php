@@ -32,7 +32,7 @@
 								<div class="blog-meta fix">
 									
 									<p class="comment-like float-right">
-										<a href="#"><i class="zmdi zmdi-comment-outline"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> （15）</font></font></a>
+										<!-- <a href="#"><i class="zmdi zmdi-comment-outline"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> （15）</font></font></a> -->
 										<a href="#">
 				                            @switch($v -> status)
 				                           		@case(0)

@@ -57,10 +57,9 @@ class WorksController extends Controller
         $issues = $issue->where('status',0)->get(); 
  
        $workShow = $work->find($id);
-         //友情链接
-        $links = DB::table('links')->get();
+        
 
-        return view('Home.works.index',['works'=>$works,'issues'=>$issues,'workShow'=>$workShow,'links'=>$links]);  
+        return view('Home.works.index',['works'=>$works,'issues'=>$issues,'workShow'=>$workShow]);  
     }
 
 
@@ -83,10 +82,8 @@ class WorksController extends Controller
         // dump($id);
        $workShow = $issue->find($id);
        // dump($workShow);   
-        //友情链接
-        $links = DB::table('links')->get();
 
-        return view('Home.works.index',['works'=>$works,'issues'=>$issues,'workShow'=>$workShow,'links'=>$links]);
+        return view('Home.works.index',['works'=>$works,'issues'=>$issues,'workShow'=>$workShow]);
     }
 
     public function add()
@@ -98,10 +95,8 @@ class WorksController extends Controller
 
         $issue = new Issues; //查问题表
         $issues = $issue->where('status',0)->get(); 
-         //友情链接
-        $links = DB::table('links')->get();
 
-        return view('Home.issue.add',['works'=>$works,'issues'=>$issues,'links'=>$links]);
+        return view('Home.issue.add',['works'=>$works,'issues'=>$issues]);
     }
 
     public function doAdd(Request $request)
