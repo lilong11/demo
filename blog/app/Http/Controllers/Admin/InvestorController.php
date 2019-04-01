@@ -57,12 +57,13 @@ class InvestorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(InvestorRequest $request)
+    // public function store(Request $request)
     {
         // dump('我是store方法,我负责接收添加的数据');
         // dump($request->all());
         // dump($request->name);
          // dd($request->input('sex',''));
-         // dd($request->all());
+
         $investor = new investor;
         
         $investor->name = $request->input('name','');
@@ -125,8 +126,7 @@ class InvestorController extends Controller
      */
     public function update(InvestorRequest $request, $id)
     {
-        // dump($request->all());
-        // dump($id);
+
         $investor = investor::find($id);
         // dump($investor);
         $investor->name = $request->name;
