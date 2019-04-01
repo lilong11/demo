@@ -126,12 +126,11 @@ class IndexController extends Controller
         
         // =====================购物车信息结束=======================
 
-<<<<<<< HEAD
-        return view('Home.Index.index',['title'=>'海天商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num,'size'=>$arr5]); 
-        }
-    }else{
-        return view('Home.Index.index',['title'=>'海天商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice]); 
-=======
+    //     return view('Home.Index.index',['title'=>'海天商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num,'size'=>$arr5]); 
+    //     }
+    // }else{
+    //     return view('Home.Index.index',['title'=>'海天商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice]); 
+
         
 
 
@@ -140,7 +139,8 @@ class IndexController extends Controller
         }
     }else{
         return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'links'=>$links]); 
->>>>>>> origin/qiqi
+
+
 
     }
 
