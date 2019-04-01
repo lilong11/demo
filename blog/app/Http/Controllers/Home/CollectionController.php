@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\collections;
 use App\Models\Goods;
 use App\Models\Users;
+use DB;
 
 class CollectionController extends Controller
 {

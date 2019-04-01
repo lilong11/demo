@@ -21,10 +21,9 @@ class WorksController extends Controller
 
         // return view('Home.issue.index',['issues'=>$issues,'title'=>'问题列表']);     
 
-         //友情链接
-        $links = DB::table('links')->get();
+        
 
-        return view('Home.issue.index',['issues'=>$issues,'title'=>'问题列表','links'=>$links]);
+        return view('Home.issue.index',['issues'=>$issues,'title'=>'问题列表']);
            
 
     }

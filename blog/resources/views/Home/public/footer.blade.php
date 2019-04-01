@@ -49,7 +49,7 @@
 		<div class="row">
 			<!-- Footer Address -->
 			<div class="sin-footer footer-address col-lg-3 col-md-4 col-sm-6 col-xs-12">
-				<div class="footer-logo"><img src="img/logo-2.png" alt="商标"></div>
+				<div class="footer-logo"><img src="/home_public/img/logo-2.png" alt="商标"></div>
 				<p><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">地址：</font></font></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 28 Green Tower，Street Name，纽约，美国</font></font></p>
 				<p><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">电话：</font></font></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> +88017 222 333</font></font></p>
 				<p><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">电子邮件：</font></font></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> contact@shopieee.com</font></font></p>
@@ -73,13 +73,7 @@
 					<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">联系我们</font></font></a></li>
 					<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">条款与协议</font></font></a></li>
 
-				<h3>友情链接</h3>
-				<ul>
-					@foreach($links as $k=>$v)
-					<li><a href="http://{{ $v->lurl }}">{{ $v->lname }}</a></li>
-					@endforeach
-
-				</ul>
+				
 			</div>
 			<!-- Footer Account -->
 			<div class="sin-footer footer-account footer-link col-lg-3 col-md-2 col-sm-6 col-xs-12">

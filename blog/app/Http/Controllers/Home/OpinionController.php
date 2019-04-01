@@ -11,9 +11,9 @@ class OpinionController extends Controller
 		if(session('uid')){
 		$users = Users::find(session('uid'));
 		 //友情链接
-        $links = DB::table('links')->get();
+        // $links = DB::table('links')->get();
 
-			return view('Home/opinion/create',['users'=>$users,'links'=>$links]);
+			return view('Home/opinion/create',['users'=>$users]);
 		}else{
 			return view('Home/register/login');
 		}

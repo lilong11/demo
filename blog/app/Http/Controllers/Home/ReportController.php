@@ -11,10 +11,9 @@ class ReportController extends Controller
     	// dump(session('uid'));
     	$users = Users::find(session('uid'));
     	// dd($users);
-    	 //友情链接
-        $links = DB::table('links')->get();
+    	
 
-    	return view('Home/report/create',['users'=>$users,'links'=>$links]);
+    	return view('Home/report/create',['users'=>$users]);
     	// dump('一哈哈哈');
     }
 }
