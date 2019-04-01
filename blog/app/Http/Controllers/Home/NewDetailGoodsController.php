@@ -44,8 +44,11 @@ class NewDetailGoodsController extends Controller
             $gsize_datas[] = DB::table('goods_sizes')->where('id',$v[$i])->first();
             }
         }
+        $goods_data = DB::table('goods')->get();
+        // dump($goods_data);
+        // exit;
         // dump($goodsDePic);
-        return view('Home.detailgoods.detailgoods',['goods'=>$goods,'details_goods'=>$details_goods,'gsize_datas'=>$gsize_datas,'goodsDePic'=>$goodsDePic]);
+        return view('Home.detailgoods.detailgoods',['goods'=>$goods,'details_goods'=>$details_goods,'gsize_datas'=>$gsize_datas,'goodsDePic'=>$goodsDePic,'goods_data'=>$goods_data]);
     }
 
     /**

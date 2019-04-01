@@ -52,9 +52,9 @@ class IndexController extends Controller
 
 
         //获取特色商品
-        
+        $goods = DB::table('goods')->get();
         //adv表没有
-        return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice]); 
+        return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'goods'=>$goods]); 
     }
 
 

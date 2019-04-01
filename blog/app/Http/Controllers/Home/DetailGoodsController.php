@@ -19,6 +19,7 @@ class DetailGoodsController extends Controller
         //获取id
         $id = $request->all();
         $goods = DB::table('goods')->where('id',$id)->get();
+       
         //商品详情
         $details_goods = DB::table('details_goods')->where('gid',$id)->get();
         //获取颜色,尺寸,图片数据,并切割字符串
@@ -44,8 +45,10 @@ class DetailGoodsController extends Controller
             $gsize_datas[] = DB::table('goods_sizes')->where('id',$v[$i])->first();
             }
         }
-        // dump($goodsDePic);
-        return view('Home.detailgoods.detailgoods',['goods'=>$goods,'details_goods'=>$details_goods,'gsize_datas'=>$gsize_datas,'goodsDePic'=>$goodsDePic]);
+        $goods_data = DB::table('goods')->get();
+        // dump('aaaaaa');
+        // exit;
+        return view('Home.detailgoods.detailgoods',['goods'=>$goods,'details_goods'=>$details_goods,'gsize_datas'=>$gsize_datas,'goodsDePic'=>$goodsDePic,'goods_data'=>$goods_data]);
     }
 
     /**

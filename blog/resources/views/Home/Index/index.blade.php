@@ -188,7 +188,7 @@
 							<nav>
 								<ul>
 									@foreach($type_data as $k=>$v)
-									<li><a href="shop.html">{{ $v->tname }}<i class="zmdi zmdi-chevron-down"></i></a>
+									<li><a href="#">{{ $v->tname }}<i class="zmdi zmdi-chevron-down"></i></a>
 										<!-- Mega Menu -->
 										<div class="mega-menu mm-5-column mm-left">
 											<div class="mm-column mm-column-link float-left">
@@ -205,36 +205,6 @@
 										</div>
 									</li>
 									@endforeach
-									<li><a href="#">pages <i class="zmdi zmdi-chevron-down"></i></a>
-										<!-- Mega Menu -->
-										<div class="mega-menu mega-menu-link mm-right">
-
-											<div class="mm-column mm-column-link float-left">
-												<h4>shop pages</h4>
-												<a href="shop.html">shop grid</a>
-												<a href="product-details.html">product details</a>
-												<a href="product-details-left-sidebar.html">product details left sidebar</a>
-											</div>
-											<div class="mm-column mm-column-link float-left">
-												<h4>shop pages</h4>
-												<a href="cart.html">cart</a>
-												<a href="checkout.html">check out</a>
-												<a href="wishlist.html">wishlist</a>
-											</div>
-											<div class="mm-column mm-column-link float-left">
-												<h4>blog pages</h4>
-												<a href="blog.html">blog</a>
-												<a href="blog-details.html">blog details</a>
-											</div>
-											<div class="mm-column mm-column-link float-left">
-												<h4>other pages</h4>
-												<a href="about-us.html">about us</a>
-												<a href="contact.html">contact</a>
-												<a href="coming-soon.html">coming soon</a>
-												<a href="404.html">404</a>
-											</div>
-										</div>
-									</li>
 									<li><a href="/homegoods">商城</a></li>
 								</ul>
 							</nav>
@@ -380,6 +350,7 @@
 
 <!-- Latest Product Area
 ============================================ --> 
+<br>
 <div class="latest-product-area tab-product-area margin-bottom-25">
 	<div class="container">
 		<div class="row">
@@ -1208,7 +1179,7 @@
 									<!-- Product Action -->
 									<div class="sin-pro-action">
 										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
-										<button class="pro-act-btn btn-text">add to bag</button>
+										<button class="pro-act-btn btn-text">加入购物车</button>
 										<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
 									</div>
 								</div>
@@ -1322,25 +1293,26 @@
 		<div class="row"> 
 			<div class="section-title col-xs-12 text-center"><h1>特色产品</h1></div> 			<div class="col-xs-12">
 				<!-- Product Slider -->
-				<div class="product-slider feature-slider"> 
+				<div class="product-slider feature-slider">
+					@foreach($goods as$k=>$v) 
 					<div class="sin-pro">
 						<!-- Product Image -->
 						<div class="sin-pro-img-action fix">
-							<a href="#" class="sin-pro-img"><img src="./home_public/img/product/1.jpg" alt="" /></a>
-							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
+							<a href="/detailgoods?id={{ $v->id }}" class="sin-pro-img"><img src="uploads/{{ $v->pic }}" alt="" /></a>
+							<a href="/detailgoods?id={{ $v->id }}" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
 							<!-- Product Action -->
 							<div class="sin-pro-action">
 								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
-								<button class="pro-act-btn btn-text">add to bag</button>
+								<button class="pro-act-btn btn-text">加入购物车</button>
 								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
 							</div>
 						</div>
 						<!-- Product Details -->
 						<div class="sin-pro-details fix">
-							<a class="sin-pro-title" href="#">Full sleev women shirt</a>
+							<a class="sin-pro-title" href="#">{{ $v->gname }}</a>
 							<!-- Product Price -->
 							<div class="sin-pro-price float-left">
-								<span class="new">$ 85.00</span>
+								<span class="new">$ {{ $v->price }}</span>
 							</div>
 							<!-- Product Ratting -->
 							<div class="sin-pro-ratting float-right">
@@ -1355,142 +1327,7 @@
 							</div>
 						</div>
 					</div>
-					<!-- Single Product -->
-					<div class="sin-pro">
-						<!-- Product Image -->
-						<div class="sin-pro-img-action fix">
-							<a href="#" class="sin-pro-img"><img src="./home_public/img/product/2.jpg" alt="" /></a>
-							<span class="pro-label label-new">new</span>
-							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
-							<!-- Product Action -->
-							<div class="sin-pro-action">
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
-								<button class="pro-act-btn btn-text">add to bag</button>
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
-							</div>
-						</div>
-						<!-- Product Details -->
-						<div class="sin-pro-details fix">
-							<a class="sin-pro-title" href="#">Loafers Men's shoes</a>
-							<!-- Product Price -->
-							<div class="sin-pro-price float-left">
-								<span class="new">$ 45.00</span>
-							</div>
-							<!-- Product Ratting -->
-							<div class="sin-pro-ratting float-right">
-								<div class="rattings float-left">
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star-half"></i>
-								</div>
-								<span>(5)</span>
-							</div>
-						</div>
-					</div>
-					<!-- Single Product -->
-					<div class="sin-pro">
-						<!-- Product Image -->
-						<div class="sin-pro-img-action fix">
-							<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
-							<span class="pro-label label-new">new</span>
-							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
-							<!-- Product Action -->
-							<div class="sin-pro-action">
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
-								<button class="pro-act-btn btn-text">add to bag</button>
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
-							</div>
-						</div>
-						<!-- Product Details -->
-						<div class="sin-pro-details fix">
-							<a class="sin-pro-title" href="#">Women’s handbag</a>
-							<!-- Product Price -->
-							<div class="sin-pro-price float-left">
-								<span class="new">$ 99.99</span>
-								<span class="old">145.00</span>
-							</div>
-							<!-- Product Ratting -->
-							<div class="sin-pro-ratting float-right">
-								<div class="rattings float-left">
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star-half"></i>
-								</div>
-								<span>(23)</span>
-							</div>
-						</div>
-					</div>
-					<!-- Single Product -->
-					<div class="sin-pro">
-						<!-- Product Image -->
-						<div class="sin-pro-img-action fix">
-							<a href="#" class="sin-pro-img"><img src="./home_public/img/product/4.jpg" alt="" /></a>
-							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
-							<!-- Product Action -->
-							<div class="sin-pro-action">
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
-								<button class="pro-act-btn btn-text">add to bag</button>
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i></button>
-							</div>
-						</div>
-						<!-- Product Details -->
-						<div class="sin-pro-details fix">
-							<a class="sin-pro-title" href="#">Women’s winter dress</a>
-							<!-- Product Price -->
-							<div class="sin-pro-price float-left">
-								<span class="new">$ 45.00</span>
-							</div>
-							<!-- Product Ratting -->
-							<div class="sin-pro-ratting float-right">
-								<div class="rattings float-left">
-									<i class="zmdi zmdi-star-outline"></i>
-									<i class="zmdi zmdi-star-outline"></i>
-									<i class="zmdi zmdi-star-outline"></i>
-									<i class="zmdi zmdi-star-outline"></i>
-									<i class="zmdi zmdi-star-outline"></i>
-								</div>
-								<span>(0)</span>
-							</div>
-						</div>
-					</div>
-					<!-- Single Product -->
-					<div class="sin-pro">
-						<!-- Product Image -->
-						<div class="sin-pro-img-action fix">
-							<a href="#" class="sin-pro-img"><img src="./home_public/img/product/3.jpg" alt="" /></a>
-							<span class="pro-label label-new">new</span>
-							<a href="#pro-quick-view" class="pro-quick-view" data-toggle="modal"><i class="zmdi zmdi-plus-circle-o"></i></a>
-							<!-- Product Action -->
-							<div class="sin-pro-action">
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-refresh"></i></button>
-								<button class="pro-act-btn btn-text">add to bag</button>
-								<button class="pro-act-btn btn-icon"><i class="zmdi zmdi-favorite-outline"></i><i class="zmdi zmdi-favorite-outline"></i></button>
-							</div>
-						</div>
-						<!-- Product Details -->
-						<div class="sin-pro-details fix">
-							<a class="sin-pro-title" href="#">Full sleev women shirt</a>
-							<!-- Product Price -->
-							<div class="sin-pro-price float-left">
-								<span class="new">$ 85.00</span>
-							</div>
-							<!-- Product Ratting -->
-							<div class="sin-pro-ratting float-right">
-								<div class="rattings float-left">
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star"></i>
-									<i class="zmdi zmdi-star-half"></i>
-								</div>
-								<span>(23)</span>
-							</div>
-						</div>
-					</div>
+					@endforeach
 				</div>
 			</div>
 		</div>
