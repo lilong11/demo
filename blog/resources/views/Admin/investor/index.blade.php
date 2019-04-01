@@ -1,5 +1,6 @@
 @extends('Admin/layout/index');
     @section('content')
+    <!-- $i = 1; -->
 <!--                     @if (session('success'))
                     <div class="bs-example" data-example-id="dismissible-alert-css">
                         <div class="alert alert-success alert-dismissible" role="alert">
@@ -150,7 +151,7 @@
                                 <input type="checkbox" value="1" name="">
                             </td>
                             <td>
-                                {{ $v->id }}
+                                {{ ($investor->currentpage()-1)*5 + $i++ }}
                             </td>
                             <td>
                                 {{ $v->name }}

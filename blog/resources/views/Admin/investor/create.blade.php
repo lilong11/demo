@@ -41,7 +41,7 @@
 {{ csrf_field() }}
 	<div class="center-block">
 	<div class="form-group ">
-		<h4>姓名:</h4>	<input type="text" name="name" class="form-control "  id="text" placeholder="请填写真实姓名">
+		<h4>姓名:</h4>	<input value="{{ old('name') }}" type="text" name="name" class="form-control "  id="text" placeholder="请填写真实姓名">
 	</div>	
 
 	<!-- 性别 -->
@@ -52,24 +52,26 @@
 				</h4> -->
 		<h4>性别:</h4>
 		<label class="radio-inline">
-		  	<input type="radio" name="sex" id="inlineRadio1" value="0">女
+		  	<!-- <input   type="radio" name="sex" id="inlineRadio1" value="0">女 -->
+		  	<!-- <input @if(!empty(old('sex'))) checked @endif  type="radio" name="sex" id="inlineRadio1">女 -->
+		  	<input @if(!empty(old('sex'))) checked @endif  type="radio" name="sex" id="inlineRadio1">女
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="sex" id="inlineRadio2" value="1">男
+			<input @if(!empty(old('sex'))) checked @endif value="{{ old('sex') }}" type="radio" name="sex" id="inlineRadio2">男
 		</label>
 		<label class="radio-inline">
-		 	<input type="radio" name="sex" id="inlineRadio3" value="2">保密
+		 	<input @if(!empty(old('sex'))) checked @endif value="{{ old('sex') }}" type="radio" name="sex" id="inlineRadio3" >保密
 		</label>
 	</div>
 
 	
 
 	<div class="form-group ">
-		<h4>手机号:</h4>	<input type="text" name="phone" class="form-control "  id="text" placeholder="请填写正确11位手机号">
+		<h4>手机号:</h4>	<input  value="{{ old('phone') }}" type="text" name="phone" class="form-control "  id="text" placeholder="请填写正确11位手机号">
 	</div>
 
 	<div class="form-group ">
-		<h4>邮箱:</h4>	<input type="text" name="email" class="form-control "  id="text" placeholder="请填写正确邮箱格式">
+		<h4>邮箱:</h4>	<input  value="{{ old('email') }}" type="text" name="email" class="form-control "  id="text" placeholder="请填写正确邮箱格式">
 	</div>
 <!-- 	<div class="form-group ">
 		<label for="text"><h4>意见内容</h4></label>

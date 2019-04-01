@@ -135,7 +135,7 @@
                                 <input type="checkbox" value="1" name="">
                             </td>
                             <td>
-                                {{ $v->id }}
+                                {{$mess->firstItem()+$i++ }}
                             </td>                            
                             <td>
                                 {{ $v->name }}

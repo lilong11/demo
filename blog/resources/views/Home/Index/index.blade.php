@@ -1208,7 +1208,7 @@
 	<div class="container">
 		<div class="row">
 			<!-- Section Title -->
-			<div class="section-title col-xs-12 text-center"><h1>因为后台强大,被迫植入广告,所以为所欲为</h1></div>
+			<div class="section-title col-xs-12 text-center"><h1>澳门赌场上线了,性感美女荷官在线发牌</h1></div>
 			<div class="col-xs-12">
 				<!-- Product Tab List -->
 				<div class="pro-tab-list text-center fix">
@@ -1229,7 +1229,7 @@
 							<div class="sin-pro">
 								<!-- Product Image -->
 								<div class="sin-pro-img-action fix">
-									<a href="#" class="sin-pro-img">
+									<a href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553858733560&di=8dfe5c19a5eb5a28e5815b6c3437ded4&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20171103%2F52a8413ee0ff4245b3fc7eef447e48d4.jpeg" class="sin-pro-img">
 									
 									<img src="/uploads/{{ $v->guanggao }}"  alt="" />
 

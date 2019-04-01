@@ -83,7 +83,7 @@
                                 <input type="checkbox" value="1" name="">
                             </td>
                             <td>
-                                {{ $v->id }}
+                                {{ ($notice->currentpage()-1)*3 + $i++ }}
                             </td>
                             <td>
                                 {{ $v->notice }}

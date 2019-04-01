@@ -32,7 +32,7 @@
 
 			<div class="form-group">
 				<label for="image"><h3>选择图片</h3></label>
-				<input type="file" name="guanggao" id="image">
+				<input multiple type="file" name="guanggao[]" id="image">
 			</div>
 <!-- 			<div class="text text-info">
 				少时诵诗书

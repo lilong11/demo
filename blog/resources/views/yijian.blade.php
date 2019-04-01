@@ -1,1 +1,0 @@
-@extends('Home/public/index');
