@@ -62,8 +62,10 @@ class PayController extends Controller
 
         $request->session()->forget('aid');
         // dump(session());
+         //友情链接
+        $links = DB::table('links')->get();
 
-        return view('Home.pay.pay',['oid'=>$oid]);
+        return view('Home.pay.pay',['oid'=>$oid,'links'=>$links]);
         }else{
             echo '<script>alert("请选择收获地址");location="/address"</script>';
         }

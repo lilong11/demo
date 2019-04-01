@@ -78,10 +78,15 @@ class CartController extends Controller
         foreach ($arr2 as $k2 => $v2) {
             $total2 +=$v2;
         }
-        return view('Home.cart.cart',['arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num,'size'=>$arr5]);
+
+         //友情链接
+        $links = DB::table('links')->get();
+
+        return view('Home.cart.cart',['arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num,'size'=>$arr5,'links'=>$links]);
         
 
         }
+
     }else{
             echo '<script>alert("您还没有登录,请先登录账号");location="/users/login"</script>';
         }

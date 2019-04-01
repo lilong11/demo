@@ -10,8 +10,10 @@ class OpinionController extends Controller
 	public function create(){
 		if(session('uid')){
 		$users = Users::find(session('uid'));
+		 //友情链接
+        $links = DB::table('links')->get();
 
-			return view('Home/opinion/create',['users'=>$users]);
+			return view('Home/opinion/create',['users'=>$users,'links'=>$links]);
 		}else{
 			return view('Home/register/login');
 		}

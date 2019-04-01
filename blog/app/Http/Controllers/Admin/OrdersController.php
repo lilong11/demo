@@ -35,8 +35,8 @@ class OrdersController extends Controller
                 $uname[] = ($v3->uname);
             }
         }
-        dump($uname);
-        dump($orders);
+        // dump($uname);
+        // dump($orders);
 
         //统计图订单信息
         $Orders = new Orders; 

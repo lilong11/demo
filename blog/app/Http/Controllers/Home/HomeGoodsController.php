@@ -33,7 +33,10 @@ class HomeGoodsController extends Controller
         //商城遍历
         $goods = Goods::where('gname','like','%'.$search.'%')->paginate(16);
         //  dump($goods);
-        return view('Home.goods.homegoods',['goods'=>$goods]);
+         //友情链接
+        $links = DB::table('links')->get();
+
+        return view('Home.goods.homegoods',['goods'=>$goods,'links'=>$links]);
        
         
     }

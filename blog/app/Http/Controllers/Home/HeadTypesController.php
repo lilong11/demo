@@ -25,7 +25,10 @@ class HeadTypesController extends Controller
             // dump($erji_data);
             $value['sub'] = $erji_data;
         }
-        return view('Home.public.head',['type_data'=>$yiji_data]);
+         //友情链接
+        $links = DB::table('links')->get();
+
+        return view('Home.public.head',['type_data'=>$yiji_data,'links'=>$links]);
     }
 
     /**

@@ -64,6 +64,7 @@
 			</div>
 			<!-- Footer Service -->
 			<div class="sin-footer footer-service footer-link col-lg-3 col-md-2 col-sm-6 col-xs-12">
+
 				<h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">服务</font></font></h3>
 				<ul>
 					<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关于我们</font></font></a></li>
@@ -71,6 +72,13 @@
 					<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们的博客</font></font></a></li>
 					<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">联系我们</font></font></a></li>
 					<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">条款与协议</font></font></a></li>
+
+				<h3>友情链接</h3>
+				<ul>
+					@foreach($links as $k=>$v)
+					<li><a href="http://{{ $v->lurl }}">{{ $v->lname }}</a></li>
+					@endforeach
+
 				</ul>
 			</div>
 			<!-- Footer Account -->

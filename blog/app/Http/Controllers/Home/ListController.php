@@ -19,7 +19,10 @@ class ListController extends Controller
         dump(session('home'));
         $goods = DB::select("select * from goods");
         dump($goods);
-        return view('Home.list.list',['goods'=>$goods]);
+         //友情链接
+        $links = DB::table('links')->get();
+
+        return view('Home.list.list',['goods'=>$goods,'links'=>$links]);
     }
 
     /**

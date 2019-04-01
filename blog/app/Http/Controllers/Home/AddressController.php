@@ -86,8 +86,11 @@ class AddressController extends Controller
         
         dump($arr5);
 
+         //友情链接
+        $links = DB::table('links')->get();
 
-        return view('Home.address.address',['arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num,'address'=>$address2,'size'=>$arr5]);
+        
+        return view('Home.address.address',['arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num,'address'=>$address2,'size'=>$arr5,'links'=>$links]);
 
         }else{
             echo '<script>alert("您还没有登录,请先登录账号");location="/users/login"</script>';
@@ -116,7 +119,7 @@ class AddressController extends Controller
         $phone = ($request->phone);
         $addr1 = ($shen[0]->name).($shi[0]->name).($qu[0]->name).($request->addr_info);
         
-        dump($addr1);
+        // dump($addr1);
 
         $Address = new Address;
         $Address->uid = $uid;

@@ -9,6 +9,7 @@ use App\Models\Slid;
 use App\Models\adv;
 use App\Models\notice;
 use App\Models\mess;
+use App\Models\Links;
 use DB;
 
 class IndexController extends Controller
@@ -45,6 +46,9 @@ class IndexController extends Controller
         $adv = adv::all();
         $notice = notice::all();
 
+        //友情链接
+        $links = DB::table('links')->get();
+        // dump($links);
 
         // =====================判断是否登录=======================  
         if (session('home')){
@@ -59,7 +63,12 @@ class IndexController extends Controller
         // dd($goodss);
         // dd($cart1);
         if (!isset($cart1)) {
-            return view('Home.Index.index',['title'=>'海天商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'goodss'=>$goodss]);  
+
+            // return view('Home.Index.index',['title'=>'海天商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'goodss'=>$goodss]);  
+
+
+            return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'links'=>$links,'goodss'=>$goodss]);  
+
             
         }else{
 
@@ -113,13 +122,25 @@ class IndexController extends Controller
             $total2 +=$v2;
         }
 
-        dump($array1);
+        // dump($array1);
+        
         // =====================购物车信息结束=======================
 
+<<<<<<< HEAD
         return view('Home.Index.index',['title'=>'海天商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num,'size'=>$arr5]); 
         }
     }else{
         return view('Home.Index.index',['title'=>'海天商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice]); 
+=======
+        
+
+
+
+        return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'arr'=>$array1,'arr1'=>$arr1,'total'=>$total2,'num'=>$num,'size'=>$arr5,'links'=>$links]); 
+        }
+    }else{
+        return view('Home.Index.index',['title'=>'哈哈商城','type_data'=>$yiji_data,'slids_data'=>$slids_data,'new_goods'=>$new_goods,'adv'=>$adv,'notice'=>$notice,'links'=>$links]); 
+>>>>>>> origin/qiqi
 
     }
 

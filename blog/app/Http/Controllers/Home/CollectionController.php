@@ -22,8 +22,10 @@ class CollectionController extends Controller
         $user = Users::find($uid);
         $collection = $user->collection;
         $i = 1;
+         //友情链接
+        $links = DB::table('links')->get();
 
-        return view('Home.Collections.index',['title'=>'个人收藏','collection'=>$collection,'i'=>$i]);
+        return view('Home.Collections.index',['title'=>'个人收藏','collection'=>$collection,'i'=>$i,'links'=>$links]);
     }
     public function add($gid)
     {
